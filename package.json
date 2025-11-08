@@ -1,0 +1,23 @@
+{
+	"name": "web",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/svelte": "^7.2.2",
+		"@tailwindcss/vite": "^4.1.17",
+		"astro": "^5.15.4",
+		"daisyui": "^5.4.7",
+		"svelte": "^5.43.5",
+		"tailwindcss": "^4.1.17",
+		"typescript": "^5.9.3"
+	},
+	"devDependencies": {
+		"prettier": "3.6.2"
+	}
+}

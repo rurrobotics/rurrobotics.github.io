@@ -1,0 +1,16 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+interface Props {
+	title?: string;
+	description?: string;
+	keywords?: string[];
+}
+const { title, ...props } = Astro.props;
+---
+
+<BaseLayout title={title ? `${title} | R.U.R.` : "R.U.R"} {...props}>
+	<slot name="head" slot="head" />
+	<main>
+		<slot />
+	</main>
+</BaseLayout>
