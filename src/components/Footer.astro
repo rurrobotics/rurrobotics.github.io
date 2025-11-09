@@ -1,0 +1,31 @@
+---
+interface Props {
+	socials?: {
+		src: string;
+        alt: string;
+		href: string;
+	}[];
+}
+const { socials = [] } = Astro.props;
+---
+
+<nav class="flex container mx-auto">
+	<aside class="px-4 py-2 border-x-(length:--border)">
+        R.U.R. Robotics © {new Date().getFullYear()} - Sva prava zadržana.
+	</aside>
+    <div class="flex-1"></div>
+	<nav class="contents">
+		{
+			socials.map((item) => (
+                <div class="border-l-(length:--border) last:border-x-(length:--border)">
+                    <a
+                        href={item.href}
+                        class="px-1 py-1 flex items-center justify-center hover:bg-[url(/pattern.svg)]"
+                    >
+                        <img src={item.src} alt={item.alt} class="size-8 bg-white px-1 py-1" />
+                    </a>
+                </div>
+			))
+		}
+	</nav>
+</nav>

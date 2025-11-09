@@ -12,19 +12,28 @@ const { items = [] } = Astro.props;
 	<div class="navbar container mx-auto items-stretch">
 		<div class="navbar-start">
 			<!-- TODO: Add scroll to top -->
-			<a class="font-medium border-x-(length:--border) h-full px-4 hover:bg-[url(pattern.svg)]" href="#">
-				<h1 class="py-2">RUR Robotics</h1>
-			</a>
+			<div class="border-x-2">
+				<a
+					class="inline-block px-1 py-1 hover:bg-[url(/pattern.svg)]"
+					href="#"
+				>
+					<h1 class="px-3 py-1 bg-base-100">R.U.R. Robotics</h1>
+				</a>
+			</div>
 		</div>
 		<div class="navbar-end">
 			{
 				items.map((item) => (
-					<a
-						class="font-medium h-full border-l-(length:--border) last:border-x-(length:--border) px-4 py-2 hover:bg-[url(pattern.svg)]"
-						href={item.href}
-					>
-						{item.name}
-					</a>
+					<div class="border-l-(length:--border) last:border-x-(length:--border)">
+						<a
+							class="inline-block h-full py-1 px-1 hover:bg-[url(/pattern.svg)]"
+							href={item.href}
+						>
+							<div class="font-medium py-1 px-3 bg-white">
+								{item.name}
+							</div>
+						</a>
+					</div>
 				))
 			}
 		</div>

@@ -1,4 +1,5 @@
 ---
+import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 import BaseLayout from "./BaseLayout.astro";
 interface Props {
@@ -10,14 +11,32 @@ const { ...props } = Astro.props;
 
 <BaseLayout title="R.U.R. Robotics" {...props}>
 	<slot name="head" slot="head" />
-	<header>
-		<Navbar items={[
-			{name: "O nama", href: "#about"},
-			{name: "Tim", href: "#team"},
-			{name: "Galerija", href: "#gallery"},
-		]} />
+	<header class="shrink-0">
+		<Navbar
+			items={[
+				{ name: "O nama", href: "#about" },
+				{ name: "Tim", href: "#team" },
+				{ name: "Galerija", href: "#gallery" },
+			]}
+		/>
 	</header>
-	<main>
+	<main class="flex-1">
 		<slot />
 	</main>
+	<footer class="shrink-0">
+		<Footer
+			socials={[
+				{
+					src: "/instagram.svg",
+					href: "https://instagram.com/rurrobotics/",
+					alt: "Instagram",
+				},
+				{
+					src: "/github.svg",
+					href: "https://github.com/rurrobotics/",
+					alt: "Github",
+				},
+			]}
+		/>
+	</footer>
 </BaseLayout>

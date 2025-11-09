@@ -67,7 +67,7 @@
 }
 
 body {
-	@apply bg-base-100 antialiased;
+	@apply bg-base-100 antialiased min-h-screen flex flex-col;
 	font-family: "Bitter Variable", "Ariel";
 }
 
@@ -78,4 +78,3 @@ body {
 /* @utility btn {
 	@apply bg-inherit! translate-0 border-neutral border-(length:--border) font-normal;
 } */
-
