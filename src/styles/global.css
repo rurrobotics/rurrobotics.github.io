@@ -42,3 +42,7 @@
 @plugin "daisyui" {
 	themes: rurlight --default;
 }
+
+@utility navbar {
+	@apply min-h-12 border-x-(length:--border);
+}

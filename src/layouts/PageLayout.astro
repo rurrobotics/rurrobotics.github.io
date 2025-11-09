@@ -1,15 +1,18 @@
 ---
+import Navbar from "../components/Navbar.astro";
 import BaseLayout from "./BaseLayout.astro";
 interface Props {
-	title?: string;
 	description?: string;
 	keywords?: string[];
 }
-const { title, ...props } = Astro.props;
+const { ...props } = Astro.props;
 ---
 
-<BaseLayout title={title ? `${title} | R.U.R.` : "R.U.R"} {...props}>
+<BaseLayout title="R.U.R. Robotics" {...props}>
 	<slot name="head" slot="head" />
+	<header>
+		<Navbar />
+	</header>
 	<main>
 		<slot />
 	</main>
