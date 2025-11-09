@@ -11,7 +11,11 @@ const { ...props } = Astro.props;
 <BaseLayout title="R.U.R. Robotics" {...props}>
 	<slot name="head" slot="head" />
 	<header>
-		<Navbar />
+		<Navbar items={[
+			{name: "O nama", href: "#about"},
+			{name: "Tim", href: "#team"},
+			{name: "Galerija", href: "#gallery"},
+		]} />
 	</header>
 	<main>
 		<slot />

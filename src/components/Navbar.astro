@@ -1,4 +1,33 @@
+---
+interface Props {
+	items?: {
+		name: string;
+		href: string;
+	}[];
+}
+const { items = [] } = Astro.props;
+---
+
 <nav class="sticky top-0 z-30 border-b-(length:--border)">
-    <div class="navbar container mx-auto">
-    </div>
+	<div class="navbar container mx-auto items-stretch">
+		<div class="navbar-start">
+			<div class="font-medium border-x-(length:--border) h-full px-4">
+				<!-- TODO: Add scroll to top -->
+				<h1 class="py-2"><a href="#">RUR Robotics<a></h1>
+			</div>
+		</div>
+		<div class="navbar-end">
+			<!-- TODO: Add button animation -->
+			{
+				items.map((item) => (
+					<a
+						class="font-medium border-y-0 h-full border-l-(length:--border) last:border-x-(length:--border) px-4 py-2"
+						href={item.href}
+					>
+						{item.name}
+					</a>
+				))
+			}
+		</div>
+	</div>
 </nav>
