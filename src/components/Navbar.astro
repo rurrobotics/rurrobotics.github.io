@@ -11,17 +11,16 @@ const { items = [] } = Astro.props;
 <nav class="sticky top-0 z-30 border-b-(length:--border)">
 	<div class="navbar container mx-auto items-stretch">
 		<div class="navbar-start">
-			<div class="font-medium border-x-(length:--border) h-full px-4">
-				<!-- TODO: Add scroll to top -->
-				<h1 class="py-2"><a href="#">RUR Robotics<a></h1>
-			</div>
+			<!-- TODO: Add scroll to top -->
+			<a class="font-medium border-x-(length:--border) h-full px-4 hover:bg-[url(pattern.svg)]" href="#">
+				<h1 class="py-2">RUR Robotics</h1>
+			</a>
 		</div>
 		<div class="navbar-end">
-			<!-- TODO: Add button animation -->
 			{
 				items.map((item) => (
 					<a
-						class="font-medium border-y-0 h-full border-l-(length:--border) last:border-x-(length:--border) px-4 py-2"
+						class="font-medium h-full border-l-(length:--border) last:border-x-(length:--border) px-4 py-2 hover:bg-[url(pattern.svg)]"
 						href={item.href}
 					>
 						{item.name}
