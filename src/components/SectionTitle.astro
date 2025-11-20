@@ -1,0 +1,15 @@
+---
+interface Props {
+    order: string,
+	title: string;
+}
+
+const { order, title } = Astro.props;
+---
+
+<div class="flex items-center gap-4 mb-8">
+	<div class="size-12 flex items-center justify-center bg-black text-bg">
+		<span class="text-2xl font-bold">{order}</span>
+	</div>
+	<h2 class="text-4xl md:text-5xl font-bold uppercase">{title}</h2>
+</div>

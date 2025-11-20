@@ -1,0 +1,73 @@
+---
+import Corners from "./Corners.astro";
+import SectionTitle from "./SectionTitle.astro";
+
+interface Props {
+	specs: { name: string; text: string }[];
+}
+
+const { specs } = Astro.props;
+---
+
+<section id="about" class="py-20 relative">
+	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="border-4 border-text p-8 md:p-12 bg-bg shadow-xl relative">
+			<SectionTitle title="About us" order="01" />
+
+			<div class="grid md:grid-cols-2 gap-4">
+				<div class="border-2 border-black p-6">
+					<h3
+						class="text-2xl font-bold mb-4 pb-2 flex items-center gap-2 uppercase"
+					>
+						<div class="w-2 h-2 bg-black"></div>
+						Our mission
+					</h3>
+					<p class="text-lg leading-relaxed mb-6">
+						We build reliable, efficient robots and aim to improve
+						our skills with each competition. We work as a team,
+						communicate openly, and take responsibility for our
+						designs. Precision, curiosity, and dedication guide
+						everything we do.
+					</p>
+				</div>
+
+				<div class="border-2 border-black p-6 bg-gray-50">
+					<h3
+						class="text-2xl font-bold mb-4 pb-2 flex items-center gap-2 uppercase"
+					>
+						<div class="size-2 bg-black"></div>
+						Our history
+					</h3>
+					<p class="text-lg leading-relaxed mb-6">
+						We began as a small robotics team at Gymnasium Jovan
+						Jovanović Zmaj, later continuing our work at the Faculty
+						of Electrical Engineering. Over the past three years,
+						we’ve competed at Eurobot, growing our skills, our team,
+						and the quality of our robots each season.
+					</p>
+				</div>
+			</div>
+
+			<div
+				class="mt-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4"
+			>
+				{
+					specs.map((spec) => (
+						<div class="border-2 border-black p-6 text-center bg-white relative overflow-hidden group hover:bg-black hover:text-white transition-all">
+							<Corners
+								class="size-3 border-text group-hover:border-bg"
+								style="smallborders"
+							/>
+							<div class="text-4xl font-bold mb-2 uppercase">
+								{spec.text}
+							</div>
+							<div class="text-xs font-bold tracking-wide uppercase">
+								{spec.name}
+							</div>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</section>
