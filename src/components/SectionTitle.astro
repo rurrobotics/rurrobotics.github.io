@@ -1,13 +1,14 @@
 ---
 interface Props {
-    order: string,
+	order: string;
 	title: string;
+	class?: string;
 }
 
-const { order, title } = Astro.props;
+const { order, title, class: className } = Astro.props;
 ---
 
-<div class="flex items-center gap-4 mb-8">
+<div class:list={["flex items-center gap-4 mb-8", className]}>
 	<div class="size-12 flex items-center justify-center bg-black text-bg">
 		<span class="text-2xl font-bold">{order}</span>
 	</div>

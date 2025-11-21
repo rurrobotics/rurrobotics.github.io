@@ -1,0 +1,4 @@
+src/assets/mihajlovic.jpg filter=lfs diff=lfs merge=lfs -text
+src/assets/pesic.jpg filter=lfs diff=lfs merge=lfs -text
+src/assets/ognjanovic.jpg filter=lfs diff=lfs merge=lfs -text
+src/assets/tesmanovic.jpg filter=lfs diff=lfs merge=lfs -text

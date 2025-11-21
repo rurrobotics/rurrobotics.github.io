@@ -12,6 +12,10 @@ const { specs } = Astro.props;
 <section id="about" class="py-20 relative">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="border-4 border-text p-8 md:p-12 bg-bg shadow-xl relative">
+			<Corners
+				class="size-4 border-text group-hover:border-bg"
+				style="sides"
+			/>
 			<SectionTitle title="About us" order="01" />
 
 			<div class="grid md:grid-cols-2 gap-4">
@@ -58,7 +62,7 @@ const { specs } = Astro.props;
 								class="size-3 border-text group-hover:border-bg"
 								style="smallborders"
 							/>
-							<div class="text-4xl font-bold mb-2 uppercase">
+							<div class="sm:text-4xl font-bold mb-2 uppercase">
 								{spec.text}
 							</div>
 							<div class="text-xs font-bold tracking-wide uppercase">

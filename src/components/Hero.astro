@@ -4,7 +4,7 @@ import Corners from "./Corners.astro";
 const date = new Date();
 const year = date.getFullYear() + (date.getMonth() >= 9 ? 1 : 0);
 
-const { class: className } = Astro.props
+const { class: className } = Astro.props;
 ---
 
 <section
@@ -20,7 +20,9 @@ const { class: className } = Astro.props
 			<div class="text-xs mb-4 tracking-widest opacity-60 uppercase">
 				/// Competing in {year} Eurobot
 			</div>
-			<h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight uppercase">
+			<h1
+				class="text-5xl md:text-7xl font-bold mb-6 tracking-tight uppercase"
+			>
 				R.U.R.<br />Robotics
 			</h1>
 			<div class="w-32 h-1 bg-text mx-auto mb-6"></div>
@@ -29,7 +31,7 @@ const { class: className } = Astro.props
 			</p>
 			<a
 				href="#about"
-				class="border-2 px-8 py-3 hover:bg-text hover:text-bg transition-all inline-block font-bold uppercase"
+				class="border-2 border-text px-8 py-3 hover:bg-text hover:text-bg transition-all inline-block font-bold uppercase"
 			>
 				Explore
 			</a>

@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import Corners from "./Corners.astro";
+import SectionTitle from "./SectionTitle.astro";
+import { Picture } from "astro:assets";
+
+interface Props {
+	members: { name: string, faculty: string, source?: any }[];
+}
+
+const { members } = Astro.props;
+---
+
+<section id="team" class="py-20 relative">
+	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionTitle title="Our team" order="02" />
+
+		<div
+			class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+		>
+			{
+				members.map((mem, i) => (
+					<div
+						class="border-4 border-text bg-bg hover:bg-text hover:text-bg transition-all group shadow-lg relative"
+					>
+                        <Corners class="size-3 z-30 border-text" style="sides" />
+
+						<div class="aspect-square border-b-4 border-text bg-bg flex items-center justify-center relative">
+							{mem.source === undefined ? "" : <Image src={import(mem.source)} class="w-full h-full object-cover object-top grayscale" alt={`Picture of ${mem.name}`} />}
+							{/* {mem.source} */}
+							<div class="absolute top-2 right-2 size-6 border-2 border-text text-text bg-bg flex items-center justify-center text-xs font-bold">
+                                {i + 1}
+                            </div>
+						</div>
+						<div class="p-4">
+							<h3 class="font-bold text-lg mb-1">
+								{mem.name}
+							</h3>
+							<p class="text-sm opacity-70">{mem.faculty}</p>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

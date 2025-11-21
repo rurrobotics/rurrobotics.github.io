@@ -2,16 +2,63 @@
 import About from "../components/About.astro";
 import Hero from "../components/Hero.astro";
 import Pattern from "../components/Pattern.astro";
+import Team from "../components/Team.astro";
 import PageLayout from "../layouts/PageLayout.astro";
+
+// import OgnjanovicImage from "@assets/ognjanovic.tif";
 ---
 
 <PageLayout>
 	<Pattern />
 	<Hero class="min-h-screen" />
-	<About specs={[
-		{name: "Years competing", text: "3"},
-		{name: "University", text: "Belgrade"},
-		{name: "Team members", text: "8"},
-		{name: "League", text: "Senior"},
-	]} />
+	<About
+		specs={[
+			{ name: "Years competing", text: "3" },
+			{ name: "University", text: "Belgrade" },
+			{ name: "Team members", text: "8" },
+			{ name: "League", text: "Senior" },
+		]}
+	/>
+	<Team
+		members={[
+			{ name: "Aleksa Bolić", faculty: "Faculty of Mathematics" },
+			{
+				name: "Aleksa Ognjanović",
+				faculty: "Faculty of Electrical Engineering",
+				source: "../assets/ognjanovic.jpg",
+			},
+			{
+				name: "Aleksej Milenković",
+				faculty: "Faculty of Mechanical Engineering",
+			},
+			{
+				name: "Filip Grujović",
+				faculty: "Faculty of Electrical Engineering",
+			},
+			{
+				name: "Marko Mihajlović",
+				faculty: "Faculty of Electrical Engineering",
+				source: "../assets/mihajlovic.jpg",
+			},
+			{
+				name: "Marko Samardžija",
+				faculty: "Faculty of Mechanical Engineering",
+			},
+			{
+				name: "Mihailo Pesić",
+				faculty: "Ex-member",
+				source: "../assets/pesic.jpg",
+			},
+			{
+				name: "Miloš Krneta",
+				faculty: "Faculty of Electrical Engineering",
+			},
+			{
+				name: "Stefan Tešmanović",
+				faculty: "Faculty of Electrical Engineering",
+				source: "../assets/tesmanovic.jpg",
+			},
+			{ name: "Vukašin Rondović", faculty: "Ex-member" },
+		]}
+	/>
 </PageLayout>
