@@ -3,6 +3,7 @@ import About from "../components/About.astro";
 import Contact from "../components/Contact.astro";
 import Hero from "../components/Hero.astro";
 import Pattern from "../components/Pattern.astro";
+import Sponsors from "../components/Sponsors.astro";
 import Team from "../components/Team.astro";
 import PageLayout from "../layouts/PageLayout.astro";
 ---
@@ -40,6 +41,7 @@ import PageLayout from "../layouts/PageLayout.astro";
 			{
 				name: "Filip Grujović",
 				faculty: "Faculty of Electrical Engineering",
+				source: "/src/assets/grujic.jpg",
 			},
 			{
 				name: "Marko Mihajlović",
@@ -53,7 +55,8 @@ import PageLayout from "../layouts/PageLayout.astro";
 			},
 			{
 				name: "Mihailo Pesić",
-				faculty: "Ex-member",
+				faculty:
+					"Faculty of Electrical Engineering of STU in Bratislava",
 				source: "/src/assets/pesic.jpg",
 			},
 			{
@@ -69,5 +72,20 @@ import PageLayout from "../layouts/PageLayout.astro";
 			{ name: "Vukašin Rondović", faculty: "Ex-member" },
 		]}
 	/>
-	<Contact order="03" />
+	<Sponsors
+		order="03"
+		sponsors={[
+			{
+				name: "Telix",
+				source: "/src/assets/telix.png",
+				class: "brightness-0",
+			},
+			{
+				name: "Insist Elektrik",
+				source: "/src/assets/insist.png",
+				class: "brightness-0",
+			},
+		]}
+	/>
+	<Contact order="04" />
 </PageLayout>

@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import Corners from "./Corners.astro";
+import SectionTitle from "./SectionTitle.astro";
+
+interface Props {
+	sponsors?: { name: string; source?: string, class?: string }[];
+	order: string;
+}
+
+const { order, sponsors = [] } = Astro.props;
+---
+
+<section id="sponsors" class="py-20 relative">
+	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+		<SectionTitle title="Our sponsors" order={order} />
+
+		<div class="border-4 border-text p-8 bg-bg shadow-xl mb-8">
+			<p class="text-lg">
+				Thank you for your support. Your contributions give us the tools and resources we need to build our robots and compete. We couldn’t do this without you. &#10084;
+			</p>
+		</div>
+
+		<div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+			{
+				[...sponsors, {name: "Your spot awaits..."}].map((sponsor) => (
+					<div class:list={["border-4 border-text aspect-video bg-bg items-center justify-center p-8 relative shadow-lg group text-2xl lg:text-4xl flex font-mono text-center"]}>
+						<Corners class="size-6" style="borders" />
+						{sponsor.source === undefined ? sponsor.name : <Image src={sponsor.source} alt={sponsor.name} class:list={["w-full h-full object-contain", sponsor.class]} height={168} width={512} />}
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>
