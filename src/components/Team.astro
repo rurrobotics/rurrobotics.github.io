@@ -12,7 +12,7 @@ interface Props {
 const { members, order } = Astro.props;
 ---
 
-<section id="team" class="py-20 relative">
+<section id="team" class="py-20">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle title="Our team" order={order} />
 
@@ -26,12 +26,8 @@ const { members, order } = Astro.props;
 					>
                         <Corners class="size-3 z-30 border-text" style="sides" />
 
-						<div class="aspect-square border-b-4 border-text bg-bg flex items-center justify-center relative">
+						<div class="aspect-square border-b-4 border-text bg-bg flex items-center justify-center">
 							{mem.source === undefined ? "" : <Image src={import(mem.source)} class="w-full h-full object-cover object-top" alt={`Picture of ${mem.name}`} />}
-							{/* {mem.source} */}
-							<div class="absolute top-2 right-2 size-6 border-2 border-text text-text bg-bg flex items-center justify-center text-xs font-bold">
-                                {i + 1}
-                            </div>
 						</div>
 						<div class="p-4">
 							<h3 class="font-bold text-lg mb-1">
