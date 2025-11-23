@@ -11,6 +11,7 @@ import PageLayout from "../layouts/PageLayout.astro";
 	<Pattern />
 	<Hero class="min-h-screen" />
 	<About
+		order="01"
 		specs={[
 			{ name: "Years competing", text: "3" },
 			{ name: "University", text: "Belgrade" },
@@ -19,6 +20,7 @@ import PageLayout from "../layouts/PageLayout.astro";
 		]}
 	/>
 	<Team
+		order="02"
 		members={[
 			{
 				name: "Aleksa Bolić",
@@ -67,5 +69,5 @@ import PageLayout from "../layouts/PageLayout.astro";
 			{ name: "Vukašin Rondović", faculty: "Ex-member" },
 		]}
 	/>
-	<Contact />
+	<Contact order="03" />
 </PageLayout>

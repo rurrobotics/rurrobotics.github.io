@@ -1,11 +1,16 @@
 ---
 import SectionTitle from "./SectionTitle.astro";
 
+interface Props {
+	order: string;
+}
+
+const { order } = Astro.props;
 ---
 
 <section id="contact" class="py-20 relative">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-		<SectionTitle title="Contact us" order="03" />
+		<SectionTitle title="Contact us" order={order} />
 
 		<div class="border-4 border-black p-8 bg-white shadow-xl relative">
 			<div

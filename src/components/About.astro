@@ -4,9 +4,10 @@ import SectionTitle from "./SectionTitle.astro";
 
 interface Props {
 	specs: { name: string; text: string }[];
+	order: string;
 }
 
-const { specs } = Astro.props;
+const { specs, order } = Astro.props;
 ---
 
 <section id="about" class="py-20 relative">
@@ -16,7 +17,7 @@ const { specs } = Astro.props;
 				class="size-4 border-text group-hover:border-bg"
 				style="sides"
 			/>
-			<SectionTitle title="About us" order="01" />
+			<SectionTitle title="About us" order={order} />
 
 			<div class="grid md:grid-cols-2 gap-4">
 				<div class="border-2 border-black p-6">
