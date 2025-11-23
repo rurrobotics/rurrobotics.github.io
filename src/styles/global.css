@@ -5,6 +5,10 @@
 	--color-text: black;
 }
 
+html {
+	@apply scroll-smooth;
+}
+
 body {
 	@apply antialiased min-h-screen flex flex-col bg-bg text-text;
 }
