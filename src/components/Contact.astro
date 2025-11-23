@@ -1,0 +1,97 @@
+---
+import SectionTitle from "./SectionTitle.astro";
+
+---
+
+<section id="contact" class="py-20 relative">
+	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+		<SectionTitle title="Contact us" order="03" />
+
+		<div class="border-4 border-black p-8 bg-white shadow-xl relative">
+			<div
+				class="absolute -top-3 left-8 bg-gray-50 px-4 py-1 border-2 border-black text-xs font-bold uppercase"
+			>
+				Get in touch
+			</div>
+
+			<p class="text-lg mb-8 mt-4">
+				If you’d like to reach out to our team—whether for
+				collaboration, support, or general inquiries—you can contact us
+				anytime. We’re open to partnerships, technical discussions, and
+				all questions related to our work.
+			</p>
+
+			<div class="space-y-6">
+				<div
+					class="flex items-start gap-4 pb-6 border-b-2 border-black"
+				>
+					<div
+						class="size-10 border-2 border-black flex items-center justify-center shrink-0 bg-gray-50"
+					>
+					
+						<!-- <Mail  /> -->
+					</div>
+					<div>
+						<div
+							class="font-bold mb-1 text-xs tracking-wide opacity-60 uppercase"
+						>
+							Email
+						</div>
+						<a
+							href="mailto:kontakt@rurrobotics.com"
+							class="hover:underline text-lg"
+						>
+							kontakt@rurrobotics.com
+						</a>
+					</div>
+				</div>
+
+				<div
+					class="flex items-start gap-4 pb-6 border-b-2 border-black"
+				>
+					<div
+						class="w-10 h-10 border-2 border-black flex items-center justify-center shrink-0 bg-gray-50"
+					>
+						<!-- <Instagram size={20} /> -->
+					</div>
+					<div>
+						<div
+							class="font-bold mb-1 text-xs tracking-wide opacity-60 uppercase"
+						>
+							Instagram
+						</div>
+						<a
+							href="https://instagram.com/rurrobotics"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="hover:underline text-lg"
+						>
+							@rurrobotics
+						</a>
+					</div>
+				</div>
+
+				<div class="flex items-start gap-4">
+					<div
+						class="w-10 h-10 border-2 border-black flex items-center justify-center shrink-0 bg-gray-50"
+					>
+						<!-- <MapPin size={20} /> -->
+					</div>
+					<div>
+						<div
+							class="font-bold mb-1 text-xs tracking-wide opacity-60 uppercase"
+						>
+							Address
+						</div>
+						<p class="text-lg">
+							University of Belgrade<br />
+							Faculty of Electrical Engineering<br />
+							Bulevar kralja Aleksandra 73<br />
+							Belgrade, Serbia
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
