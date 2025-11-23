@@ -26,7 +26,7 @@ const { members } = Astro.props;
                         <Corners class="size-3 z-30 border-text" style="sides" />
 
 						<div class="aspect-square border-b-4 border-text bg-bg flex items-center justify-center relative">
-							{mem.source === undefined ? "" : <Image src={import(mem.source)} class="w-full h-full object-cover object-top grayscale" alt={`Picture of ${mem.name}`} />}
+							{mem.source === undefined ? "" : <Image src={import(mem.source)} class="w-full h-full object-cover object-top" alt={`Picture of ${mem.name}`} />}
 							{/* {mem.source} */}
 							<div class="absolute top-2 right-2 size-6 border-2 border-text text-text bg-bg flex items-center justify-center text-xs font-bold">
                                 {i + 1}

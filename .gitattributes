@@ -2,3 +2,7 @@ src/assets/mihajlovic.jpg filter=lfs diff=lfs merge=lfs -text
 src/assets/pesic.jpg filter=lfs diff=lfs merge=lfs -text
 src/assets/ognjanovic.jpg filter=lfs diff=lfs merge=lfs -text
 src/assets/tesmanovic.jpg filter=lfs diff=lfs merge=lfs -text
+src/assets/krneta.jpg filter=lfs diff=lfs merge=lfs -text
+src/assets/samardzija.jpg filter=lfs diff=lfs merge=lfs -text
+src/assets/milenkovic.jpg filter=lfs diff=lfs merge=lfs -text
+src/assets/bolic.jpg filter=lfs diff=lfs merge=lfs -text
