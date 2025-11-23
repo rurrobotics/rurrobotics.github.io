@@ -9,6 +9,8 @@ interface Props {
 }
 
 const { order, sponsors = [] } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/*/**.{jpeg,jpg,png,gif}");
 ---
 
 <section id="sponsors" class="py-20 relative">
@@ -27,7 +29,7 @@ const { order, sponsors = [] } = Astro.props;
 					<div class:list={["border-4 border-text aspect-video bg-bg items-center justify-center p-8 relative shadow-lg group text-2xl lg:text-4xl flex font-mono text-center"]}>
 						<Corners class="size-6" style="borders" />
 						<a href={sponsor.href}>
-						{sponsor.source === undefined ? sponsor.name : <Image src={sponsor.source} alt={sponsor.name} class:list={["w-full h-full object-contain", sponsor.class]} height={168} width={512} />}
+						{sponsor.source === undefined || !images[sponsor.source] ? sponsor.name : <Image src={images[sponsor.source]()} alt={sponsor.name} class:list={["w-full h-full object-contain", sponsor.class]} height={168} width={512} />}
 						</a>
 					</div>
 				))

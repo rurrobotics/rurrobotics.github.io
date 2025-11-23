@@ -1,37 +1,47 @@
 ---
+import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 import Corners from "./Corners.astro";
 import SectionTitle from "./SectionTitle.astro";
 
 interface Props {
-	members: { name: string, faculty: string, source?: any }[];
+	members: { name: string; faculty: string; source?: any }[];
 	order: string;
 }
 
 const { members, order } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/*/**.{jpeg,jpg,png,gif}");
 ---
 
 <section id="team" class="py-20">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle title="Our team" order={order} />
+		<SectionTitle title="Our team" order={order} />
 
 		<div
 			class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
 		>
 			{
 				members.map((mem, i) => (
-					<div
-						class="border-4 border-text bg-bg hover:bg-text hover:text-bg transition-all group shadow-lg relative"
-					>
-                        <Corners class="size-3 z-30 border-text" style="sides" />
+					<div class="border-4 border-text bg-bg hover:bg-text hover:text-bg transition-all group shadow-lg relative">
+						<Corners
+							class="size-3 z-30 border-text"
+							style="sides"
+						/>
 
 						<div class="aspect-square border-b-4 border-text bg-bg flex items-center justify-center">
-							{mem.source === undefined ? "" : <Image src={import(mem.source)} class="w-full h-full object-cover object-top" alt={`Picture of ${mem.name}`} />}
+							{mem.source === undefined || !images[mem.source] ? (
+								""
+							) : (
+								<Image
+									src={images[mem.source]()}
+									class="w-full h-full object-cover object-top"
+									alt={`Picture of ${mem.name}`}
+								/>
+							)}
 						</div>
 						<div class="p-4">
-							<h3 class="font-bold text-lg mb-1">
-								{mem.name}
-							</h3>
+							<h3 class="font-bold text-lg mb-1">{mem.name}</h3>
 							<p class="text-sm opacity-70">{mem.faculty}</p>
 						</div>
 					</div>
