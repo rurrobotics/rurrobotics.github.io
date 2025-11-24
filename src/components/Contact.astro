@@ -1,5 +1,8 @@
 ---
 import SectionTitle from "./SectionTitle.astro";
+import Instagram from "./icons/Instagram.svg";
+import Mail from "./icons/Mail.svg";
+import MapPin from "./icons/MapPin.svg";
 
 interface Props {
 	order: string;
@@ -33,8 +36,7 @@ const { order } = Astro.props;
 					<div
 						class="size-10 border-2 border-black flex items-center justify-center shrink-0 bg-gray-50"
 					>
-					
-						<!-- <Mail  /> -->
+						<Mail  />
 					</div>
 					<div>
 						<div
@@ -57,7 +59,7 @@ const { order } = Astro.props;
 					<div
 						class="w-10 h-10 border-2 border-black flex items-center justify-center shrink-0 bg-gray-50"
 					>
-						<!-- <Instagram size={20} /> -->
+						<Instagram />
 					</div>
 					<div>
 						<div
@@ -80,7 +82,7 @@ const { order } = Astro.props;
 					<div
 						class="w-10 h-10 border-2 border-black flex items-center justify-center shrink-0 bg-gray-50"
 					>
-						<!-- <MapPin size={20} /> -->
+						<MapPin />
 					</div>
 					<div>
 						<div
