@@ -3,9 +3,12 @@ import { defineConfig } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 
+import sitemap from "@astrojs/sitemap";
+
 export default defineConfig({
-	integrations: [],
-	vite: {
-		plugins: [tailwindcss()],
-	},
+	site: "https://rurrobotics.rs/",
+    integrations: [sitemap()],
+    vite: {
+        plugins: [tailwindcss()],
+    },
 });
