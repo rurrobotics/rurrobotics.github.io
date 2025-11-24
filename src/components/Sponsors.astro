@@ -4,13 +4,20 @@ import Corners from "./Corners.astro";
 import SectionTitle from "./SectionTitle.astro";
 
 interface Props {
-	sponsors?: { name: string, href: string; source?: string, class?: string }[];
+	sponsors?: {
+		name: string;
+		href: string;
+		source?: string;
+		class?: string;
+	}[];
 	order: string;
 }
 
 const { order, sponsors = [] } = Astro.props;
 
-const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/*/**.{jpeg,jpg,png,gif}");
+const images = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/*/**.{jpeg,jpg,png,gif}"
+);
 ---
 
 <section id="sponsors" class="py-20 relative">
@@ -19,17 +26,55 @@ const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/*/**.{j
 
 		<div class="border-4 border-text p-8 bg-bg shadow-xl mb-8">
 			<p class="text-lg">
-				Thank you for your support. Your contributions give us the tools and resources we need to build our robots and compete. We couldn’t do this without you. &#10084;
+				Thank you for your support. Your contributions give us the tools
+				and resources we need to build our robots and compete. We
+				couldn’t do this without you. &#10084;
 			</p>
 		</div>
 
 		<div class="grid grid-cols-2 md:grid-cols-3 gap-6">
 			{
-				[...sponsors, {name: "Your spot awaits...", href: "#contact"}].map((sponsor) => (
-					<div class:list={["border-4 border-text group hover:bg-text aspect-video bg-bg items-center justify-center p-8 relative shadow-lg group text-2xl lg:text-4xl flex font-mono text-center"]}>
-						<Corners class="size-6 group-hover:border-white" style="borders" />
-						<a href={sponsor.href} class="brightness-0 group-hover:invert">
-						{sponsor.source === undefined || !images[sponsor.source] ? sponsor.name : <Image src={images[sponsor.source]()} alt={sponsor.name} class:list={["w-full h-full object-contain", sponsor.class]} height={168} width={512} />}
+				[
+					...sponsors.map((val) => {
+						return {
+							...val,
+							attribs: {
+								target: "_blank",
+								rel: "noopener",
+							},
+						};
+					}),
+					{ name: "Your spot awaits...", href: "#contact", attribs: {} },
+				].map((sponsor) => (
+					<div
+						class:list={[
+							"border-4 border-text group hover:bg-text aspect-video bg-bg items-center justify-center p-8 relative shadow-lg group text-2xl lg:text-4xl flex font-mono text-center",
+						]}
+					>
+						<Corners
+							class="size-6 group-hover:border-white"
+							style="borders"
+						/>
+						<a
+							href={sponsor.href}
+							class="brightness-0 group-hover:invert"
+							{...sponsor.attribs}
+						>
+							{sponsor.source === undefined ||
+							!images[sponsor.source] ? (
+								sponsor.name
+							) : (
+								<Image
+									src={images[sponsor.source]()}
+									alt={sponsor.name}
+									class:list={[
+										"w-full h-full object-contain",
+										sponsor.class,
+									]}
+									height={168}
+									width={512}
+								/>
+							)}
 						</a>
 					</div>
 				))
