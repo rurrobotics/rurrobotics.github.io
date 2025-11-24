@@ -9,3 +9,4 @@ src/assets/team/bolic.jpg filter=lfs diff=lfs merge=lfs -text
 src/assets/team/grujic.jpg filter=lfs diff=lfs merge=lfs -text
 src/assets/sponsor/insist.png filter=lfs diff=lfs merge=lfs -text
 src/assets/sponsor/telix.png filter=lfs diff=lfs merge=lfs -text
+src/assets/team/rondovic.jpg filter=lfs diff=lfs merge=lfs -text
