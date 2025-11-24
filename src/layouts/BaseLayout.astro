@@ -4,8 +4,10 @@ interface Props {
 	title?: string;
 	description?: string;
 	keywords?: string[];
+	url?: string;
+	image?: string;
 }
-const { title, description, keywords = [] } = Astro.props;
+const { title, description, url, image, keywords = [] } = Astro.props;
 ---
 
 <html lang="en">
@@ -20,6 +22,16 @@ const { title, description, keywords = [] } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 		<meta name="keyword" content={keywords.join(" ")} />
+
+		<!-- Open Graph -->
+		<meta property="og:title" content={title} />
+		<meta property="og:url" content={url} />
+		<meta property="og:image" content={image} />
+		<meta property="og:description" content={description} />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+
 		<slot name="head" />
 	</head>
 	<body>

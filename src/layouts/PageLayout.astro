@@ -3,6 +3,8 @@ import BaseLayout from "./BaseLayout.astro";
 interface Props {
 	description?: string;
 	keywords?: string[];
+	url?: string;
+	image?: string;
 }
 const { ...props } = Astro.props;
 ---

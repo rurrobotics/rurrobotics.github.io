@@ -10,6 +10,7 @@ import PageLayout from "../layouts/PageLayout.astro";
 
 <PageLayout
 	description="University of Belgrade team developing innovative autonomous robots for the Eurobot competition."
+	url={import.meta.env.DEV ? Astro.url.origin : Astro.site?.toString()}
 	keywords={[
 		"eurobot",
 		"rurrobotics",
