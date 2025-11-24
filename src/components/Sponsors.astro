@@ -26,9 +26,9 @@ const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/*/**.{j
 		<div class="grid grid-cols-2 md:grid-cols-3 gap-6">
 			{
 				[...sponsors, {name: "Your spot awaits...", href: "#contact"}].map((sponsor) => (
-					<div class:list={["border-4 border-text aspect-video bg-bg items-center justify-center p-8 relative shadow-lg group text-2xl lg:text-4xl flex font-mono text-center"]}>
-						<Corners class="size-6" style="borders" />
-						<a href={sponsor.href}>
+					<div class:list={["border-4 border-text group hover:bg-text aspect-video bg-bg items-center justify-center p-8 relative shadow-lg group text-2xl lg:text-4xl flex font-mono text-center"]}>
+						<Corners class="size-6 group-hover:border-white" style="borders" />
+						<a href={sponsor.href} class="brightness-0 group-hover:invert">
 						{sponsor.source === undefined || !images[sponsor.source] ? sponsor.name : <Image src={images[sponsor.source]()} alt={sponsor.name} class:list={["w-full h-full object-contain", sponsor.class]} height={168} width={512} />}
 						</a>
 					</div>
