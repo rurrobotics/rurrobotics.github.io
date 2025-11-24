@@ -6,7 +6,7 @@
 }
 
 html {
-	@apply scroll-smooth;
+	@apply scroll-smooth font-mono;
 }
 
 body {

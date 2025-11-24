@@ -28,7 +28,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 			<p class="text-lg">
 				Thank you for your support. Your contributions give us the tools
 				and resources we need to build our robots and compete. We
-				couldn’t do this without you. &#10084;
+				couldn’t do this without you. <span class="font-sans">&#10084;</span>
 			</p>
 		</div>
 
@@ -48,7 +48,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 				].map((sponsor) => (
 					<div
 						class:list={[
-							"border-4 border-text group hover:bg-text transition-all aspect-video bg-bg items-center justify-center p-8 relative shadow-lg group text-2xl lg:text-4xl flex font-mono text-center",
+							"border-4 border-text group hover:bg-text transition-all aspect-video bg-bg items-center justify-center p-8 relative shadow-lg group text-2xl lg:text-4xl flex text-center",
 						]}
 					>
 						<Corners
