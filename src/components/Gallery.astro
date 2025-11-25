@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+import Corners from "./Corners.astro";
+import SectionTitle from "./SectionTitle.astro";
+
+interface Props {
+	order: string;
+}
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/gallery/*.{jpeg,jpg,png,gif}"
+);
+
+console.log(images);
+
+const { order } = Astro.props;
+---
+
+<section id="gallery" class="py-20 relative">
+	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+		<SectionTitle title="Gallery" order={order} />
+
+		<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+			{
+				Object.values(images).map((val, i) => (
+					<div class="border-4 border-black aspect-square bg-white flex items-center justify-center hover:border-black hover:shadow-xl transition-all relative group">
+						<Corners class="size-2" style="smallborders" />
+						<Image src={val()} alt={`Gallery image number ${i + 1}`} class="w-full h-full object-cover" height={256} width={256} />
+						<div class="absolute top-2 right-2 text-xs font-bold bg-white px-1 border border-black">
+							{String(i + 1).padStart(2, "0")}
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

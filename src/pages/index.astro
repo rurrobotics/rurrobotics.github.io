@@ -1,6 +1,7 @@
 ---
 import About from "../components/About.astro";
 import Contact from "../components/Contact.astro";
+import Gallery from "../components/Gallery.astro";
 import Hero from "../components/Hero.astro";
 import Navbar from "../components/Navbar.astro";
 import Pattern from "../components/Pattern.astro";
@@ -13,20 +14,19 @@ import PageLayout from "../layouts/PageLayout.astro";
 	description="University of Belgrade team developing innovative autonomous robots for the Eurobot competition."
 	url={import.meta.env.DEV ? Astro.url.origin : Astro.site?.toString()}
 	image="/banner.svg"
-	keywords={[
-		"eurobot",
-		"rurrobotics",
-		"rur",
-	]}
+	keywords={["eurobot", "rurrobotics", "rur"]}
 >
 	<Pattern />
 	<header class="fixed w-full top-0 z-50">
-		<Navbar links={[
-			{name: "About us", href: "#about"},
-			{name: "Team", href: "#team"},
-			{name: "Sponsors", href: "#sponsors"},
-			{name: "Contact", href: "#contact"},
-		]} />
+		<Navbar
+			links={[
+				{ name: "About us", href: "#about" },
+				{ name: "Team", href: "#team" },
+				{ name: "Gallery", href: "#gallery" },
+				{ name: "Sponsors", href: "#sponsors" },
+				{ name: "Contact", href: "#contact" },
+			]}
+		/>
 	</header>
 	<div class="min-h-screen flex flex-col" id="start">
 		<div class="opacity-0">
@@ -100,8 +100,9 @@ import PageLayout from "../layouts/PageLayout.astro";
 			},
 		]}
 	/>
+	<Gallery order="03" />
 	<Sponsors
-		order="03"
+		order="04"
 		sponsors={[
 			{
 				name: "Telix",
@@ -115,5 +116,5 @@ import PageLayout from "../layouts/PageLayout.astro";
 			},
 		]}
 	/>
-	<Contact order="04" />
+	<Contact order="05" />
 </PageLayout>
