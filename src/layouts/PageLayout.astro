@@ -1,4 +1,5 @@
 ---
+import Footer from "../components/Footer.astro";
 import BaseLayout from "./BaseLayout.astro";
 interface Props {
 	description?: string;
@@ -15,5 +16,6 @@ const { ...props } = Astro.props;
 		<slot />
 	</main>
 	<footer class="shrink-0">
+		<Footer />
 	</footer>
 </BaseLayout>
