@@ -1,0 +1,109 @@
+---
+interface Props {
+	links?: {
+		name: string;
+		href: string;
+	}[];
+	languages?: string[];
+}
+const { links = [], languages = [] } = Astro.props;
+import Menu from "./icons/Menu.svg";
+import X from "./icons/X.svg";
+---
+
+<nav
+	class="sticky top-0 w-full bg-bg/95 backdrop-blur-sm border-b-2 border-text z-50 shadow-md"
+>
+	<input type="checkbox" id="mobile-menu-toggle" class="hidden peer" />
+
+	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="flex justify-between items-center h-16">
+			<div class="flex items-center gap-3">
+				<a href="/#start" class="contents">
+					<div
+						class="py-1 px-2 border-2 border-black flex items-center justify-center bg-black text-white"
+					>
+						<span class="text-xs font-bold">RUR</span>
+					</div>
+					<div class="text-xl font-bold tracking-wider uppercase">
+						Robotics
+					</div>
+				</a>
+			</div>
+
+			<div class="hidden md:flex items-center space-x-8">
+				{
+					links.map((item) => (
+						<a
+							class="hover:underline transition-all font-bold text-sm tracking-wide uppercase"
+							href={item.href}
+						>
+							{item.name}
+						</a>
+					))
+				}
+
+				{
+					languages.length === 0 ? (
+						""
+					) : (
+						<div class="flex items-center gap-2 border-l-2 border-black pl-6">
+							{languages.map((lang) => (
+								<a
+									href={`?lang=${lang}`}
+									class="border-2 border-black px-3 py-1 bg-black text-white hover:bg-white hover:text-black transition-all font-bold text-sm uppercase"
+								>
+									{lang}
+								</a>
+							))}
+						</div>
+					)
+				}
+			</div>
+
+			<label
+				for="mobile-menu-toggle"
+				class="md:hidden border-2 border-black p-1 hover:bg-black hover:text-white transition-all cursor-pointer"
+			>
+				<span class="block peer-checked:hidden">
+					<Menu />
+				</span>
+				<span class="hidden peer-checked:block">
+					<X />
+				</span>
+			</label>
+		</div>
+	</div>
+
+	<div
+		class="hidden peer-checked:block md:hidden border-t-2 border-black bg-white"
+	>
+		{
+			links.map((item) => (
+				<a
+					class="block w-full text-left px-4 py-3 hover:bg-black hover:text-white border-b border-black transition-all font-bold uppercase"
+					href={item.href}
+				>
+					{item.name}
+				</a>
+			))
+		}
+
+		{
+			languages.length === 0 ? (
+				""
+			) : (
+				<div class="flex gap-2 p-4 border-t-2 border-black">
+					{languages.map((lang) => (
+						<a
+							href={`?lang=${lang}`}
+							class="flex-1 text-center border-2 border-black px-3 py-2 bg-black text-white hover:bg-white hover:text-black transition-all font-bold uppercase"
+						>
+							{lang}
+						</a>
+					))}
+				</div>
+			)
+		}
+	</div>
+</nav>

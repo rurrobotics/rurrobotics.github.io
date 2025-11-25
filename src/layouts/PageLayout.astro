@@ -11,9 +11,7 @@ const { ...props } = Astro.props;
 
 <BaseLayout title="R.U.R. Robotics" {...props}>
 	<slot name="head" slot="head" />
-	<header class="shrink-0">
-	</header>
-	<main class="flex-1">
+	<main class="flex-1 relative">
 		<slot />
 	</main>
 	<footer class="shrink-0">

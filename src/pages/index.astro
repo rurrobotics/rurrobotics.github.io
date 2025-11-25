@@ -2,6 +2,7 @@
 import About from "../components/About.astro";
 import Contact from "../components/Contact.astro";
 import Hero from "../components/Hero.astro";
+import Navbar from "../components/Navbar.astro";
 import Pattern from "../components/Pattern.astro";
 import Sponsors from "../components/Sponsors.astro";
 import Team from "../components/Team.astro";
@@ -18,7 +19,21 @@ import PageLayout from "../layouts/PageLayout.astro";
 	]}
 >
 	<Pattern />
-	<Hero class="min-h-screen" />
+	<header class="fixed w-full top-0 z-50">
+		<Navbar links={[
+			{name: "About us", href: "#about"},
+			{name: "Team", href: "#team"},
+			{name: "Sponsors", href: "#sponsors"},
+			{name: "Contact", href: "#contact"},
+		]} />
+	</header>
+	<div class="min-h-screen flex flex-col" id="start">
+		<div class="opacity-0">
+			<!-- Dummy -->
+			<Navbar />
+		</div>
+		<Hero class="flex-1" />
+	</div>
 	<About
 		order="01"
 		specs={[
