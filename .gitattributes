@@ -49,3 +49,4 @@ src/assets/gallery/IMG-9f2819d98ee240c001fdafc7a7cf843a-V.jpg filter=lfs diff=lf
 src/assets/gallery/IMG-e6f2037506b97456b42a4aec95f2d665-V.jpg filter=lfs diff=lfs merge=lfs -text
 src/assets/gallery/pcb.vElqo9TJ.png filter=lfs diff=lfs merge=lfs -text
 src/assets/gallery/IMG-be05a67c3acf53603aec43ada86ee358-V.jpg filter=lfs diff=lfs merge=lfs -text
+src/assets/sponsor/3drepublika.png filter=lfs diff=lfs merge=lfs -text
