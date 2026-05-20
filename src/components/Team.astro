@@ -11,7 +11,15 @@ interface Props {
 
 const { members, order } = Astro.props;
 
-const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/*/**.{jpeg,jpg,png,gif}");
+type Member = Props["members"][number];
+
+const byName = (a: Member, b: Member) => {
+	return a.name.localeCompare(b.name);
+};
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/*/**.{jpeg,jpg,png,gif}",
+);
 ---
 
 <section id="team" class="py-20">
@@ -22,7 +30,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/*/**.{j
 			class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
 		>
 			{
-				members.map((mem, i) => (
+				members.toSorted(byName).map((mem, i) => (
 					<div class="border-4 border-text bg-bg hover:bg-text hover:text-bg transition-all group shadow-lg relative">
 						<Corners
 							class="size-3 z-30 border-text"

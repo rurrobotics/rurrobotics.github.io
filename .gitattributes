@@ -52,3 +52,4 @@ src/assets/gallery/IMG-be05a67c3acf53603aec43ada86ee358-V.jpg filter=lfs diff=lf
 src/assets/sponsor/3drepublika.png filter=lfs diff=lfs merge=lfs -text
 src/assets/sponsor/zanus.png filter=lfs diff=lfs merge=lfs -text
 src/assets/sponsor/cncobrada.png filter=lfs diff=lfs merge=lfs -text
+src/assets/team/radmilovic.jpg filter=lfs diff=lfs merge=lfs -text
