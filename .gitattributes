@@ -1,0 +1,5 @@
+src/assets/sponsors/*.png filter=lfs diff=lfs merge=lfs -text
+src/assets/sponsors/*.jpg filter=lfs diff=lfs merge=lfs -text
+src/assets/sponsors/*.jpeg filter=lfs diff=lfs merge=lfs -text
+src/assets/sponsors/*.webp filter=lfs diff=lfs merge=lfs -text
+src/assets/sponsors/*.gif filter=lfs diff=lfs merge=lfs -text
