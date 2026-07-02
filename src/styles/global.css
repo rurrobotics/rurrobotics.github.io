@@ -1,8 +1,42 @@
 @import "tailwindcss";
+@plugin "daisyui" {
+	themes: false;
+	include:
+		rootcolor, button, navbar, join, properties, reset, rootcolor,
+		rootscrollgutter, rootscrolllock, scrollbar, svg;
+}
 
-@theme {
-	--color-primary: #ff7431;
+@plugin "daisyui/theme" {
+	name: "rur";
+	default: true;
+	color-scheme: light;
+
+	--color-primary: #ee4036;
+	--color-primary-content: #ffffff;
 	--color-secondary: #ffa112;
-	--color-accent: #ee4036;
-	--color-dark: #001d7d;
+	--color-secondary-content: #ffffff;
+	--color-accent: #ff7431;
+	--color-accent-content: #ffffff;
+	--color-neutral: #001d7d;
+	--color-neutral-content: #ffffff;
+	--color-base-100: #ffffff;
+	--color-base-content: #001d7d;
+}
+
+.btn {
+	transition: none;
+	box-shadow: none;
+	text-shadow: none;
+	border: none;
+}
+.btn:active:not(.btn-active) {
+	translate: none;
+	box-shadow: none;
+}
+.btn:hover {
+	--btn-bg: var(--btn-color);
+}
+.btn:focus-visible,
+.btn:has(:focus-visible) {
+	outline: none;
 }
