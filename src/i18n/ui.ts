@@ -6,9 +6,14 @@ export const locales = {
 
 export const defaultLocale = "sr";
 
+export const localeTags = {
+	sr: "sr-Latn-RS",
+	"sr-Cyrl": "sr-Cyrl-RS",
+	en: "en",
+};
+
 export const ui = {
-	sr: {
-	},
+	sr: {},
 	"sr-Cyrl": {
 		"site.title": "РУР Роботика",
 	},
