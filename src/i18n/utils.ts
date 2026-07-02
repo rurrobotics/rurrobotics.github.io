@@ -9,6 +9,11 @@ export function getLangFromUrl(url: URL) {
 	return defaultLocale;
 }
 
+export function switchLocalePath(url: URL, lang: keyof typeof ui) {
+	const [, , ...rest] = url.pathname.split("/");
+	return `/${lang}/${rest.join("/")}`;
+}
+
 export function useTranslations(lang: keyof typeof ui) {
 	if (lang === "sr") {
 		return function t(key: Key) {
