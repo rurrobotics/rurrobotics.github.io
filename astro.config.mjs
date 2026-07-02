@@ -3,10 +3,13 @@ import { defineConfig } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 
-import { locales, defaultLocale } from "./src/i18n/ui";
+import { locales, defaultLocale, localeTags } from "./src/i18n/ui";
+
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
+	site: "https://rurrobotics.rs/",
 	trailingSlash: "always",
 	redirects: {
 		"/": `/${defaultLocale}/`,
@@ -21,4 +24,12 @@ export default defineConfig({
 	vite: {
 		plugins: [tailwindcss()],
 	},
+	integrations: [
+		sitemap({
+			i18n: {
+				defaultLocale,
+				locales: localeTags,
+			},
+		}),
+	],
 });
