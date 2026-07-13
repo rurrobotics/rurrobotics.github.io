@@ -3,7 +3,9 @@ import { defineConfig } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 
-import { locales, defaultLocale, localeTags } from "./src/i18n/ui";
+import { wuchale } from "wuchale/vite";
+
+import { locales, defaultLocale, localeTags } from "./src/locales/config.js";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -15,14 +17,14 @@ export default defineConfig({
 		"/": `/${defaultLocale}/`,
 	},
 	i18n: {
-		locales: Object.keys(locales),
-		defaultLocale: defaultLocale,
+		locales,
+		defaultLocale,
 		routing: {
 			prefixDefaultLocale: true,
 		},
 	},
 	vite: {
-		plugins: [tailwindcss()],
+		plugins: [tailwindcss(), wuchale()],
 	},
 	integrations: [
 		sitemap({
