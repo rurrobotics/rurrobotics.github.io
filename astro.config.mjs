@@ -9,6 +9,8 @@ import { locales, defaultLocale, localeTags } from "./src/locales/config.js";
 
 import sitemap from "@astrojs/sitemap";
 
+import svelte from "@astrojs/svelte";
+
 // https://astro.build/config
 export default defineConfig({
 	site: "https://rurrobotics.rs/",
@@ -33,5 +35,6 @@ export default defineConfig({
 				locales: localeTags,
 			},
 		}),
+		svelte(),
 	],
 });
