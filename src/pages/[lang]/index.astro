@@ -1,14 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { locales } from "../../i18n/ui";
-import { useTranslations } from "../../i18n/utils";
-import { langStaticPaths } from "../../i18n/paths";
+import { locales } from "../../locales/config";
 
-export const getStaticPaths = langStaticPaths;
-
-const { lang } = Astro.params;
-const t = useTranslations(lang as keyof typeof locales);
+export function getStaticPaths() {
+	return locales.map((lang) => ({ params: { lang } }));
+}
 ---
 
-<Layout title={t("site.title")}>
+<Layout>
 </Layout>

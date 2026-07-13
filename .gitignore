@@ -3,6 +3,9 @@ dist/
 # generated types
 .astro/
 
+# wuchale generated proxies/loaders
+src/locales/.wuchale/
+
 # dependencies
 node_modules/
 
