@@ -10,3 +10,11 @@ msgstr ""
 #: src/layouts/Layout.astro
 msgid "RUR Robotics"
 msgstr "RUR Robotika"
+
+#: src/components/ProjectsSection.astro
+msgid "Projects"
+msgstr "Projekti"
+
+#: src/components/ProjectsSection.astro
+msgid "All repositories <0/>"
+msgstr "Svi repozitorijumi <0/>"
