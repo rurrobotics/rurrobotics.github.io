@@ -1,0 +1,34 @@
+---
+import { getProjects } from "../projects";
+import Section from "./Section.astro";
+import ProjectCard from "./ProjectCard.astro";
+import { MoveUpRight } from "@lucide/astro";
+
+
+const projects = await getProjects();
+const colors = ["primary", "secondary", "tertiary", "accent"] as const;
+---
+
+<Section id="projects" title="Projects">
+	<div
+		class="grid pt-[6px] pl-[6px]"
+		style="grid-template-columns: repeat(auto-fill, minmax(400px, 1fr))"
+	>
+		{
+			projects.map((p, i) => (
+				<ProjectCard
+					project={p}
+					color={
+						colors[i % colors.length]
+					}
+				/>
+			))
+		}
+	</div>
+	<div class="mt-4 text-right">
+		<a href="https://github.com/rurrobotics" class="inline-flex items-center gap-1.5 font-mono font-bold text-sm tracking-widest text-tertiary uppercase">
+			All repositories
+			<MoveUpRight class="size-4" />
+		</a>
+	</div>
+</Section>

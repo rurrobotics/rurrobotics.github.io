@@ -8,15 +8,13 @@
 
 :root {
 	--background: #ffffff;
-	--foreground: #ffffff;
+	--foreground: #000000;
 	--primary: #ee4036;
 	--primary-foreground: #ffffff;
 	--secondary: #ffa112;
 	--secondary-foreground: #ffffff;
 	--accent: #ff7431;
 	--accent-foreground: #ffffff;
-	--muted: oklch(0.97 0 0);
-	--muted-foreground: #46549b;
 	--tertiary: #001d7d;
 	--tertiary-foreground: #ffffff;
 }
@@ -33,8 +31,8 @@
 	--color-secondary-foreground: var(--secondary-foreground);
 	--color-accent: var(--accent);
 	--color-accent-foreground: var(--accent-foreground);
-	--color-muted: var(--muted);
-	--color-muted-foreground: var(--muted-foreground);
+	/* --color-muted: var(--muted); */
+	--color-muted-foreground: var(--color-neutral-600);
 	--color-tertiary: var(--tertiary);
 	--color-tertiary-foreground: var(--tertiary-foreground);
 }
@@ -45,5 +43,8 @@
 	}
 	html {
 		@apply font-sans;
+	}
+	* {
+		@apply border-black;
 	}
 }
