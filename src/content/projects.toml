@@ -1,6 +1,9 @@
 [ninja]
 name = "ninja"
-description = " Firmware code for Ninja & Hybrid SIMA robots"
+description = {
+    en = "Firmware code for Ninja & Hybrid SIMA robots",
+    sr = "Firmver za Ninja i Hybrid SIMA robote",
+    "sr-Cyrl" = "Фирмвер за Нинџа и Хибрид СИМА роботе"
+}
 url = "https://github.com/rurrobotics/ninja"
 tags = ["rust", "embassy"]
-
