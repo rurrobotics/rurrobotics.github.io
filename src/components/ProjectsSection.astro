@@ -12,7 +12,7 @@ const colors = ["primary", "secondary", "tertiary", "accent"] as const;
 <Section id="projects" title="Projects">
 	<div
 		class="grid pt-[6px] pl-[6px]"
-		style="grid-template-columns: repeat(auto-fill, minmax(400px, 1fr))"
+		style="grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr))"
 	>
 		{
 			projects.map((p, i) => (
