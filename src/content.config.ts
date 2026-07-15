@@ -1,5 +1,5 @@
 import { defineCollection } from "astro:content";
-import { glob } from "astro/loaders";
+import { glob, file } from "astro/loaders";
 import { z } from "astro/zod";
 
 const articles = defineCollection({
@@ -18,4 +18,14 @@ const articles = defineCollection({
 		}),
 });
 
-export const collections = { articles };
+const projects = defineCollection({
+	loader: file("./src/content/projects.toml"),
+	schema: z.object({
+		name: z.string(),
+		description: z.string().optional(),
+		url: z.url(),
+		order: z.number().optional(),
+	}),
+});
+
+export const collections = { articles, projects };
