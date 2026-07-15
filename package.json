@@ -7,14 +7,16 @@
 	},
 	"scripts": {
 		"dev": "astro dev",
-		"build": "npm run i18n && astro build",
-		"i18n": "wuchale && node scripts/transliterate-po.mjs",
-		"translit": "node scripts/transliterate-po.mjs",
+		"build": "astro build",
+		"wuchale": "wuchale",
+		"translit:po": "node scripts/transliterate-po.mjs",
+		"translit:articles": "node scripts/transliterate-articles.mjs",
 		"preview": "astro preview",
 		"astro": "astro",
 		"format": "prettier --write ."
 	},
 	"dependencies": {
+		"@astrojs/mdx": "^7.0.3",
 		"@astrojs/sitemap": "^3.7.3",
 		"@astrojs/svelte": "^9.0.1",
 		"@tailwindcss/vite": "^4.3.2",
