@@ -7,15 +7,28 @@ const articles = defineCollection({
 		pattern: "**/*.{md,mdx}",
 		base: "./src/content/articles",
 	}),
-	schema: ({ image }) =>
-		z.object({
+	schema: ({ image }) => {
+		const base = z.object({
 			title: z.string(),
 			description: z.string().optional(),
 			date: z.coerce.date(),
 			author: z.string().optional(),
 			hero: image().optional(),
 			draft: z.boolean().default(false),
-		}),
+		});
+		return z.discriminatedUnion("category", [
+			base.extend({
+				category: z.literal("event"),
+				eventDate: z.coerce.date(),
+			}),
+			base.extend({
+				category: z.literal("lecture"),
+				eventDate: z.coerce.date(),
+			}),
+			base.extend({ category: z.literal("news") }),
+			base.extend({ category: z.literal("writeup") }),
+		]);
+	},
 });
 
 const projects = defineCollection({
