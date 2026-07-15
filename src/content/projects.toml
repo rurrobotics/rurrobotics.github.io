@@ -1,0 +1,6 @@
+[ninja]
+name = "ninja"
+description = " Firmware code for Ninja & Hybrid SIMA robots"
+url = "https://github.com/rurrobotics/ninja"
+tags = ["rust", "embassy"]
+
