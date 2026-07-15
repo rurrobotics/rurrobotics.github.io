@@ -22,7 +22,7 @@ const projects = defineCollection({
 	loader: file("./src/content/projects.toml"),
 	schema: z.object({
 		name: z.string(),
-		description: z.string().optional(),
+		description: z.record(z.string(), z.string()).default({}),
 		url: z.url(),
 		tags: z.array(z.string()).default([]),
 		order: z.number().optional(),

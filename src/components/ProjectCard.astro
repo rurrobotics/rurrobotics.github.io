@@ -1,5 +1,6 @@
 ---
 import type { Project } from "../projects";
+import { defaultLocale } from "../locales/config.js";
 import { MoveRight } from "@lucide/astro";
 import Tag from "./Tag.astro";
 
@@ -10,6 +11,9 @@ interface Props {
 
 const { project, color = "primary" } = Astro.props;
 const { name, description, url, tags } = project.data;
+
+const locale = Astro.currentLocale ?? defaultLocale;
+const localizedDescription = description[locale] ?? description[defaultLocale];
 ---
 
 <a
@@ -19,7 +23,7 @@ const { name, description, url, tags } = project.data;
 >
 	<div class="-mx-7 -mt-7 mb-6 h-3.5" style="background:var(--accent)"></div>
 	<span class="font-mono font-bold text-lg">{name}</span>
-	{description && <p class="mt-3 mb-auto text-sm leading-relaxed font-medium text-muted-foreground">{description}</p>}
+	{localizedDescription && <p class="mt-3 mb-auto text-sm leading-relaxed font-medium text-muted-foreground">{localizedDescription}</p>}
 	<div class="flex items-center justify-between gap-2 mt-5">
 		<div class="flex flex-wrap gap-2">
 			{tags.map((tag) => <Tag label={tag} />)}
