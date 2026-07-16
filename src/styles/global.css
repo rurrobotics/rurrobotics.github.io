@@ -32,7 +32,7 @@
 	--color-accent: var(--accent);
 	--color-accent-foreground: var(--accent-foreground);
 	/* --color-muted: var(--muted); */
-	--color-muted-foreground: var(--color-neutral-600);
+	--color-muted-foreground: var(--color-neutral-500);
 	--color-tertiary: var(--tertiary);
 	--color-tertiary-foreground: var(--tertiary-foreground);
 }
