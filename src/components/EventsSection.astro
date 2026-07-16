@@ -1,0 +1,46 @@
+---
+import { getEventArticles } from "../articles";
+import { defaultLocale, type Locale } from "../locales/config.js";
+import Section from "./Section.astro";
+import EventItem from "./EventItem.astro";
+
+const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const events = await getEventArticles(locale);
+
+const now = Date.now();
+const upcoming = events
+	.filter((e) => e.data.eventDate.valueOf() >= now)
+	.sort((a, b) => a.data.eventDate.valueOf() - b.data.eventDate.valueOf());
+const past = events
+	.filter((e) => e.data.eventDate.valueOf() < now)
+	.sort((a, b) => b.data.eventDate.valueOf() - a.data.eventDate.valueOf());
+---
+
+<Section id="events" title="Events">
+	{
+		upcoming.length === 0 ? (
+			<p class="font-mono text-sm text-muted-foreground">No upcoming events.</p>
+		) : (
+			<ul class="grid gap-6 lg:grid-cols-2">
+				{upcoming.map((event) => (
+					<EventItem article={event} />
+				))}
+			</ul>
+		)
+	}
+
+	{
+		past.length > 0 ? (
+			<div>
+				<h3 class="mt-10 mb-6 font-display text-2xl font-bold uppercase text-muted-foreground">
+					Past events
+				</h3>
+				<ul class="grid gap-6 lg:grid-cols-2">
+					{past.map((event) => (
+						<EventItem article={event} past />
+					))}
+				</ul>
+			</div>
+		) : null
+	}
+</Section>

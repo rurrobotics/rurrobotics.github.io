@@ -18,3 +18,23 @@ msgstr "Пројекти"
 #: src/components/ProjectsSection.astro
 msgid "All repositories <0/>"
 msgstr "Сви репозиторијуми <0/>"
+
+#: src/components/EventItem.astro
+msgid "Lecture"
+msgstr "Предавање"
+
+#: src/components/EventsSection.astro
+msgid "Events"
+msgstr "Дешавања"
+
+#: src/components/EventsSection.astro
+msgid "No upcoming events."
+msgstr "Нема надолазећих дешавања"
+
+#: src/components/EventsSection.astro
+msgid "Past events"
+msgstr "Прошла дешавања"
+
+#: src/components/EventItem.astro
+msgid "Meetup"
+msgstr "Окупљање"

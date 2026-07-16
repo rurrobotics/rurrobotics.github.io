@@ -18,7 +18,7 @@ const articles = defineCollection({
 		});
 		return z.discriminatedUnion("category", [
 			base.extend({
-				category: z.literal("event"),
+				category: z.literal("meetup"),
 				eventDate: z.coerce.date(),
 			}),
 			base.extend({
