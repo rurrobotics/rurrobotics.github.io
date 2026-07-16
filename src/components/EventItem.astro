@@ -1,0 +1,88 @@
+---
+import { articleSlug, type EventArticle } from "../articles";
+import { defaultLocale, localeTags, type Locale } from "../locales/config.js";
+import { MoveRight } from "@lucide/astro";
+import Badge from "./Badge.astro";
+
+interface Props {
+	article: EventArticle;
+	past?: boolean;
+}
+
+const { article, past = false } = Astro.props;
+const { data } = article;
+
+const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const localeTag = localeTags[locale];
+
+type EventCategory = EventArticle["data"]["category"];
+
+const categoryColors = {
+	meetup: "primary",
+	lecture: "secondary",
+} as const satisfies Record<EventCategory, string>;
+
+const categoryLabels = {
+	meetup: "Meetup",
+	lecture: "Lecture",
+} as const satisfies Record<EventCategory, string>;
+
+const dayFmt = new Intl.DateTimeFormat(localeTag, { day: "2-digit" });
+const monthFmt = new Intl.DateTimeFormat(localeTag, { month: "short" });
+const timeFmt = new Intl.DateTimeFormat(localeTag, {
+	hour: "2-digit",
+	minute: "2-digit",
+});
+---
+
+<li>
+	<a
+		href={`/${locale}/articles/${articleSlug(article)}/`}
+		class:list={[
+			"flex border-4 border-current",
+			past && "text-muted-foreground",
+		]}
+	>
+		<div
+			class:list={[
+				"flex w-26 shrink-0 flex-col items-center justify-center gap-0.5 border-r-4 text-background border-current",
+				past ? "bg-muted-foreground" : "bg-tertiary",
+			]}
+		>
+			<span class="font-display text-4xl font-bold leading-none">
+				{dayFmt.format(data.eventDate)}
+			</span>
+			<span class="font-mono text-xs font-bold uppercase tracking-widest">
+				{monthFmt.format(data.eventDate)}
+			</span>
+		</div>
+		<div
+			class="flex min-w-0 flex-1 flex-col justify-center gap-2.5 px-6 py-5"
+		>
+			<div class="flex items-center gap-3">
+				<Badge
+					label={categoryLabels[data.category]}
+					class={"font-bold uppercase tracking-widest"}
+					{...past &&
+						({
+							variant: "solid",
+							color: categoryColors[data.category],
+						} as const)}
+				/>
+				<span class="font-mono text-xs text-muted-foreground">
+					{
+						past
+							? data.eventDate.getFullYear()
+							: timeFmt.format(data.eventDate)
+					}
+				</span>
+			</div>
+			<span class="truncate text-xl font-bold leading-snug">
+				{data.title}
+			</span>
+		</div>
+		<div class="flex shrink-0 items-center pr-6">
+			<MoveRight class="size-5" />
+		</div>
+	</a>
+</li>
