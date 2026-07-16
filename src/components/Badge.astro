@@ -1,0 +1,21 @@
+---
+interface Props {
+	label: string;
+	variant?: "outline" | "solid";
+	color?:  "primary" | "secondary" | "accent" | "tertiary";
+}
+
+const { label, variant = "outline", color = "primary" } = Astro.props;
+---
+
+<span
+	class:list={[
+		"font-mono text-xs tracking-wide px-2 py-0.5",
+		variant === "outline" && "border-2",
+	]}
+	style={variant === "solid"
+		? `background: var(--${color}); color: var(--${color}-foreground)`
+		: undefined}
+>
+	{label}
+</span>
