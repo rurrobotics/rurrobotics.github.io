@@ -2,7 +2,7 @@
 import type { Project } from "../projects";
 import { defaultLocale } from "../locales/config.js";
 import { MoveRight } from "@lucide/astro";
-import Tag from "./Tag.astro";
+import Badge from "./Badge.astro";
 
 interface Props {
 	project: Project;
@@ -19,14 +19,14 @@ const localizedDescription = description[locale] ?? description[defaultLocale];
 <a
 	href={url}
 	class="card flex flex-col p-7 min-h-[200px] border-6 mt-[-6px] ml-[-6px]"
-	style={`--accent: var(--${color}); --accent-fg: var(--${color}-foreground)`}
+	style={`--card-accent: var(--${color}); --card-accent-fg: var(--${color}-foreground)`}
 >
-	<div class="-mx-7 -mt-7 mb-6 h-3.5" style="background:var(--accent)"></div>
+	<div class="-mx-7 -mt-7 mb-6 h-3.5" style="background:var(--card-accent)"></div>
 	<span class="font-mono font-bold text-lg">{name}</span>
 	{localizedDescription && <p class="mt-3 mb-auto text-sm leading-relaxed font-medium text-muted-foreground">{localizedDescription}</p>}
 	<div class="flex items-center justify-between gap-2 mt-5">
 		<div class="flex flex-wrap gap-2">
-			{tags.map((tag) => <Tag label={tag} />)}
+			{tags.map((tag) => <Badge label={tag} />)}
 		</div>
 		<MoveRight class="size-5 shrink-0" />
 	</div>
@@ -34,7 +34,7 @@ const localizedDescription = description[locale] ?? description[defaultLocale];
 
 <style>
 	.card {
-		background-image: linear-gradient(var(--accent), var(--accent));
+		background-image: linear-gradient(var(--card-accent), var(--card-accent));
 		background-repeat: no-repeat;
 		background-position: top;
 		background-size: 100% 0%;
@@ -44,9 +44,9 @@ const localizedDescription = description[locale] ?? description[defaultLocale];
 	}
 	.card:hover {
 		background-size: 100% 100%;
-		color: var(--accent-fg);
+		color: var(--card-accent-fg);
 	}
 	.card:hover p {
-		color: var(--accent-fg);
+		color: var(--card-accent-fg);
 	}
 </style>
