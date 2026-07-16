@@ -63,11 +63,8 @@ const timeFmt = new Intl.DateTimeFormat(localeTag, {
 				<Badge
 					label={categoryLabels[data.category]}
 					class={"font-bold uppercase tracking-widest"}
-					{...past &&
-						({
-							variant: "solid",
-							color: categoryColors[data.category],
-						} as const)}
+					color={categoryColors[data.category]}
+					variant={past ? "outline" : "solid"}
 				/>
 				<span class="font-mono text-xs text-muted-foreground">
 					{
