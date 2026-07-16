@@ -18,3 +18,23 @@ msgstr "Projects"
 #: src/components/ProjectsSection.astro
 msgid "All repositories <0/>"
 msgstr "All repositories <0/>"
+
+#: src/components/EventItem.astro
+msgid "Lecture"
+msgstr "Lecture"
+
+#: src/components/EventsSection.astro
+msgid "Events"
+msgstr "Events"
+
+#: src/components/EventsSection.astro
+msgid "No upcoming events."
+msgstr "No upcoming events."
+
+#: src/components/EventsSection.astro
+msgid "Past events"
+msgstr "Past events"
+
+#: src/components/EventItem.astro
+msgid "Meetup"
+msgstr "Meetup"
