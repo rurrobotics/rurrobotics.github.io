@@ -2,7 +2,7 @@
 import { getProjects } from "../projects";
 import Section from "./Section.astro";
 import ProjectCard from "./ProjectCard.astro";
-import { MoveUpRight } from "@lucide/astro";
+import SectionLink from "./SectionLink.astro";
 
 
 const projects = await getProjects();
@@ -25,10 +25,5 @@ const colors = ["primary", "secondary", "tertiary", "accent"] as const;
 			))
 		}
 	</div>
-	<div class="mt-4 text-right group">
-		<a href="https://github.com/rurrobotics" class="inline-flex items-center gap-1.5 font-mono font-bold text-sm tracking-widest text-tertiary uppercase">
-			All repositories
-			<MoveUpRight class="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-		</a>
-	</div>
+	<SectionLink href="https://github.com/rurrobotics">All repositories</SectionLink>
 </Section>

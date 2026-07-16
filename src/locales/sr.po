@@ -15,10 +15,6 @@ msgstr "RUR Robotika"
 msgid "Projects"
 msgstr "Projekti"
 
-#: src/components/ProjectsSection.astro
-msgid "All repositories <0/>"
-msgstr "Svi repozitorijumi <0/>"
-
 #: src/components/EventItem.astro
 msgid "Lecture"
 msgstr "Predavanje"
@@ -39,3 +35,10 @@ msgstr "Prošla dešavanja"
 msgid "Meetup"
 msgstr "Okupljanje"
 
+#: src/components/ProjectsSection.astro
+msgid "All repositories"
+msgstr "Svi repozitorijumi"
+
+#: src/components/EventsSection.astro
+msgid "All past events"
+msgstr "Sva prošla dešavanja"

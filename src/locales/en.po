@@ -15,10 +15,6 @@ msgstr "RUR Robotics"
 msgid "Projects"
 msgstr "Projects"
 
-#: src/components/ProjectsSection.astro
-msgid "All repositories <0/>"
-msgstr "All repositories <0/>"
-
 #: src/components/EventItem.astro
 msgid "Lecture"
 msgstr "Lecture"
@@ -38,3 +34,11 @@ msgstr "Past events"
 #: src/components/EventItem.astro
 msgid "Meetup"
 msgstr "Meetup"
+
+#: src/components/ProjectsSection.astro
+msgid "All repositories"
+msgstr "All repositories"
+
+#: src/components/EventsSection.astro
+msgid "All past events"
+msgstr "All past events"
