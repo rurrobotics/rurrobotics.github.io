@@ -11,7 +11,7 @@ const { label, variant = "outline", color = "primary" } = Astro.props;
 <span
 	class:list={[
 		"font-mono text-xs tracking-wide px-2 py-0.5",
-		variant === "outline" && "border-2",
+		variant === "outline" && "border-2 border-current",
 	]}
 	style={variant === "solid"
 		? `background: var(--${color}); color: var(--${color}-foreground)`
