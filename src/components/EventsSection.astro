@@ -3,6 +3,7 @@ import { getEventArticles } from "../articles";
 import { defaultLocale, type Locale } from "../locales/config.js";
 import Section from "./Section.astro";
 import EventItem from "./EventItem.astro";
+import SectionLink from "./SectionLink.astro";
 
 const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
 const events = await getEventArticles(locale);
@@ -19,7 +20,9 @@ const past = events
 <Section id="events" title="Events">
 	{
 		upcoming.length === 0 ? (
-			<p class="font-mono text-sm text-muted-foreground">No upcoming events.</p>
+			<p class="font-mono text-sm text-muted-foreground">
+				No upcoming events.
+			</p>
 		) : (
 			<ul class="grid gap-6 lg:grid-cols-2">
 				{upcoming.map((event) => (
@@ -36,11 +39,18 @@ const past = events
 					Past events
 				</h3>
 				<ul class="grid gap-6 lg:grid-cols-2">
-					{past.map((event) => (
+					{past.slice(0, 2).map((event) => (
 						<EventItem article={event} past />
 					))}
 				</ul>
 			</div>
 		) : null
+	}
+	{
+		past.length > 2 && (
+			<SectionLink href={`/${locale}/articles/`}>
+				All past events
+			</SectionLink>
+		)
 	}
 </Section>
