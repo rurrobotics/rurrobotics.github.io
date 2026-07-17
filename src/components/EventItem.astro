@@ -48,11 +48,11 @@ const timeFmt = new Intl.DateTimeFormat(localeTag, {
 	>
 		<div
 			class:list={[
-				"flex w-26 shrink-0 flex-col items-center justify-center gap-0.5 text-background",
+				"flex w-16 sm:w-26 shrink-0 flex-col items-center justify-center gap-0.5 text-background",
 				past ? "bg-muted-foreground border-muted-foreground" : "bg-tertiary",
 			]}
 		>
-			<span class="font-display text-4xl font-bold leading-none">
+			<span class="font-display text-2xl sm:text-4xl font-bold leading-none">
 				{dayFmt.format(data.eventDate)}
 			</span>
 			<span class="font-mono text-xs font-bold uppercase tracking-widest">
@@ -60,7 +60,7 @@ const timeFmt = new Intl.DateTimeFormat(localeTag, {
 			</span>
 		</div>
 		<div
-			class="flex min-w-0 flex-1 flex-col justify-center gap-2.5 px-6 py-5"
+			class="flex min-w-0 flex-1 flex-col justify-center py-2 gap-1 sm:gap-2.5 px-6 sm:py-5"
 		>
 			<div class="flex items-center gap-3">
 				<Badge
