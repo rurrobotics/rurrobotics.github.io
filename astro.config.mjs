@@ -11,6 +11,8 @@ import sitemap from "@astrojs/sitemap";
 
 import mdx from "@astrojs/mdx";
 
+import rehypeShiki from "@shikijs/rehype";
+
 // https://astro.build/config
 export default defineConfig({
 	site: "https://rurrobotics.rs/",
@@ -28,6 +30,9 @@ export default defineConfig({
 	vite: {
 		plugins: [tailwindcss(), wuchale()],
 	},
+	markdown: {
+		rehypePlugins: [rehypeShiki],
+	},
 	integrations: [
 		sitemap({
 			i18n: {
@@ -35,6 +40,10 @@ export default defineConfig({
 				locales: localeTags,
 			},
 		}),
-		mdx(),
+		mdx({
+			shikiConfig: {
+				theme: "github-dark"
+			}
+		}),
 	],
 });
