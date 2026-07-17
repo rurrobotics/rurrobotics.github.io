@@ -13,6 +13,8 @@ import mdx from "@astrojs/mdx";
 
 import rehypeShiki from "@shikijs/rehype";
 
+import { unified } from "@astrojs/markdown-remark";
+
 // https://astro.build/config
 export default defineConfig({
 	site: "https://rurrobotics.rs/",
@@ -31,7 +33,10 @@ export default defineConfig({
 		plugins: [tailwindcss(), wuchale()],
 	},
 	markdown: {
-		rehypePlugins: [rehypeShiki],
+		syntaxHighlight: false,
+		processor: unified({
+			rehypePlugins: [[rehypeShiki, { theme: "monokai" }]],
+		}),
 	},
 	integrations: [
 		sitemap({
@@ -40,10 +45,6 @@ export default defineConfig({
 				locales: localeTags,
 			},
 		}),
-		mdx({
-			shikiConfig: {
-				theme: "github-dark"
-			}
-		}),
+		mdx(),
 	],
 });
