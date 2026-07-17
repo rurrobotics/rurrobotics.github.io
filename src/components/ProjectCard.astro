@@ -18,7 +18,7 @@ const localizedDescription = description[locale] ?? description[defaultLocale];
 
 <a
 	href={url}
-	class="card flex flex-col p-7 min-h-[200px] border-4 mt-[-4px] ml-[-4px]"
+	class="group card flex flex-col p-7 min-h-[200px] border-4 mt-[-4px] ml-[-4px]"
 	style={`--card-accent: var(--${color}); --card-accent-fg: var(--${color}-foreground)`}
 >
 	<div class="-mx-7 -mt-7 mb-6 h-3.5" style="background:var(--card-accent)"></div>
@@ -28,7 +28,7 @@ const localizedDescription = description[locale] ?? description[defaultLocale];
 		<div class="flex flex-wrap gap-2">
 			{tags.map((tag) => <Badge label={tag} />)}
 		</div>
-		<MoveRight class="size-5 shrink-0" />
+		<MoveRight class="size-5 shrink-0 transition-transform group-hover:translate-x-0.5" />
 	</div>
 </a>
 
