@@ -39,13 +39,16 @@ const timeFmt = new Intl.DateTimeFormat(localeTag, {
 	<a
 		href={`/${locale}/articles/${articleSlug(article)}/`}
 		class:list={[
-			"flex border-4 border-current",
-			past && "text-muted-foreground",
+			"group card flex border-4",
+			past && "text-muted-foreground border-muted-foreground",
 		]}
+		style={past
+			? "--card-accent: var(--color-muted-foreground); --card-accent-fg: var(--background)"
+			: "--card-accent: var(--tertiary); --card-accent-fg: var(--tertiary-foreground)"}
 	>
 		<div
 			class:list={[
-				"flex w-26 shrink-0 flex-col items-center justify-center gap-0.5 border-r-4 text-background",
+				"flex w-26 shrink-0 flex-col items-center justify-center gap-0.5 text-background",
 				past ? "bg-muted-foreground border-muted-foreground" : "bg-tertiary",
 			]}
 		>
@@ -66,7 +69,7 @@ const timeFmt = new Intl.DateTimeFormat(localeTag, {
 					color={categoryColors[data.category]}
 					variant={past ? "outline" : "solid"}
 				/>
-				<span class="font-mono text-xs text-muted-foreground">
+				<span class="font-mono text-xs text-muted-foreground group-hover:text-background">
 					{
 						past
 							? data.eventDate.getFullYear()
@@ -79,7 +82,23 @@ const timeFmt = new Intl.DateTimeFormat(localeTag, {
 			</span>
 		</div>
 		<div class="flex shrink-0 items-center pr-6">
-			<MoveRight class="size-5" />
+			<MoveRight class="size-5 transition-transform group-hover:translate-x-0.5" />
 		</div>
 	</a>
 </li>
+
+<style>
+	.card {
+		background-image: linear-gradient(var(--card-accent), var(--card-accent));
+		background-repeat: no-repeat;
+		background-position: left;
+		background-size: 0% 100%;
+		transition:
+			background-size 0.15s ease,
+			color 0.1s ease;
+	}
+	.card:hover {
+		background-size: 100% 100%;
+		color: var(--card-accent-fg);
+	}
+</style>
