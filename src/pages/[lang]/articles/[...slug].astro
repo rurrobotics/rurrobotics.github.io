@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
-import Layout from "../../../layouts/Layout.astro";
-import { parseArticleId, type Article } from "../../../articles";
+import Layout from "@layouts/Layout.astro";
+import { parseArticleId, type Article } from "@/articles";
 
 export async function getStaticPaths() {
 	const articles = await getCollection(

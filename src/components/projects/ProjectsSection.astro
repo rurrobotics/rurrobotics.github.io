@@ -1,9 +1,8 @@
 ---
-import { getProjects } from "../projects";
-import Section from "./Section.astro";
+import { getProjects } from "@/projects";
+import Section from "@components/common/Section.astro";
 import ProjectCard from "./ProjectCard.astro";
-import SectionLink from "./SectionLink.astro";
-
+import SectionLink from "@components/common/SectionLink.astro";
 
 const projects = await getProjects();
 const colors = ["primary", "secondary", "tertiary", "accent"] as const;
@@ -11,19 +10,16 @@ const colors = ["primary", "secondary", "tertiary", "accent"] as const;
 
 <Section id="projects" title="Projects">
 	<div
-		class="grid pt-[4px] pl-[4px]"
+		class="grid pt-1 pl-1"
 		style="grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr))"
 	>
 		{
 			projects.map((p, i) => (
-				<ProjectCard
-					project={p}
-					color={
-						colors[i % colors.length]
-					}
-				/>
+				<ProjectCard project={p} color={colors[i % colors.length]} />
 			))
 		}
 	</div>
-	<SectionLink href="https://github.com/orgs/rurrobotics/repositories">All repositories</SectionLink>
+	<SectionLink href="https://github.com/orgs/rurrobotics/repositories"
+		>All repositories</SectionLink
+	>
 </Section>
