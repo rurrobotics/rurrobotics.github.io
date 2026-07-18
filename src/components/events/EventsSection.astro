@@ -1,9 +1,9 @@
 ---
-import { getEventArticles } from "../articles";
-import { defaultLocale, type Locale } from "../locales/config.js";
-import Section from "./Section.astro";
+import { getEventArticles } from "@/articles";
+import { defaultLocale, type Locale } from "@locales/config.js";
+import Section from "@components/common/Section.astro";
 import EventItem from "./EventItem.astro";
-import SectionLink from "./SectionLink.astro";
+import SectionLink from "@components/common/SectionLink.astro";
 
 const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
 const events = await getEventArticles(locale);
