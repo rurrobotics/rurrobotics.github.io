@@ -7,5 +7,21 @@
 	"exclude": [
 		"dist"
 	],
-	"compilerOptions": {}
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@components/*": [
+				"src/components/*"
+			],
+			"@locales/*": [
+				"src/locales/*"
+			],
+			"@layouts/*": [
+				"src/layouts/*"
+			],
+			"@/*": [
+				"src/*"
+			]
+		}
+	}
 }
