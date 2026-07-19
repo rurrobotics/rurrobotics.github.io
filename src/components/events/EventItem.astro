@@ -43,7 +43,7 @@ const timeFmt = new Intl.DateTimeFormat(localeTag, {
 			past && "text-muted border-muted",
 		]}
 		style={past
-			? "--card-accent: var(--color-muted); --card-accent-fg: var(--background)"
+			? "--card-accent: var(--muted); --card-accent-fg: var(--muted-foreground)"
 			: "--card-accent: var(--tertiary); --card-accent-fg: var(--tertiary-foreground)"}
 	>
 		<div
@@ -69,7 +69,7 @@ const timeFmt = new Intl.DateTimeFormat(localeTag, {
 					color={categoryColors[data.category]}
 					variant={past ? "outline" : "solid"}
 				/>
-				<span class="font-mono text-xs text-muted group-hover:text-background group-hover:delay-150">
+				<span class="font-mono text-xs text-muted group-hover:text-muted-foreground group-hover:delay-150">
 					{
 						past
 							? data.eventDate.getFullYear()
