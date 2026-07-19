@@ -15,7 +15,7 @@ msgstr "RUR Robotics"
 msgid "Projects"
 msgstr "Projects"
 
-#: src/components/events/EventItem.astro
+#: src/components/common/ArticleCard.astro
 msgid "Lecture"
 msgstr "Lecture"
 
@@ -31,7 +31,7 @@ msgstr "No upcoming events."
 msgid "Past events"
 msgstr "Past events"
 
-#: src/components/events/EventItem.astro
+#: src/components/common/ArticleCard.astro
 msgid "Meetup"
 msgstr "Meetup"
 
@@ -50,3 +50,11 @@ msgstr "The team"
 #: src/components/about/AboutSection.astro
 msgid "Founded in 2023 as a <0>Eurobot</0> team, we've since grown into the robotics club of the School of Electrical Engineering at the University of Belgrade. Our members come from faculties across the university, building autonomous robots that bring together mechanics, electronics and software."
 msgstr "Founded in 2023 as a <0>Eurobot</0> team, we've since grown into the robotics club of the School of Electrical Engineering at the University of Belgrade. Our members come from faculties across the university, building autonomous robots that bring together mechanics, electronics and software."
+
+#: src/components/common/ArticleCard.astro
+msgid "News"
+msgstr "News"
+
+#: src/components/common/ArticleCard.astro
+msgid "Writeup"
+msgstr "Writeup"
