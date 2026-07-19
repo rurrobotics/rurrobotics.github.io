@@ -12,7 +12,7 @@ const articles = (await getArticles(locale)).filter(
 );
 ---
 
-<Section id="articles">
+<Section id="articles" color="tertiary">
 	<SectionTitle>Articles</SectionTitle>
 	{
 		articles.length === 0 ? (
@@ -28,6 +28,6 @@ const articles = (await getArticles(locale)).filter(
 
 	{
 		articles.length > 4 &&
-		<SectionLink href={`/${locale}/articles/`}>All articles</SectionLink>
+		<SectionLink href={`/${locale}/articles/`} color="secondary">All articles</SectionLink>
 	}
 </Section>
