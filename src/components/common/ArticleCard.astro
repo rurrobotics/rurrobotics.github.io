@@ -25,9 +25,9 @@ const eventDate = "eventDate" in data ? data.eventDate : undefined;
 
 const categoryColors = {
 	meetup: "primary",
-	lecture: "secondary",
+	lecture: "accent",
 	news: "tertiary",
-	writeup: "accent",
+	writeup: "secondary",
 } as const satisfies Record<ArticleCategory, string>;
 
 const categoryLabels = {
@@ -58,7 +58,9 @@ const dateFmt = new Intl.DateTimeFormat(localeTag, {
 		]}
 		style={past
 			? "--card-accent: var(--muted); --card-accent-fg: var(--muted-foreground)"
-			: "--card-accent: var(--tertiary); --card-accent-fg: var(--tertiary-foreground)"}
+			: isEvent
+				? "--card-accent: var(--tertiary); --card-accent-fg: var(--tertiary-foreground)"
+				: "--card-accent: var(--primary); --card-accent-fg: var(--primary-foreground)"}
 	>
 		{
 			isEvent && eventDate && (
