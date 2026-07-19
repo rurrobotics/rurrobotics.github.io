@@ -2,6 +2,7 @@
 import { getEventArticles } from "@/articles";
 import { defaultLocale, type Locale } from "@locales/config.js";
 import Section from "@components/common/Section.astro";
+import SectionTitle from "@components/common/SectionTitle.astro";
 import EventItem from "./EventItem.astro";
 import SectionLink from "@components/common/SectionLink.astro";
 
@@ -17,7 +18,8 @@ const past = events
 	.sort((a, b) => b.data.eventDate.valueOf() - a.data.eventDate.valueOf());
 ---
 
-<Section id="events" title="Events">
+<Section id="events">
+	<SectionTitle>Events</SectionTitle>
 	{
 		upcoming.length === 0 ? (
 			<p class="font-mono text-sm text-muted">
