@@ -19,6 +19,23 @@
 	--accent-foreground: #ffffff;
 	--tertiary: #001d7d;
 	--tertiary-foreground: #ffffff;
+	--muted: var(--color-neutral-500);
+	--muted-foreground: #ffffff;
+}
+
+.dark {
+	--background: #151515;
+	--foreground: #ffffff;
+	--primary: #ee4036;
+	--primary-foreground: #ffffff;
+	--secondary: #ffa112;
+	--secondary-foreground: #ffffff;
+	--accent: #ff7431;
+	--accent-foreground: #ffffff;
+	--tertiary: #4263eb;
+	--tertiary-foreground: #ffffff;
+	--muted: var(--color-neutral-400);
+	--muted-foreground: #ffffff;
 }
 
 @theme inline {
@@ -33,8 +50,8 @@
 	--color-secondary-foreground: var(--secondary-foreground);
 	--color-accent: var(--accent);
 	--color-accent-foreground: var(--accent-foreground);
-	--color-muted: var(--color-neutral-500);
-	--color-muted-foreground: #ffffff;
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
 	--color-tertiary: var(--tertiary);
 	--color-tertiary-foreground: var(--tertiary-foreground);
 }
@@ -47,6 +64,6 @@
 		@apply font-sans;
 	}
 	* {
-		@apply border-black;
+		@apply border-foreground;
 	}
 }
