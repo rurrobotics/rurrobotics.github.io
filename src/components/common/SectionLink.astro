@@ -3,15 +3,17 @@ import { MoveUpRight } from "@lucide/astro";
 
 interface Props {
 	href: string;
+	color?: "primary" | "secondary" | "accent" | "tertiary";
 }
 
-const { href } = Astro.props;
+const { href, color = "tertiary" } = Astro.props;
 ---
 
 <div class="mt-4 text-right">
 	<a
 		href={href}
-		class="group inline-flex items-center gap-1.5 font-mono font-bold text-sm tracking-widest text-tertiary uppercase"
+		style={`color: var(--${color})`}
+		class="group inline-flex items-center gap-1.5 font-mono font-bold text-sm tracking-widest uppercase"
 	>
 		<slot />
 		<MoveUpRight

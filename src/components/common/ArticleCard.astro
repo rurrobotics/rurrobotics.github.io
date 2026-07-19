@@ -53,8 +53,8 @@ const dateFmt = new Intl.DateTimeFormat(localeTag, {
 	<a
 		href={`/${locale}/articles/${articleSlug(article)}/`}
 		class:list={[
-			"group card flex border-4",
-			past && "text-muted border-muted",
+			"group card flex border-4 bg-background",
+			past ? "text-muted border-muted" : "text-foreground",
 		]}
 		style={past
 			? "--card-accent: var(--muted); --card-accent-fg: var(--muted-foreground)"
