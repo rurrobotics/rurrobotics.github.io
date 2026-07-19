@@ -15,7 +15,7 @@ msgstr "RUR Robotika"
 msgid "Projects"
 msgstr "Projekti"
 
-#: src/components/events/EventItem.astro
+#: src/components/common/ArticleCard.astro
 msgid "Lecture"
 msgstr "Predavanje"
 
@@ -31,7 +31,7 @@ msgstr "Nema nadolazećih dešavanja"
 msgid "Past events"
 msgstr "Prošla dešavanja"
 
-#: src/components/events/EventItem.astro
+#: src/components/common/ArticleCard.astro
 msgid "Meetup"
 msgstr "Okupljanje"
 
@@ -58,3 +58,11 @@ msgstr ""
 "Elektrotehničkog fakulteta Univerziteta u Beogradu. Naši članovi dolaze sa "
 "različitih fakulteta i zajedno prave autonomne robote koji spajaju "
 "mehaniku, elektroniku i softver."
+
+#: src/components/common/ArticleCard.astro
+msgid "News"
+msgstr "Vesti"
+
+#: src/components/common/ArticleCard.astro
+msgid "Writeup"
+msgstr "Tekst"

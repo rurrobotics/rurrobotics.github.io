@@ -3,7 +3,7 @@ import { getEventArticles } from "@/articles";
 import { defaultLocale, type Locale } from "@locales/config.js";
 import Section from "@components/common/Section.astro";
 import SectionTitle from "@components/common/SectionTitle.astro";
-import EventItem from "./EventItem.astro";
+import ArticleCard from "@components/common/ArticleCard.astro";
 import SectionLink from "@components/common/SectionLink.astro";
 
 const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
@@ -28,7 +28,7 @@ const past = events
 		) : (
 			<ul class="grid gap-6 lg:grid-cols-2">
 				{upcoming.map((event) => (
-					<EventItem article={event} />
+					<ArticleCard article={event} />
 				))}
 			</ul>
 		)
@@ -42,7 +42,7 @@ const past = events
 				</h3>
 				<ul class="grid gap-6 lg:grid-cols-2">
 					{past.slice(0, 2).map((event) => (
-						<EventItem article={event} past />
+						<ArticleCard article={event} past />
 					))}
 				</ul>
 			</div>
