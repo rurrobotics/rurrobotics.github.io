@@ -58,3 +58,15 @@ msgstr "News"
 #: src/components/common/ArticleCard.astro
 msgid "Writeup"
 msgstr "Writeup"
+
+#: src/components/articles/ArticlesSection.astro
+msgid "No articles yet."
+msgstr "No articles yet."
+
+#: src/components/articles/ArticlesSection.astro
+msgid "Articles"
+msgstr "Articles"
+
+#: src/components/articles/ArticlesSection.astro
+msgid "All articles"
+msgstr "All articles"

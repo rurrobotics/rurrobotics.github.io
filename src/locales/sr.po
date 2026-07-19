@@ -66,3 +66,15 @@ msgstr "Vesti"
 #: src/components/common/ArticleCard.astro
 msgid "Writeup"
 msgstr "Tekst"
+
+#: src/components/articles/ArticlesSection.astro
+msgid "No articles yet."
+msgstr "Još nema članaka."
+
+#: src/components/articles/ArticlesSection.astro
+msgid "Articles"
+msgstr "Članci"
+
+#: src/components/articles/ArticlesSection.astro
+msgid "All articles"
+msgstr "Svi članci"
