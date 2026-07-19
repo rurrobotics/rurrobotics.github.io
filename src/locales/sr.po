@@ -12,33 +12,41 @@ msgid "RUR Robotics"
 msgstr "RUR Robotika"
 
 #: src/components/ProjectsSection.astro
+#: src/components/projects/ProjectsSection.astro
 msgid "Projects"
 msgstr "Projekti"
 
 #: src/components/EventItem.astro
+#: src/components/events/EventItem.astro
 msgid "Lecture"
 msgstr "Predavanje"
 
 #: src/components/EventsSection.astro
+#: src/components/events/EventsSection.astro
 msgid "Events"
 msgstr "Dešavanja"
 
 #: src/components/EventsSection.astro
+#: src/components/events/EventsSection.astro
 msgid "No upcoming events."
 msgstr "Nema nadolazećih dešavanja"
 
 #: src/components/EventsSection.astro
+#: src/components/events/EventsSection.astro
 msgid "Past events"
 msgstr "Prošla dešavanja"
 
 #: src/components/EventItem.astro
+#: src/components/events/EventItem.astro
 msgid "Meetup"
 msgstr "Okupljanje"
 
 #: src/components/ProjectsSection.astro
+#: src/components/projects/ProjectsSection.astro
 msgid "All repositories"
 msgstr "Svi repozitorijumi"
 
 #: src/components/EventsSection.astro
+#: src/components/events/EventsSection.astro
 msgid "All past events"
 msgstr "Sva prošla dešavanja"

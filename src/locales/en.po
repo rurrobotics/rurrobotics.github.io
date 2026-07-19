@@ -12,33 +12,41 @@ msgid "RUR Robotics"
 msgstr "RUR Robotics"
 
 #: src/components/ProjectsSection.astro
+#: src/components/projects/ProjectsSection.astro
 msgid "Projects"
 msgstr "Projects"
 
 #: src/components/EventItem.astro
+#: src/components/events/EventItem.astro
 msgid "Lecture"
 msgstr "Lecture"
 
 #: src/components/EventsSection.astro
+#: src/components/events/EventsSection.astro
 msgid "Events"
 msgstr "Events"
 
 #: src/components/EventsSection.astro
+#: src/components/events/EventsSection.astro
 msgid "No upcoming events."
 msgstr "No upcoming events."
 
 #: src/components/EventsSection.astro
+#: src/components/events/EventsSection.astro
 msgid "Past events"
 msgstr "Past events"
 
 #: src/components/EventItem.astro
+#: src/components/events/EventItem.astro
 msgid "Meetup"
 msgstr "Meetup"
 
 #: src/components/ProjectsSection.astro
+#: src/components/projects/ProjectsSection.astro
 msgid "All repositories"
 msgstr "All repositories"
 
 #: src/components/EventsSection.astro
+#: src/components/events/EventsSection.astro
 msgid "All past events"
 msgstr "All past events"
