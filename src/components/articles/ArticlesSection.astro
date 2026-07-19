@@ -1,0 +1,33 @@
+---
+import { getArticles, isEventCategory } from "@/articles";
+import { defaultLocale, type Locale } from "@locales/config.js";
+import Section from "@components/common/Section.astro";
+import SectionTitle from "@components/common/SectionTitle.astro";
+import ArticleCard from "@components/common/ArticleCard.astro";
+import SectionLink from "@components/common/SectionLink.astro";
+
+const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const articles = (await getArticles(locale)).filter(
+	(a) => !isEventCategory(a.data.category),
+);
+---
+
+<Section id="articles">
+	<SectionTitle>Articles</SectionTitle>
+	{
+		articles.length === 0 ? (
+			<p class="font-mono text-sm text-muted">No articles yet.</p>
+		) : (
+			<ul class="grid gap-6 lg:grid-cols-2">
+				{articles.slice(0, 4).map((article) => (
+					<ArticleCard article={article} />
+				))}
+			</ul>
+		)
+	}
+
+	{
+		articles.length > 4 &&
+		<SectionLink href={`/${locale}/articles/`}>All articles</SectionLink>
+	}
+</Section>
