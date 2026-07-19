@@ -1,6 +1,7 @@
 ---
 import { getProjects } from "@/projects";
 import Section from "@components/common/Section.astro";
+import SectionTitle from "@components/common/SectionTitle.astro";
 import ProjectCard from "./ProjectCard.astro";
 import SectionLink from "@components/common/SectionLink.astro";
 
@@ -8,7 +9,8 @@ const projects = await getProjects();
 const colors = ["primary", "secondary", "tertiary", "accent"] as const;
 ---
 
-<Section id="projects" title="Projects">
+<Section id="projects">
+	<SectionTitle>Projects</SectionTitle>
 	<div
 		class="grid pt-1 pl-1"
 		style="grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr))"
@@ -19,7 +21,7 @@ const colors = ["primary", "secondary", "tertiary", "accent"] as const;
 			))
 		}
 	</div>
-	<SectionLink href="https://github.com/orgs/rurrobotics/repositories"
-		>All repositories</SectionLink
-	>
+	<SectionLink href="https://github.com/orgs/rurrobotics/repositories">
+		All repositories
+	</SectionLink>
 </Section>
