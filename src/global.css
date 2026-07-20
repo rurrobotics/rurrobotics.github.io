@@ -10,32 +10,23 @@
 
 :root {
 	--background: #ffffff;
-	--foreground: #000000;
+	--foreground: #111111;
 	--primary: #ee4036;
 	--primary-foreground: #ffffff;
 	--secondary: #ffa112;
-	--secondary-foreground: #ffffff;
+	--secondary-foreground: #111111;
 	--accent: #ff7431;
-	--accent-foreground: #ffffff;
+	--accent-foreground: #111111;
 	--tertiary: #001d7d;
 	--tertiary-foreground: #ffffff;
 	--muted: var(--color-neutral-500);
 	--muted-foreground: #ffffff;
+	--border: #000000;
 }
 
 .dark {
-	--background: #151515;
+	--background: #111111;
 	--foreground: #ffffff;
-	--primary: #ee4036;
-	--primary-foreground: #ffffff;
-	--secondary: #ffa112;
-	--secondary-foreground: #ffffff;
-	--accent: #ff7431;
-	--accent-foreground: #ffffff;
-	--tertiary: #4263eb;
-	--tertiary-foreground: #ffffff;
-	--muted: var(--color-neutral-400);
-	--muted-foreground: #ffffff;
 }
 
 @theme inline {
@@ -54,6 +45,7 @@
 	--color-muted-foreground: var(--muted-foreground);
 	--color-tertiary: var(--tertiary);
 	--color-tertiary-foreground: var(--tertiary-foreground);
+	--color-border: var(--border);
 }
 
 @layer base {
@@ -64,6 +56,6 @@
 		@apply font-sans;
 	}
 	* {
-		@apply border-foreground;
+		@apply border-border;
 	}
 }
