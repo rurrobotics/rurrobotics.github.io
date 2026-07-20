@@ -3,13 +3,13 @@ import Section from "@components/common/Section.astro";
 import SectionTitle from "@components/common/SectionTitle.astro";
 ---
 
-<Section id="about">
+<Section id="about" class="dark">
 	<div class="grid lg:grid-cols-[1fr_16rem]">
 		<div class="lg:pr-10">
 			<SectionTitle>The team</SectionTitle>
 			<p class="max-w-184 text-lg leading-relaxed">
 				Founded in 2023 as a <a
-					class="italic text-tertiary font-medium"
+					class="italic text-accent font-medium"
 					href="https://www.eurobot.org/">Eurobot</a
 				> team, we've since grown into the robotics club of the School of
 				Electrical Engineering at the University of Belgrade. Our members
@@ -18,11 +18,11 @@ import SectionTitle from "@components/common/SectionTitle.astro";
 			</p>
 		</div>
 		<div
-			class="hidden lg:grid grid-cols-2 grid-rows-[2fr_1fr] gap-1 border-l-4 bg-foreground lg:-my-14"
+			class="hidden lg:grid grid-cols-2 grid-rows-[2fr_1fr] gap-1 border-l-4 bg-border lg:-my-14"
 		>
 			<div class="col-span-2 bg-primary"></div>
-			<div class="bg-background"></div>
-			<div></div>
+			<div class="bg-foreground"></div>
+			<div class="bg-secondary"></div>
 		</div>
 	</div>
 </Section>
