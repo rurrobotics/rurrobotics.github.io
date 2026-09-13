@@ -1,16 +1,16 @@
 ---
-import Layout from "@layouts/Layout.astro";
 import AboutSection from "@components/about/AboutSection.astro";
 import ProjectsSection from "@components/projects/ProjectsSection.astro";
 import ArticlesSection from "@components/articles/ArticlesSection.astro";
 import EventsSection from "@components/events/EventsSection.astro";
+import PageLayout from "@layouts/PageLayout.astro";
 
 export { getStaticPaths } from "../../locales/utils";
 ---
 
-<Layout>
+<PageLayout>
 	<AboutSection />
 	<ProjectsSection />
 	<EventsSection />
 	<ArticlesSection />
-</Layout>
+</PageLayout>
