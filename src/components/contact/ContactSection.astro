@@ -1,0 +1,45 @@
+---
+import { Mail, MapPin, Phone } from "@lucide/astro";
+import Section from "@components/common/Section.astro";
+import SectionTitle from "@components/common/SectionTitle.astro";
+import SocialLink from "@components/common/SocialLink.astro";
+
+const email = "rur@etf.bg.ac.rs";
+const phone = "+381 11 3218 300";
+
+const socials = [
+	{ network: "instagram", href: "https://instagram.com/rurrobotics" },
+	// TODO: link to the LinkedIn page
+	{ network: "linkedin", href: "#" },
+	{ network: "github", href: "https://github.com/rurrobotics" },
+] as const;
+---
+
+<Section id="contact" color="black">
+	<SectionTitle slot="title" color="secondary">Contact</SectionTitle>
+	<ul class="space-y-4 text-lg">
+		<li class="flex items-start gap-4">
+			<Mail class="mt-0.5 size-6 shrink-0 text-secondary" />
+			<a href={`mailto:${email}`} class="text-secondary transition-colors hover:text-white">{email}</a>
+		</li>
+		<li class="flex items-start gap-4">
+			<Phone class="mt-0.5 size-6 shrink-0 text-secondary" />
+			<a href={`tel:${phone.replaceAll(" ", "")}`} class="text-secondary transition-colors hover:text-white">
+				{phone}
+			</a>
+		</li>
+		<li class="flex items-start gap-4">
+			<MapPin class="mt-0.5 size-6 shrink-0" />
+			<span>School of Electrical Engineering, Bulevar kralja Aleksandra 73, Belgrade</span>
+		</li>
+	</ul>
+	<ul class="mt-8 flex gap-4">
+		{
+			socials.map((social) => (
+				<li>
+					<SocialLink network={social.network} href={social.href} />
+				</li>
+			))
+		}
+	</ul>
+</Section>

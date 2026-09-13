@@ -1,0 +1,88 @@
+---
+import Badge from "@components/common/Badge.astro";
+import Section from "@components/common/Section.astro";
+import SectionTitle from "@components/common/SectionTitle.astro";
+import SponsorTile from "./SponsorTile.astro";
+import rbt from "@/assets/sponsors/rbt.svg";
+import insist from "@/assets/sponsors/insist.png";
+import republika from "@/assets/sponsors/3drepublika.png";
+import cncObrada from "@/assets/sponsors/cncobrada.png";
+import telix from "@/assets/sponsors/telix.png";
+import zanus from "@/assets/sponsors/zanus.png";
+
+const general = [
+	{ name: "RBT", href: "https://rbt.rs/", logo: rbt },
+	{ name: "Insist Elektrik", href: "http://www.insistelektrik.com/", logo: insist },
+];
+
+const partners = [
+	{ name: "3D Republika", href: "https://3drepublika.com/", logo: republika },
+	{ name: "CNC Obrada", href: "https://cncobrada.com/", logo: cncObrada },
+	// The Telix logo is white, so it is rendered black
+	{ name: "Telix", href: "https://www.telix.rs/", logo: telix, logoClass: "brightness-0" },
+	{ name: "Zanus", href: "https://zanustechnology.com/", logo: zanus },
+];
+
+// TODO: add links and logos for supporters
+const supporters = [
+	{ name: "ETF" },
+	{ name: "Student Parliament" },
+	{ name: "Department of Electronics" },
+];
+
+// TODO: replace placeholders with real supporters
+const placeholders = 4;
+---
+
+<Section id="sponsors">
+	<SectionTitle slot="title">Partners</SectionTitle>
+	<p class="mb-10 max-w-184 text-lg leading-relaxed">
+		Robots aren't built without machines, boards and the people who pay for them.
+	</p>
+
+	<h3 class="mb-6">
+		<Badge label="General" color="primary" variant="solid" size="md" class="font-bold uppercase tracking-widest" />
+	</h3>
+	<ul class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+		{
+			general.map((sponsor) => (
+				<li>
+					<SponsorTile {...sponsor} size="large" />
+				</li>
+			))
+		}
+	</ul>
+
+	<h3 class="mt-10 mb-6">
+		<Badge label="Partners" color="tertiary" variant="solid" size="md" class="font-bold uppercase tracking-widest" />
+	</h3>
+	<ul class="grid grid-cols-2 gap-6 md:grid-cols-4">
+		{
+			partners.map((partner) => (
+				<li>
+					<SponsorTile {...partner} />
+				</li>
+			))
+		}
+	</ul>
+
+	<h3 class="mt-10 mb-6">
+		<Badge label="Support" color="secondary" variant="solid" size="md" class="font-bold uppercase tracking-widest" />
+	</h3>
+	<ul class="grid grid-cols-2 gap-4 sm:grid-cols-4 xl:grid-cols-7">
+		{
+			supporters.map((supporter) => (
+				<li>
+					<SponsorTile {...supporter} size="small" />
+				</li>
+			))
+		}
+		{
+			Array.from({ length: placeholders }, () => (
+				<li>
+					<SponsorTile size="small" />
+				</li>
+			))
+		}
+	</ul>
+</Section>

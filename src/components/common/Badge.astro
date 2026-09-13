@@ -3,6 +3,7 @@ interface Props {
 	label: string;
 	variant?: "outline" | "solid";
 	color?: "primary" | "secondary" | "accent" | "tertiary";
+	size?: "sm" | "md";
 	class?: string;
 }
 
@@ -10,13 +11,15 @@ const {
 	label,
 	variant = "outline",
 	color = "primary",
+	size = "sm",
 	class: className,
 } = Astro.props;
 ---
 
 <span
 	class:list={[
-		"font-mono text-xs tracking-wide px-2 py-0.5",
+		"inline-block font-mono tracking-wide",
+		size === "md" ? "text-sm px-3 py-1" : "text-xs px-2 py-0.5",
 		variant === "outline" && "border-2 border-current",
 		className,
 	]}

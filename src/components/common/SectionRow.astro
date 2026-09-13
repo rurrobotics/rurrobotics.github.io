@@ -1,0 +1,43 @@
+---
+// Places two <Section>s side by side from lg up. Each section's content container (section > div)
+// is sized to its share of the page container and pushed toward the split, so it lines up with full-width sections.
+
+interface Props {
+	/** Share of the page container taken by the first section (0.5 = equal halves). */
+	split?: number;
+}
+
+const { split = 0.5 } = Astro.props;
+---
+
+<div class="section-row grid" style={`--split: ${split}`}>
+	<slot />
+</div>
+
+<style>
+	/* --container mirrors the max-width of Tailwind's `container` at each breakpoint */
+	@media (width >= 64rem) {
+		.section-row {
+			--container: 64rem;
+			grid-template-columns: calc(50% + (var(--split) - 0.5) * var(--container)) minmax(0, 1fr);
+		}
+		.section-row > :global(:first-child > div) {
+			max-width: calc(var(--split) * var(--container));
+			margin-right: 0;
+		}
+		.section-row > :global(:last-child > div) {
+			max-width: calc((1 - var(--split)) * var(--container));
+			margin-left: 0;
+		}
+	}
+	@media (width >= 80rem) {
+		.section-row {
+			--container: 80rem;
+		}
+	}
+	@media (width >= 96rem) {
+		.section-row {
+			--container: 96rem;
+		}
+	}
+</style>

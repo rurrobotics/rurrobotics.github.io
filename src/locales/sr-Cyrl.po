@@ -39,9 +39,8 @@ msgstr "Окупљање"
 msgid "All repositories"
 msgstr "Сви репозиторијуми"
 
-#: src/components/events/EventsSection.astro
-msgid "All past events"
-msgstr "Сва прошла дешавања"
+#~ msgid "All past events"
+#~ msgstr "Сва прошла дешавања"
 
 #: src/components/about/AboutSection.astro
 msgid "The team"
@@ -70,3 +69,87 @@ msgstr "Чланци"
 #: src/components/articles/ArticlesSection.astro
 msgid "All articles"
 msgstr "Сви чланци"
+
+#: src/components/events/EventsSection.astro
+msgid "All events"
+msgstr "Сва дешавања"
+
+#: src/components/join/JoinSection.astro
+msgid "Send application"
+msgstr "Пошаљи пријаву"
+
+#: src/components/join/JoinSection.astro
+msgid "Join us"
+msgstr "Придружи се"
+
+#: src/components/join/JoinSection.astro
+msgid "Admission is open to all students. All you need is the will to learn; we'll teach you the rest in the lab."
+msgstr "Пријем је отворен свим студентима. Довољна је воља да учиш; остало те научимо у лабораторији."
+
+#: src/components/common/SocialLink.astro
+msgid "Instagram"
+msgstr "Instagram"
+
+#: src/components/common/SocialLink.astro
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: src/components/common/SocialLink.astro
+msgid "GitHub"
+msgstr "GitHub"
+
+#: src/components/contact/ContactSection.astro
+msgid "School of Electrical Engineering, Bulevar kralja Aleksandra 73, Belgrade"
+msgstr "Електротехнички факултет, Булевар краља Александра 73, Београд"
+
+#: src/components/contact/ContactSection.astro
+msgid "Contact"
+msgstr "Контакт"
+
+#: src/components/sponsors/SponsorsSection.astro
+msgid "CNC Obrada"
+msgstr "CNC Obrada"
+
+#: src/components/sponsors/SponsorsSection.astro
+msgid "Telix"
+msgstr "Telix"
+
+#: src/components/sponsors/SponsorsSection.astro
+msgid "Zanus"
+msgstr "Zanus"
+
+#: src/components/sponsors/SponsorsSection.astro
+msgid "Student Parliament"
+msgstr "Студентски парламент"
+
+#: src/components/sponsors/SponsorsSection.astro
+msgid "Department of Electronics"
+msgstr "Катедра за електронику"
+
+#~ msgid "Sponsors"
+#~ msgstr "Спонзори"
+
+#: src/components/sponsors/SponsorsSection.astro
+#: src/components/sponsors/SponsorsSection.astro
+msgid "Partners"
+msgstr "Партнери"
+
+#: src/components/sponsors/SponsorsSection.astro
+msgid "Support"
+msgstr "Подршка"
+
+#: src/components/sponsors/SponsorTile.astro
+msgid "Logo"
+msgstr "Лого"
+
+#: src/components/sponsors/SponsorsSection.astro
+msgid "Insist Elektrik"
+msgstr "Insist Elektrik"
+
+#: src/components/sponsors/SponsorsSection.astro
+msgid "General"
+msgstr "Генерални"
+
+#: src/components/sponsors/SponsorsSection.astro
+msgid "Robots aren't built without machines, boards and the people who pay for them."
+msgstr "Роботи се не праве без машина, плоча и људи који их плаћају."
