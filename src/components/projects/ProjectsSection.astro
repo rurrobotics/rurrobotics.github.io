@@ -10,7 +10,10 @@ const colors = ["primary", "secondary", "tertiary", "accent"] as const;
 ---
 
 <Section id="projects">
-	<SectionTitle color="accent">Projects</SectionTitle>
+	<SectionTitle slot="title">Projects</SectionTitle>
+	<SectionLink slot="link" href="https://github.com/orgs/rurrobotics/repositories">
+		All repositories
+	</SectionLink>
 	<div
 		class="grid gap-6"
 		style="grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr))"
@@ -21,7 +24,4 @@ const colors = ["primary", "secondary", "tertiary", "accent"] as const;
 			))
 		}
 	</div>
-	<SectionLink href="https://github.com/orgs/rurrobotics/repositories">
-		All repositories
-	</SectionLink>
 </Section>

@@ -12,22 +12,18 @@ const articles = (await getArticles(locale)).filter(
 );
 ---
 
-<Section id="articles">
-	<SectionTitle color="secondary">Articles</SectionTitle>
+<Section id="articles" color="tertiary">
+	<SectionTitle slot="title">Articles</SectionTitle>
+	<SectionLink slot="link" href={`/${locale}/articles/`} color="secondary">All articles</SectionLink>
 	{
 		articles.length === 0 ? (
-			<p class="font-mono text-sm text-muted">No articles yet.</p>
+			<p class="font-mono text-sm opacity-75">No articles yet.</p>
 		) : (
-			<ul class="grid gap-6 lg:grid-cols-2">
+			<ul class="grid grid-cols-1 gap-6">
 				{articles.slice(0, 4).map((article) => (
 					<ArticleCard article={article} />
 				))}
 			</ul>
 		)
-	}
-
-	{
-		articles.length > 4 &&
-		<SectionLink href={`/${locale}/articles/`} color="secondary">All articles</SectionLink>
 	}
 </Section>

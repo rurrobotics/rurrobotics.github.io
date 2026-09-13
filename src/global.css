@@ -19,6 +19,8 @@
 	--accent-foreground: #111111;
 	--tertiary: #001d7d;
 	--tertiary-foreground: #ffffff;
+	--black: #000000;
+	--black-foreground: #ffffff;
 	--muted: var(--color-neutral-500);
 	--muted-foreground: #ffffff;
 	--border: #000000;

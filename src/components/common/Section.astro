@@ -1,19 +1,32 @@
 ---
 interface Props {
 	id?: string;
-	color?: "primary" | "secondary" | "accent" | "tertiary";
+	color?: "primary" | "secondary" | "accent" | "tertiary" | "black";
 	class?: string;
 }
 
 const { id, color, class: className } = Astro.props;
+const hasLink = Astro.slots.has("link");
 ---
 
 <section
 	{id}
-	class:list={["border-t-4 bg-background text-foreground", className]}
+	class:list={["bg-background text-foreground", className]}
 	style={color && `background: var(--${color}); color: var(--${color}-foreground)`}
 >
 	<div class="mx-auto container px-5 py-10 sm:px-10 md:px-15 md:py-14">
-		<slot />
+		<div class:list={[hasLink && "grid gap-x-6 sm:grid-cols-[1fr_auto] sm:items-baseline"]}>
+			<slot name="title" />
+			<div class="min-w-0 sm:col-span-2">
+				<slot />
+			</div>
+			{
+				hasLink && (
+					<div class="mt-4 text-right sm:col-start-2 sm:row-start-1 sm:mt-0">
+						<slot name="link" />
+					</div>
+				)
+			}
+		</div>
 	</div>
 </section>
