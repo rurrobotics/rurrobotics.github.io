@@ -10,24 +10,34 @@ interface Props {
 	/** Extra classes for the logo image. */
 	logoClass?: string;
 	size?: "large" | "medium" | "small";
+	/** Extra classes for the tile itself. */
+	class?: string;
 }
 
-const { name, href, logo, logoClass, size = "medium" } = Astro.props;
+const {
+	name,
+	href,
+	logo,
+	logoClass,
+	size = "medium",
+	class: className,
+} = Astro.props;
 const Tag = href ? "a" : "div";
 
 const sizeClasses = {
 	large: "h-36 border-4 p-8 md:h-48",
 	medium: "h-28 border-4 p-6 md:h-32",
-	small: "h-20 border-2 p-3",
+	small: "h-20 border-3 p-3",
 };
 ---
 
 <Tag
 	href={href}
 	class:list={[
-		"flex items-center justify-center bg-background text-foreground",
+		"flex items-center justify-center",
 		sizeClasses[size],
 		name === undefined && "border-dashed text-muted",
+		className,
 	]}
 >
 	{
