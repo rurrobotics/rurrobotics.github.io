@@ -1,0 +1,85 @@
+/* Wipe: the shared hover fill behind cards, buttons and icon links. An accent
+ * sweeps across the element, then the content flips to the accent foreground
+ * once the fill has passed under it.
+ *
+ * Compose a base, a direction and a color:
+ *   <a class="wipe wipe-left wipe-primary">
+ *
+ * Deliberately unlayered: Tailwind's utilities layer would otherwise outrank
+ * these rules and `text-*` classes on the element would beat the hover color. */
+
+.wipe {
+	--wipe-accent: var(--foreground);
+	--wipe-accent-fg: var(--background);
+	--wipe-duration: 0.15s;
+	--wipe-delay: 150ms;
+	background-image: linear-gradient(var(--wipe-accent), var(--wipe-accent));
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 0% 100%;
+	transition:
+		background-size var(--wipe-duration) ease,
+		color 0.1s ease;
+}
+
+.wipe:hover,
+.wipe:focus-visible {
+	background-size: 100% 100%;
+	color: var(--wipe-accent-fg);
+	transition-delay: var(--wipe-delay);
+}
+
+.wipe-left {
+	background-position: left center;
+	background-size: 0% 100%;
+}
+.wipe-right {
+	background-position: right center;
+	background-size: 0% 100%;
+}
+.wipe-top {
+	background-position: center top;
+	background-size: 100% 0%;
+}
+.wipe-bottom {
+	background-position: center bottom;
+	background-size: 100% 0%;
+}
+
+.wipe-primary {
+	--wipe-accent: var(--primary);
+	--wipe-accent-fg: var(--primary-foreground);
+}
+.wipe-secondary {
+	--wipe-accent: var(--secondary);
+	--wipe-accent-fg: var(--secondary-foreground);
+}
+.wipe-accent {
+	--wipe-accent: var(--accent);
+	--wipe-accent-fg: var(--accent-foreground);
+}
+.wipe-tertiary {
+	--wipe-accent: var(--tertiary);
+	--wipe-accent-fg: var(--tertiary-foreground);
+}
+.wipe-black {
+	--wipe-accent: var(--black);
+	--wipe-accent-fg: var(--black-foreground);
+}
+.wipe-muted {
+	--wipe-accent: var(--muted);
+	--wipe-accent-fg: var(--muted-foreground);
+}
+
+.wipe-text {
+	transition: color 0.1s ease;
+}
+.wipe:hover .wipe-text,
+.wipe:focus-visible .wipe-text {
+	color: var(--wipe-accent-fg);
+	transition-delay: var(--wipe-delay);
+}
+
+.wipe-strip {
+	background-color: var(--wipe-accent);
+}
