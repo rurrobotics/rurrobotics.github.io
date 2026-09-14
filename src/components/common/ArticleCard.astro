@@ -63,6 +63,14 @@ const dateFmt = new Intl.DateTimeFormat(localeTag, {
 				: "--card-accent: var(--primary); --card-accent-fg: var(--primary-foreground)"}
 	>
 		{
+			!(isEvent && eventDate) && (
+				<div
+					class="w-3.5 shrink-0 self-stretch"
+					style="background: var(--card-accent)"
+				/>
+			)
+		}
+		{
 			isEvent && eventDate && (
 				<div
 					class:list={[
