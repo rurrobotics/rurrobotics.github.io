@@ -19,14 +19,17 @@ const past = events
 ---
 
 <Section id="events">
-	<SectionTitle>Events</SectionTitle>
+	<SectionTitle slot="title">Events</SectionTitle>
+	<SectionLink slot="link" href={`/${locale}/articles/`}>
+		All events
+	</SectionLink>
 	{
 		upcoming.length === 0 ? (
 			<p class="font-mono text-sm text-muted">
 				No upcoming events.
 			</p>
 		) : (
-			<ul class="grid gap-6 lg:grid-cols-2">
+			<ul class="grid grid-cols-1 gap-6">
 				{upcoming.map((event) => (
 					<ArticleCard article={event} />
 				))}
@@ -40,19 +43,12 @@ const past = events
 				<h3 class="mt-10 mb-6 font-display text-2xl font-bold uppercase text-muted">
 					Past events
 				</h3>
-				<ul class="grid gap-6 lg:grid-cols-2">
+				<ul class="grid grid-cols-1 gap-6">
 					{past.slice(0, 2).map((event) => (
 						<ArticleCard article={event} past />
 					))}
 				</ul>
 			</div>
 		) : null
-	}
-	{
-		past.length > 2 && (
-			<SectionLink href={`/${locale}/articles/`}>
-				All past events
-			</SectionLink>
-		)
 	}
 </Section>

@@ -9,15 +9,13 @@ interface Props {
 const { href, color = "tertiary" } = Astro.props;
 ---
 
-<div class="mt-4 text-right">
-	<a
-		href={href}
-		style={`color: var(--${color})`}
-		class="group inline-flex items-center gap-1.5 font-mono font-bold text-sm tracking-widest uppercase"
-	>
-		<slot />
-		<MoveUpRight
-			class="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-		/>
-	</a>
-</div>
+<a
+	href={href}
+	style={`color: var(--${color})`}
+	class="group inline-flex items-center gap-1.5 font-mono font-bold text-sm tracking-widest uppercase"
+>
+	<slot />
+	<MoveUpRight
+		class="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+	/>
+</a>

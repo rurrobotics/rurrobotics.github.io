@@ -39,10 +39,6 @@ msgstr "Meetup"
 msgid "All repositories"
 msgstr "All repositories"
 
-#: src/components/events/EventsSection.astro
-msgid "All past events"
-msgstr "All past events"
-
 #: src/components/about/AboutSection.astro
 msgid "The team"
 msgstr "The team"
@@ -70,3 +66,60 @@ msgstr "Articles"
 #: src/components/articles/ArticlesSection.astro
 msgid "All articles"
 msgstr "All articles"
+
+#: src/components/events/EventsSection.astro
+msgid "All events"
+msgstr "All events"
+
+#: src/components/join/JoinSection.astro
+msgid "Send application"
+msgstr "Send application"
+
+#: src/components/join/JoinSection.astro
+msgid "Join us"
+msgstr "Join us"
+
+#: src/components/join/JoinSection.astro
+msgid "Admission is open to all students. All you need is the will to learn; we'll teach you the rest in the lab."
+msgstr "Admission is open to all students. All you need is the will to learn; we'll teach you the rest in the lab."
+
+#: src/components/common/SocialLink.astro
+msgid "Instagram"
+msgstr "Instagram"
+
+#: src/components/common/SocialLink.astro
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: src/components/common/SocialLink.astro
+msgid "GitHub"
+msgstr "GitHub"
+
+#: src/components/contact/ContactSection.astro
+msgid "School of Electrical Engineering, Bulevar kralja Aleksandra 73, Belgrade"
+msgstr "School of Electrical Engineering, Bulevar kralja Aleksandra 73, Belgrade"
+
+#: src/components/contact/ContactSection.astro
+msgid "Contact"
+msgstr "Contact"
+
+#: src/components/sponsors/SponsorsSection.astro
+#: src/components/sponsors/SponsorsSection.astro
+msgid "Partners"
+msgstr "Partners"
+
+#: src/components/sponsors/SponsorsSection.astro
+msgid "Support"
+msgstr "Support"
+
+#: src/components/sponsors/SponsorTile.astro
+msgid "Logo"
+msgstr "Logo"
+
+#: src/components/sponsors/SponsorsSection.astro
+msgid "General"
+msgstr "General"
+
+#: src/components/sponsors/SponsorsSection.astro
+msgid "We are grateful to our sponsors for supporting our work and helping us learn, create, and compete."
+msgstr "We are grateful to our sponsors for supporting our work and helping us learn, create, and compete."
