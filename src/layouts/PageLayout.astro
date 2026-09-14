@@ -1,10 +1,16 @@
 ---
 import Layout from "./Layout.astro";
+import SectionRow from "@components/common/SectionRow.astro";
+import JoinSection from "@components/join/JoinSection.astro";
+import ContactSection from "@components/contact/ContactSection.astro";
 ---
 
 <Layout>
     <!-- TODO: Add navbar -->
     <slot />
-    <!-- TODO: Add contact -->
+    <SectionRow split={0.6}>
+        <JoinSection />
+        <ContactSection />
+    </SectionRow>
     <!-- TODO: Add footer -->
 </Layout>
