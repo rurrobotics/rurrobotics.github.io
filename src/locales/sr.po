@@ -39,10 +39,6 @@ msgstr "Okupljanje"
 msgid "All repositories"
 msgstr "Svi repozitorijumi"
 
-#: src/components/events/EventsSection.astro
-msgid "All past events"
-msgstr "Sva prošla dešavanja"
-
 #: src/components/about/AboutSection.astro
 msgid "The team"
 msgstr "Tim"
@@ -70,3 +66,60 @@ msgstr "Članci"
 #: src/components/articles/ArticlesSection.astro
 msgid "All articles"
 msgstr "Svi članci"
+
+#: src/components/events/EventsSection.astro
+msgid "All events"
+msgstr "Sva dešavanja"
+
+#: src/components/join/JoinSection.astro
+msgid "Send application"
+msgstr "Pošalji prijavu"
+
+#: src/components/join/JoinSection.astro
+msgid "Join us"
+msgstr "Pridruži se"
+
+#: src/components/join/JoinSection.astro
+msgid "Admission is open to all students. All you need is the will to learn; we'll teach you the rest in the lab."
+msgstr "Prijem je otvoren svim studentima. Dovoljna je volja da učiš; ostalo te naučimo u laboratoriji."
+
+#: src/components/common/SocialLink.astro
+msgid "Instagram"
+msgstr "Instagram"
+
+#: src/components/common/SocialLink.astro
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: src/components/common/SocialLink.astro
+msgid "GitHub"
+msgstr "GitHub"
+
+#: src/components/contact/ContactSection.astro
+msgid "School of Electrical Engineering, Bulevar kralja Aleksandra 73, Belgrade"
+msgstr "Elektrotehnički fakultet, Bulevar kralja Aleksandra 73, Beograd"
+
+#: src/components/contact/ContactSection.astro
+msgid "Contact"
+msgstr "Kontakt"
+
+#: src/components/sponsors/SponsorsSection.astro
+#: src/components/sponsors/SponsorsSection.astro
+msgid "Partners"
+msgstr "Partneri"
+
+#: src/components/sponsors/SponsorsSection.astro
+msgid "Support"
+msgstr "Podrška"
+
+#: src/components/sponsors/SponsorTile.astro
+msgid "Logo"
+msgstr "Logo"
+
+#: src/components/sponsors/SponsorsSection.astro
+msgid "General"
+msgstr "Generalni"
+
+#: src/components/sponsors/SponsorsSection.astro
+msgid "We are grateful to our sponsors for supporting our work and helping us learn, create, and compete."
+msgstr "Zahvaljujemo se našim sponzorima na podršci i na tome što nam omogućavaju da učimo, stvaramo i da se takmičimo."

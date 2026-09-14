@@ -1,0 +1,84 @@
+---
+import Badge from "@components/common/Badge.astro";
+import Section from "@components/common/Section.astro";
+import SectionTitle from "@components/common/SectionTitle.astro";
+import SponsorTile from "./SponsorTile.astro";
+import rbt from "@/assets/sponsors/rbt.svg";
+import sistemcd from "@/assets/sponsors/sistemcd.svg";
+import pinoles from "@/assets/sponsors/pinoles.svg";
+import maxon from "@/assets/sponsors/maxon.svg";
+import insist from "@/assets/sponsors/insist.png";
+import republika from "@/assets/sponsors/3drepublika.png";
+import telix from "@/assets/sponsors/telix.png";
+import zanus from "@/assets/sponsors/zanus.png";
+import kelco from "@/assets/sponsors/kelco.png";
+import malina314 from "@/assets/sponsors/malina314.png";
+import elektroleum from "@/assets/sponsors/elektroleum.webp";
+
+// @wc-ignore
+const general = [{ name: "RBT", href: "https://rbt.rs/", logo: rbt }];
+
+// @wc-ignore
+const partners = [
+	{ name: "Telix", href: "https://www.telix.rs/", logo: telix, class: "bg-[#11153e]" },
+	{ name: "Zanus", href: "https://zanustechnology.com/", logo: zanus },
+	{ name: "SistemCD", href: "https://sistemcd.rs/", logo: sistemcd, class: "bg-[#191c20]" },
+	{ name: "3D Republika", href: "https://3drepublika.com/", logo: republika },
+	{ name: "Pinoles", href: "https://www.pinoles.com/", logo: pinoles },
+];
+
+// @wc-ignore
+const supporters = [
+	{ name: "Maxon YEP", href: "https://www.maxongroup.com/en/cooperations/young-engineers-program", logo: maxon, logoClass: "p-3" },
+	{ name: "Malina314", href: "https://malina314.com/", logo: malina314 },
+	{ name: "Kelco", href: "https://www.kelco.rs/", logo: kelco, class: "bg-[#212121]" },
+	{ name: "Elektroleum", href: "https://elektroleum.rs/", logo: elektroleum, class: "bg-[#1d2a3f]" },
+	{ name: "Insist Elektrik", href: "http://www.insistelektrik.com/", logo: insist },
+];
+---
+
+<Section id="sponsors">
+	<SectionTitle slot="title">Partners</SectionTitle>
+	<p class="mb-10 text-lg leading-relaxed">
+		We are grateful to our sponsors for supporting our work and helping us learn, create, and compete.
+	</p>
+
+	<h3 class="mb-6">
+		<Badge label="General" color="primary" variant="solid" size="md" class="font-bold uppercase tracking-widest" />
+	</h3>
+	<ul class="flex flex-wrap justify-center gap-6">
+		{
+			general.map((sponsor) => (
+				<li class="w-full sm:w-[calc((100%-1.5rem)/2)]">
+					<SponsorTile {...sponsor} size="large" />
+				</li>
+			))
+		}
+	</ul>
+
+	<h3 class="mt-10 mb-6">
+		<Badge label="Partners" color="tertiary" variant="solid" size="md" class="font-bold uppercase tracking-widest" />
+	</h3>
+	<ul class="flex flex-wrap justify-center gap-6">
+		{
+			partners.map((partner) => (
+				<li class="w-full sm:w-[calc((100%-1.5rem)/2)] md:w-[calc((100%-3rem)/3)]">
+					<SponsorTile {...partner} />
+				</li>
+			))
+		}
+	</ul>
+
+	<h3 class="mt-10 mb-6">
+		<Badge label="Support" color="secondary" variant="solid" size="md" class="font-bold uppercase tracking-widest" />
+	</h3>
+	<ul class="flex flex-wrap justify-center gap-4">
+		{
+			supporters.map((supporter) => (
+				<li class="w-full sm:w-[calc((100%-1rem)/2)] md:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-4rem)/5)]">
+					<SponsorTile {...supporter} size="small" />
+				</li>
+			))
+		}
+	</ul>
+</Section>

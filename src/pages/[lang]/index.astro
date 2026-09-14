@@ -1,16 +1,27 @@
 ---
-import Layout from "@layouts/Layout.astro";
 import AboutSection from "@components/about/AboutSection.astro";
 import ProjectsSection from "@components/projects/ProjectsSection.astro";
 import ArticlesSection from "@components/articles/ArticlesSection.astro";
 import EventsSection from "@components/events/EventsSection.astro";
+import SponsorsSection from "@components/sponsors/SponsorsSection.astro";
+import JoinSection from "@components/join/JoinSection.astro";
+import ContactSection from "@components/contact/ContactSection.astro";
+import SectionRow from "@components/common/SectionRow.astro";
+import PageLayout from "@layouts/PageLayout.astro";
 
 export { getStaticPaths } from "../../locales/utils";
 ---
 
-<Layout>
+<PageLayout>
 	<AboutSection />
-	<EventsSection />
-	<ArticlesSection />
 	<ProjectsSection />
-</Layout>
+	<SectionRow>
+		<EventsSection />
+		<ArticlesSection />
+	</SectionRow>
+	<SponsorsSection />
+	<SectionRow split={0.6}>
+		<JoinSection />
+		<ContactSection />
+	</SectionRow>
+</PageLayout>

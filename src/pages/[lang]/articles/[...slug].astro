@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
-import Layout from "@layouts/Layout.astro";
 import { parseArticleId, type Article } from "@/articles";
+import PageLayout from "@layouts/PageLayout.astro";
 
 export async function getStaticPaths() {
 	const articles = await getCollection(
@@ -22,8 +22,32 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<Layout>
-	<article class="prose container! mx-auto px-4 font-mono">
+<PageLayout>
+	<article
+		class="prose mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 md:px-12 md:py-16"
+	>
 		<Content />
 	</article>
-</Layout>
+</PageLayout>
+
+<script>
+	document
+		.querySelectorAll<HTMLButtonElement>(".code-block [data-copy]")
+		.forEach((button) => {
+			button.addEventListener("click", async () => {
+				const code = button
+					.closest(".code-block")
+					?.querySelector("pre")?.textContent;
+				if (!code) return;
+
+				try {
+					await navigator.clipboard.writeText(code);
+					const previous = button.textContent;
+					button.textContent = "Copied";
+					setTimeout(() => (button.textContent = previous), 1500);
+				} catch {
+					button.textContent = "Failed";
+				}
+			});
+		});
+</script>

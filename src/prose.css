@@ -1,0 +1,166 @@
+/* Rich-text theme, layered over @tailwindcss/typography's `prose`.
+ *
+ * Follows the spirit of Article.dc.html on Tailwind's own type and spacing
+ * scale rather than reproducing the mockup's exact pixel values — the design is
+ * a reference for hierarchy and weight, not a spec to match to the pixel.
+ *
+ * Deliberately CSS rather than an MDX `components` map: Astro only forwards the
+ * `components` prop for `.mdx` (see the id.endsWith("mdx") guard in
+ * astro/dist/content/runtime.js), so a map would silently skip every `.md` file.
+ * Element selectors reach both. Structure that CSS can't express — the
+ * code-block chrome and image captions — is built in
+ * src/plugins/rehype-prose-elements.mjs, which also runs for both.
+ *
+ * Riding on `prose` keeps the plugin's defaults for elements the design doesn't
+ * spec (tables, dl, nested lists) but means undoing the decorations it adds.
+ *
+ * NOT in `@layer components`: the typography plugin emits `prose` into the
+ * `utilities` layer, which outranks `components` wholesale — every rule below
+ * lost regardless of specificity. Unlayered CSS beats every layer, so these win.
+ * The tradeoff is that they also beat utility classes on the same elements.
+ *
+ * `max-width` is the one thing left to prose: overriding it here would defeat
+ * the container's own width utility.
+ */
+
+/* prose wraps inline code in literal backticks and adds curly quotes to
+   blockquote paragraphs; neither suits this design. */
+.prose code::before,
+.prose code::after,
+.prose blockquote p:first-of-type::before,
+.prose blockquote p:last-of-type::after {
+	content: none;
+}
+
+.prose > :first-child {
+	@apply mt-0;
+}
+.prose > :last-child {
+	@apply mb-0;
+}
+
+/* Headings — one step apart on the default scale, display face throughout. */
+.prose :is(h1, h2, h3, h4, h5) {
+	@apply font-display leading-none text-foreground uppercase;
+}
+.prose h1 {
+	@apply mt-12 mb-5 text-4xl font-bold md:mt-16 md:mb-6 md:text-5xl;
+}
+.prose h2 {
+	@apply mt-10 mb-4 text-3xl font-bold md:mt-12 md:mb-5 md:text-4xl;
+}
+.prose h3 {
+	@apply mt-8 mb-3 text-2xl font-bold md:mt-10 md:mb-4 md:text-3xl;
+}
+.prose h4 {
+	@apply mt-8 mb-3 text-xl font-bold md:text-2xl;
+}
+.prose h5 {
+	@apply mt-6 mb-2 text-lg font-semibold tracking-wider md:text-xl;
+}
+.prose h6 {
+	@apply mt-6 mb-2 font-mono text-sm leading-none font-bold tracking-widest text-ink-muted uppercase;
+}
+
+/* Text */
+.prose p {
+	@apply my-5 text-base leading-relaxed text-foreground md:text-lg;
+}
+/* Promoting an image to a block-level <figure> leaves the markdown pipeline's
+   now-empty wrapper paragraphs behind. */
+.prose p:empty {
+	@apply hidden;
+}
+/* em unit so the highlight tracks the text it sits behind. */
+.prose strong {
+	@apply font-semibold shadow-[inset_0_-0.4em_0_var(--secondary)];
+}
+/* Same wipe as .card in ProjectCard.astro, anchored to the bottom so the fill
+   rises out of the underline rather than sweeping in from the left. */
+.prose a {
+	@apply border-b-4 border-primary pb-px font-normal text-foreground no-underline;
+	background-image: linear-gradient(var(--primary), var(--primary));
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: 100% 0%;
+	transition:
+		background-size 0.15s ease,
+		color 0.1s ease;
+}
+.prose a:hover {
+	background-size: 100% 100%;
+	color: var(--primary-foreground);
+	transition-delay: 150ms;
+}
+.prose hr {
+	@apply my-10 h-1.5 border-0 bg-foreground;
+}
+
+/* Blockquote — an orange rule alongside the quoted text. The display face at a
+   larger size is what marks it as quoted; the bar alone reads as decoration. */
+.prose blockquote {
+	@apply my-8 border-l-4 border-secondary py-1 pl-5 not-italic md:border-l-8 md:pl-6;
+}
+.prose blockquote p {
+	@apply my-0 font-display text-xl leading-snug text-foreground md:text-2xl;
+}
+.prose blockquote p + p {
+	@apply mt-4;
+}
+
+/* Code */
+.prose :not(pre) > code {
+	@apply rounded-none border-2 border-foreground bg-background px-1.5 py-px font-mono text-sm font-normal text-foreground md:text-base;
+}
+.prose .code-block {
+	@apply my-8 rounded-none border-4 border-foreground;
+}
+/* m-0: prose gives every figcaption a margin-top, which would otherwise open a
+   gap between the wrapper's border and the header bar. */
+.prose .code-block figcaption {
+	@apply m-0 flex items-center justify-between bg-primary px-3 py-2 font-mono text-xs tracking-widest text-tertiary-foreground uppercase md:px-4;
+}
+.prose .code-block figcaption button {
+	@apply text-primary-foreground/80 hover:text-primary-foreground cursor-pointer uppercase transition-colors;
+}
+.prose .code-block pre {
+	@apply m-0 overflow-auto rounded-none bg-background p-4 font-mono text-sm leading-relaxed text-foreground md:p-5;
+}
+.prose .code-block[data-wrap] pre {
+	@apply overflow-visible whitespace-pre-wrap;
+}
+
+/* Lists — markers live on the list so ul and ol can differ. */
+.prose :is(ul, ol) {
+	@apply my-6 flex list-none flex-col gap-2 p-0 text-base leading-normal text-foreground md:gap-2.5 md:text-lg;
+}
+/* prose gives li its own vertical margin and padding; the design spaces items
+   with the list's flex gap instead. */
+.prose :is(ul, ol) > li {
+	@apply my-0 flex gap-3 p-0 md:gap-4;
+}
+.prose li > p {
+	@apply my-0;
+}
+.prose ul > li::before {
+	@apply mt-2 block size-3 shrink-0 bg-primary content-[''];
+}
+.prose ol {
+	counter-reset: prose-item;
+}
+.prose ol > li::before {
+	counter-increment: prose-item;
+	content: counter(prose-item);
+	@apply flex size-6 shrink-0 items-center justify-center bg-tertiary font-mono text-xs font-bold text-tertiary-foreground md:size-7 md:text-sm;
+}
+
+/* Images */
+.prose figure:not(.code-block) {
+	@apply my-8;
+}
+.prose figure:not(.code-block) img {
+	@apply w-full;
+}
+.prose figure:not(.code-block) figcaption {
+	@apply mt-2 font-mono text-xs text-ink-muted md:mt-3;
+}
