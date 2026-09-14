@@ -14,3 +14,10 @@ npm run translit     # transliterate only
 
 npx shadcn-svelte@latest add <name>   # add a UI component (lands in src/shadcn/)
 ```
+
+## TODO
+
+### Articles page
+- Translations for `COPY`/`COPIED`
+- Redo style for blockquote
+- Redo style for inline code
