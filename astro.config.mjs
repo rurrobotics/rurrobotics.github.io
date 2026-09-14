@@ -15,6 +15,30 @@ import rehypeShiki from "@shikijs/rehype";
 
 import { unified } from "@astrojs/markdown-remark";
 
+import { rehypeProseElements } from "./src/plugins/rehype-prose-elements.mjs";
+
+/**
+ * Hands the language and the `wrap` fence flag to rehypeProseElements, which
+ * builds the header bar, and drops Shiki's own background so the block renders
+ * on the page background rather than the theme's own.
+ *
+ * Write ```js wrap to soft-wrap a block instead of scrolling it.
+ *
+ * @type {import("shiki").ShikiTransformer}
+ */
+const proseCodeBlock = {
+	pre(node) {
+		node.properties["data-language"] = this.options.lang;
+		if (/(^|\s)wrap(\s|$)/.test(this.options.meta?.__raw ?? "")) {
+			node.properties["data-wrap"] = "true";
+		}
+		node.properties.style = String(node.properties.style ?? "").replace(
+			/background-color:[^;]*;?/g,
+			"",
+		);
+	},
+};
+
 // https://astro.build/config
 export default defineConfig({
 	site: "https://rurrobotics.rs/",
@@ -35,7 +59,16 @@ export default defineConfig({
 	markdown: {
 		syntaxHighlight: false,
 		processor: unified({
-			rehypePlugins: [[rehypeShiki, { theme: "monokai" }]],
+			rehypePlugins: [
+				[
+					rehypeShiki,
+					{
+						theme: "github-light",
+						transformers: [proseCodeBlock],
+					},
+				],
+				rehypeProseElements,
+			],
 		}),
 	},
 	integrations: [
