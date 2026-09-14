@@ -53,21 +53,14 @@ const dateFmt = new Intl.DateTimeFormat(localeTag, {
 	<a
 		href={`/${locale}/articles/${articleSlug(article)}/`}
 		class:list={[
-			"group card flex border-4 bg-background",
+			"group wipe wipe-left flex border-4 bg-background",
 			past ? "text-muted border-muted" : "text-foreground",
+			past ? "wipe-muted" : isEvent ? "wipe-tertiary" : "wipe-primary",
 		]}
-		style={past
-			? "--card-accent: var(--muted); --card-accent-fg: var(--muted-foreground)"
-			: isEvent
-				? "--card-accent: var(--tertiary); --card-accent-fg: var(--tertiary-foreground)"
-				: "--card-accent: var(--primary); --card-accent-fg: var(--primary-foreground)"}
 	>
 		{
 			!(isEvent && eventDate) && (
-				<div
-					class="w-3.5 shrink-0 self-stretch"
-					style="background: var(--card-accent)"
-				/>
+				<div class="wipe-strip w-3.5 shrink-0 self-stretch" />
 			)
 		}
 		{
@@ -99,9 +92,7 @@ const dateFmt = new Intl.DateTimeFormat(localeTag, {
 					color={categoryColors[data.category]}
 					variant={past ? "outline" : "solid"}
 				/>
-				<span
-					class="font-mono text-xs font-semibold text-muted group-hover:text-muted-foreground group-hover:delay-150"
-				>
+				<span class="wipe-text font-mono text-xs font-semibold text-muted">
 					{
 						eventDate
 							? past
@@ -124,23 +115,3 @@ const dateFmt = new Intl.DateTimeFormat(localeTag, {
 		</div>
 	</a>
 </li>
-
-<style>
-	.card {
-		background-image: linear-gradient(
-			var(--card-accent),
-			var(--card-accent)
-		);
-		background-repeat: no-repeat;
-		background-position: left;
-		background-size: 0% 100%;
-		transition:
-			background-size 0.15s ease,
-			color 0.1s ease;
-	}
-	.card:hover {
-		background-size: 100% 100%;
-		color: var(--card-accent-fg);
-		transition-delay: 150ms;
-	}
-</style>
