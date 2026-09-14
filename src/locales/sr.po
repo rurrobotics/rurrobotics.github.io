@@ -39,9 +39,6 @@ msgstr "Okupljanje"
 msgid "All repositories"
 msgstr "Svi repozitorijumi"
 
-#~ msgid "All past events"
-#~ msgstr "Sva prošla dešavanja"
-
 #: src/components/about/AboutSection.astro
 msgid "The team"
 msgstr "Tim"
@@ -107,29 +104,6 @@ msgid "Contact"
 msgstr "Kontakt"
 
 #: src/components/sponsors/SponsorsSection.astro
-msgid "CNC Obrada"
-msgstr "CNC Obrada"
-
-#: src/components/sponsors/SponsorsSection.astro
-msgid "Telix"
-msgstr "Telix"
-
-#: src/components/sponsors/SponsorsSection.astro
-msgid "Zanus"
-msgstr "Zanus"
-
-#: src/components/sponsors/SponsorsSection.astro
-msgid "Student Parliament"
-msgstr "Studentski parlament"
-
-#: src/components/sponsors/SponsorsSection.astro
-msgid "Department of Electronics"
-msgstr "Katedra za elektroniku"
-
-#~ msgid "Sponsors"
-#~ msgstr "Sponzori"
-
-#: src/components/sponsors/SponsorsSection.astro
 #: src/components/sponsors/SponsorsSection.astro
 msgid "Partners"
 msgstr "Partneri"
@@ -143,13 +117,9 @@ msgid "Logo"
 msgstr "Logo"
 
 #: src/components/sponsors/SponsorsSection.astro
-msgid "Insist Elektrik"
-msgstr "Insist Elektrik"
-
-#: src/components/sponsors/SponsorsSection.astro
 msgid "General"
 msgstr "Generalni"
 
 #: src/components/sponsors/SponsorsSection.astro
-msgid "Robots aren't built without machines, boards and the people who pay for them."
-msgstr "Roboti se ne prave bez mašina, ploča i ljudi koji ih plaćaju."
+msgid "We are grateful to our sponsors for supporting our work and helping us learn, create, and compete."
+msgstr "Zahvaljujemo se našim sponzorima na podršci i na tome što nam omogućavaju da učimo, stvaramo i da se takmičimo."

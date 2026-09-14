@@ -39,9 +39,6 @@ msgstr "Meetup"
 msgid "All repositories"
 msgstr "All repositories"
 
-#~ msgid "All past events"
-#~ msgstr "All past events"
-
 #: src/components/about/AboutSection.astro
 msgid "The team"
 msgstr "The team"
@@ -107,29 +104,6 @@ msgid "Contact"
 msgstr "Contact"
 
 #: src/components/sponsors/SponsorsSection.astro
-msgid "CNC Obrada"
-msgstr "CNC Obrada"
-
-#: src/components/sponsors/SponsorsSection.astro
-msgid "Telix"
-msgstr "Telix"
-
-#: src/components/sponsors/SponsorsSection.astro
-msgid "Zanus"
-msgstr "Zanus"
-
-#: src/components/sponsors/SponsorsSection.astro
-msgid "Student Parliament"
-msgstr "Student Parliament"
-
-#: src/components/sponsors/SponsorsSection.astro
-msgid "Department of Electronics"
-msgstr "Department of Electronics"
-
-#~ msgid "Sponsors"
-#~ msgstr "Sponsors"
-
-#: src/components/sponsors/SponsorsSection.astro
 #: src/components/sponsors/SponsorsSection.astro
 msgid "Partners"
 msgstr "Partners"
@@ -143,13 +117,9 @@ msgid "Logo"
 msgstr "Logo"
 
 #: src/components/sponsors/SponsorsSection.astro
-msgid "Insist Elektrik"
-msgstr "Insist Elektrik"
-
-#: src/components/sponsors/SponsorsSection.astro
 msgid "General"
 msgstr "General"
 
 #: src/components/sponsors/SponsorsSection.astro
-msgid "Robots aren't built without machines, boards and the people who pay for them."
-msgstr "Robots aren't built without machines, boards and the people who pay for them."
+msgid "We are grateful to our sponsors for supporting our work and helping us learn, create, and compete."
+msgstr "We are grateful to our sponsors for supporting our work and helping us learn, create, and compete."
