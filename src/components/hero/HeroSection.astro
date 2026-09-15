@@ -1,0 +1,144 @@
+---
+import { MoveRight } from "@lucide/astro";
+import { defaultLocale, type Locale } from "@locales/config.js";
+
+const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const home = `/${locale}/`;
+
+// Parked with the ticker below until the application page exists.
+// const ticker = "Applications open / Join RUR / Lectures every week";
+//
+// Two identical halves; the marquee travels exactly one half, so it loops seamlessly.
+// const tickerHalf = [0, 1, 2, 3];
+---
+
+<section
+	class="relative flex flex-1 flex-col overflow-hidden bg-scaffold-deep lg:bg-background"
+>
+	<div class="relative flex flex-1 flex-col justify-center">
+		<!-- Constructivist scaffolding: a red wedge and two solids on small screens, -->
+		<!-- the full bar-and-rule frame from the desktop board at lg and up. -->
+		<div class="lg:hidden" aria-hidden="true">
+			<div
+				class="absolute inset-0 bg-primary"
+				style="clip-path: polygon(100% 0, 100% 100%, 52% 100%)"
+			>
+			</div>
+			<div
+				class="absolute top-6 -right-10 size-32.5 rounded-full border-12 border-ink"
+			>
+			</div>
+			<div class="absolute right-4 bottom-4 size-16 bg-tertiary"></div>
+		</div>
+		<div class="hidden lg:block" aria-hidden="true">
+			<div class="absolute inset-y-0 left-0 w-16 bg-primary"></div>
+			<div class="absolute inset-y-0 right-0 w-16 bg-tertiary"></div>
+			<div class="absolute inset-y-0 left-28 w-1.25 bg-ink"></div>
+			<div class="absolute inset-y-0 right-28 w-1.25 bg-ink"></div>
+			<div class="absolute top-29.5 left-0 h-1.25 w-47.5 bg-ink"></div>
+			<div class="absolute right-0 bottom-33.5 h-1.25 w-47.5 bg-ink">
+			</div>
+			<div class="absolute top-30.75 left-16 h-24 w-12 bg-secondary">
+			</div>
+			<div class="absolute top-0 left-29.25 h-29.5 w-9 bg-tertiary"></div>
+			<div class="absolute right-16 bottom-0 h-33.5 w-12 bg-secondary">
+			</div>
+			<div
+				class="absolute right-29.25 bottom-34.75 h-17.5 w-9 bg-primary"
+			>
+			</div>
+		</div>
+
+		<div
+			class="relative px-5 pt-10 pb-13 lg:flex lg:flex-col lg:items-center lg:px-45 lg:pt-22 lg:pb-23 lg:text-center"
+		>
+			<h1
+				class="font-display text-[54px] leading-[.88] font-bold tracking-[-.015em] text-ink uppercase lg:text-[106px] lg:leading-[.86]"
+			>
+				We build robots<br />
+				<span
+					class="mt-1.5 inline-block bg-ink px-2 py-1 text-[38px] leading-[.88] text-secondary lg:mt-3.5 lg:bg-primary lg:px-3 lg:py-1.5 lg:text-[106px] lg:leading-[.86] lg:text-white"
+					>that compete.</span
+				>
+			</h1>
+			<p
+				class="mt-6 max-w-60 text-[15px] leading-normal text-ink lg:mt-8 lg:max-w-150 lg:text-lg lg:leading-[1.55]"
+			>
+				The student robotics club at the School of Electrical
+				Engineering, University of Belgrade. Our robots race the clock
+				at Eurobot.
+			</p>
+			<div
+				class="mt-6 flex max-w-60 flex-col gap-2.5 lg:mt-9 lg:max-w-none lg:flex-row lg:gap-3.5"
+			>
+				<!-- Parked until the application page exists.
+				<a
+					href={`${home}#join`}
+					class="group wipe wipe-left wipe-primary flex items-center justify-center gap-2.5 bg-ink px-5 py-4 font-display text-[15px] tracking-widest text-white uppercase lg:px-7 lg:text-base"
+				>
+					<span>Join us</span>
+					<MoveRight
+						class="size-5 transition-transform group-hover:translate-x-0.5"
+					/>
+				</a>
+				-->
+				<a
+					href={`${home}#projects`}
+					class="group wipe wipe-left wipe-ink flex items-center justify-center gap-2.5 border-3 border-ink px-5 py-4 font-display text-[15px] tracking-widest text-ink uppercase lg:px-7 lg:text-base"
+				>
+					<span>Projects</span>
+					<MoveRight
+						class="size-5 transition-transform group-hover:translate-x-0.5"
+					/>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Parked until the application page exists.
+	<div
+		class="hidden h-10.5 items-center overflow-hidden border-t-3 border-ink bg-secondary lg:flex"
+		aria-hidden="true"
+	>
+		<div class="ticker flex w-max">
+			<span class="flex shrink-0">
+				{ tickerHalf.map(() => (
+					<span class="pr-6 font-display text-sm tracking-[.18em] whitespace-nowrap text-ink uppercase">
+						{ticker} /
+					</span>
+				)) }
+			</span>
+			<span class="flex shrink-0">
+				{ tickerHalf.map(() => (
+					<span class="pr-6 font-display text-sm tracking-[.18em] whitespace-nowrap text-ink uppercase">
+						{ticker} /
+					</span>
+				)) }
+			</span>
+		</div>
+	</div>
+	-->
+</section>
+
+<style>
+	/* Parked with the ticker markup.
+	@keyframes ticker {
+		from {
+			transform: translate3d(0, 0, 0);
+		}
+		to {
+			transform: translate3d(-50%, 0, 0);
+		}
+	}
+
+	.ticker {
+		animation: ticker 26s linear infinite;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.ticker {
+			animation: none;
+		}
+	}
+	*/
+</style>

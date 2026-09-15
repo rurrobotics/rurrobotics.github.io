@@ -1,7 +1,8 @@
 ---
 interface Props {
 	id?: string;
-	color?: "primary" | "secondary" | "accent" | "tertiary" | "black";
+	color?:
+		"primary" | "secondary" | "accent" | "tertiary" | "black" | "scaffold";
 	class?: string;
 }
 
@@ -12,10 +13,16 @@ const hasLink = Astro.slots.has("link");
 <section
 	{id}
 	class:list={["bg-background text-foreground", className]}
-	style={color && `background: var(--${color}); color: var(--${color}-foreground)`}
+	style={color &&
+		`background: var(--${color}); color: var(--${color}-foreground)`}
 >
 	<div class="mx-auto container px-5 py-10 sm:px-10 md:px-15 md:py-14">
-		<div class:list={[hasLink && "grid gap-x-6 sm:grid-cols-[1fr_auto] sm:items-baseline"]}>
+		<div
+			class:list={[
+				hasLink &&
+					"grid gap-x-6 sm:grid-cols-[1fr_auto] sm:items-baseline",
+			]}
+		>
 			<slot name="title" />
 			<div class="min-w-0 sm:col-span-2">
 				<slot />

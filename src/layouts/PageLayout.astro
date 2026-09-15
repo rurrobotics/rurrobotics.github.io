@@ -1,16 +1,44 @@
 ---
 import Layout from "./Layout.astro";
+import Navbar from "@components/layout/Navbar.astro";
+import Footer from "@components/layout/Footer.astro";
 import SectionRow from "@components/common/SectionRow.astro";
 import JoinSection from "@components/join/JoinSection.astro";
 import ContactSection from "@components/contact/ContactSection.astro";
+
+interface Props {
+	/** Article pages close with contact alone; the landing page pairs it with the call to join. */
+	join?: boolean;
+}
+
+const { join = true } = Astro.props;
+
+// A page that fills the "hero" slot gets navbar + hero sized to one screenful;
+// every other page keeps the navbar at its natural height.
+const hasHero = Astro.slots.has("hero");
 ---
 
 <Layout>
-    <!-- TODO: Add navbar -->
-    <slot />
-    <SectionRow split={0.6}>
-        <JoinSection />
-        <ContactSection />
-    </SectionRow>
-    <!-- TODO: Add footer -->
+	{
+		hasHero ? (
+			<div class="flex min-h-svh flex-col">
+				<Navbar />
+				<slot name="hero" />
+			</div>
+		) : (
+			<Navbar />
+		)
+	}
+	<slot />
+	{
+		join ? (
+			<SectionRow split={0.6}>
+				<JoinSection />
+				<ContactSection />
+			</SectionRow>
+		) : (
+			<ContactSection />
+		)
+	}
+	<Footer />
 </Layout>

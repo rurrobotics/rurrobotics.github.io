@@ -2,6 +2,10 @@
 import { getCollection, render } from "astro:content";
 import { parseArticleId, type Article } from "@/articles";
 import PageLayout from "@layouts/PageLayout.astro";
+import ArticleMasthead from "@components/articles/ArticleMasthead.astro";
+import ArticleToc from "@components/articles/ArticleToc.astro";
+import ArticleShare from "@components/articles/ArticleShare.astro";
+import MoreArticles from "@components/articles/MoreArticles.astro";
 
 export async function getStaticPaths() {
 	const articles = await getCollection(
@@ -19,15 +23,28 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
+
+const shareUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url).href;
 ---
 
-<PageLayout>
-	<article
-		class="prose mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 md:px-12 md:py-16"
+<PageLayout join={false}>
+	<ArticleMasthead article={entry} />
+
+	<div
+		class="container mx-auto grid items-start gap-10 px-5 py-10 sm:px-10 md:px-15 md:py-14 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-14"
 	>
-		<Content />
-	</article>
+		<article class="prose w-full max-w-225">
+			<Content />
+		</article>
+		<!-- The rail is desktop-only: below lg it would land under the text it indexes. -->
+		<aside class="hidden flex-col gap-6 lg:sticky lg:top-6 lg:flex">
+			<ArticleToc headings={headings} />
+			<ArticleShare url={shareUrl} title={entry.data.title} />
+		</aside>
+	</div>
+
+	<MoreArticles current={entry} />
 </PageLayout>
 
 <script>

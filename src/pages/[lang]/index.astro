@@ -1,4 +1,5 @@
 ---
+import HeroSection from "@components/hero/HeroSection.astro";
 import AboutSection from "@components/about/AboutSection.astro";
 import ProjectsSection from "@components/projects/ProjectsSection.astro";
 import ArticlesSection from "@components/articles/ArticlesSection.astro";
@@ -11,6 +12,7 @@ export { getStaticPaths } from "../../locales/utils";
 ---
 
 <PageLayout>
+	<HeroSection slot="hero" />
 	<AboutSection />
 	<ProjectsSection />
 	<SectionRow>

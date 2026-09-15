@@ -66,6 +66,10 @@
 	--wipe-accent: var(--black);
 	--wipe-accent-fg: var(--black-foreground);
 }
+.wipe-ink {
+	--wipe-accent: var(--ink);
+	--wipe-accent-fg: var(--ink-foreground);
+}
 .wipe-muted {
 	--wipe-accent: var(--muted);
 	--wipe-accent-fg: var(--muted-foreground);

@@ -1,23 +1,35 @@
 ---
-import { MoveRight } from "@lucide/astro";
+// Parked with the button below until the application page exists.
+// import { MoveRight } from "@lucide/astro";
 import Section from "@components/common/Section.astro";
 import SectionTitle from "@components/common/SectionTitle.astro";
 
 // TODO: link to the application form
-const applicationUrl = "#";
+// const applicationUrl = "#";
 ---
 
-<Section id="join" color="primary">
+<Section id="join" color="primary" class="relative overflow-hidden">
 	<SectionTitle slot="title" size="large" dot={false}>Join us</SectionTitle>
-	<p class="max-w-184 text-lg leading-relaxed text-black">
-		Admission is open to all students. All you need is the will to learn; we'll teach you the rest in the lab.
-	</p>
-	<a
-		href={applicationUrl}
-		class="group wipe wipe-left wipe-black mt-8 inline-flex items-center gap-3 border-4 border-black bg-background px-6 py-3 font-mono text-sm font-bold uppercase tracking-widest text-foreground"
+	<div
+		class="pointer-events-none absolute -right-15 -bottom-20 size-47.5 rounded-full border-14 border-ink md:-right-17.5 md:-bottom-27.5 md:size-65 md:border-16"
+		aria-hidden="true"
 	>
-		<span>Send application</span>
-		<MoveRight class="size-5 transition-transform group-hover:translate-x-0.5" />
-	</a>
+	</div>
+	<div class="relative">
+		<p class="max-w-184 text-lg leading-relaxed text-black">
+			Admission is open to all students. All you need is the will to
+			learn; we'll teach you the rest in the lab.
+		</p>
+		<!-- Parked until the application page exists.
+		<a
+			href={applicationUrl}
+			class="group wipe wipe-left wipe-black mt-8 inline-flex items-center gap-3 border-4 border-black bg-background px-6 py-3 font-mono text-sm font-bold tracking-widest text-foreground uppercase"
+		>
+			<span>Send application</span>
+			<MoveRight
+				class="size-5 transition-transform group-hover:translate-x-0.5"
+			/>
+		</a>
+		-->
+	</div>
 </Section>
-

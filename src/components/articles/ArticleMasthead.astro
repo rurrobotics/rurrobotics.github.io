@@ -1,0 +1,128 @@
+---
+import {
+	isEventCategory,
+	type Article,
+	type ArticleCategory,
+} from "@/articles";
+import { defaultLocale, localeTags, type Locale } from "@locales/config.js";
+import Badge from "@components/common/Badge.astro";
+
+interface Props {
+	article: Article;
+}
+
+const { article } = Astro.props;
+const { data } = article;
+
+const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const localeTag = localeTags[locale];
+
+// Duplicated from ArticleCard rather than shared from articles.ts: wuchale only
+// extracts from .astro, so labels moved into a .ts file would lose translation.
+const categoryColors = {
+	meetup: "primary",
+	lecture: "accent",
+	news: "tertiary",
+	writeup: "secondary",
+} as const satisfies Record<ArticleCategory, string>;
+
+const categoryLabels = {
+	meetup: "Meetup",
+	lecture: "Lecture",
+	news: "News",
+	writeup: "Writeup",
+} as const satisfies Record<ArticleCategory, string>;
+
+const isEvent = isEventCategory(data.category);
+const eventDate = "eventDate" in data ? data.eventDate : undefined;
+
+const publishedFmt = new Intl.DateTimeFormat(localeTag, {
+	day: "2-digit",
+	month: "2-digit",
+	year: "numeric",
+});
+const dayFmt = new Intl.DateTimeFormat(localeTag, { day: "2-digit" });
+const monthFmt = new Intl.DateTimeFormat(localeTag, { month: "short" });
+const eventFmt = new Intl.DateTimeFormat(localeTag, {
+	day: "numeric",
+	month: "long",
+	year: "numeric",
+	hour: "2-digit",
+	minute: "2-digit",
+});
+---
+
+<header class="relative overflow-hidden border-b-3 border-ink bg-background">
+	<div aria-hidden="true">
+		<div class="absolute inset-y-0 left-0 w-5 bg-primary lg:w-14"></div>
+		<div class="absolute inset-y-0 right-0 w-5 bg-tertiary lg:w-14"></div>
+		<div class="absolute inset-y-0 left-14 hidden w-1.25 bg-ink lg:block">
+		</div>
+		<div class="absolute inset-y-0 right-14 hidden w-1.25 bg-ink lg:block">
+		</div>
+	</div>
+
+	<div class="relative px-9 pt-8 pb-7.5 lg:px-35 lg:pt-14 lg:pb-13">
+		<div
+			class="mb-4.5 flex flex-wrap items-center gap-2.5 font-mono text-[10px] tracking-[.14em] lg:mb-6.5 lg:gap-3.5 lg:text-xs"
+		>
+			<a
+				href={`/${locale}/articles/`}
+				class="hidden text-ink-muted uppercase lg:inline"
+			>
+				Articles
+			</a>
+			<span class="hidden text-ink-faint lg:inline" aria-hidden="true"
+				>/</span
+			>
+			<Badge
+				label={categoryLabels[data.category]}
+				color={categoryColors[data.category]}
+				variant="solid"
+				class="font-bold tracking-[.14em] uppercase"
+			/>
+			<span class="text-ink-muted">
+				{publishedFmt.format(data.date)}{
+					data.author && ` · ${data.author}`
+				}
+			</span>
+		</div>
+
+		<h1
+			class="font-display text-[46px] leading-[.95] font-bold text-ink uppercase lg:max-w-225 lg:text-[82px] lg:leading-[.94] lg:tracking-[-.01em]"
+		>
+			{data.title}
+		</h1>
+
+		{
+			data.description && (
+				<p class="mt-5 max-w-190 border-l-8 border-primary pl-4 text-base leading-normal text-ink lg:mt-6.5 lg:border-l-10 lg:pl-5.5 lg:text-xl">
+					{data.description}
+				</p>
+			)
+		}
+
+		{
+			isEvent && eventDate && (
+				<div class="mt-6 inline-flex items-stretch border-3 border-ink lg:mt-8">
+					<span class="flex flex-col justify-center border-r-3 border-ink bg-secondary px-3.5 py-2.5 text-center font-display text-ink lg:px-4 lg:py-3">
+						<span class="text-2xl leading-none lg:text-3xl">
+							{dayFmt.format(eventDate)}
+						</span>
+						<span class="font-mono text-[10px] tracking-widest lg:text-[11px]">
+							{monthFmt.format(eventDate)}
+						</span>
+					</span>
+					<span class="flex flex-col justify-center gap-1 px-3.5 py-2.5 lg:px-4.5 lg:py-3">
+						<span class="font-mono text-[10px] tracking-[.12em] text-ink-muted uppercase lg:text-[11px]">
+							Event time
+						</span>
+						<span class="font-display text-[17px] text-ink lg:text-xl">
+							{eventFmt.format(eventDate)}
+						</span>
+					</span>
+				</div>
+			)
+		}
+	</div>
+</header>

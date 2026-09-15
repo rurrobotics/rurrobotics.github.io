@@ -1,0 +1,72 @@
+---
+import { getArticles, getEventArticles, isEventCategory } from "@/articles";
+import { defaultLocale, type Locale } from "@locales/config.js";
+import PageLayout from "@layouts/PageLayout.astro";
+import Section from "@components/common/Section.astro";
+import SectionTitle from "@components/common/SectionTitle.astro";
+import ArticleCard from "@components/common/ArticleCard.astro";
+
+export { getStaticPaths } from "@locales/utils";
+
+const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+
+const events = await getEventArticles(locale);
+const articles = (await getArticles(locale)).filter(
+	(article) => !isEventCategory(article.data.category),
+);
+
+// The home page shows a handful of each; here every entry is listed.
+const now = Date.now();
+const upcoming = events
+	.filter((event) => event.data.eventDate.valueOf() >= now)
+	.sort((a, b) => a.data.eventDate.valueOf() - b.data.eventDate.valueOf());
+const past = events
+	.filter((event) => event.data.eventDate.valueOf() < now)
+	.sort((a, b) => b.data.eventDate.valueOf() - a.data.eventDate.valueOf());
+---
+
+<PageLayout>
+	<Section id="events">
+		<SectionTitle slot="title" size="large">Events</SectionTitle>
+		{
+			upcoming.length === 0 ? (
+				<p class="font-mono text-sm text-muted">No upcoming events.</p>
+			) : (
+				<ul class="grid grid-cols-1 gap-6">
+					{upcoming.map((event) => (
+						<ArticleCard article={event} />
+					))}
+				</ul>
+			)
+		}
+		{
+			past.length > 0 && (
+				<div>
+					<h3 class="mt-10 mb-6 font-display text-2xl font-bold text-muted uppercase">
+						Past events
+					</h3>
+					<ul class="grid grid-cols-1 gap-6">
+						{past.map((event) => (
+							<ArticleCard article={event} past />
+						))}
+					</ul>
+				</div>
+			)
+		}
+	</Section>
+
+	<Section id="articles" color="tertiary">
+		<SectionTitle slot="title" size="large">Articles</SectionTitle>
+		{
+			articles.length === 0 ? (
+				<p class="font-mono text-sm opacity-75">No articles yet.</p>
+			) : (
+				<ul class="grid grid-cols-1 gap-6">
+					{articles.map((article) => (
+						<ArticleCard article={article} />
+					))}
+				</ul>
+			)
+		}
+	</Section>
+</PageLayout>

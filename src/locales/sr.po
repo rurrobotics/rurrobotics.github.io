@@ -11,26 +11,34 @@ msgstr ""
 msgid "RUR Robotics"
 msgstr "RUR Robotika"
 
+#: src/components/hero/HeroSection.astro
+#: src/components/layout/Navbar.astro
 #: src/components/projects/ProjectsSection.astro
 msgid "Projects"
 msgstr "Projekti"
 
+#: src/components/articles/ArticleMasthead.astro
 #: src/components/common/ArticleCard.astro
 msgid "Lecture"
 msgstr "Predavanje"
 
 #: src/components/events/EventsSection.astro
+#: src/components/layout/Navbar.astro
+#: src/pages/[lang]/articles/index.astro
 msgid "Events"
 msgstr "Dešavanja"
 
 #: src/components/events/EventsSection.astro
+#: src/pages/[lang]/articles/index.astro
 msgid "No upcoming events."
 msgstr "Nema nadolazećih dešavanja"
 
 #: src/components/events/EventsSection.astro
+#: src/pages/[lang]/articles/index.astro
 msgid "Past events"
 msgstr "Prošla dešavanja"
 
+#: src/components/articles/ArticleMasthead.astro
 #: src/components/common/ArticleCard.astro
 msgid "Meetup"
 msgstr "Okupljanje"
@@ -47,23 +55,30 @@ msgstr "Tim"
 msgid "Founded in 2023 as a <0>Eurobot</0> team, we've since grown into the robotics club of the School of Electrical Engineering at the University of Belgrade. Our members come from faculties across the university, building autonomous robots that bring together mechanics, electronics and software."
 msgstr "Osnovani 2023. kao <0>Eurobot</0> tim, od tada smo prerasli u klub robotike Elektrotehničkog fakulteta Univerziteta u Beogradu. Naši članovi dolaze sa različitih fakulteta i zajedno prave autonomne robote koji spajaju mehaniku, elektroniku i softver."
 
+#: src/components/articles/ArticleMasthead.astro
 #: src/components/common/ArticleCard.astro
 msgid "News"
 msgstr "Vesti"
 
+#: src/components/articles/ArticleMasthead.astro
 #: src/components/common/ArticleCard.astro
 msgid "Writeup"
 msgstr "Tekst"
 
 #: src/components/articles/ArticlesSection.astro
+#: src/pages/[lang]/articles/index.astro
 msgid "No articles yet."
 msgstr "Još nema članaka."
 
+#: src/components/articles/ArticleMasthead.astro
 #: src/components/articles/ArticlesSection.astro
+#: src/components/layout/Navbar.astro
+#: src/pages/[lang]/articles/index.astro
 msgid "Articles"
 msgstr "Članci"
 
 #: src/components/articles/ArticlesSection.astro
+#: src/components/articles/MoreArticles.astro
 msgid "All articles"
 msgstr "Svi članci"
 
@@ -71,9 +86,8 @@ msgstr "Svi članci"
 msgid "All events"
 msgstr "Sva dešavanja"
 
-#: src/components/join/JoinSection.astro
-msgid "Send application"
-msgstr "Pošalji prijavu"
+#~ msgid "Send application"
+#~ msgstr "Pošalji prijavu"
 
 #: src/components/join/JoinSection.astro
 msgid "Join us"
@@ -103,6 +117,7 @@ msgstr "Elektrotehnički fakultet, Bulevar kralja Aleksandra 73, Beograd"
 msgid "Contact"
 msgstr "Kontakt"
 
+#: src/components/layout/Navbar.astro
 #: src/components/sponsors/SponsorsSection.astro
 #: src/components/sponsors/SponsorsSection.astro
 msgid "Partners"
@@ -123,3 +138,73 @@ msgstr "Generalni"
 #: src/components/sponsors/SponsorsSection.astro
 msgid "We are grateful to our sponsors for supporting our work and helping us learn, create, and compete."
 msgstr "Zahvaljujemo se našim sponzorima na podršci i na tome što nam omogućavaju da učimo, stvaramo i da se takmičimo."
+
+#~ msgid "All past events"
+#~ msgstr "Сва прошла дешавања"
+
+#~ msgid "CNC Obrada"
+#~ msgstr "CNC Obrada"
+
+#~ msgid "Telix"
+#~ msgstr "Telix"
+
+#~ msgid "Zanus"
+#~ msgstr "Zanus"
+
+#~ msgid "Student Parliament"
+#~ msgstr "Студентски парламент"
+
+#~ msgid "Department of Electronics"
+#~ msgstr "Катедра за електронику"
+
+#~ msgid "Sponsors"
+#~ msgstr "Спонзори"
+
+#~ msgid "Insist Elektrik"
+#~ msgstr "Insist Elektrik"
+
+#~ msgid "Robots aren't built without machines, boards and the people who pay for them."
+#~ msgstr "Роботи се не праве без машина, плоча и људи који их плаћају."
+
+#: src/components/layout/Navbar.astro
+msgid "Menu"
+msgstr "Meni"
+
+#: src/components/layout/Footer.astro
+msgid "RUR Robotics · ETF · Belgrade"
+msgstr "RUR Robotics · ETF · Beograd"
+
+#~ msgid "Applications open / Join RUR / Lectures every week"
+#~ msgstr "Prijave u toku / Upiši se u RUR / Predavanja svake nedelje"
+
+#: src/components/hero/HeroSection.astro
+msgid "We build robots<0/> <1>that compete.</1>"
+msgstr "Pravimo robote<0/> <1>koji se takmiče.</1>"
+
+#: src/components/hero/HeroSection.astro
+msgid "The student robotics club at the School of Electrical Engineering, University of Belgrade. Our robots race the clock at Eurobot."
+msgstr "Studentski klub robotike na Elektrotehničkom fakultetu Univerziteta u Beogradu. Naši roboti trkaju se sa vremenom na Evrobotu."
+
+#: src/components/articles/ArticleMasthead.astro
+msgid "Event time"
+msgstr "Termin"
+
+#: src/components/articles/ArticleToc.astro
+msgid "Contents"
+msgstr "Sadržaj"
+
+#: src/components/articles/ArticleShare.astro
+msgid "Share on LinkedIn"
+msgstr "Podeli na LinkedIn-u"
+
+#: src/components/articles/ArticleShare.astro
+msgid "Copy link"
+msgstr "Kopiraj link"
+
+#: src/components/articles/ArticleShare.astro
+msgid "Share"
+msgstr "Podeli"
+
+#: src/components/articles/MoreArticles.astro
+msgid "More articles"
+msgstr "Još članaka"

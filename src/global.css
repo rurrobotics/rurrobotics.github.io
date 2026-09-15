@@ -26,7 +26,15 @@
 	--muted: var(--color-neutral-500);
 	--muted-foreground: #ffffff;
 	--border: #000000;
+	/* Ink and scaffold grounds carry the chrome: navbar, hero and footer. */
+	--ink: #111111;
+	--ink-foreground: #ffffff;
+	--ink-soft: #3a3831;
 	--ink-muted: #55503f;
+	--ink-faint: #b9b2a2;
+	--scaffold: #f2efe7;
+	--scaffold-foreground: #111111;
+	--scaffold-deep: #e4dfd0;
 }
 
 .dark {
@@ -51,7 +59,14 @@
 	--color-tertiary: var(--tertiary);
 	--color-tertiary-foreground: var(--tertiary-foreground);
 	--color-border: var(--border);
+	--color-ink: var(--ink);
+	--color-ink-foreground: var(--ink-foreground);
+	--color-ink-soft: var(--ink-soft);
 	--color-ink-muted: var(--ink-muted);
+	--color-ink-faint: var(--ink-faint);
+	--color-scaffold: var(--scaffold);
+	--color-scaffold-foreground: var(--scaffold-foreground);
+	--color-scaffold-deep: var(--scaffold-deep);
 }
 
 @layer base {

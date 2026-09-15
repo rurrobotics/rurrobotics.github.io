@@ -1,0 +1,198 @@
+---
+import { defaultLocale, type Locale } from "@locales/config.js";
+
+const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const home = `/${locale}/`;
+
+// @wc-ignore
+const wordmark = "RUR Robotics";
+
+// @wc-ignore
+const localeLabels = {
+	en: "EN",
+	sr: "SR",
+	"sr-Cyrl": "СР",
+} as const satisfies Record<Locale, string>;
+
+// @wc-ignore
+const localeOrder = ["en", "sr", "sr-Cyrl"] as const;
+
+// The path without its locale segment, so switching language keeps the reader on the same page.
+const rest = Astro.url.pathname.split("/").filter(Boolean).slice(1).join("/");
+const localeHref = (target: Locale) => `/${target}/${rest && `${rest}/`}`;
+
+// An article has no section of its own, so the design marks Articles as current.
+const onArticles = Astro.url.pathname.includes("/articles");
+const isCurrent = (hash: string) => hash === "#articles" && onArticles;
+
+// Anchors are absolute so the nav also works from an article page.
+const links = [
+	{ hash: "#projects", label: "Projects" },
+	{ hash: "#events", label: "Events" },
+	{ hash: "#articles", label: "Articles" },
+	{ hash: "#sponsors", label: "Partners" },
+];
+---
+
+<header class="flex items-center justify-between bg-ink px-4 py-3 lg:hidden">
+	<a
+		href={home}
+		class="font-display text-[17px] font-bold tracking-[.06em] text-white uppercase"
+	>
+		{wordmark}
+	</a>
+	<div class="flex items-center gap-4">
+		<span
+			class="font-mono text-[11px] font-bold tracking-[.08em] text-secondary"
+		>
+			{localeLabels[locale]}
+		</span>
+		<button
+			type="button"
+			data-nav-toggle
+			aria-controls="nav-panel"
+			aria-expanded="false"
+			aria-label="Menu"
+			class="flex cursor-pointer flex-col gap-[5px] p-1"
+		>
+			<span class="h-[3px] w-6 bg-white"></span>
+			<span class="h-[3px] w-6 bg-white"></span>
+			<span class="h-[3px] w-6 bg-white"></span>
+		</button>
+	</div>
+</header>
+
+<div
+	id="nav-panel"
+	data-nav-panel
+	hidden
+	class="border-t-3 border-ink-soft bg-ink lg:hidden"
+>
+	<nav class="flex flex-col">
+		{
+			links.map((link) => (
+				<a
+					href={`${home}${link.hash}`}
+					aria-current={isCurrent(link.hash) ? "page" : undefined}
+					class:list={[
+						"px-4 py-3.5 font-display text-lg tracking-widest uppercase",
+						isCurrent(link.hash)
+							? "bg-primary text-primary-foreground"
+							: "wipe wipe-left wipe-primary text-white",
+					]}
+				>
+					{link.label}
+				</a>
+			))
+		}
+		<!-- Parked until the application page exists.
+		<a
+			href={`${home}#join`}
+			class="wipe wipe-left wipe-primary bg-secondary px-4 py-3.5 font-display text-lg tracking-widest text-ink uppercase"
+		>
+			<span>Join us</span>
+		</a>
+		-->
+	</nav>
+	<div
+		class="flex gap-1 border-t-3 border-ink-soft px-4 py-3 font-mono text-xs tracking-[.08em]"
+	>
+		{
+			localeOrder.map((target) => (
+				<a
+					href={localeHref(target)}
+					class:list={[
+						"px-2.5 py-1",
+						target === locale
+							? "bg-secondary font-bold text-ink"
+							: "text-ink-faint",
+					]}
+				>
+					{localeLabels[target]}
+				</a>
+			))
+		}
+	</div>
+</div>
+
+<header
+	class="hidden border-b-3 border-ink bg-scaffold lg:flex lg:items-stretch lg:justify-between"
+>
+	<a
+		href={home}
+		class="flex items-center px-8 py-4 font-display text-xl font-bold tracking-[.06em] text-ink uppercase"
+	>
+		{wordmark}
+	</a>
+	<nav
+		class="flex items-stretch font-display text-sm tracking-widest uppercase"
+	>
+		{
+			links.map((link) => (
+				<a
+					href={`${home}${link.hash}`}
+					aria-current={isCurrent(link.hash) ? "page" : undefined}
+					class:list={[
+						"flex items-center px-4",
+						isCurrent(link.hash)
+							? "bg-primary text-primary-foreground"
+							: "wipe wipe-left wipe-primary text-ink",
+					]}
+				>
+					{link.label}
+				</a>
+			))
+		}
+		<!-- Parked until the application page exists.
+		<a
+			href={`${home}#join`}
+			class="wipe wipe-left wipe-primary ml-3 flex items-center bg-secondary px-6 text-ink"
+		>
+			<span>Join us</span>
+		</a>
+		-->
+		<span
+			class="flex items-center px-2 font-mono text-xs tracking-[.08em] normal-case"
+		>
+			{
+				localeOrder.map((target) => (
+					<a
+						href={localeHref(target)}
+						class:list={[
+							"px-2.5 py-1",
+							target === locale
+								? "bg-secondary font-bold text-ink"
+								: "text-ink-muted",
+						]}
+					>
+						{localeLabels[target]}
+					</a>
+				))
+			}
+		</span>
+	</nav>
+</header>
+
+<script>
+	const toggle =
+		document.querySelector<HTMLButtonElement>("[data-nav-toggle]");
+	const panel = document.querySelector<HTMLElement>("[data-nav-panel]");
+
+	if (toggle && panel) {
+		const setOpen = (open: boolean) => {
+			toggle.setAttribute("aria-expanded", String(open));
+			panel.hidden = !open;
+		};
+
+		toggle.addEventListener("click", () =>
+			setOpen(toggle.getAttribute("aria-expanded") !== "true"),
+		);
+
+		// Picking a section closes the panel so the target isn't hidden behind it.
+		panel
+			.querySelectorAll("a")
+			.forEach((link) =>
+				link.addEventListener("click", () => setOpen(false)),
+			);
+	}
+</script>

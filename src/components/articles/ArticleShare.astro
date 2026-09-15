@@ -1,0 +1,78 @@
+---
+import { Check, Link } from "@lucide/astro";
+import BrandIcon from "@components/icons/BrandIcon.astro";
+
+interface Props {
+	/** Absolute URL of the article. */
+	url: string;
+	title: string;
+}
+
+const { url, title } = Astro.props;
+
+const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+
+const box =
+	"wipe wipe-left flex size-11 items-center justify-center border-2 border-ink text-ink";
+---
+
+<div>
+	<h2
+		class="mb-3 border-b-3 border-ink pb-2 font-display text-base tracking-[.08em] text-ink uppercase"
+	>
+		Share
+	</h2>
+	<div class="flex gap-2">
+		<a
+			href={linkedInUrl}
+			target="_blank"
+			rel="noopener noreferrer"
+			aria-label="Share on LinkedIn"
+			class:list={[box, "wipe-tertiary"]}
+		>
+			<BrandIcon name="linkedin" class="size-5" />
+		</a>
+		<button
+			type="button"
+			data-copy-link
+			data-url={url}
+			data-title={title}
+			aria-label="Copy link"
+			class:list={[box, "wipe-primary cursor-pointer"]}
+		>
+			<Link class="size-5" data-icon="link" />
+			<Check class="size-5" data-icon="check" hidden />
+		</button>
+	</div>
+</div>
+
+<script>
+	const button =
+		document.querySelector<HTMLButtonElement>("[data-copy-link]");
+	const link = button?.querySelector<SVGElement>("[data-icon='link']");
+	const check = button?.querySelector<SVGElement>("[data-icon='check']");
+
+	button?.addEventListener("click", async () => {
+		const url = button.dataset.url;
+		if (!url) return;
+
+		try {
+			// The share sheet is the better affordance where the browser has one.
+			if (navigator.share) {
+				await navigator.share({ title: button.dataset.title, url });
+				return;
+			}
+			await navigator.clipboard.writeText(url);
+		} catch {
+			return; // A dismissed share sheet or a denied clipboard is not a failure worth reporting.
+		}
+
+		if (!link || !check) return;
+		link.hidden = true;
+		check.hidden = false;
+		setTimeout(() => {
+			link.hidden = false;
+			check.hidden = true;
+		}, 1500);
+	});
+</script>

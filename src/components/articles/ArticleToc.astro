@@ -1,0 +1,43 @@
+---
+import type { MarkdownHeading } from "astro";
+
+interface Props {
+	headings: MarkdownHeading[];
+}
+
+const { headings } = Astro.props;
+
+// h1–h3 only; deeper headings would make the rail longer than the text it indexes.
+const items = headings.filter((heading) => heading.depth <= 3);
+
+const indents: Record<number, string> = {
+	1: "pl-2.5",
+	2: "pl-5.5",
+	3: "pl-8.5",
+};
+---
+
+{
+	items.length > 0 && (
+		<nav>
+			<h2 class="mb-3 border-b-3 border-ink pb-2 font-display text-base tracking-[.08em] text-ink uppercase">
+				Contents
+			</h2>
+			<ul class="flex flex-col gap-0.5 font-mono text-xs">
+				{items.map((heading) => (
+					<li>
+						<a
+							href={`#${heading.slug}`}
+							class:list={[
+								"wipe wipe-left wipe-secondary block py-1.75 pr-2.5 text-ink-soft",
+								indents[heading.depth],
+							]}
+						>
+							{heading.text}
+						</a>
+					</li>
+				))}
+			</ul>
+		</nav>
+	)
+}

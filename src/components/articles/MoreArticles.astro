@@ -1,0 +1,36 @@
+---
+import { getArticles, type Article } from "@/articles";
+import { defaultLocale, type Locale } from "@locales/config.js";
+import Section from "@components/common/Section.astro";
+import SectionTitle from "@components/common/SectionTitle.astro";
+import SectionLink from "@components/common/SectionLink.astro";
+import ArticleCard from "@components/common/ArticleCard.astro";
+
+interface Props {
+	/** The article being read, so it doesn't list itself. */
+	current: Article;
+}
+
+const { current } = Astro.props;
+
+const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const articles = (await getArticles(locale))
+	.filter((article) => article.id !== current.id)
+	.slice(0, 3);
+---
+
+{
+	articles.length > 0 && (
+		<Section id="more-articles" color="scaffold">
+			<SectionTitle slot="title">More articles</SectionTitle>
+			<SectionLink slot="link" href={`/${locale}/articles/`}>
+				All articles
+			</SectionLink>
+			<ul class="grid gap-4 lg:grid-cols-3">
+				{articles.map((article) => (
+					<ArticleCard article={article} />
+				))}
+			</ul>
+		</Section>
+	)
+}
