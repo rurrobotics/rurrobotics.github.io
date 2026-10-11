@@ -123,3 +123,12 @@ msgstr "Генерални"
 #: src/components/sponsors/SponsorsSection.astro
 msgid "We are grateful to our sponsors for supporting our work and helping us learn, create, and compete."
 msgstr "Захваљујемо се нашим спонзорима на подршци и на томе што нам омогућавају да учимо, стварамо и да се такмичимо."
+
+#: src/components/layout/Footer.astro
+msgid "Source"
+msgstr "Изворни код"
+
+#. 0: year
+#: src/components/layout/Footer.astro
+msgid "© 2023–{0} RUR Robotics. All rights reserved."
+msgstr "© 2023–{0} РУР Роботика. Сва права задржана."
