@@ -75,23 +75,8 @@
 .prose strong {
 	@apply font-semibold shadow-[inset_0_-0.4em_0_var(--secondary)];
 }
-/* Same wipe as .card in ProjectCard.astro, anchored to the bottom so the fill
-   rises out of the underline rather than sweeping in from the left. */
-.prose a {
-	@apply border-b-4 border-primary pb-px font-normal text-foreground no-underline;
-	background-image: linear-gradient(var(--primary), var(--primary));
-	background-repeat: no-repeat;
-	background-position: bottom;
-	background-size: 100% 0%;
-	transition:
-		background-size 0.15s ease,
-		color 0.1s ease;
-}
-.prose a:hover {
-	background-size: 100% 100%;
-	color: var(--primary-foreground);
-	transition-delay: 150ms;
-}
+/* Links are the universal `.link` style — see wipe.css, which targets
+   `.prose a` directly so article links need no class of their own. */
 .prose hr {
 	@apply my-10 h-1.5 border-0 bg-foreground;
 }
