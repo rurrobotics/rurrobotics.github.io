@@ -1,16 +1,18 @@
 ---
 import { Mail, MapPin, Phone } from "@lucide/astro";
+import { defaultLocale, type Locale } from "@locales/config.js";
 import Section from "@components/common/Section.astro";
 import SectionTitle from "@components/common/SectionTitle.astro";
 import SocialLink from "@components/common/SocialLink.astro";
 
-const email = "rur@etf.bg.ac.rs";
-const phone = "+381 11 3218 300";
+const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const email = locale === "en" ? "contact@rurrobotics.com" : "kontakt@rurrobotics.com";
+const phone: string | null = null;
 
 const socials = [
 	{ network: "instagram", href: "https://instagram.com/rurrobotics" },
 	// TODO: link to the LinkedIn page
-	{ network: "linkedin", href: "#" },
+	{ network: "linkedin", href: "https://linkedin.com/company/rur-robotics" },
 	{ network: "github", href: "https://github.com/rurrobotics" },
 ] as const;
 ---
@@ -19,15 +21,19 @@ const socials = [
 	<SectionTitle slot="title" color="secondary">Contact</SectionTitle>
 	<ul class="space-y-4 text-lg">
 		<li class="flex items-start gap-4">
-			<Mail class="mt-0.5 size-6 shrink-0 text-secondary" />
+			<Mail class="mt-0.5 size-6 shrink-0" />
 			<a href={`mailto:${email}`} class="link wipe-secondary">{email}</a>
 		</li>
-		<li class="flex items-start gap-4">
-			<Phone class="mt-0.5 size-6 shrink-0 text-secondary" />
-			<a href={`tel:${phone.replaceAll(" ", "")}`} class="link wipe-secondary">
-				{phone}
-			</a>
-		</li>
+		{
+			phone && (
+				<li class="flex items-start gap-4">
+					<Phone class="mt-0.5 size-6 shrink-0" />
+					<a href={`tel:${phone.replaceAll(" ", "")}`} class="link wipe-secondary">
+						{phone}
+					</a>
+				</li>
+			)
+		}
 		<li class="flex items-start gap-4">
 			<MapPin class="mt-0.5 size-6 shrink-0" />
 			<span>School of Electrical Engineering, Bulevar kralja Aleksandra 73, Belgrade</span>
