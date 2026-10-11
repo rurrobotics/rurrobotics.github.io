@@ -6,9 +6,15 @@
  *   <a class="wipe wipe-left wipe-primary">
  *
  * Deliberately unlayered: Tailwind's utilities layer would otherwise outrank
- * these rules and `text-*` classes on the element would beat the hover color. */
+ * these rules and `text-*` classes on the element would beat the hover color.
+ *
+ * `.prose a` is wrapped in `:where()` everywhere it appears below. `:is()` takes
+ * the specificity of its most specific argument, so a bare `.prose a` would lift
+ * these rules to (0,1,1) and the single-class variants below could never
+ * override them. `:where()` contributes nothing, keeping everything at (0,1,0)
+ * where source order decides. */
 
-.wipe {
+:is(.wipe, .link, :where(.prose a)) {
 	--wipe-accent: var(--foreground);
 	--wipe-accent-fg: var(--background);
 	--wipe-duration: 0.15s;
@@ -22,11 +28,26 @@
 		color 0.1s ease;
 }
 
-.wipe:hover,
-.wipe:focus-visible {
+:is(.wipe, .link, :where(.prose a)):is(:hover, :focus-visible) {
 	background-size: 100% 100%;
 	color: var(--wipe-accent-fg);
 	transition-delay: var(--wipe-delay);
+}
+
+/* Link: the universal inline text link. A thick underline in the accent, out of
+ * which the fill rises on hover. Takes the color variants like anything else:
+ *   <a class="link wipe-secondary">
+ * Kept above them so an explicit variant still wins over the default. */
+:is(.link, :where(.prose a)) {
+	--wipe-accent: var(--primary);
+	--wipe-accent-fg: var(--primary-foreground);
+	background-position: center bottom;
+	background-size: 100% 0%;
+	border-bottom: 4px solid var(--wipe-accent);
+	padding-bottom: 1px;
+	color: inherit;
+	font-weight: inherit;
+	text-decoration: none;
 }
 
 .wipe-left {

@@ -20,11 +20,11 @@ const socials = [
 	<ul class="space-y-4 text-lg">
 		<li class="flex items-start gap-4">
 			<Mail class="mt-0.5 size-6 shrink-0 text-secondary" />
-			<a href={`mailto:${email}`} class="text-secondary transition-colors hover:text-white">{email}</a>
+			<a href={`mailto:${email}`} class="link wipe-secondary">{email}</a>
 		</li>
 		<li class="flex items-start gap-4">
 			<Phone class="mt-0.5 size-6 shrink-0 text-secondary" />
-			<a href={`tel:${phone.replaceAll(" ", "")}`} class="text-secondary transition-colors hover:text-white">
+			<a href={`tel:${phone.replaceAll(" ", "")}`} class="link wipe-secondary">
 				{phone}
 			</a>
 		</li>
