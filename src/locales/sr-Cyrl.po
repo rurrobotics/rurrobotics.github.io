@@ -85,10 +85,6 @@ msgstr "Пошаљи пријаву"
 msgid "Join us"
 msgstr "Придружи се"
 
-#: src/components/join/JoinSection.astro
-msgid "Admission is open to all students. All you need is the will to learn; we'll teach you the rest in the lab."
-msgstr "Пријем је отворен свим студентима. Довољна је воља да учиш; остало те научимо у лабораторији."
-
 #: src/components/common/SocialLink.astro
 msgid "Instagram"
 msgstr "Instagram"
@@ -147,3 +143,7 @@ msgstr "Тим РУР Роботике"
 #: src/components/layout/Navbar.astro
 msgid "Menu"
 msgstr "Мени"
+
+#: src/components/join/JoinSection.astro
+msgid "Meet new people and learn from more experienced members while you compete. We take students from any faculty and any year, no background needed."
+msgstr "Упознај нове људе и учи од искуснијих док се такмичиш. Примамо студенте са свих факултета и свих година, без предзнања."
