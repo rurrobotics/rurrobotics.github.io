@@ -21,3 +21,7 @@ npx shadcn-svelte@latest add <name>   # add a UI component (lands in src/shadcn/
 - Translations for `COPY`/`COPIED`
 - Redo style for blockquote
 - Redo style for inline code
+
+### Navbar
+- Redesign the locale switcher
+- Animations for mobile
