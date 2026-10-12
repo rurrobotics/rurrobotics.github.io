@@ -11,6 +11,7 @@ msgstr ""
 msgid "RUR Robotics"
 msgstr "RUR Robotics"
 
+#: src/components/layout/Navbar.astro
 #: src/components/projects/ProjectsSection.astro
 msgid "Projects"
 msgstr "Projects"
@@ -20,6 +21,7 @@ msgid "Lecture"
 msgstr "Lecture"
 
 #: src/components/events/EventsSection.astro
+#: src/components/layout/Navbar.astro
 msgid "Events"
 msgstr "Events"
 
@@ -60,6 +62,7 @@ msgid "No articles yet."
 msgstr "No articles yet."
 
 #: src/components/articles/ArticlesSection.astro
+#: src/components/layout/Navbar.astro
 msgid "Articles"
 msgstr "Articles"
 
@@ -76,6 +79,8 @@ msgid "Send application"
 msgstr "Send application"
 
 #: src/components/join/JoinSection.astro
+#: src/components/layout/Navbar.astro
+#: src/components/layout/Navbar.astro
 msgid "Join us"
 msgstr "Join us"
 
@@ -103,6 +108,7 @@ msgstr "School of Electrical Engineering, Bulevar kralja Aleksandra 73, Belgrade
 msgid "Contact"
 msgstr "Contact"
 
+#: src/components/layout/Navbar.astro
 #: src/components/sponsors/SponsorsSection.astro
 #: src/components/sponsors/SponsorsSection.astro
 msgid "Partners"
@@ -136,3 +142,7 @@ msgstr "© 2023–{0} RUR Robotics. All rights reserved."
 #: src/components/about/AboutSection.astro
 msgid "The RUR Robotics team"
 msgstr "The RUR Robotics team"
+
+#: src/components/layout/Navbar.astro
+msgid "Menu"
+msgstr "Menu"

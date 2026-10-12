@@ -4,10 +4,11 @@ import SectionRow from "@components/common/SectionRow.astro";
 import JoinSection from "@components/join/JoinSection.astro";
 import ContactSection from "@components/contact/ContactSection.astro";
 import Footer from "@components/layout/Footer.astro";
+import Navbar from "@components/layout/Navbar.astro";
 ---
 
 <Layout>
-    <!-- TODO: Add navbar -->
+    <Navbar />
     <slot />
     <SectionRow split={0.6}>
         <JoinSection />

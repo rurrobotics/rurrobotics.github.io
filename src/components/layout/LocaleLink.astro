@@ -1,0 +1,22 @@
+---
+interface Props {
+	href: string;
+	/** Marks the locale the page is already in. */
+	current?: boolean;
+}
+
+const { href, current = false } = Astro.props;
+---
+
+<a
+	href={href}
+	aria-current={current ? "true" : undefined}
+	class:list={[
+		"px-2.5 py-1",
+		current
+			? "bg-secondary font-bold text-secondary-foreground"
+			: "text-ink-muted",
+	]}
+>
+	<slot />
+</a>

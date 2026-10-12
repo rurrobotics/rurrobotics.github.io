@@ -1,0 +1,28 @@
+---
+interface Props {
+	href: string;
+	/** Section id this link tracks, picked up by the scroll notch. */
+	section?: string;
+	/** Renders as the current page instead of taking a hover wipe. */
+	current?: boolean;
+	/** Layout classes; the desktop bar and mobile panel size their links differently. */
+	class?: string;
+}
+
+const { href, section, current = false, class: className } = Astro.props;
+---
+
+<a
+	href={href}
+	data-section={section}
+	aria-current={current ? "page" : undefined}
+	class:list={[
+		"font-display tracking-widest uppercase",
+		current
+			? "bg-primary text-primary-foreground"
+			: "wipe wipe-bottom wipe-primary",
+		className,
+	]}
+>
+	<slot />
+</a>
