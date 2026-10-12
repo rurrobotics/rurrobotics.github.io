@@ -148,3 +148,7 @@ msgstr "Izvorni kod"
 #. 0: year
 msgid "© 2023–{0} RUR Robotics. All rights reserved."
 msgstr "© 2023–{0} RUR Robotika. Sva prava zadržana."
+
+#: src/components/about/AboutSection.astro
+msgid "The RUR Robotics team"
+msgstr "Tim RUR Robotike"

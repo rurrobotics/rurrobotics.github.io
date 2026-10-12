@@ -132,3 +132,7 @@ msgstr "Source"
 #: src/components/layout/Footer.astro
 msgid "© 2023–{0} RUR Robotics. All rights reserved."
 msgstr "© 2023–{0} RUR Robotics. All rights reserved."
+
+#: src/components/about/AboutSection.astro
+msgid "The RUR Robotics team"
+msgstr "The RUR Robotics team"

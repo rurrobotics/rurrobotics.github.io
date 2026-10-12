@@ -1,17 +1,46 @@
 ---
+import { Image } from "astro:assets";
 import Section from "@components/common/Section.astro";
 import SectionTitle from "@components/common/SectionTitle.astro";
+import team from "@/assets/team.jpg";
 ---
 
 <Section id="about" class="">
-	<SectionTitle slot="title">The team</SectionTitle>
-	<p class="max-w-184 text-lg leading-relaxed">
-		Founded in 2023 as a <a
-			class="link wipe-tertiary italic"
-			href="https://www.eurobot.org/">Eurobot</a
-		> team, we've since grown into the robotics club of the School of
-		Electrical Engineering at the University of Belgrade. Our members
-		come from faculties across the university, building autonomous robots
-		that bring together mechanics, electronics and software.
-	</p>
+	<div class="grid items-center gap-12 lg:grid-cols-[1fr_420px]">
+		<div>
+			<SectionTitle>The team</SectionTitle>
+			<p class="max-w-184 text-lg leading-relaxed md:text-xl">
+				Founded in 2023 as a <a
+					class="link wipe-tertiary italic"
+					href="https://www.eurobot.org/">Eurobot</a
+				> team, we've since grown into the robotics club of the School of
+				Electrical Engineering at the University of Belgrade. Our members
+				come from faculties across the university, building autonomous robots
+				that bring together mechanics, electronics and software.
+			</p>
+		</div>
+		<div class="relative">
+			<div
+				aria-hidden="true"
+				class="absolute -top-4.5 -left-4.5 size-20 bg-secondary sm:size-26"
+			>
+			</div>
+			<div
+				aria-hidden="true"
+				class="absolute -right-4 -bottom-4 size-24 rounded-full border-10 border-tertiary sm:size-33 sm:border-14 lg:-right-6.5 lg:-bottom-6.5"
+			>
+			</div>
+			<div
+				aria-hidden="true"
+				class="absolute bottom-10 -left-4 h-28 w-3 bg-primary sm:h-35 sm:w-4 lg:-left-8.5"
+			>
+			</div>
+			<Image
+				src={team}
+				alt="The RUR Robotics team"
+				width={840}
+				class="relative h-75 w-full border-4 object-cover"
+			/>
+		</div>
+	</div>
 </Section>

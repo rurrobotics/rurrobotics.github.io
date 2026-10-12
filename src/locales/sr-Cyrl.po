@@ -132,3 +132,7 @@ msgstr "Изворни код"
 #: src/components/layout/Footer.astro
 msgid "© 2023–{0} RUR Robotics. All rights reserved."
 msgstr "© 2023–{0} РУР Роботика. Сва права задржана."
+
+#: src/components/about/AboutSection.astro
+msgid "The RUR Robotics team"
+msgstr "Тим РУР Роботике"
