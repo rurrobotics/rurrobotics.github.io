@@ -93,14 +93,6 @@ msgstr "Pošalji prijavu"
 msgid "Join us"
 msgstr "Pridruži se"
 
-#: src/components/join/JoinSection.astro
-msgid ""
-"Admission is open to all students. All you need is the will to learn; we'll "
-"teach you the rest in the lab."
-msgstr ""
-"Prijem je otvoren svim studentima. Dovoljna je volja da učiš; ostalo te "
-"naučimo u laboratoriji."
-
 #: src/components/common/SocialLink.astro
 msgid "Instagram"
 msgstr "Instagram"
@@ -163,3 +155,11 @@ msgstr "Tim RUR Robotike"
 #: src/components/layout/Navbar.astro
 msgid "Menu"
 msgstr "Meni"
+
+#: src/components/join/JoinSection.astro
+msgid ""
+"Meet new people and learn from more experienced members while you compete. "
+"We take students from any faculty and any year, no background needed."
+msgstr ""
+"Upoznaj nove ljude i uči od iskusnijih dok se takmičiš. Primamo studente sa "
+"svih fakulteta i svih godina, bez predznanja."
