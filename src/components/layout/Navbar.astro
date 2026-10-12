@@ -1,0 +1,156 @@
+---
+import { Image } from "astro:assets";
+import { defaultLocale, type Locale } from "@locales/config.js";
+import NavLink from "@components/layout/NavLink.astro";
+import LocaleLink from "@components/layout/LocaleLink.astro";
+import logo from "@/assets/logo.svg";
+
+const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const home = `/${locale}/`;
+
+// @wc-ignore
+const wordmark = "RUR Robotics";
+
+// @wc-ignore
+const localeOptions = [
+	["en", "EN"],
+	["sr", "SR"],
+	["sr-Cyrl", "СР"],
+] as const satisfies readonly (readonly [Locale, string])[];
+
+const rest = Astro.url.pathname.split("/").filter(Boolean).slice(1).join("/");
+const localeHref = (target: Locale) => `/${target}/${rest && `${rest}/`}`;
+
+const links = [
+	{ id: "projects", label: "Projects" },
+	{ id: "events", label: "Events" },
+	{ id: "articles", label: "Articles" },
+	{ id: "sponsors", label: "Partners" },
+];
+
+const onArticles = Astro.url.pathname.includes("/articles");
+const isCurrent = (id: string) => id === "articles" && onArticles;
+
+const gutter = "px-5 sm:px-10 md:px-15";
+---
+
+<header class="sticky top-0 z-20 border-b-4 border-foreground bg-background">
+	<div
+		class:list={[
+			"relative mx-auto container flex items-stretch justify-between",
+			gutter,
+		]}
+	>
+		<a href={home} class="flex items-center gap-3 py-4">
+			<Image src={logo} alt="" width={32} class="size-8 shrink-0" />
+			<span
+				class="font-display text-xl font-bold tracking-wider uppercase"
+			>
+				{wordmark}
+			</span>
+		</a>
+
+		<nav class="relative hidden items-stretch lg:flex" data-nav>
+			{
+				links.map((link) => (
+					<NavLink
+						href={`${home}#${link.id}`}
+						section={link.id}
+						current={isCurrent(link.id)}
+						class="flex items-center px-4 text-sm"
+					>
+						{link.label}
+					</NavLink>
+				))
+			}
+			<NavLink
+				href={`${home}#join`}
+				class="ml-3 flex items-center bg-secondary px-6.5 text-sm text-secondary-foreground"
+			>
+				<span>Join us</span>
+			</NavLink>
+			<span
+				class="-mr-2.5 flex items-center pl-2 font-mono text-xs tracking-wider"
+			>
+				{
+					localeOptions.map(([target, label]) => (
+						<LocaleLink
+							href={localeHref(target)}
+							current={target === locale}
+						>
+							{label}
+						</LocaleLink>
+					))
+				}
+			</span>
+			<span
+				data-notch
+				data-visible="false"
+				class="pointer-events-none absolute bottom-0 h-0 bg-primary transition-[left,width,height] duration-150 ease-out data-[visible=true]:h-1.5"
+			></span>
+		</nav>
+
+		<details class="lg:hidden">
+			<summary
+				aria-label="Menu"
+				class="-mr-5 flex h-full cursor-pointer list-none items-center px-5 [&::-webkit-details-marker]:hidden"
+			>
+				<span class="flex flex-col gap-1.5">
+					<span class="h-1 w-6 bg-foreground"></span>
+					<span class="h-1 w-6 bg-foreground"></span>
+					<span class="h-1 w-6 bg-foreground"></span>
+				</span>
+			</summary>
+			<nav
+				class="absolute inset-x-0 top-full flex flex-col border-b-4 border-foreground bg-background"
+			>
+				{
+					links.map((link) => (
+						<NavLink
+							href={`${home}#${link.id}`}
+							current={isCurrent(link.id)}
+							class:list={["py-3.5 text-lg", gutter]}
+						>
+							{link.label}
+						</NavLink>
+					))
+				}
+				<NavLink
+					href={`${home}#join`}
+					class:list={[
+						"bg-secondary py-3.5 text-lg text-secondary-foreground",
+						gutter,
+					]}
+				>
+					<span>Join us</span>
+				</NavLink>
+				<span
+					class:list={[
+						"flex gap-1 border-t-4 border-foreground py-3 font-mono text-xs tracking-wider",
+						gutter,
+					]}
+				>
+					{
+						localeOptions.map(([target, label]) => (
+							<LocaleLink
+								href={localeHref(target)}
+								current={target === locale}
+							>
+								{label}
+							</LocaleLink>
+						))
+					}
+				</span>
+			</nav>
+		</details>
+	</div>
+</header>
+
+<script>
+	import { sectionNotch } from "@/scripts/section-notch";
+
+	const nav = document.querySelector<HTMLElement>("[data-nav]");
+	const notch = document.querySelector<HTMLElement>("[data-notch]");
+
+	if (nav && notch) sectionNotch({ nav, notch });
+</script>

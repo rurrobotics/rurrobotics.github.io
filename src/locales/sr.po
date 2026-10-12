@@ -11,6 +11,7 @@ msgstr ""
 msgid "RUR Robotics"
 msgstr "RUR Robotika"
 
+#: src/components/layout/Navbar.astro
 #: src/components/projects/ProjectsSection.astro
 msgid "Projects"
 msgstr "Projekti"
@@ -20,6 +21,7 @@ msgid "Lecture"
 msgstr "Predavanje"
 
 #: src/components/events/EventsSection.astro
+#: src/components/layout/Navbar.astro
 msgid "Events"
 msgstr "Dešavanja"
 
@@ -68,6 +70,7 @@ msgid "No articles yet."
 msgstr "Još nema članaka."
 
 #: src/components/articles/ArticlesSection.astro
+#: src/components/layout/Navbar.astro
 msgid "Articles"
 msgstr "Članci"
 
@@ -84,6 +87,8 @@ msgid "Send application"
 msgstr "Pošalji prijavu"
 
 #: src/components/join/JoinSection.astro
+#: src/components/layout/Navbar.astro
+#: src/components/layout/Navbar.astro
 msgid "Join us"
 msgstr "Pridruži se"
 
@@ -115,6 +120,7 @@ msgstr "Elektrotehnički fakultet, Bulevar kralja Aleksandra 73, Beograd"
 msgid "Contact"
 msgstr "Kontakt"
 
+#: src/components/layout/Navbar.astro
 #: src/components/sponsors/SponsorsSection.astro
 #: src/components/sponsors/SponsorsSection.astro
 msgid "Partners"
@@ -152,3 +158,7 @@ msgstr "© 2023–{0} RUR Robotika. Sva prava zadržana."
 #: src/components/about/AboutSection.astro
 msgid "The RUR Robotics team"
 msgstr "Tim RUR Robotike"
+
+#: src/components/layout/Navbar.astro
+msgid "Menu"
+msgstr "Meni"
