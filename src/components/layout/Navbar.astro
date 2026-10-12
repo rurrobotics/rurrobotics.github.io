@@ -9,9 +9,6 @@ const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
 const home = `/${locale}/`;
 
 // @wc-ignore
-const wordmark = "RUR Robotics";
-
-// @wc-ignore
 const localeOptions = [
 	["en", "EN"],
 	["sr", "SR"],
@@ -46,7 +43,7 @@ const gutter = "px-5 sm:px-10 md:px-15";
 			<span
 				class="font-display text-xl font-bold tracking-wider uppercase"
 			>
-				{wordmark}
+				RUR Robotics
 			</span>
 		</a>
 
@@ -65,7 +62,7 @@ const gutter = "px-5 sm:px-10 md:px-15";
 			}
 			<NavLink
 				href={`${home}#join`}
-				class="ml-3 flex items-center bg-secondary px-6.5 text-sm text-secondary-foreground"
+				class="flex items-center bg-secondary px-6.5 text-sm text-secondary-foreground"
 			>
 				<span>Join us</span>
 			</NavLink>

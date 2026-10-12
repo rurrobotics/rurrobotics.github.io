@@ -17,7 +17,7 @@ const { href, section, current = false, class: className } = Astro.props;
 	data-section={section}
 	aria-current={current ? "page" : undefined}
 	class:list={[
-		"font-display tracking-widest uppercase",
+		"font-display font-semibold tracking-widest uppercase",
 		current
 			? "bg-primary text-primary-foreground"
 			: "wipe wipe-bottom wipe-primary",
