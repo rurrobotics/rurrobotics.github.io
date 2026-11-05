@@ -120,15 +120,23 @@
 	@apply my-6 flex list-none flex-col gap-2 p-0 text-base leading-normal text-foreground md:gap-2.5 md:text-lg;
 }
 /* prose gives li its own vertical margin and padding; the design spaces items
-   with the list's flex gap instead. */
+   with the list's flex gap instead. The marker is absolutely positioned rather
+   than a flex sibling so the item's text stays inline — a flex li would split
+   a leading <strong> and the rest of the text into separate columns. */
 .prose :is(ul, ol) > li {
-	@apply my-0 flex gap-3 p-0 md:gap-4;
+	@apply relative my-0 p-0;
+}
+.prose ul > li {
+	@apply pl-6 md:pl-7;
+}
+.prose ol > li {
+	@apply pl-9 md:pl-11;
 }
 .prose li > p {
 	@apply my-0;
 }
 .prose ul > li::before {
-	@apply mt-2 block size-3 shrink-0 bg-primary content-[''];
+	@apply absolute top-2 left-0 block size-3 bg-primary content-[''];
 }
 .prose ol {
 	counter-reset: prose-item;
@@ -136,7 +144,7 @@
 .prose ol > li::before {
 	counter-increment: prose-item;
 	content: counter(prose-item);
-	@apply flex size-6 shrink-0 items-center justify-center bg-tertiary font-mono text-xs font-bold text-tertiary-foreground md:size-7 md:text-sm;
+	@apply absolute top-0 left-0 flex size-6 items-center justify-center bg-tertiary font-mono text-xs font-bold text-tertiary-foreground md:size-7 md:text-sm;
 }
 
 /* Images */
