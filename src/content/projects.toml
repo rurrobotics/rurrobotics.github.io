@@ -1,49 +1,19 @@
 [ninja]
 name = "ninja"
 description = {
-    en = "Firmware code for Ninja & Hybrid SIMA robots",
-    sr = "Firmver za Ninja i Hybrid SIMA robote",
-    "sr-Cyrl" = "Фирмвер за Нинџа и Хибрид СИМА роботе"
+    en = "Firmware and controller for the Ninja and Hybrid SIMA robots",
+    sr = "Firmver i kontroler za Ninja i Hybrid SIMA robote",
+    "sr-Cyrl" = "Фирмвер и контролер за Нинџа и Хибрид СИМА роботе"
 }
 url = "https://github.com/rurrobotics/ninja"
 tags = ["rust", "embassy"]
 
-[1]
-name = "1"
+[electronics]
+name = "electronics"
 description = {
-    en = "Firmware code for Ninja & Hybrid SIMA robots",
-    sr = "Firmver za Ninja i Hybrid SIMA robote",
-    "sr-Cyrl" = "Фирмвер за Нинџа и Хибрид СИМА роботе"
+    en = "Altium schematics and PCB designs for the robot's motion and actuator boards",
+    sr = "Altium šeme i PCB dizajni za motion i actuator ploče robota",
+    "sr-Cyrl" = "Алтиум шеме и PCB дизајни за motion и actuator плоче робота"
 }
-url = "https://github.com/rurrobotics/ninja"
-tags = ["rust", "embassy"]
-
-[2]
-name = "2"
-description = {
-    en = "Firmware code for Ninja & Hybrid SIMA robots",
-    sr = "Firmver za Ninja i Hybrid SIMA robote",
-    "sr-Cyrl" = "Фирмвер за Нинџа и Хибрид СИМА роботе"
-}
-url = "https://github.com/rurrobotics/ninja"
-tags = ["rust", "embassy"]
-
-[3]
-name = "3"
-description = {
-    en = "Firmware code for Ninja & Hybrid SIMA robots",
-    sr = "Firmver za Ninja i Hybrid SIMA robote",
-    "sr-Cyrl" = "Фирмвер за Нинџа и Хибрид СИМА роботе"
-}
-url = "https://github.com/rurrobotics/ninja"
-tags = ["rust", "embassy"]
-
-[4]
-name = "4"
-description = {
-    en = "Firmware code for Ninja & Hybrid SIMA robots",
-    sr = "Firmver za Ninja i Hybrid SIMA robote",
-    "sr-Cyrl" = "Фирмвер за Нинџа и Хибрид СИМА роботе"
-}
-url = "https://github.com/rurrobotics/ninja"
-tags = ["rust", "embassy"]
+url = "https://github.com/rurrobotics/electronics"
+tags = ["altium", "pcb"]
