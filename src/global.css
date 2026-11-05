@@ -56,7 +56,7 @@
 
 @layer base {
 	body {
-		@apply bg-background text-foreground;
+		@apply flex min-h-dvh flex-col bg-background text-foreground;
 	}
 	html {
 		@apply scroll-pt-20 font-sans motion-safe:scroll-smooth;
