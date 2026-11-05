@@ -2,7 +2,7 @@
 title: "Robotics Meet-up у Палати науке"
 description: "ETF Robotics 9. новембра организује сусрет студената, истраживача и компанија, а ми долазимо."
 date: 2026-11-05
-author: "Aleksa Ognjanović"
+author: "Алекса Огњановић"
 category: "meetup"
 eventDate: 2026-11-09T16:30:00+01:00
 ---
