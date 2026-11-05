@@ -17,7 +17,9 @@ msgstr "RUR Robotics"
 msgid "Projects"
 msgstr "Projects"
 
+#: src/components/articles/ArticleHeader.astro
 #: src/components/common/ArticleCard.astro
+#: src/pages/[lang]/articles/[...slug].astro
 msgid "Lecture"
 msgstr "Lecture"
 
@@ -34,7 +36,9 @@ msgstr "No upcoming events."
 msgid "Past events"
 msgstr "Past events"
 
+#: src/components/articles/ArticleHeader.astro
 #: src/components/common/ArticleCard.astro
+#: src/pages/[lang]/articles/[...slug].astro
 msgid "Meetup"
 msgstr "Meetup"
 
@@ -50,11 +54,15 @@ msgstr "The team"
 msgid "Founded in 2023 as a <0>Eurobot</0> team, we've since grown into the robotics club of the School of Electrical Engineering at the University of Belgrade. Our members come from faculties across the university, building autonomous robots that bring together mechanics, electronics and software."
 msgstr "Founded in 2023 as a <0>Eurobot</0> team, we've since grown into the robotics club of the School of Electrical Engineering at the University of Belgrade. Our members come from faculties across the university, building autonomous robots that bring together mechanics, electronics and software."
 
+#: src/components/articles/ArticleHeader.astro
 #: src/components/common/ArticleCard.astro
+#: src/pages/[lang]/articles/[...slug].astro
 msgid "News"
 msgstr "News"
 
+#: src/components/articles/ArticleHeader.astro
 #: src/components/common/ArticleCard.astro
+#: src/pages/[lang]/articles/[...slug].astro
 msgid "Writeup"
 msgstr "Writeup"
 
@@ -147,3 +155,18 @@ msgstr "Menu"
 #: src/components/join/JoinSection.astro
 msgid "Meet new people and learn from more experienced members while you compete. We take students from any faculty and any year, no background needed."
 msgstr "Meet new people and learn from more experienced members while you compete. We take students from any faculty and any year, no background needed."
+
+#: src/components/articles/ArticleHeader.astro
+#: src/pages/[lang]/articles/[...slug].astro
+msgid "Event date"
+msgstr "Event date"
+
+#: src/components/articles/ArticleFooter.astro
+#: src/pages/[lang]/articles/[...slug].astro
+msgid "Published"
+msgstr "Published"
+
+#: src/components/articles/ArticleFooter.astro
+#: src/pages/[lang]/articles/[...slug].astro
+msgid "Author"
+msgstr "Author"

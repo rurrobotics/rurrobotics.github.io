@@ -17,7 +17,9 @@ msgstr "РУР Роботика"
 msgid "Projects"
 msgstr "Пројекти"
 
+#: src/components/articles/ArticleHeader.astro
 #: src/components/common/ArticleCard.astro
+#: src/pages/[lang]/articles/[...slug].astro
 msgid "Lecture"
 msgstr "Предавање"
 
@@ -34,7 +36,9 @@ msgstr "Нема надолазећих дешавања"
 msgid "Past events"
 msgstr "Прошла дешавања"
 
+#: src/components/articles/ArticleHeader.astro
 #: src/components/common/ArticleCard.astro
+#: src/pages/[lang]/articles/[...slug].astro
 msgid "Meetup"
 msgstr "Окупљање"
 
@@ -50,11 +54,15 @@ msgstr "Тим"
 msgid "Founded in 2023 as a <0>Eurobot</0> team, we've since grown into the robotics club of the School of Electrical Engineering at the University of Belgrade. Our members come from faculties across the university, building autonomous robots that bring together mechanics, electronics and software."
 msgstr "Основани 2023. године као тим за <0>Еуробот</0>, а од тада смо прерасли у клуб роботике Електротехничког факултета Универзитета у Београду. Наши чланови долазе са различитих факултета и заједно пројектују, граде и програмирају аутономне роботе."
 
+#: src/components/articles/ArticleHeader.astro
 #: src/components/common/ArticleCard.astro
+#: src/pages/[lang]/articles/[...slug].astro
 msgid "News"
 msgstr "Вести"
 
+#: src/components/articles/ArticleHeader.astro
 #: src/components/common/ArticleCard.astro
+#: src/pages/[lang]/articles/[...slug].astro
 msgid "Writeup"
 msgstr "Текст"
 
@@ -147,3 +155,18 @@ msgstr "Мени"
 #: src/components/join/JoinSection.astro
 msgid "Meet new people and learn from more experienced members while you compete. We take students from any faculty and any year, no background needed."
 msgstr "Упознај нове људе и учи од искуснијих док се такмичиш. Примамо студенте са свих факултета и свих година, без предзнања."
+
+#: src/components/articles/ArticleHeader.astro
+#: src/pages/[lang]/articles/[...slug].astro
+msgid "Event date"
+msgstr "Датум дешавања"
+
+#: src/components/articles/ArticleFooter.astro
+#: src/pages/[lang]/articles/[...slug].astro
+msgid "Published"
+msgstr "Објављено"
+
+#: src/components/articles/ArticleFooter.astro
+#: src/pages/[lang]/articles/[...slug].astro
+msgid "Author"
+msgstr "Аутор"

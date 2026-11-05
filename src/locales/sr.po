@@ -17,7 +17,9 @@ msgstr "RUR Robotika"
 msgid "Projects"
 msgstr "Projekti"
 
+#: src/components/articles/ArticleHeader.astro
 #: src/components/common/ArticleCard.astro
+#: src/pages/[lang]/articles/[...slug].astro
 msgid "Lecture"
 msgstr "Predavanje"
 
@@ -34,7 +36,9 @@ msgstr "Nema nadolazećih dešavanja"
 msgid "Past events"
 msgstr "Prošla dešavanja"
 
+#: src/components/articles/ArticleHeader.astro
 #: src/components/common/ArticleCard.astro
+#: src/pages/[lang]/articles/[...slug].astro
 msgid "Meetup"
 msgstr "Okupljanje"
 
@@ -47,22 +51,18 @@ msgid "The team"
 msgstr "Tim"
 
 #: src/components/about/AboutSection.astro
-msgid ""
-"Founded in 2023 as a <0>Eurobot</0> team, we've since grown into the "
-"robotics club of the School of Electrical Engineering at the University of "
-"Belgrade. Our members come from faculties across the university, building "
-"autonomous robots that bring together mechanics, electronics and software."
-msgstr ""
-"Osnovani 2023. kao <0>Eurobot</0> tim, od tada smo prerasli u klub robotike "
-"Elektrotehničkog fakulteta Univerziteta u Beogradu. Naši članovi dolaze sa "
-"različitih fakulteta i zajedno prave autonomne robote koji spajaju "
-"mehaniku, elektroniku i softver."
+msgid "Founded in 2023 as a <0>Eurobot</0> team, we've since grown into the robotics club of the School of Electrical Engineering at the University of Belgrade. Our members come from faculties across the university, building autonomous robots that bring together mechanics, electronics and software."
+msgstr "Osnovani 2023. kao <0>Eurobot</0> tim, od tada smo prerasli u klub robotike Elektrotehničkog fakulteta Univerziteta u Beogradu. Naši članovi dolaze sa različitih fakulteta i zajedno prave autonomne robote koji spajaju mehaniku, elektroniku i softver."
 
+#: src/components/articles/ArticleHeader.astro
 #: src/components/common/ArticleCard.astro
+#: src/pages/[lang]/articles/[...slug].astro
 msgid "News"
 msgstr "Vesti"
 
+#: src/components/articles/ArticleHeader.astro
 #: src/components/common/ArticleCard.astro
+#: src/pages/[lang]/articles/[...slug].astro
 msgid "Writeup"
 msgstr "Tekst"
 
@@ -132,19 +132,15 @@ msgid "General"
 msgstr "Generalni"
 
 #: src/components/sponsors/SponsorsSection.astro
-msgid ""
-"We are grateful to our sponsors for supporting our work and helping us "
-"learn, create, and compete."
-msgstr ""
-"Zahvaljujemo se našim sponzorima na podršci i na tome što nam omogućavaju "
-"da učimo, stvaramo i da se takmičimo."
+msgid "We are grateful to our sponsors for supporting our work and helping us learn, create, and compete."
+msgstr "Zahvaljujemo se našim sponzorima na podršci i na tome što nam omogućavaju da učimo, stvaramo i da se takmičimo."
 
 #: src/components/layout/Footer.astro
 msgid "Source"
 msgstr "Izvorni kod"
 
-#: src/components/layout/Footer.astro
 #. 0: year
+#: src/components/layout/Footer.astro
 msgid "© 2023–{0} RUR Robotics. All rights reserved."
 msgstr "© 2023–{0} RUR Robotika. Sva prava zadržana."
 
@@ -157,9 +153,20 @@ msgid "Menu"
 msgstr "Meni"
 
 #: src/components/join/JoinSection.astro
-msgid ""
-"Meet new people and learn from more experienced members while you compete. "
-"We take students from any faculty and any year, no background needed."
-msgstr ""
-"Upoznaj nove ljude i uči od iskusnijih dok se takmičiš. Primamo studente sa "
-"svih fakulteta i svih godina, bez predznanja."
+msgid "Meet new people and learn from more experienced members while you compete. We take students from any faculty and any year, no background needed."
+msgstr "Upoznaj nove ljude i uči od iskusnijih dok se takmičiš. Primamo studente sa svih fakulteta i svih godina, bez predznanja."
+
+#: src/components/articles/ArticleHeader.astro
+#: src/pages/[lang]/articles/[...slug].astro
+msgid "Event date"
+msgstr "Datum dešavanja"
+
+#: src/components/articles/ArticleFooter.astro
+#: src/pages/[lang]/articles/[...slug].astro
+msgid "Published"
+msgstr "Objavljeno"
+
+#: src/components/articles/ArticleFooter.astro
+#: src/pages/[lang]/articles/[...slug].astro
+msgid "Author"
+msgstr "Autor"

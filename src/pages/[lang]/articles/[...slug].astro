@@ -1,7 +1,15 @@
 ---
 import { getCollection, render } from "astro:content";
-import { parseArticleId, type Article } from "@/articles";
+import {
+	EVENT_TIME_ZONE,
+	isEventCategory,
+	parseArticleId,
+	type Article,
+	type ArticleCategory,
+} from "@/articles";
+import { defaultLocale, localeTags, type Locale } from "@locales/config.js";
 import PageLayout from "@layouts/PageLayout.astro";
+import Badge from "@components/common/Badge.astro";
 
 export async function getStaticPaths() {
 	const articles = await getCollection(
@@ -20,13 +28,112 @@ interface Props {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const { data } = entry;
+
+const localeTag = localeTags[(Astro.currentLocale ?? defaultLocale) as Locale];
+
+// Duplicated from ArticleCard rather than shared from articles.ts: wuchale only
+// extracts from .astro, so labels moved into a .ts file would lose translation.
+const categoryColors = {
+	meetup: "primary",
+	lecture: "accent",
+	news: "tertiary",
+	writeup: "secondary",
+} as const satisfies Record<ArticleCategory, string>;
+
+const categoryLabels = {
+	meetup: "Meetup",
+	lecture: "Lecture",
+	news: "News",
+	writeup: "Writeup",
+} as const satisfies Record<ArticleCategory, string>;
+
+// Strings in the frontmatter are extracted by wuchale; a bare word in the
+// markup isn't.
+const labels = {
+	eventDate: "Event date",
+	published: "Published",
+	author: "Author",
+};
+
+const eventDate =
+	isEventCategory(data.category) && "eventDate" in data
+		? data.eventDate
+		: undefined;
+
+const timeZone = EVENT_TIME_ZONE;
+const dateFmt = new Intl.DateTimeFormat(localeTag, {
+	day: "numeric",
+	month: "long",
+	year: "numeric",
+	timeZone,
+});
+const timeFmt = new Intl.DateTimeFormat(localeTag, {
+	hour: "2-digit",
+	minute: "2-digit",
+	timeZone,
+});
 ---
 
 <PageLayout>
 	<article
-		class="prose mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 md:px-12 md:py-16"
+		class="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 md:px-12 md:py-16"
 	>
-		<Content />
+		<header class="mb-10 md:mb-12">
+			<Badge
+				label={categoryLabels[data.category]}
+				color={categoryColors[data.category]}
+				variant="solid"
+				class="font-bold tracking-widest uppercase"
+			/>
+			<h1
+				class="mt-4 font-display text-4xl leading-none font-bold text-foreground uppercase sm:text-6xl"
+			>
+				{data.title}
+			</h1>
+			{
+				data.description && (
+					<p class="mt-5 text-base leading-relaxed text-ink-muted md:text-lg">
+						{data.description}
+					</p>
+				)
+			}
+			<p
+				class="mt-5 flex flex-wrap gap-x-6 gap-y-1 font-mono text-sm text-muted"
+			>
+				{
+					eventDate && (
+						<span>
+							{labels.eventDate}:{" "}
+							<span class="font-semibold text-foreground">
+								{dateFmt.format(eventDate)}, {timeFmt.format(eventDate)}
+							</span>
+						</span>
+					)
+				}
+				<span>
+					{labels.published}:{" "}
+					<time
+						class="font-semibold text-foreground"
+						datetime={data.date.toISOString()}
+					>
+						{dateFmt.format(data.date)}
+					</time>
+				</span>
+				{
+					data.author && (
+						<span>
+							{labels.author}:{" "}
+							<span class="font-semibold text-foreground">{data.author}</span>
+						</span>
+					)
+				}
+			</p>
+		</header>
+
+		<div class="prose max-w-none">
+			<Content />
+		</div>
 	</article>
 </PageLayout>
 

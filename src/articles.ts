@@ -26,6 +26,8 @@ export async function getArticles(locale: Locale): Promise<Article[]> {
 	);
 }
 
+export const EVENT_TIME_ZONE = "Europe/Belgrade";
+
 export type ArticleCategory = Article["data"]["category"];
 
 export const EVENT_CATEGORIES = ["meetup", "lecture"] as const;
