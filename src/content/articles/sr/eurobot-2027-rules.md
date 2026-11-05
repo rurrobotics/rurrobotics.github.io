@@ -2,7 +2,7 @@
 title: "Izlaze pravila za Eurobot 2027"
 description: "U subotu se okupljamo u laboratoriji da zajedno pročitamo nova pravila."
 date: 2026-09-16
-author: "RUR"
+author: "Aleksa Ognjanović"
 category: "meetup"
 eventDate: 2026-09-19T12:00:00+02:00
 ---

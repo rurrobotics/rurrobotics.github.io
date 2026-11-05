@@ -2,7 +2,7 @@
 title: "The Eurobot 2027 rules are out"
 description: "We're meeting in the lab on Saturday to read the new rules together."
 date: 2026-09-16
-author: "RUR"
+author: "Aleksa Ognjanović"
 category: "meetup"
 eventDate: 2026-09-19T12:00:00+02:00
 ---
