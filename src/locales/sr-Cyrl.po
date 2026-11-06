@@ -194,3 +194,7 @@ msgstr "Објављено:"
 #: src/pages/[lang]/articles/[...slug].astro
 msgid "Author:"
 msgstr "Аутор:"
+
+#: src/components/sponsors/SponsorsSection.astro
+msgid "Become a partner"
+msgstr "Постани партнер"

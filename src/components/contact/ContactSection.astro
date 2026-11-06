@@ -1,12 +1,11 @@
 ---
 import { Mail, MapPin, Phone } from "@lucide/astro";
-import { defaultLocale, type Locale } from "@locales/config.js";
+import { getContactEmail } from "@/contact";
 import Section from "@components/common/Section.astro";
 import SectionTitle from "@components/common/SectionTitle.astro";
 import SocialLink from "@components/common/SocialLink.astro";
 
-const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
-const email = locale === "en" ? "contact@rurrobotics.com" : "kontakt@rurrobotics.com";
+const email = getContactEmail(Astro.currentLocale);
 const phone: string | null = null;
 
 const socials = [

@@ -1,0 +1,32 @@
+---
+import type { ComponentProps } from "astro/types";
+import SponsorTile from "./SponsorTile.astro";
+
+type Sponsor = ComponentProps<typeof SponsorTile>;
+
+interface Props {
+	sponsors: Sponsor[];
+	size: NonNullable<Sponsor["size"]>;
+	color: "primary" | "secondary" | "accent" | "tertiary";
+}
+
+const { sponsors, size, color } = Astro.props;
+---
+
+<div class="grid gap-x-8 gap-y-4 lg:grid-cols-[8rem_1fr]">
+	<h3
+		class="self-start border-l-8 py-1 pl-3 font-mono text-xs font-bold uppercase tracking-widest lg:mt-2"
+		style={`border-color: var(--${color})`}
+	>
+		<slot />
+	</h3>
+	<ul class="flex flex-wrap gap-4">
+		{
+			sponsors.map((sponsor) => (
+				<li class:list={["w-full", { large: "sm:w-72", medium: "sm:w-48", small: "w-[calc((100%-1rem)/2)] sm:w-40" }[size]]}>
+					<SponsorTile {...sponsor} size={size} />
+				</li>
+			))
+		}
+	</ul>
+</div>

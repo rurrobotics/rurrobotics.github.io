@@ -194,3 +194,7 @@ msgstr "Published:"
 #: src/pages/[lang]/articles/[...slug].astro
 msgid "Author:"
 msgstr "Author:"
+
+#: src/components/sponsors/SponsorsSection.astro
+msgid "Become a partner"
+msgstr "Become a partner"
