@@ -1,5 +1,5 @@
 ---
-import { getEventArticles } from "@/articles";
+import { getArticles } from "@/articles";
 import { defaultLocale, type Locale } from "@locales/config.js";
 import Section from "@components/common/Section.astro";
 import SectionTitle from "@components/common/SectionTitle.astro";
@@ -7,7 +7,7 @@ import ArticleCard from "@components/common/ArticleCard.astro";
 import SectionLink from "@components/common/SectionLink.astro";
 
 const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
-const events = await getEventArticles(locale);
+const events = await getArticles(locale, true);
 
 const now = Date.now();
 const upcoming = events

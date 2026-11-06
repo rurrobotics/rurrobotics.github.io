@@ -16,16 +16,6 @@ export function articleSlug(entry: Article): string {
 	return parseArticleId(entry.id).slug;
 }
 
-export async function getArticles(locale: Locale): Promise<Article[]> {
-	const entries = await getCollection("articles", ({ id, data }) => {
-		const isLocale = parseArticleId(id).locale === locale;
-		return isLocale && (import.meta.env.DEV || !data.draft);
-	});
-	return entries.sort(
-		(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-	);
-}
-
 export const EVENT_TIME_ZONE = "Europe/Belgrade";
 
 export type ArticleCategory = Article["data"]["category"];
@@ -44,9 +34,21 @@ export type EventArticle = Article & {
 	data: Extract<Article["data"], { category: EventCategory }>;
 };
 
-export async function getEventArticles(locale: Locale): Promise<EventArticle[]> {
-	const entries = await getArticles(locale);
-	return entries.filter((entry): entry is EventArticle =>
-		isEventCategory(entry.data.category),
+export function getArticles(locale: Locale, event: true): Promise<EventArticle[]>;
+export function getArticles(
+	locale: Locale,
+	event?: boolean | null,
+): Promise<Article[]>;
+export async function getArticles(
+	locale: Locale,
+	event?: boolean | null,
+): Promise<Article[]> {
+	const entries = await getCollection("articles", ({ id, data }) => {
+		const isLocale = parseArticleId(id).locale === locale;
+		const isWanted = event == null || isEventCategory(data.category) === event;
+		return isLocale && isWanted && (import.meta.env.DEV || !data.draft);
+	});
+	return entries.sort(
+		(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 	);
 }
