@@ -1,0 +1,32 @@
+---
+import { CATEGORY_COLORS, type ArticleCategory } from "@/articles";
+import Badge from "@components/common/Badge.astro";
+
+interface Props {
+	category: ArticleCategory;
+	variant?: "solid" | "outline";
+	plain?: boolean;
+}
+
+const { category, variant = "solid", plain = false } = Astro.props;
+
+const labels = {
+	meetup: "Meetup",
+	lecture: "Lecture",
+	news: "News",
+	writeup: "Writeup",
+} as const satisfies Record<ArticleCategory, string>;
+---
+
+{
+	plain ? (
+		labels[category]
+	) : (
+		<Badge
+			label={labels[category]}
+			color={CATEGORY_COLORS[category]}
+			variant={variant}
+			class="font-bold tracking-widest uppercase"
+		/>
+	)
+}

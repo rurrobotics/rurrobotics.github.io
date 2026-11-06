@@ -20,6 +20,13 @@ export const EVENT_TIME_ZONE = "Europe/Belgrade";
 
 export type ArticleCategory = Article["data"]["category"];
 
+export const CATEGORY_COLORS = {
+	meetup: "primary",
+	lecture: "accent",
+	news: "tertiary",
+	writeup: "secondary",
+} as const satisfies Record<ArticleCategory, string>;
+
 export const EVENT_CATEGORIES = ["meetup", "lecture"] as const;
 
 export type EventCategory = (typeof EVENT_CATEGORIES)[number];
