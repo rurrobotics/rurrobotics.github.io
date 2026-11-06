@@ -1,0 +1,63 @@
+---
+import { Search } from "@lucide/astro";
+import { CATEGORY_COLORS, type ArticleCategory } from "@/articles";
+import CategoryBadge from "@components/common/CategoryBadge.astro";
+import FilterChip from "@components/common/FilterChip.astro";
+
+interface Props {
+	categories: { category: ArticleCategory; count: number }[];
+	years: number[];
+}
+
+const { categories, years } = Astro.props;
+---
+
+<div class="mb-8 border-4 border-foreground bg-background">
+	<label
+		class="flex items-center gap-3 border-b-4 border-foreground px-4"
+	>
+		<Search class="size-5 shrink-0" />
+		<input
+			type="search"
+			data-search
+			placeholder="Search titles and descriptions"
+			aria-label="Search titles and descriptions"
+			class="w-full bg-transparent py-4 text-base outline-none placeholder:text-muted"
+		/>
+	</label>
+	<div
+		class="flex flex-wrap items-center justify-between gap-x-8 gap-y-4 px-4 py-4"
+	>
+		<div class="flex flex-wrap items-center gap-2">
+			<span class="mr-2 font-mono text-xs tracking-widest text-muted uppercase">Category</span>
+			<FilterChip data-category-all aria-pressed="true">All</FilterChip>
+			{
+				categories.map(({ category, count }) => (
+					<FilterChip
+						data-category-filter={category}
+						aria-pressed="false"
+						color={CATEGORY_COLORS[category]}
+					>
+						<CategoryBadge category={category} plain />{" "}
+						<span class="opacity-70">{count}</span>
+					</FilterChip>
+				))
+			}
+		</div>
+		<div class="flex flex-wrap items-center gap-2">
+			<span class="mr-2 font-mono text-xs tracking-widest text-muted uppercase">Year</span>
+			<FilterChip data-year-filter="all" aria-pressed="true">All</FilterChip>
+			{
+				years.map((year) => (
+					<FilterChip data-year-filter={year} aria-pressed="false">
+						{year}
+					</FilterChip>
+				))
+			}
+		</div>
+	</div>
+</div>
+
+<script>
+	import "@/scripts/article-filters";
+</script>

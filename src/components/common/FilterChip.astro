@@ -1,0 +1,25 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"button"> {
+	color?: "primary" | "secondary" | "accent" | "tertiary";
+}
+
+const { color, class: className, ...attrs } = Astro.props;
+---
+
+<button
+	type="button"
+	{...attrs}
+	style={color &&
+		`--chip: var(--${color}); --chip-fg: var(--${color}-foreground)`}
+	class:list={[
+		"cursor-pointer border-2 px-3 py-1 font-mono text-xs font-bold tracking-widest uppercase",
+		color
+			? "border-(--chip) aria-pressed:bg-(--chip) aria-pressed:text-(--chip-fg)"
+			: "border-foreground aria-pressed:bg-foreground aria-pressed:text-background",
+		className,
+	]}
+>
+	<slot />
+</button>

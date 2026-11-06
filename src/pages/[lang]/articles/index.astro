@@ -1,0 +1,51 @@
+---
+import { ARTICLE_CATEGORIES, EVENT_CATEGORIES, getArticles } from "@/articles";
+import { defaultLocale, type Locale } from "@locales/config.js";
+import PageLayout from "@layouts/PageLayout.astro";
+import Section from "@components/common/Section.astro";
+import SectionTitle from "@components/common/SectionTitle.astro";
+import ArticleDetailCard from "@components/common/ArticleDetailCard.astro";
+import ArticleFilters from "@components/articles/ArticleFilters.astro";
+
+export { getStaticPaths } from "../../../locales/utils";
+
+const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+
+const whenOf = (article: (typeof entries)[number]) =>
+	"eventDate" in article.data ? article.data.eventDate : article.data.date;
+const entries = (await getArticles(locale)).sort(
+	(a, b) => whenOf(b).valueOf() - whenOf(a).valueOf(),
+);
+
+const categories = [...EVENT_CATEGORIES, ...ARTICLE_CATEGORIES].map(
+	(category) => ({
+		category,
+		count: entries.filter((a) => a.data.category === category).length,
+	}),
+);
+const years = [...new Set(entries.map((a) => whenOf(a).getUTCFullYear()))].sort(
+	(a, b) => b - a,
+);
+---
+
+<PageLayout>
+	<Section>
+		<SectionTitle slot="title" size="large">Events & articles</SectionTitle>
+		<p class="mb-8 max-w-2xl text-lg leading-relaxed text-ink-muted">
+			Meetups, lectures, news and writeups from the club.
+		</p>
+
+		<ArticleFilters categories={categories} years={years} />
+
+		<p
+			class="mb-4 font-mono text-xs tracking-widest text-muted uppercase"
+			aria-live="polite"
+		>
+			Shown <span data-shown>{entries.length}</span> out of {entries.length}
+		</p>
+		<ul class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+			{entries.map((article) => <ArticleDetailCard article={article} />)}
+		</ul>
+		<p data-empty hidden class="font-mono text-sm text-muted">Nothing matches your filters.</p>
+	</Section>
+</PageLayout>

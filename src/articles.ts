@@ -29,6 +29,8 @@ export const CATEGORY_COLORS = {
 
 export const EVENT_CATEGORIES = ["meetup", "lecture"] as const;
 
+export const ARTICLE_CATEGORIES = ["news", "writeup"] as const;
+
 export type EventCategory = (typeof EVENT_CATEGORIES)[number];
 
 export function isEventCategory(
