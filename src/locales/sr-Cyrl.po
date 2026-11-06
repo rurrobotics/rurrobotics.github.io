@@ -148,6 +148,41 @@ msgstr "Мени"
 msgid "Meet new people and learn from more experienced members while you compete. We take students from any faculty and any year, no background needed."
 msgstr "Упознај нове људе и учи од искуснијих док се такмичиш. Примамо студенте са свих факултета и свих година, без предзнања."
 
+#: src/components/articles/ArticleFilters.astro
+#: src/components/articles/ArticleFilters.astro
+msgid "All"
+msgstr "Све"
+
+#: src/pages/[lang]/articles/index.astro
+msgid "Events & articles"
+msgstr "Дешавања и чланци"
+
+#: src/pages/[lang]/articles/index.astro
+msgid "Meetups, lectures, news and writeups from the club."
+msgstr "Окупљања, предавања, вести и текстови из клуба."
+
+#: src/components/articles/ArticleFilters.astro
+#: src/components/articles/ArticleFilters.astro
+msgid "Search titles and descriptions"
+msgstr "Претражи наслове и описе"
+
+#: src/components/articles/ArticleFilters.astro
+msgid "Category"
+msgstr "Категорија"
+
+#: src/components/articles/ArticleFilters.astro
+msgid "Year"
+msgstr "Година"
+
+#: src/pages/[lang]/articles/index.astro
+msgid "Nothing matches your filters."
+msgstr "Ништа не одговара претрази."
+
+#. 0: entries.length
+#: src/pages/[lang]/articles/index.astro
+msgid "Shown <0/> out of {0}"
+msgstr "Приказано <0/> од {0}"
+
 #: src/pages/[lang]/articles/[...slug].astro
 msgid "Event date:"
 msgstr "Датум дешавања:"

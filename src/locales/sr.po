@@ -47,8 +47,16 @@ msgid "The team"
 msgstr "Tim"
 
 #: src/components/about/AboutSection.astro
-msgid "Founded in 2023 as a <0>Eurobot</0> team, we've since grown into the robotics club of the School of Electrical Engineering at the University of Belgrade. Our members come from faculties across the university, building autonomous robots that bring together mechanics, electronics and software."
-msgstr "Osnovani 2023. kao <0>Eurobot</0> tim, od tada smo prerasli u klub robotike Elektrotehničkog fakulteta Univerziteta u Beogradu. Naši članovi dolaze sa različitih fakulteta i zajedno prave autonomne robote koji spajaju mehaniku, elektroniku i softver."
+msgid ""
+"Founded in 2023 as a <0>Eurobot</0> team, we've since grown into the "
+"robotics club of the School of Electrical Engineering at the University of "
+"Belgrade. Our members come from faculties across the university, building "
+"autonomous robots that bring together mechanics, electronics and software."
+msgstr ""
+"Osnovani 2023. kao <0>Eurobot</0> tim, od tada smo prerasli u klub robotike "
+"Elektrotehničkog fakulteta Univerziteta u Beogradu. Naši članovi dolaze sa "
+"različitih fakulteta i zajedno prave autonomne robote koji spajaju "
+"mehaniku, elektroniku i softver."
 
 #: src/components/common/CategoryBadge.astro
 msgid "News"
@@ -124,15 +132,19 @@ msgid "General"
 msgstr "Generalni"
 
 #: src/components/sponsors/SponsorsSection.astro
-msgid "We are grateful to our sponsors for supporting our work and helping us learn, create, and compete."
-msgstr "Zahvaljujemo se našim sponzorima na podršci i na tome što nam omogućavaju da učimo, stvaramo i da se takmičimo."
+msgid ""
+"We are grateful to our sponsors for supporting our work and helping us "
+"learn, create, and compete."
+msgstr ""
+"Zahvaljujemo se našim sponzorima na podršci i na tome što nam omogućavaju "
+"da učimo, stvaramo i da se takmičimo."
 
 #: src/components/layout/Footer.astro
 msgid "Source"
 msgstr "Izvorni kod"
 
-#. 0: year
 #: src/components/layout/Footer.astro
+#. 0: year
 msgid "© 2023–{0} RUR Robotics. All rights reserved."
 msgstr "© 2023–{0} RUR Robotika. Sva prava zadržana."
 
@@ -145,8 +157,47 @@ msgid "Menu"
 msgstr "Meni"
 
 #: src/components/join/JoinSection.astro
-msgid "Meet new people and learn from more experienced members while you compete. We take students from any faculty and any year, no background needed."
-msgstr "Upoznaj nove ljude i uči od iskusnijih dok se takmičiš. Primamo studente sa svih fakulteta i svih godina, bez predznanja."
+msgid ""
+"Meet new people and learn from more experienced members while you compete. "
+"We take students from any faculty and any year, no background needed."
+msgstr ""
+"Upoznaj nove ljude i uči od iskusnijih dok se takmičiš. Primamo studente sa "
+"svih fakulteta i svih godina, bez predznanja."
+
+#: src/components/articles/ArticleFilters.astro
+#: src/components/articles/ArticleFilters.astro
+msgid "All"
+msgstr "Sve"
+
+#: src/pages/[lang]/articles/index.astro
+msgid "Events & articles"
+msgstr "Dešavanja i članci"
+
+#: src/pages/[lang]/articles/index.astro
+msgid "Meetups, lectures, news and writeups from the club."
+msgstr "Okupljanja, predavanja, vesti i tekstovi iz kluba."
+
+#: src/components/articles/ArticleFilters.astro
+#: src/components/articles/ArticleFilters.astro
+msgid "Search titles and descriptions"
+msgstr "Pretraži naslove i opise"
+
+#: src/components/articles/ArticleFilters.astro
+msgid "Category"
+msgstr "Kategorija"
+
+#: src/components/articles/ArticleFilters.astro
+msgid "Year"
+msgstr "Godina"
+
+#: src/pages/[lang]/articles/index.astro
+msgid "Nothing matches your filters."
+msgstr "Ništa ne odgovara pretrazi."
+
+#: src/pages/[lang]/articles/index.astro
+#. 0: entries.length
+msgid "Shown <0/> out of {0}"
+msgstr "Prikazano <0/> od {0}"
 
 #: src/pages/[lang]/articles/[...slug].astro
 msgid "Event date:"

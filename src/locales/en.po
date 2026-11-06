@@ -148,6 +148,41 @@ msgstr "Menu"
 msgid "Meet new people and learn from more experienced members while you compete. We take students from any faculty and any year, no background needed."
 msgstr "Meet new people and learn from more experienced members while you compete. We take students from any faculty and any year, no background needed."
 
+#: src/components/articles/ArticleFilters.astro
+#: src/components/articles/ArticleFilters.astro
+msgid "All"
+msgstr "All"
+
+#: src/pages/[lang]/articles/index.astro
+msgid "Events & articles"
+msgstr "Events & articles"
+
+#: src/pages/[lang]/articles/index.astro
+msgid "Meetups, lectures, news and writeups from the club."
+msgstr "Meetups, lectures, news and writeups from the club."
+
+#: src/components/articles/ArticleFilters.astro
+#: src/components/articles/ArticleFilters.astro
+msgid "Search titles and descriptions"
+msgstr "Search titles and descriptions"
+
+#: src/components/articles/ArticleFilters.astro
+msgid "Category"
+msgstr "Category"
+
+#: src/components/articles/ArticleFilters.astro
+msgid "Year"
+msgstr "Year"
+
+#: src/pages/[lang]/articles/index.astro
+msgid "Nothing matches your filters."
+msgstr "Nothing matches your filters."
+
+#. 0: entries.length
+#: src/pages/[lang]/articles/index.astro
+msgid "Shown <0/> out of {0}"
+msgstr "Shown <0/> out of {0}"
+
 #: src/pages/[lang]/articles/[...slug].astro
 msgid "Event date:"
 msgstr "Event date:"

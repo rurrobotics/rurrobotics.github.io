@@ -1,5 +1,5 @@
 ---
-import { getArticles } from "@/articles";
+import { EVENT_CATEGORIES, getArticles } from "@/articles";
 import { defaultLocale, type Locale } from "@locales/config.js";
 import Section from "@components/common/Section.astro";
 import SectionTitle from "@components/common/SectionTitle.astro";
@@ -7,6 +7,7 @@ import ArticleCard from "@components/common/ArticleCard.astro";
 import SectionLink from "@components/common/SectionLink.astro";
 
 const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const href = `/${locale}/articles/?category=${EVENT_CATEGORIES.join(",")}`;
 const events = await getArticles(locale, true);
 
 const now = Date.now();
@@ -20,7 +21,7 @@ const past = events
 
 <Section id="events">
 	<SectionTitle slot="title">Events</SectionTitle>
-	<SectionLink slot="link" href={`/${locale}/articles/`}>
+	<SectionLink slot="link" href={href}>
 		All events
 	</SectionLink>
 	{

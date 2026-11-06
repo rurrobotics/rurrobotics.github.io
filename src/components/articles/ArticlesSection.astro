@@ -1,5 +1,5 @@
 ---
-import { getArticles } from "@/articles";
+import { ARTICLE_CATEGORIES, getArticles } from "@/articles";
 import { defaultLocale, type Locale } from "@locales/config.js";
 import Section from "@components/common/Section.astro";
 import SectionTitle from "@components/common/SectionTitle.astro";
@@ -7,12 +7,13 @@ import ArticleCard from "@components/common/ArticleCard.astro";
 import SectionLink from "@components/common/SectionLink.astro";
 
 const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const href = `/${locale}/articles/?category=${ARTICLE_CATEGORIES.join(",")}`;
 const articles = await getArticles(locale, false);
 ---
 
 <Section id="articles" color="tertiary">
 	<SectionTitle slot="title">Articles</SectionTitle>
-	<SectionLink slot="link" href={`/${locale}/articles/`} color="secondary">All articles</SectionLink>
+	<SectionLink slot="link" href={href} color="secondary">All articles</SectionLink>
 	{
 		articles.length === 0 ? (
 			<p class="font-mono text-sm opacity-75">No articles yet.</p>
