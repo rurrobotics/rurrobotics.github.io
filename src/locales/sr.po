@@ -17,9 +17,7 @@ msgstr "RUR Robotika"
 msgid "Projects"
 msgstr "Projekti"
 
-#: src/components/articles/ArticleHeader.astro
-#: src/components/common/ArticleCard.astro
-#: src/pages/[lang]/articles/[...slug].astro
+#: src/components/common/CategoryBadge.astro
 msgid "Lecture"
 msgstr "Predavanje"
 
@@ -36,9 +34,7 @@ msgstr "Nema nadolazećih dešavanja"
 msgid "Past events"
 msgstr "Prošla dešavanja"
 
-#: src/components/articles/ArticleHeader.astro
-#: src/components/common/ArticleCard.astro
-#: src/pages/[lang]/articles/[...slug].astro
+#: src/components/common/CategoryBadge.astro
 msgid "Meetup"
 msgstr "Okupljanje"
 
@@ -54,15 +50,11 @@ msgstr "Tim"
 msgid "Founded in 2023 as a <0>Eurobot</0> team, we've since grown into the robotics club of the School of Electrical Engineering at the University of Belgrade. Our members come from faculties across the university, building autonomous robots that bring together mechanics, electronics and software."
 msgstr "Osnovani 2023. kao <0>Eurobot</0> tim, od tada smo prerasli u klub robotike Elektrotehničkog fakulteta Univerziteta u Beogradu. Naši članovi dolaze sa različitih fakulteta i zajedno prave autonomne robote koji spajaju mehaniku, elektroniku i softver."
 
-#: src/components/articles/ArticleHeader.astro
-#: src/components/common/ArticleCard.astro
-#: src/pages/[lang]/articles/[...slug].astro
+#: src/components/common/CategoryBadge.astro
 msgid "News"
 msgstr "Vesti"
 
-#: src/components/articles/ArticleHeader.astro
-#: src/components/common/ArticleCard.astro
-#: src/pages/[lang]/articles/[...slug].astro
+#: src/components/common/CategoryBadge.astro
 msgid "Writeup"
 msgstr "Tekst"
 
