@@ -148,17 +148,14 @@ msgstr "Meni"
 msgid "Meet new people and learn from more experienced members while you compete. We take students from any faculty and any year, no background needed."
 msgstr "Upoznaj nove ljude i uči od iskusnijih dok se takmičiš. Primamo studente sa svih fakulteta i svih godina, bez predznanja."
 
-#: src/components/articles/ArticleHeader.astro
 #: src/pages/[lang]/articles/[...slug].astro
-msgid "Event date"
-msgstr "Datum dešavanja"
+msgid "Event date:"
+msgstr "Datum dešavanja:"
 
-#: src/components/articles/ArticleFooter.astro
 #: src/pages/[lang]/articles/[...slug].astro
-msgid "Published"
-msgstr "Objavljeno"
+msgid "Published:"
+msgstr "Objavljeno:"
 
-#: src/components/articles/ArticleFooter.astro
 #: src/pages/[lang]/articles/[...slug].astro
-msgid "Author"
-msgstr "Autor"
+msgid "Author:"
+msgstr "Autor:"

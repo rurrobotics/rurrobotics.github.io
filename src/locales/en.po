@@ -148,17 +148,14 @@ msgstr "Menu"
 msgid "Meet new people and learn from more experienced members while you compete. We take students from any faculty and any year, no background needed."
 msgstr "Meet new people and learn from more experienced members while you compete. We take students from any faculty and any year, no background needed."
 
-#: src/components/articles/ArticleHeader.astro
 #: src/pages/[lang]/articles/[...slug].astro
-msgid "Event date"
-msgstr "Event date"
+msgid "Event date:"
+msgstr "Event date:"
 
-#: src/components/articles/ArticleFooter.astro
 #: src/pages/[lang]/articles/[...slug].astro
-msgid "Published"
-msgstr "Published"
+msgid "Published:"
+msgstr "Published:"
 
-#: src/components/articles/ArticleFooter.astro
 #: src/pages/[lang]/articles/[...slug].astro
-msgid "Author"
-msgstr "Author"
+msgid "Author:"
+msgstr "Author:"

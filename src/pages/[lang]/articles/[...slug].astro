@@ -31,14 +31,6 @@ const { data } = entry;
 
 const localeTag = localeTags[(Astro.currentLocale ?? defaultLocale) as Locale];
 
-// Strings in the frontmatter are extracted by wuchale; a bare word in the
-// markup isn't.
-const labels = {
-	eventDate: "Event date",
-	published: "Published",
-	author: "Author",
-};
-
 const eventDate =
 	isEventCategory(data.category) && "eventDate" in data
 		? data.eventDate
@@ -82,15 +74,23 @@ const timeFmt = new Intl.DateTimeFormat(localeTag, {
 				{
 					eventDate && (
 						<span>
-							{labels.eventDate}:{" "}
+							<span>Event date: </span>
 							<span class="font-semibold text-foreground">
 								{dateFmt.format(eventDate)}, {timeFmt.format(eventDate)}
 							</span>
 						</span>
 					)
 				}
+				{
+					data.author && (
+						<span>
+							<span>Author: </span>
+							<span class="font-semibold text-foreground">{data.author}</span>
+						</span>
+					)
+				}
 				<span>
-					{labels.published}:{" "}
+					<span>Published: </span>
 					<time
 						class="font-semibold text-foreground"
 						datetime={data.date.toISOString()}
@@ -98,14 +98,6 @@ const timeFmt = new Intl.DateTimeFormat(localeTag, {
 						{dateFmt.format(data.date)}
 					</time>
 				</span>
-				{
-					data.author && (
-						<span>
-							{labels.author}:{" "}
-							<span class="font-semibold text-foreground">{data.author}</span>
-						</span>
-					)
-				}
 			</p>
 		</header>
 
