@@ -10,7 +10,9 @@ export { getStaticPaths } from "../../../locales/utils";
 const years = getGalleryYears();
 ---
 
-<PageLayout>
+<PageLayout
+	description="A collection of photos from the events we've been part of."
+>
 	<Section>
 		<SectionTitle slot="title" size="large">Gallery</SectionTitle>
 		{

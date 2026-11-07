@@ -158,6 +158,7 @@ msgid "Events & articles"
 msgstr "Dešavanja i članci"
 
 #: src/pages/[lang]/articles/index.astro
+#: src/pages/[lang]/articles/index.astro
 msgid "Meetups, lectures, news and writeups from the club."
 msgstr "Okupljanja, predavanja, vesti i tekstovi iz kluba."
 
@@ -232,3 +233,11 @@ msgstr "Naš robot na takmičarskom stolu na Eurobot kupu Srbije"
 #: src/components/gallery/GallerySection.astro
 msgid "Team members by the playing table at the Serbian Eurobot Cup"
 msgstr "Članovi tima pored takmičarskog stola na Eurobot kupu Srbije"
+
+#: src/pages/[lang]/index.astro
+msgid "RUR Robotics is the robotics club of the School of Electrical Engineering at the University of Belgrade. We build autonomous robots and compete in Eurobot."
+msgstr "RUR Robotika je klub robotike Elektrotehničkog fakulteta Univerziteta u Beogradu. Gradimo autonomne robote i takmičimo se na Eurobotu."
+
+#: src/pages/[lang]/gallery/index.astro
+msgid "A collection of photos from the events we've been part of."
+msgstr "Zbirka fotografija sa događaja u kojima smo učestvovali."
