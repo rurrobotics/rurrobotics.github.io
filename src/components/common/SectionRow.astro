@@ -1,9 +1,5 @@
 ---
-// Places two <Section>s side by side from lg up. Each section's content container (section > div)
-// is sized to its share of the page container and pushed toward the split, so it lines up with full-width sections.
-
 interface Props {
-	/** Share of the page container taken by the first section (0.5 = equal halves). */
 	split?: number;
 	class?: string;
 }
@@ -16,7 +12,6 @@ const { split = 0.5, class: className } = Astro.props;
 </div>
 
 <style>
-	/* --container mirrors the max-width of Tailwind's `container` at each breakpoint */
 	@media (width >= 64rem) {
 		.section-row {
 			--container: 64rem;
