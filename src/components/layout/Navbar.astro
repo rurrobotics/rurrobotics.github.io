@@ -32,12 +32,13 @@ const isCurrent = (id: string) =>
 	(id === "articles" && onArticles) || (id === "gallery" && onGallery);
 
 const gutter = "px-5 sm:px-10 md:px-15";
+const inner = `mx-auto container ${gutter}`;
 ---
 
 <header class="sticky top-0 z-20 border-b-4 border-foreground bg-background">
 	<div
 		class:list={[
-			"relative mx-auto container flex items-stretch justify-between",
+			"mx-auto container flex items-stretch justify-between",
 			gutter,
 		]}
 	>
@@ -109,37 +110,35 @@ const gutter = "px-5 sm:px-10 md:px-15";
 						<NavLink
 							href={`${home}#${link.id}`}
 							current={isCurrent(link.id)}
-							class:list={["py-3.5 text-lg", gutter]}
+							class="py-3.5 text-lg"
 						>
-							{link.label}
+							<span class:list={["block", inner]}>
+								{link.label}
+							</span>
 						</NavLink>
 					))
 				}
 				<NavLink
 					href={`${home}#join`}
-					class:list={[
-						"bg-secondary py-3.5 text-lg text-secondary-foreground",
-						gutter,
-					]}
+					class="bg-secondary py-3.5 text-lg text-secondary-foreground"
 				>
-					<span>Join us</span>
+					<span class:list={["block", inner]}>Join us</span>
 				</NavLink>
 				<span
-					class:list={[
-						"flex gap-1 border-t-4 border-foreground py-3 font-mono text-xs tracking-wider",
-						gutter,
-					]}
+					class="block border-t-4 border-foreground py-3 font-mono text-xs tracking-wider"
 				>
-					{
-						localeOptions.map(([target, label]) => (
-							<LocaleLink
-								href={localeHref(target)}
-								current={target === locale}
-							>
-								{label}
-							</LocaleLink>
-						))
-					}
+					<span class:list={["flex gap-1", inner]}>
+						{
+							localeOptions.map(([target, label]) => (
+								<LocaleLink
+									href={localeHref(target)}
+									current={target === locale}
+								>
+									{label}
+								</LocaleLink>
+							))
+						}
+					</span>
 				</span>
 			</nav>
 		</details>
