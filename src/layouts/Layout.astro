@@ -1,6 +1,12 @@
 ---
 import "@/global.css";
 import FontPreloads from "@components/layout/FontPreloads.astro";
+
+interface Props {
+	description: string;
+}
+
+const { description } = Astro.props;
 ---
 
 <html lang={Astro.currentLocale}>
@@ -13,6 +19,7 @@ import FontPreloads from "@components/layout/FontPreloads.astro";
 		<meta name="generator" content={Astro.generator} />
 		<FontPreloads />
 		<title>RUR Robotics</title>
+		<meta name="description" content={description} />
 	</head>
 	<body>
 		<slot />
