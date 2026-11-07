@@ -1,0 +1,44 @@
+---
+import { getGalleryYears } from "@/gallery";
+import PageLayout from "@layouts/PageLayout.astro";
+import Section from "@components/common/Section.astro";
+import SectionTitle from "@components/common/SectionTitle.astro";
+import GalleryTile from "@components/gallery/GalleryTile.astro";
+
+export { getStaticPaths } from "../../../locales/utils";
+
+const years = getGalleryYears();
+---
+
+<PageLayout>
+	<Section>
+		<SectionTitle slot="title" size="large">Gallery</SectionTitle>
+		{
+			years.map(({ year, photos }) => (
+				<section class="mt-10 first:mt-0">
+					<h3 class="mb-4 font-display text-2xl font-bold sm:mb-6 sm:text-3xl">
+						{year}
+					</h3>
+					<ul class="grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
+						{photos.map((photo) => (
+							<li>
+								<GalleryTile
+									photo={photo}
+									alt="A photo from the Serbian Eurobot Cup"
+									sizes="(min-width: 1024px) min(25vw, 330px), (min-width: 768px) 33vw, 50vw"
+									class="aspect-4/3 border-4"
+								/>
+							</li>
+						))}
+					</ul>
+				</section>
+			))
+		}
+	</Section>
+</PageLayout>
+
+<script>
+	import { imageZoom } from "@/scripts/image-zoom";
+
+	imageZoom();
+</script>

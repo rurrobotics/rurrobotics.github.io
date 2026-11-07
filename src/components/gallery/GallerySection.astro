@@ -1,0 +1,91 @@
+---
+import { MoveRight } from "@lucide/astro";
+import { defaultLocale, type Locale } from "@locales/config.js";
+import Section from "@components/common/Section.astro";
+import SectionTitle from "@components/common/SectionTitle.astro";
+import GalleryTile from "./GalleryTile.astro";
+import img0973 from "@/assets/gallery/2026/IMG_0973.jpg";
+import img1020 from "@/assets/gallery/2026/IMG_1020.jpg";
+import img0974 from "@/assets/gallery/2026/IMG_0974.jpg";
+import img1017 from "@/assets/gallery/2026/IMG_1017.jpg";
+import img0972 from "@/assets/gallery/2026/IMG_0972.jpg";
+
+const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+
+// Placed in order on a 12-column grid, two rows tall. The "See more" tile fills the rest.
+const photos = [
+	{
+		photo: img0973,
+		alt: "Team members preparing a robot at the Serbian Eurobot Cup",
+		sizes: "(min-width: 768px) min(33vw, 472px), 50vw",
+		class: "md:col-span-4",
+	},
+	{
+		photo: img1020,
+		alt: "A team member setting up a robot at the Serbian Eurobot Cup",
+		sizes: "(min-width: 768px) min(25vw, 354px), 50vw",
+		class: "row-span-2 md:col-span-3",
+	},
+	{
+		photo: img0974,
+		alt: "Team members gathered at the Serbian Eurobot Cup",
+		sizes: "(min-width: 768px) min(42vw, 590px), 100vw",
+		class: "col-span-2 md:col-span-5",
+	},
+	{
+		photo: img1017,
+		alt: "Our robot on the playing table at the Serbian Eurobot Cup",
+		sizes: "(min-width: 768px) min(33vw, 472px), 50vw",
+		class: "md:col-span-4",
+	},
+	{
+		photo: img0972,
+		alt: "Team members by the playing table at the Serbian Eurobot Cup",
+		sizes: "(min-width: 768px) min(25vw, 354px), 50vw",
+		class: "md:col-span-3",
+	},
+];
+---
+
+<Section id="gallery">
+	<SectionTitle slot="title">Gallery</SectionTitle>
+
+	<div class="relative">
+		<div
+			aria-hidden="true"
+			class="absolute -top-4.5 -right-4.5 size-20 bg-primary sm:size-26"
+		>
+		</div>
+		<div
+			aria-hidden="true"
+			class="absolute -bottom-4 -left-4 size-24 rounded-full border-10 border-secondary sm:size-33 sm:border-14 lg:-bottom-6.5 lg:-left-6.5"
+		>
+		</div>
+		<div
+			aria-hidden="true"
+			class="absolute top-10 -left-4 h-28 w-3 bg-tertiary sm:h-35 sm:w-4 lg:-left-8.5"
+		>
+		</div>
+		<!-- Two rows of photos split by thick black lines, the tall one in the middle, the last tile is the button. -->
+		<div
+			class="relative grid auto-rows-36 grid-flow-dense grid-cols-2 gap-1 border-4 bg-border md:auto-rows-48 md:grid-cols-12"
+		>
+			{photos.map((tile) => <GalleryTile {...tile} />)}
+			<a
+				href={`/${locale}/gallery/`}
+				class="group wipe wipe-left wipe-tertiary flex items-end gap-3 bg-primary p-4 font-mono text-sm font-bold uppercase tracking-widest text-primary-foreground md:col-span-2"
+			>
+				<span>See more</span>
+				<MoveRight
+					class="size-5 transition-transform group-hover:translate-x-0.5"
+				/>
+			</a>
+		</div>
+	</div>
+</Section>
+
+<script>
+	import { imageZoom } from "@/scripts/image-zoom";
+
+	imageZoom();
+</script>
