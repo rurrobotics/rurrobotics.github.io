@@ -7,3 +7,4 @@ src/assets/team.jpg filter=lfs diff=lfs merge=lfs -text
 src/assets/articles/*.png filter=lfs diff=lfs merge=lfs -text
 src/assets/articles/*.jpg filter=lfs diff=lfs merge=lfs -text
 src/assets/articles/*.webp filter=lfs diff=lfs merge=lfs -text
+src/assets/gallery/**/*.jpg filter=lfs diff=lfs merge=lfs -text

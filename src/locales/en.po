@@ -198,3 +198,36 @@ msgstr "Author:"
 #: src/components/sponsors/SponsorsSection.astro
 msgid "Become a partner"
 msgstr "Become a partner"
+
+#: src/components/gallery/GallerySection.astro
+msgid "See more"
+msgstr "See more"
+
+#: src/components/gallery/GallerySection.astro
+#: src/pages/[lang]/gallery/index.astro
+msgid "Gallery"
+msgstr "Gallery"
+
+#: src/pages/[lang]/gallery/index.astro
+msgid "A photo from the Serbian Eurobot Cup"
+msgstr "A photo from the Serbian Eurobot Cup"
+
+#: src/components/gallery/GallerySection.astro
+msgid "Team members preparing a robot at the Serbian Eurobot Cup"
+msgstr "Team members preparing a robot at the Serbian Eurobot Cup"
+
+#: src/components/gallery/GallerySection.astro
+msgid "A team member setting up a robot at the Serbian Eurobot Cup"
+msgstr "A team member setting up a robot at the Serbian Eurobot Cup"
+
+#: src/components/gallery/GallerySection.astro
+msgid "Team members gathered at the Serbian Eurobot Cup"
+msgstr "Team members gathered at the Serbian Eurobot Cup"
+
+#: src/components/gallery/GallerySection.astro
+msgid "Our robot on the playing table at the Serbian Eurobot Cup"
+msgstr "Our robot on the playing table at the Serbian Eurobot Cup"
+
+#: src/components/gallery/GallerySection.astro
+msgid "Team members by the playing table at the Serbian Eurobot Cup"
+msgstr "Team members by the playing table at the Serbian Eurobot Cup"

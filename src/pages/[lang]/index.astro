@@ -3,6 +3,7 @@ import AboutSection from "@components/about/AboutSection.astro";
 import ProjectsSection from "@components/projects/ProjectsSection.astro";
 import ArticlesSection from "@components/articles/ArticlesSection.astro";
 import EventsSection from "@components/events/EventsSection.astro";
+import GallerySection from "@components/gallery/GallerySection.astro";
 import SponsorsSection from "@components/sponsors/SponsorsSection.astro";
 import SectionRow from "@components/common/SectionRow.astro";
 import PageLayout from "@layouts/PageLayout.astro";
@@ -17,5 +18,6 @@ export { getStaticPaths } from "../../locales/utils";
 		<EventsSection />
 		<ArticlesSection />
 	</SectionRow>
+	<GallerySection />
 	<SponsorsSection />
 </PageLayout>
