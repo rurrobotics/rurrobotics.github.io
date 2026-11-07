@@ -43,6 +43,8 @@ const proseCodeBlock = {
 export default defineConfig({
 	site: "https://rurrobotics.rs/",
 	trailingSlash: "always",
+	// Fetch a page when its link is hovered, so moving around the site feels instant.
+	prefetch: { prefetchAll: true, defaultStrategy: "hover" },
 	redirects: {
 		"/": `/${defaultLocale}/`,
 	},

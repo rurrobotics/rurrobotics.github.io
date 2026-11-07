@@ -25,3 +25,8 @@ npx shadcn-svelte@latest add <name>   # add a UI component (lands in src/shadcn/
 ### Navbar
 - Redesign the locale switcher
 - Animations for mobile
+
+### Performance
+- Put Cloudflare (free plan) in front of the site: GitHub Pages serves gzip only with a short cache lifetime, while the hashed files in `_astro/` can be cached for a year. Add a cache rule for `/_astro/*` and enable Brotli
+- Trim the fonts (about 106 KB for the Latin subsets): drop JetBrains Mono, which only labels use, or subset the fonts further
+- Serve photos as AVIF with a WebP fallback (`<Picture>`), about 25-30% smaller, once the gallery grows. It slows builds down
