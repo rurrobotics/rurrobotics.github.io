@@ -5,12 +5,13 @@
 interface Props {
 	/** Share of the page container taken by the first section (0.5 = equal halves). */
 	split?: number;
+	class?: string;
 }
 
-const { split = 0.5 } = Astro.props;
+const { split = 0.5, class: className } = Astro.props;
 ---
 
-<div class="section-row grid" style={`--split: ${split}`}>
+<div class:list={["section-row grid", className]} style={`--split: ${split}`}>
 	<slot />
 </div>
 
