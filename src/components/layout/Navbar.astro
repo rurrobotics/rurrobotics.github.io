@@ -22,11 +22,14 @@ const links = [
 	{ id: "projects", label: "Projects" },
 	{ id: "events", label: "Events" },
 	{ id: "articles", label: "Articles" },
+	{ id: "gallery", label: "Gallery" },
 	{ id: "sponsors", label: "Partners" },
 ];
 
 const onArticles = Astro.url.pathname.includes("/articles");
-const isCurrent = (id: string) => id === "articles" && onArticles;
+const onGallery = Astro.url.pathname.includes("/gallery");
+const isCurrent = (id: string) =>
+	(id === "articles" && onArticles) || (id === "gallery" && onGallery);
 
 const gutter = "px-5 sm:px-10 md:px-15";
 ---
@@ -47,7 +50,7 @@ const gutter = "px-5 sm:px-10 md:px-15";
 			</span>
 		</a>
 
-		<nav class="relative hidden items-stretch lg:flex" data-nav>
+		<nav class="relative hidden items-stretch xl:flex" data-nav>
 			{
 				links.map((link) => (
 					<NavLink
@@ -87,7 +90,7 @@ const gutter = "px-5 sm:px-10 md:px-15";
 			></span>
 		</nav>
 
-		<details class="lg:hidden">
+		<details class="xl:hidden">
 			<summary
 				aria-label="Menu"
 				class="-mr-5 flex h-full cursor-pointer list-none items-center px-5 [&::-webkit-details-marker]:hidden"

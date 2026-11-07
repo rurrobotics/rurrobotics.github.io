@@ -204,6 +204,7 @@ msgid "See more"
 msgstr "See more"
 
 #: src/components/gallery/GallerySection.astro
+#: src/components/layout/Navbar.astro
 #: src/pages/[lang]/gallery/index.astro
 msgid "Gallery"
 msgstr "Gallery"
