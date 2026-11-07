@@ -24,6 +24,8 @@ const {
 } = Astro.props;
 const Tag = href ? "a" : "div";
 
+const logoHeights = { large: 144, medium: 96, small: 100 };
+
 const sizeClasses = {
 	large: "h-32 border-4 p-6",
 	medium: "h-24 border-4 p-5",
@@ -42,7 +44,12 @@ const sizeClasses = {
 >
 	{
 		logo ? (
-			<Image src={logo} alt={name ?? ""} class:list={["max-h-full w-auto object-contain", logoClass]} />
+			<Image
+				src={logo}
+				alt={name ?? ""}
+				height={logoHeights[size]}
+				class:list={["max-h-full w-auto object-contain", logoClass]}
+			/>
 		) : (
 			<span class="text-center font-mono text-xs font-bold uppercase tracking-widest">{name ?? "Logo"}</span>
 		)
