@@ -11,6 +11,8 @@ import sitemap from "@astrojs/sitemap";
 
 import mdx from "@astrojs/mdx";
 
+import cloudflare from "@astrojs/cloudflare";
+
 import rehypeShiki from "@shikijs/rehype";
 
 import { unified } from "@astrojs/markdown-remark";
@@ -43,7 +45,8 @@ const proseCodeBlock = {
 export default defineConfig({
 	site: "https://rurrobotics.rs/",
 	trailingSlash: "always",
-	// Fetch a page when its link is hovered, so moving around the site feels instant.
+	adapter: cloudflare({ imageService: "compile" }),
+	session: false,
 	prefetch: { prefetchAll: true, defaultStrategy: "hover" },
 	redirects: {
 		"/": `/${defaultLocale}/`,
