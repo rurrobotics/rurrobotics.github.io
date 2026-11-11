@@ -1,0 +1,98 @@
+---
+import { Image } from "astro:assets";
+import PageLayout from "@layouts/PageLayout.astro";
+import Section from "@components/common/Section.astro";
+import SectionTitle from "@components/common/SectionTitle.astro";
+import JoinForm from "@components/join/JoinForm.astro";
+import team from "@/assets/team.jpg";
+
+export { getStaticPaths } from "../../../locales/utils";
+---
+
+<PageLayout
+	description="Apply to join RUR Robotics, the robotics club of the School of Electrical Engineering at the University of Belgrade."
+	showJoinSection={false}
+>
+	<Section color="primary" class="relative isolate grow overflow-hidden">
+		<SectionTitle slot="title" size="large" dot={false}
+			>Join us</SectionTitle
+		>
+
+		<div
+			aria-hidden="true"
+			class="absolute -top-16 -right-12 -z-10 size-56 bg-secondary sm:size-72"
+		>
+		</div>
+		<div
+			aria-hidden="true"
+			class="absolute -bottom-28 -left-24 -z-10 size-72 rounded-full border-[3.5rem] border-background"
+		>
+		</div>
+		<div
+			aria-hidden="true"
+			class="absolute top-1/2 -right-6 -z-10 hidden h-40 w-5 bg-black lg:block"
+		>
+		</div>
+
+		<div class="relative grid items-start gap-12 lg:grid-cols-[1fr_30rem]">
+			<div class="flex flex-col gap-8">
+				<p class="max-w-184 text-lg leading-relaxed text-black">
+					Meet new people and learn from more experienced members
+					while you compete. We take students from any faculty and any
+					year, no background needed.
+				</p>
+
+				<div>
+					<h2
+						class="font-mono text-sm font-bold tracking-widest text-black uppercase"
+					>
+						What happens next
+					</h2>
+					<ol class="mt-4 flex flex-col gap-3 text-black">
+						<li class="flex gap-4">
+							<span class="font-mono font-bold">01</span>
+							<span>Fill in the form.</span>
+						</li>
+						<li class="flex gap-4">
+							<span class="font-mono font-bold">02</span>
+							<span>We email you when the selection round starts.</span>
+						</li>
+						<li class="flex gap-4">
+							<span class="font-mono font-bold">03</span>
+							<span>Pass the round and pick a project.</span>
+						</li>
+					</ol>
+				</div>
+
+				<Image
+					src={team}
+					alt="The RUR Robotics team"
+					width={960}
+					widths={[480, 960]}
+					sizes="(min-width: 1024px) 576px, 100vw"
+					class="hidden h-72 w-full max-w-xl border-4 border-black object-cover lg:block"
+				/>
+			</div>
+			<div class="relative">
+				<div
+					aria-hidden="true"
+					class="absolute -top-4.5 -left-4.5 size-20 bg-secondary sm:size-24"
+				>
+				</div>
+				<div
+					aria-hidden="true"
+					class="absolute -right-4 -bottom-4 size-24 rounded-full border-10 border-background sm:size-28"
+				>
+				</div>
+				<JoinForm />
+			</div>
+		</div>
+	</Section>
+</PageLayout>
+
+<script>
+	import { joinForm } from "@/scripts/join-form";
+
+	const form = document.querySelector<HTMLFormElement>("#join-form");
+	if (form) joinForm(form);
+</script>
