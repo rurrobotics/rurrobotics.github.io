@@ -1,27 +1,45 @@
 ---
 import { MoveRight } from "@lucide/astro";
-import { defaultLocale } from "@locales/config.js";
+import { actions, isInputError } from "astro:actions";
 import FormField from "./FormField.astro";
 
-// TODO: point this at the Supabase endpoint. It should accept the form post,
-// store it, then redirect to /<locale>/join/#sent or #error (and answer JSON
-// when asked with `Accept: application/json`) so it works with and without JS.
-const action = "#";
-const locale = Astro.currentLocale ?? defaultLocale;
+// Set when this request is the form's own POST to the `apply` action.
+const result = Astro.getActionResult(actions.apply);
+const sent = result !== undefined && !result.error;
+const invalid = isInputError(result?.error) ? result.error.fields : {};
+// Refill the fields after a failed submit; a sent form starts empty again.
+const values: Record<string, string> = result?.error
+	? Object.fromEntries(
+			[...(await Astro.request.formData())].map(([k, v]) => [
+				k,
+				String(v),
+			]),
+		)
+	: {};
 ---
 
 <form
-	method="post"
-	{action}
-	id="join-form"
+	method="POST"
+	action={actions.apply}
 	class="relative flex flex-col gap-5 border-4 border-black bg-background p-6 text-foreground sm:p-8"
 >
-	<input type="hidden" name="locale" value={locale} />
-	<FormField name="name" autocomplete="name" minlength={2}>
+	<FormField
+		name="name"
+		autocomplete="name"
+		minlength={2}
+		value={values.name}
+		invalid={!!invalid.name}
+	>
 		<span slot="label">Name</span>
 		<span slot="error">Enter your name.</span>
 	</FormField>
-	<FormField name="email" type="email" autocomplete="email">
+	<FormField
+		name="email"
+		type="email"
+		autocomplete="email"
+		value={values.email}
+		invalid={!!invalid.email}
+	>
 		<span slot="label">Email</span>
 		<span slot="error">Enter a valid email.</span>
 	</FormField>
@@ -30,32 +48,52 @@ const locale = Astro.currentLocale ?? defaultLocale;
 		type="tel"
 		autocomplete="tel"
 		pattern="\+?[0-9 ()/\-]{6,20}"
+		value={values.phone}
+		invalid={!!invalid.phone}
 	>
 		<span slot="label">Phone number</span>
 		<span slot="error">Enter a valid phone number.</span>
 	</FormField>
-	<FormField name="faculty">
+	<FormField
+		name="faculty"
+		minlength={2}
+		value={values.faculty}
+		invalid={!!invalid.faculty}
+	>
 		<span slot="label">Faculty</span>
 		<span slot="error">Enter your faculty.</span>
 	</FormField>
-	<FormField name="year" type="number" min={1} max={6}>
+	<FormField
+		name="year"
+		type="number"
+		min={1}
+		max={6}
+		value={values.year}
+		invalid={!!invalid.year}
+	>
 		<span slot="label">Year of study</span>
 		<span slot="error">Enter a year from 1 to 6.</span>
 	</FormField>
-	<p
-		id="sent"
-		role="status"
-		class="hidden scroll-mt-24 border-4 border-black bg-secondary text-secondary-foreground p-4 font-mono text-sm font-bold target:block"
-	>
-		Thanks! We got your application and will be in touch soon.
-	</p>
-	<p
-		id="error"
-		role="alert"
-		class="hidden scroll-mt-24 border-4 border-black bg-primary text-primary-foreground p-4 font-mono text-sm font-bold target:block"
-	>
-		Something went wrong. Check your answers and try again.
-	</p>
+	{
+		sent && (
+			<p
+				role="status"
+				class="border-4 border-black bg-secondary p-4 font-mono text-sm font-bold text-secondary-foreground"
+			>
+				Thanks! We got your application and will be in touch soon.
+			</p>
+		)
+	}
+	{
+		result?.error && !isInputError(result.error) && (
+			<p
+				role="alert"
+				class="border-4 border-black bg-primary p-4 font-mono text-sm font-bold text-primary-foreground"
+			>
+				Something went wrong. Check your answers and try again.
+			</p>
+		)
+	}
 	<button
 		type="submit"
 		class="group wipe wipe-left wipe-primary mt-2 inline-flex items-center justify-between gap-3 border-4 border-black bg-foreground px-6 py-3 font-mono text-sm font-bold tracking-widest text-background uppercase"
