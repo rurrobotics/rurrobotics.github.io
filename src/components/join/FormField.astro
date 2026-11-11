@@ -26,12 +26,12 @@ const { name, type = "text", autocomplete, min, max, minlength, pattern } = Astr
 		{pattern}
 		required
 		aria-describedby={`${name}-error`}
-		class="border-4 border-black bg-background px-4 py-3 font-sans text-base text-foreground focus-visible:border-tertiary focus-visible:outline-none"
+		class="border-4 border-black bg-background px-4 py-3 font-sans text-base text-foreground aria-invalid:border-primary focus-visible:border-tertiary focus-visible:outline-none"
 	/>
 	<span
 		id={`${name}-error`}
 		hidden
-		class="font-mono text-xs font-bold text-tertiary"
+		class="font-mono text-xs font-bold text-primary"
 	>
 		<slot name="error" />
 	</span>
