@@ -1,0 +1,68 @@
+---
+import { MoveRight } from "@lucide/astro";
+import { defaultLocale } from "@locales/config.js";
+import FormField from "./FormField.astro";
+
+// TODO: point this at the Supabase endpoint. It should accept the form post,
+// store it, then redirect to /<locale>/join/#sent or #error (and answer JSON
+// when asked with `Accept: application/json`) so it works with and without JS.
+const action = "#";
+const locale = Astro.currentLocale ?? defaultLocale;
+---
+
+<form
+	method="post"
+	{action}
+	id="join-form"
+	class="relative flex flex-col gap-5 border-4 border-black bg-background p-6 text-foreground sm:p-8"
+>
+	<input type="hidden" name="locale" value={locale} />
+	<p
+		id="sent"
+		role="status"
+		class="hidden scroll-mt-24 border-4 border-black bg-secondary p-4 font-mono text-sm font-bold target:block"
+	>
+		Thanks! We got your application and will be in touch soon.
+	</p>
+	<p
+		id="error"
+		role="alert"
+		class="hidden scroll-mt-24 border-4 border-black bg-tertiary p-4 font-mono text-sm font-bold target:block"
+	>
+		Something went wrong. Check your answers and try again.
+	</p>
+	<FormField name="name" autocomplete="name" minlength={2}>
+		<span slot="label">Name</span>
+		<span slot="error">Enter your name.</span>
+	</FormField>
+	<FormField name="email" type="email" autocomplete="email">
+		<span slot="label">Email</span>
+		<span slot="error">Enter a valid email.</span>
+	</FormField>
+	<FormField
+		name="phone"
+		type="tel"
+		autocomplete="tel"
+		pattern="\+?[0-9 ()/\-]{6,20}"
+	>
+		<span slot="label">Phone number</span>
+		<span slot="error">Enter a valid phone number.</span>
+	</FormField>
+	<FormField name="faculty">
+		<span slot="label">Faculty</span>
+		<span slot="error">Enter your faculty.</span>
+	</FormField>
+	<FormField name="year" type="number" min={1} max={6}>
+		<span slot="label">Year of study</span>
+		<span slot="error">Enter a year from 1 to 6.</span>
+	</FormField>
+	<button
+		type="submit"
+		class="group wipe wipe-left wipe-primary mt-2 inline-flex items-center justify-between gap-3 border-4 border-black bg-foreground px-6 py-3 font-mono text-sm font-bold tracking-widest text-background uppercase"
+	>
+		<span>Send application</span>
+		<MoveRight
+			class="size-5 transition-transform group-hover:translate-x-0.5"
+		/>
+	</button>
+</form>

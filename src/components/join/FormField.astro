@@ -1,0 +1,38 @@
+---
+interface Props {
+	name: string;
+	type?: "text" | "email" | "tel" | "number";
+	autocomplete?: string;
+	min?: number;
+	max?: number;
+	minlength?: number;
+	pattern?: string;
+}
+
+const { name, type = "text", autocomplete, min, max, minlength, pattern } = Astro.props;
+---
+
+<label class="flex flex-col gap-2">
+	<span class="font-mono text-xs font-bold tracking-widest uppercase"
+		><slot name="label" /></span
+	>
+	<input
+		{name}
+		{type}
+		{autocomplete}
+		{min}
+		{max}
+		{minlength}
+		{pattern}
+		required
+		aria-describedby={`${name}-error`}
+		class="border-4 border-black bg-background px-4 py-3 font-sans text-base text-foreground focus-visible:border-tertiary focus-visible:outline-none"
+	/>
+	<span
+		id={`${name}-error`}
+		hidden
+		class="font-mono text-xs font-bold text-tertiary"
+	>
+		<slot name="error" />
+	</span>
+</label>
