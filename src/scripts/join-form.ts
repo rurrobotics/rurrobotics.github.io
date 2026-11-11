@@ -29,9 +29,11 @@ export function joinForm(form: HTMLFormElement): () => void {
 			parsed.success ? [] : parsed.error.issues.map((i) => String(i.path[0])),
 		);
 		for (const input of form.querySelectorAll<HTMLInputElement>("input[name]")) {
+			const error = form.querySelector<HTMLElement>(`#${input.name}-error`);
+			if (!error) continue; // e.g. the hidden locale field
 			const bad = invalid.has(input.name);
 			input.setAttribute("aria-invalid", String(bad));
-			form.querySelector<HTMLElement>(`#${input.name}-error`)!.hidden = !bad;
+			error.hidden = !bad;
 		}
 		if (!parsed.success) {
 			form.querySelector<HTMLInputElement>(`[name=${[...invalid][0]}]`)?.focus();

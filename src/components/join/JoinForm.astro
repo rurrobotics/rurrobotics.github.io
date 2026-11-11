@@ -17,20 +17,6 @@ const locale = Astro.currentLocale ?? defaultLocale;
 	class="relative flex flex-col gap-5 border-4 border-black bg-background p-6 text-foreground sm:p-8"
 >
 	<input type="hidden" name="locale" value={locale} />
-	<p
-		id="sent"
-		role="status"
-		class="hidden scroll-mt-24 border-4 border-black bg-secondary p-4 font-mono text-sm font-bold target:block"
-	>
-		Thanks! We got your application and will be in touch soon.
-	</p>
-	<p
-		id="error"
-		role="alert"
-		class="hidden scroll-mt-24 border-4 border-black bg-tertiary p-4 font-mono text-sm font-bold target:block"
-	>
-		Something went wrong. Check your answers and try again.
-	</p>
 	<FormField name="name" autocomplete="name" minlength={2}>
 		<span slot="label">Name</span>
 		<span slot="error">Enter your name.</span>
@@ -56,6 +42,20 @@ const locale = Astro.currentLocale ?? defaultLocale;
 		<span slot="label">Year of study</span>
 		<span slot="error">Enter a year from 1 to 6.</span>
 	</FormField>
+	<p
+		id="sent"
+		role="status"
+		class="hidden scroll-mt-24 border-4 border-black bg-secondary p-4 font-mono text-sm font-bold target:block"
+	>
+		Thanks! We got your application and will be in touch soon.
+	</p>
+	<p
+		id="error"
+		role="alert"
+		class="hidden scroll-mt-24 border-4 border-black bg-primary text-primary-foreground p-4 font-mono text-sm font-bold target:block"
+	>
+		Something went wrong. Check your answers and try again.
+	</p>
 	<button
 		type="submit"
 		class="group wipe wipe-left wipe-primary mt-2 inline-flex items-center justify-between gap-3 border-4 border-black bg-foreground px-6 py-3 font-mono text-sm font-bold tracking-widest text-background uppercase"
