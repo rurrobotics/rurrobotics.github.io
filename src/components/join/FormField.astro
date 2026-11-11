@@ -1,15 +1,12 @@
 ---
-interface Props {
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"input"> {
 	name: string;
-	type?: "text" | "email" | "tel" | "number";
-	autocomplete?: string;
-	min?: number;
-	max?: number;
-	minlength?: number;
-	pattern?: string;
+	invalid?: boolean;
 }
 
-const { name, type = "text", autocomplete, min, max, minlength, pattern } = Astro.props;
+const { name, invalid = false, ...attrs } = Astro.props;
 ---
 
 <label class="flex flex-col gap-2">
@@ -18,21 +15,20 @@ const { name, type = "text", autocomplete, min, max, minlength, pattern } = Astr
 	>
 	<input
 		{name}
-		{type}
-		{autocomplete}
-		{min}
-		{max}
-		{minlength}
-		{pattern}
+		{...attrs}
 		required
-		aria-describedby={`${name}-error`}
+		aria-invalid={invalid ? "true" : undefined}
+		aria-describedby={invalid ? `${name}-error` : undefined}
 		class="border-4 border-black bg-background px-4 py-3 font-sans text-base text-foreground aria-invalid:border-primary focus-visible:border-tertiary focus-visible:outline-none"
 	/>
-	<span
-		id={`${name}-error`}
-		hidden
-		class="font-mono text-xs font-bold text-primary"
-	>
-		<slot name="error" />
-	</span>
+	{
+		invalid && (
+			<span
+				id={`${name}-error`}
+				class="font-mono text-xs font-bold text-primary"
+			>
+				<slot name="error" />
+			</span>
+		)
+	}
 </label>

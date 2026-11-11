@@ -5,8 +5,14 @@ import Section from "@components/common/Section.astro";
 import SectionTitle from "@components/common/SectionTitle.astro";
 import JoinForm from "@components/join/JoinForm.astro";
 import team from "@/assets/team.jpg";
+import { locales, type Locale } from "@locales/config.js";
 
-export { getStaticPaths } from "../../../locales/utils";
+// Rendered on request so the form can post to the `apply` action without JS.
+export const prerender = false;
+
+if (!locales.includes(Astro.params.lang as Locale)) {
+	return new Response(null, { status: 404 });
+}
 ---
 
 <PageLayout
@@ -55,7 +61,9 @@ export { getStaticPaths } from "../../../locales/utils";
 						</li>
 						<li class="flex gap-4">
 							<span class="font-mono font-bold">02</span>
-							<span>We email you when the selection round starts.</span>
+							<span
+								>We email you when the selection round starts.</span
+							>
 						</li>
 						<li class="flex gap-4">
 							<span class="font-mono font-bold">03</span>
@@ -89,10 +97,3 @@ export { getStaticPaths } from "../../../locales/utils";
 		</div>
 	</Section>
 </PageLayout>
-
-<script>
-	import { joinForm } from "@/scripts/join-form";
-
-	const form = document.querySelector<HTMLFormElement>("#join-form");
-	if (form) joinForm(form);
-</script>
