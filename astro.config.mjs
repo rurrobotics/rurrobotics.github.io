@@ -43,7 +43,7 @@ const proseCodeBlock = {
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://rurrobotics.rs/",
+	site: "https://rurrobotics.com/",
 	trailingSlash: "always",
 	adapter: cloudflare({ imageService: "compile" }),
 	session: false,
