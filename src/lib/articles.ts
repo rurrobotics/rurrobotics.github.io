@@ -1,5 +1,5 @@
 import { getCollection, type CollectionEntry } from "astro:content";
-import { locales, type Locale } from "./locales/config.js";
+import { locales, type Locale } from "@locales/config.js";
 
 export type Article = CollectionEntry<"articles">;
 

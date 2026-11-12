@@ -23,7 +23,7 @@ The join form saves to Supabase; everything lives in `supabase/` and is applied 
 npx supabase login
 npx supabase link --project-ref <ref>
 npx supabase db push                                 # apply supabase/migrations/
-npm run db:types                                     # regenerate src/supabase.types.ts
+npm run db:types                                     # regenerate src/lib/supabase.types.ts
 npx supabase functions deploy application-emails --use-api
 ```
 

@@ -1,6 +1,6 @@
 ---
 import { defaultLocale, type Locale } from "@locales/config.js";
-import { preloadedFonts } from "@/fonts";
+import { preloadedFonts } from "@lib/fonts";
 
 const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
 const links = preloadedFonts[locale].map(
