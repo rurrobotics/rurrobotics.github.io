@@ -317,3 +317,40 @@ msgstr "Унеси годину од 1 до 6."
 #: src/components/ui/JoinForm.astro
 msgid "We couldn't confirm you're human. Complete the check and try again."
 msgstr "Нисмо успели да потврдимо да си човек. Заврши проверу и покушај поново."
+
+#: src/pages/404.astro
+msgid "The page you're looking for doesn't exist."
+msgstr "Страница коју тражиш не постоји."
+
+#: src/pages/404.astro
+msgid "Error 404"
+msgstr "Грешка 404"
+
+#: src/pages/404.astro
+msgid "Page not found"
+msgstr "Страница није пронађена"
+
+#: src/pages/404.astro
+msgid "The page you're looking for doesn't exist or has been moved."
+msgstr "Страница коју тражиш не постоји или је премештена."
+
+#: src/pages/404.astro
+#: src/pages/500.astro
+msgid "Back to home"
+msgstr "Назад на почетну"
+
+#: src/pages/500.astro
+msgid "Something went wrong on our end."
+msgstr "Нешто је пошло наопако на нашој страни."
+
+#: src/pages/500.astro
+msgid "Error 500"
+msgstr "Грешка 500"
+
+#: src/pages/500.astro
+msgid "Something went wrong"
+msgstr "Нешто је пошло наопако"
+
+#: src/pages/500.astro
+msgid "Something broke on our end. Try again in a moment."
+msgstr "Нешто се покварило на нашој страни. Покушај поново за тренутак."
