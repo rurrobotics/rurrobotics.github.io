@@ -25,11 +25,11 @@
 		"@lucide/astro": "^1.72.0",
 		"@supabase/supabase-js": "^2.119.0",
 		"@tailwindcss/vite": "^4.3.5",
-		"@wuchale/astro": "^0.5.1",
+		"@wuchale/astro": "^0.4.4",
 		"astro": "^7.4.11",
 		"tailwindcss": "^4.3.5",
 		"typescript": "^6.0.3",
-		"wuchale": "^0.26.7"
+		"wuchale": "^0.25.8"
 	},
 	"devDependencies": {
 		"@fontsource-variable/golos-text": "^5.3.0",
