@@ -317,3 +317,40 @@ msgstr "Enter a year from 1 to 6."
 #: src/components/ui/JoinForm.astro
 msgid "We couldn't confirm you're human. Complete the check and try again."
 msgstr "We couldn't confirm you're human. Complete the check and try again."
+
+#: src/pages/404.astro
+msgid "The page you're looking for doesn't exist."
+msgstr "The page you're looking for doesn't exist."
+
+#: src/pages/404.astro
+msgid "Error 404"
+msgstr "Error 404"
+
+#: src/pages/404.astro
+msgid "Page not found"
+msgstr "Page not found"
+
+#: src/pages/404.astro
+msgid "The page you're looking for doesn't exist or has been moved."
+msgstr "The page you're looking for doesn't exist or has been moved."
+
+#: src/pages/404.astro
+#: src/pages/500.astro
+msgid "Back to home"
+msgstr "Back to home"
+
+#: src/pages/500.astro
+msgid "Something went wrong on our end."
+msgstr "Something went wrong on our end."
+
+#: src/pages/500.astro
+msgid "Error 500"
+msgstr "Error 500"
+
+#: src/pages/500.astro
+msgid "Something went wrong"
+msgstr "Something went wrong"
+
+#: src/pages/500.astro
+msgid "Something broke on our end. Try again in a moment."
+msgstr "Something broke on our end. Try again in a moment."

@@ -1,0 +1,14 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import ErrorSection from "@components/sections/ErrorSection.astro";
+---
+
+<PageLayout description="Something went wrong on our end." showJoinSection={false}>
+	<ErrorSection
+		code="500"
+		label="Error 500"
+		title="Something went wrong"
+		message="Something broke on our end. Try again in a moment."
+		linkLabel="Back to home"
+	/>
+</PageLayout>
