@@ -1,8 +1,8 @@
 ---
-import { defaultLocale, type Locale } from "@locales/config.js";
+import { pageLocale } from "@locales/utils";
 import { preloadedFonts } from "@lib/fonts";
 
-const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const locale = pageLocale(Astro.currentLocale);
 const links = preloadedFonts[locale].map(
 	(href) =>
 		`<link rel="preload" as="font" type="font/woff2" href="${href}" crossorigin="anonymous" />`,

@@ -13,119 +13,119 @@ msgid "RUR Robotics"
 msgstr "РУР Роботика"
 
 #: src/components/layout/Navbar.astro
-#: src/components/projects/ProjectsSection.astro
+#: src/components/sections/ProjectsSection.astro
 msgid "Projects"
 msgstr "Пројекти"
 
-#: src/components/common/CategoryBadge.astro
+#: src/components/ui/CategoryBadge.astro
 msgid "Lecture"
 msgstr "Предавање"
 
-#: src/components/events/EventsSection.astro
 #: src/components/layout/Navbar.astro
+#: src/components/sections/EventsSection.astro
 msgid "Events"
 msgstr "Дешавања"
 
-#: src/components/events/EventsSection.astro
+#: src/components/sections/EventsSection.astro
 msgid "No upcoming events."
 msgstr "Нема надолазећих дешавања"
 
-#: src/components/events/EventsSection.astro
+#: src/components/sections/EventsSection.astro
 msgid "Past events"
 msgstr "Прошла дешавања"
 
-#: src/components/common/CategoryBadge.astro
+#: src/components/ui/CategoryBadge.astro
 msgid "Meetup"
 msgstr "Окупљање"
 
-#: src/components/projects/ProjectsSection.astro
+#: src/components/sections/ProjectsSection.astro
 msgid "All repositories"
 msgstr "Сви репозиторијуми"
 
-#: src/components/about/AboutSection.astro
+#: src/components/sections/AboutSection.astro
 msgid "The team"
 msgstr "Тим"
 
-#: src/components/about/AboutSection.astro
+#: src/components/sections/AboutSection.astro
 msgid "Founded in 2023 as a <0>Eurobot</0> team, we've since grown into the robotics club of the School of Electrical Engineering at the University of Belgrade. Our members come from faculties across the university, building autonomous robots that bring together mechanics, electronics and software."
 msgstr "Основани 2023. године као тим за <0>Еуробот</0>, а од тада смо прерасли у клуб роботике Електротехничког факултета Универзитета у Београду. Наши чланови долазе са различитих факултета и заједно пројектују, граде и програмирају аутономне роботе."
 
-#: src/components/common/CategoryBadge.astro
+#: src/components/ui/CategoryBadge.astro
 msgid "News"
 msgstr "Вести"
 
-#: src/components/common/CategoryBadge.astro
+#: src/components/ui/CategoryBadge.astro
 msgid "Writeup"
 msgstr "Текст"
 
-#: src/components/articles/ArticlesSection.astro
+#: src/components/sections/ArticlesSection.astro
 msgid "No articles yet."
 msgstr "Још нема чланака."
 
-#: src/components/articles/ArticlesSection.astro
 #: src/components/layout/Navbar.astro
+#: src/components/sections/ArticlesSection.astro
 msgid "Articles"
 msgstr "Чланци"
 
-#: src/components/articles/ArticlesSection.astro
+#: src/components/sections/ArticlesSection.astro
 msgid "All articles"
 msgstr "Сви чланци"
 
-#: src/components/events/EventsSection.astro
+#: src/components/sections/EventsSection.astro
 msgid "All events"
 msgstr "Сва дешавања"
 
-#: src/components/join/JoinForm.astro
-#: src/components/join/JoinSection.astro
+#: src/components/sections/JoinSection.astro
+#: src/components/ui/JoinForm.astro
 msgid "Send application"
 msgstr "Пошаљи пријаву"
 
-#: src/components/join/JoinSection.astro
 #: src/components/layout/Navbar.astro
 #: src/components/layout/Navbar.astro
+#: src/components/sections/JoinSection.astro
 #: src/pages/[lang]/join/index.astro
 msgid "Join us"
 msgstr "Придружи се"
 
-#: src/components/common/SocialLink.astro
+#: src/components/ui/SocialLink.astro
 msgid "Instagram"
 msgstr "Instagram"
 
-#: src/components/common/SocialLink.astro
+#: src/components/ui/SocialLink.astro
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: src/components/common/SocialLink.astro
+#: src/components/ui/SocialLink.astro
 msgid "GitHub"
 msgstr "GitHub"
 
-#: src/components/contact/ContactSection.astro
+#: src/components/sections/ContactSection.astro
 msgid "School of Electrical Engineering, Bulevar kralja Aleksandra 73, Belgrade"
 msgstr "Електротехнички факултет, Булевар краља Александра 73, Београд"
 
-#: src/components/contact/ContactSection.astro
+#: src/components/sections/ContactSection.astro
 msgid "Contact"
 msgstr "Контакт"
 
 #: src/components/layout/Navbar.astro
-#: src/components/sponsors/SponsorsSection.astro
-#: src/components/sponsors/SponsorsSection.astro
+#: src/components/sections/SponsorsSection.astro
+#: src/components/sections/SponsorsSection.astro
 msgid "Partners"
 msgstr "Партнери"
 
-#: src/components/sponsors/SponsorsSection.astro
+#: src/components/sections/SponsorsSection.astro
 msgid "Support"
 msgstr "Подршка"
 
-#: src/components/sponsors/SponsorTile.astro
+#: src/components/ui/SponsorTile.astro
 msgid "Logo"
 msgstr "Лого"
 
-#: src/components/sponsors/SponsorsSection.astro
+#: src/components/sections/SponsorsSection.astro
 msgid "General"
 msgstr "Генерални"
 
-#: src/components/sponsors/SponsorsSection.astro
+#: src/components/sections/SponsorsSection.astro
 msgid "We are grateful to our sponsors for supporting our work and helping us learn, create, and compete."
 msgstr "Захваљујемо се нашим спонзорима на подршци и на томе што нам омогућавају да учимо, стварамо и да се такмичимо."
 
@@ -138,7 +138,7 @@ msgstr "Изворни код"
 msgid "© 2023–{0} RUR Robotics. All rights reserved."
 msgstr "© 2023–{0} РУР Роботика. Сва права задржана."
 
-#: src/components/about/AboutSection.astro
+#: src/components/sections/AboutSection.astro
 #: src/pages/[lang]/join/index.astro
 msgid "The RUR Robotics team"
 msgstr "Тим РУР Роботике"
@@ -147,13 +147,13 @@ msgstr "Тим РУР Роботике"
 msgid "Menu"
 msgstr "Мени"
 
-#: src/components/join/JoinSection.astro
+#: src/components/sections/JoinSection.astro
 #: src/pages/[lang]/join/index.astro
 msgid "Meet new people and learn from more experienced members while you compete. We take students from any faculty and any year, no background needed."
 msgstr "Упознај нове људе и учи од искуснијих док се такмичиш. Примамо студенте са свих факултета и свих година, без предзнања."
 
-#: src/components/articles/ArticleFilters.astro
-#: src/components/articles/ArticleFilters.astro
+#: src/components/ui/ArticleFilters.astro
+#: src/components/ui/ArticleFilters.astro
 msgid "All"
 msgstr "Све"
 
@@ -166,16 +166,16 @@ msgstr "Дешавања и чланци"
 msgid "Meetups, lectures, news and writeups from the club."
 msgstr "Окупљања, предавања, вести и текстови из клуба."
 
-#: src/components/articles/ArticleFilters.astro
-#: src/components/articles/ArticleFilters.astro
+#: src/components/ui/ArticleFilters.astro
+#: src/components/ui/ArticleFilters.astro
 msgid "Search titles and descriptions"
 msgstr "Претражи наслове и описе"
 
-#: src/components/articles/ArticleFilters.astro
+#: src/components/ui/ArticleFilters.astro
 msgid "Category"
 msgstr "Категорија"
 
-#: src/components/articles/ArticleFilters.astro
+#: src/components/ui/ArticleFilters.astro
 msgid "Year"
 msgstr "Година"
 
@@ -200,16 +200,16 @@ msgstr "Објављено:"
 msgid "Author:"
 msgstr "Аутор:"
 
-#: src/components/sponsors/SponsorsSection.astro
+#: src/components/sections/SponsorsSection.astro
 msgid "Become a partner"
 msgstr "Постани партнер"
 
-#: src/components/gallery/GallerySection.astro
+#: src/components/sections/GallerySection.astro
 msgid "See more"
 msgstr "Погледај још"
 
-#: src/components/gallery/GallerySection.astro
 #: src/components/layout/Navbar.astro
+#: src/components/sections/GallerySection.astro
 #: src/pages/[lang]/gallery/index.astro
 msgid "Gallery"
 msgstr "Галерија"
@@ -218,23 +218,23 @@ msgstr "Галерија"
 msgid "A photo from the Serbian Eurobot Cup"
 msgstr "Фотографија са Eurobot купа Србије"
 
-#: src/components/gallery/GallerySection.astro
+#: src/components/sections/GallerySection.astro
 msgid "Team members preparing a robot at the Serbian Eurobot Cup"
 msgstr "Чланови тима припремају робота на Eurobot купу Србије"
 
-#: src/components/gallery/GallerySection.astro
+#: src/components/sections/GallerySection.astro
 msgid "A team member setting up a robot at the Serbian Eurobot Cup"
 msgstr "Члан тима поставља робота на Eurobot купу Србије"
 
-#: src/components/gallery/GallerySection.astro
+#: src/components/sections/GallerySection.astro
 msgid "Team members gathered at the Serbian Eurobot Cup"
 msgstr "Чланови тима окупљени на Eurobot купу Србије"
 
-#: src/components/gallery/GallerySection.astro
+#: src/components/sections/GallerySection.astro
 msgid "Our robot on the playing table at the Serbian Eurobot Cup"
 msgstr "Наш робот на такмичарском столу на Eurobot купу Србије"
 
-#: src/components/gallery/GallerySection.astro
+#: src/components/sections/GallerySection.astro
 msgid "Team members by the playing table at the Serbian Eurobot Cup"
 msgstr "Чланови тима поред такмичарског стола на Eurobot купу Србије"
 
@@ -246,23 +246,23 @@ msgstr "РУР Роботика је клуб роботике Електрот�
 msgid "A collection of photos from the events we've been part of."
 msgstr "Збирка фотографија са догађаја у којима смо учествовали."
 
-#: src/components/join/JoinForm.astro
+#: src/components/ui/JoinForm.astro
 msgid "Name"
 msgstr "Име"
 
-#: src/components/join/JoinForm.astro
+#: src/components/ui/JoinForm.astro
 msgid "Email"
 msgstr "Имејл"
 
-#: src/components/join/JoinForm.astro
+#: src/components/ui/JoinForm.astro
 msgid "Phone number"
 msgstr "Број телефона"
 
-#: src/components/join/JoinForm.astro
+#: src/components/ui/JoinForm.astro
 msgid "Faculty"
 msgstr "Факултет"
 
-#: src/components/join/JoinForm.astro
+#: src/components/ui/JoinForm.astro
 msgid "Year of study"
 msgstr "Година студија"
 
@@ -274,11 +274,11 @@ msgstr "Пријави се за чланство у РУР Роботици, к
 msgid "What happens next"
 msgstr "Шта следи"
 
-#: src/components/join/JoinForm.astro
+#: src/components/ui/JoinForm.astro
 msgid "Thanks! We got your application and will be in touch soon."
 msgstr "Хвала! Примили смо твоју пријаву и ускоро ћемо ти се јавити."
 
-#: src/components/join/JoinForm.astro
+#: src/components/ui/JoinForm.astro
 msgid "Something went wrong. Check your answers and try again."
 msgstr "Нешто је пошло по злу. Провери одговоре и покушај поново."
 
@@ -294,26 +294,26 @@ msgstr "Мејлом ти јављамо када почиње круг селе
 msgid "Pass the round and pick a project."
 msgstr "Прођи круг и изабери пројекат."
 
-#: src/components/join/JoinForm.astro
+#: src/components/ui/JoinForm.astro
 msgid "Enter your name."
 msgstr "Унеси своје име."
 
-#: src/components/join/JoinForm.astro
+#: src/components/ui/JoinForm.astro
 msgid "Enter a valid email."
 msgstr "Унеси исправан имејл."
 
-#: src/components/join/JoinForm.astro
+#: src/components/ui/JoinForm.astro
 msgid "Enter a valid phone number."
 msgstr "Унеси исправан број телефона."
 
-#: src/components/join/JoinForm.astro
+#: src/components/ui/JoinForm.astro
 msgid "Enter your faculty."
 msgstr "Унеси свој факултет."
 
-#: src/components/join/JoinForm.astro
+#: src/components/ui/JoinForm.astro
 msgid "Enter a year from 1 to 6."
 msgstr "Унеси годину од 1 до 6."
 
-#: src/components/join/JoinForm.astro
+#: src/components/ui/JoinForm.astro
 msgid "We couldn't confirm you're human. Complete the check and try again."
 msgstr "Нисмо успели да потврдимо да си човек. Заврши проверу и покушај поново."

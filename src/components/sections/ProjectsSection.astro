@@ -1,9 +1,9 @@
 ---
 import { getProjects } from "@lib/projects";
-import Section from "@components/common/Section.astro";
-import SectionTitle from "@components/common/SectionTitle.astro";
-import ProjectCard from "./ProjectCard.astro";
-import SectionLink from "@components/common/SectionLink.astro";
+import Section from "@components/ui/Section.astro";
+import SectionTitle from "@components/ui/SectionTitle.astro";
+import ProjectCard from "@components/ui/ProjectCard.astro";
+import SectionLink from "@components/ui/SectionLink.astro";
 
 const projects = await getProjects();
 const colors = ["primary", "secondary", "tertiary", "accent"] as const;

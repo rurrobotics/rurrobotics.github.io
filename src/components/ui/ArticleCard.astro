@@ -1,8 +1,9 @@
 ---
 import { articleSlug, isEventCategory, type Article } from "@lib/articles";
-import { defaultLocale, localeTags, type Locale } from "@locales/config.js";
+import { localeTags } from "@locales/config.js";
+import { pageLocale } from "@locales/utils";
 import { MoveRight } from "@lucide/astro";
-import CategoryBadge from "@components/common/CategoryBadge.astro";
+import CategoryBadge from "@components/ui/CategoryBadge.astro";
 
 interface Props {
 	article: Article;
@@ -12,7 +13,7 @@ interface Props {
 const { article, past = false } = Astro.props;
 const { data } = article;
 
-const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const locale = pageLocale(Astro.currentLocale);
 const localeTag = localeTags[locale];
 
 const isEvent = isEventCategory(data.category);

@@ -1,8 +1,8 @@
 ---
 import { Search } from "@lucide/astro";
 import { CATEGORY_COLORS, type ArticleCategory } from "@lib/articles";
-import CategoryBadge from "@components/common/CategoryBadge.astro";
-import FilterChip from "@components/common/FilterChip.astro";
+import CategoryBadge from "@components/ui/CategoryBadge.astro";
+import FilterChip from "@components/ui/FilterChip.astro";
 
 interface Props {
 	categories: { category: ArticleCategory; count: number }[];
