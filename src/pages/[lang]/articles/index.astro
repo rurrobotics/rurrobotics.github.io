@@ -4,6 +4,7 @@ import { pageLocale } from "@locales/utils";
 import PageLayout from "@layouts/PageLayout.astro";
 import Section from "@components/ui/Section.astro";
 import SectionTitle from "@components/ui/SectionTitle.astro";
+import SectionLink from "@components/ui/SectionLink.astro";
 import ArticleDetailCard from "@components/ui/ArticleDetailCard.astro";
 import ArticleFilters from "@components/ui/ArticleFilters.astro";
 
@@ -31,6 +32,7 @@ const years = [...new Set(entries.map((a) => whenOf(a).getUTCFullYear()))].sort(
 <PageLayout description="Meetups, lectures, news and writeups from the club.">
 	<Section>
 		<SectionTitle slot="title" size="large">Events & articles</SectionTitle>
+		<SectionLink slot="link" href={`/${locale}/articles/rss.xml`}>RSS feed</SectionLink>
 		<p class="mb-8 max-w-2xl text-lg leading-relaxed text-ink-muted">
 			Meetups, lectures, news and writeups from the club.
 		</p>
