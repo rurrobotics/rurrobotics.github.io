@@ -9,6 +9,7 @@ msgstr ""
 
 #: src/components/layout/Navbar.astro
 #: src/layouts/Layout.astro
+#: src/layouts/Layout.astro
 msgid "RUR Robotics"
 msgstr "RUR Robotika"
 
@@ -179,6 +180,7 @@ msgstr "Dešavanja i članci"
 
 #: src/pages/[lang]/articles/index.astro
 #: src/pages/[lang]/articles/index.astro
+#: src/pages/[lang]/articles/rss.xml.ts
 msgid "Meetups, lectures, news and writeups from the club."
 msgstr "Okupljanja, predavanja, vesti i tekstovi iz kluba."
 
@@ -379,3 +381,11 @@ msgstr "Nešto je pošlo naopako"
 #: src/pages/500.astro
 msgid "Something broke on our end. Try again in a moment."
 msgstr "Nešto se pokvarilo na našoj strani. Pokušaj ponovo za trenutak."
+
+#: src/pages/[lang]/articles/rss.xml.ts
+msgid "RUR Robotics: events & articles"
+msgstr "RUR Robotika: dešavanja i članci"
+
+#: src/pages/[lang]/articles/index.astro
+msgid "RSS feed"
+msgstr "RSS fid"
