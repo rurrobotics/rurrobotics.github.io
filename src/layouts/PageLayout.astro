@@ -8,17 +8,26 @@ import Navbar from "@components/layout/Navbar.astro";
 
 interface Props {
     description: string;
+    showJoinSection?: boolean;
 }
 
-const { description } = Astro.props;
+const { description, showJoinSection = true } = Astro.props;
 ---
 
 <Layout description={description}>
     <Navbar />
     <slot />
-    <SectionRow split={0.6} class="mt-auto">
-        <JoinSection />
-        <ContactSection />
-    </SectionRow>
+    {
+        showJoinSection ? (
+            <SectionRow split={0.6} class="mt-auto">
+                <JoinSection />
+                <ContactSection />
+            </SectionRow>
+        ) : (
+            <div class="mt-auto">
+                <ContactSection />
+            </div>
+        )
+    }
     <Footer />
 </Layout>

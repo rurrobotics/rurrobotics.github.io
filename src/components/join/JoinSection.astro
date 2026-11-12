@@ -2,22 +2,21 @@
 import { MoveRight } from "@lucide/astro";
 import Section from "@components/common/Section.astro";
 import SectionTitle from "@components/common/SectionTitle.astro";
+import { defaultLocale, type Locale } from "@locales/config.js";
 
-// TODO: link to the application form
-const applicationUrl = "#";
+const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
 ---
 
 <Section id="join" color="primary">
 	<SectionTitle slot="title" size="large" dot={false}>Join us</SectionTitle>
-	<p class="max-w-184 text-lg leading-relaxed text-black">
+	<p class="max-w-184 text-lg leading-relaxed">
 		Meet new people and learn from more experienced members while you compete. We take students from any faculty and any year, no background needed.
 	</p>
 	<a
-		href={applicationUrl}
+		href={`/${locale}/join/`}
 		class="group wipe wipe-left wipe-black mt-8 inline-flex items-center gap-3 border-4 border-black bg-background px-6 py-3 font-mono text-sm font-bold uppercase tracking-widest text-foreground"
 	>
 		<span>Send application</span>
 		<MoveRight class="size-5 transition-transform group-hover:translate-x-0.5" />
 	</a>
 </Section>
-
