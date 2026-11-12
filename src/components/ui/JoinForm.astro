@@ -2,7 +2,7 @@
 import { MoveRight } from "@lucide/astro";
 import { actions, isInputError } from "astro:actions";
 import { TURNSTILE_SITE_KEY } from "astro:env/server";
-import FormField from "./FormField.astro";
+import FormField from "@components/ui/FormField.astro";
 
 // Set when this request is the form's own POST to the `apply` action.
 const result = Astro.getActionResult(actions.apply);

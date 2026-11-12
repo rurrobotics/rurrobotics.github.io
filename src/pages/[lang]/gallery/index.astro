@@ -1,11 +1,11 @@
 ---
-import { getGalleryYears } from "@/gallery";
+import { getGalleryYears } from "@lib/gallery";
 import PageLayout from "@layouts/PageLayout.astro";
-import Section from "@components/common/Section.astro";
-import SectionTitle from "@components/common/SectionTitle.astro";
-import GalleryTile from "@components/gallery/GalleryTile.astro";
+import Section from "@components/ui/Section.astro";
+import SectionTitle from "@components/ui/SectionTitle.astro";
+import GalleryTile from "@components/ui/GalleryTile.astro";
 
-export { getStaticPaths } from "../../../locales/utils";
+export { getStaticPaths } from "@locales/utils";
 
 const years = getGalleryYears();
 ---

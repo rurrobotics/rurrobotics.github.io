@@ -1,22 +1,12 @@
 ---
 import { Image } from "astro:assets";
-import { defaultLocale, type Locale } from "@locales/config.js";
+import { pageLocale } from "@locales/utils";
 import NavLink from "@components/layout/NavLink.astro";
-import LocaleLink from "@components/layout/LocaleLink.astro";
+import LocaleSwitcher from "@components/layout/LocaleSwitcher.astro";
 import logo from "@/assets/logo.svg";
 
-const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const locale = pageLocale(Astro.currentLocale);
 const home = `/${locale}/`;
-
-// @wc-ignore
-const localeOptions = [
-	["en", "EN"],
-	["sr", "SR"],
-	["sr-Cyrl", "СР"],
-] as const satisfies readonly (readonly [Locale, string])[];
-
-const rest = Astro.url.pathname.split("/").filter(Boolean).slice(1).join("/");
-const localeHref = (target: Locale) => `/${target}/${rest && `${rest}/`}`;
 
 const links = [
 	{ id: "projects", label: "Projects" },
@@ -73,16 +63,7 @@ const inner = `mx-auto container ${gutter}`;
 			<span
 				class="-mr-2.5 flex items-center pl-2 font-mono text-xs tracking-wider"
 			>
-				{
-					localeOptions.map(([target, label]) => (
-						<LocaleLink
-							href={localeHref(target)}
-							current={target === locale}
-						>
-							{label}
-						</LocaleLink>
-					))
-				}
+				<LocaleSwitcher />
 			</span>
 			<span
 				data-notch
@@ -128,16 +109,7 @@ const inner = `mx-auto container ${gutter}`;
 					class="block border-t-4 border-foreground py-3 font-mono text-xs tracking-wider"
 				>
 					<span class:list={["flex gap-1", inner]}>
-						{
-							localeOptions.map(([target, label]) => (
-								<LocaleLink
-									href={localeHref(target)}
-									current={target === locale}
-								>
-									{label}
-								</LocaleLink>
-							))
-						}
+						<LocaleSwitcher />
 					</span>
 				</span>
 			</nav>

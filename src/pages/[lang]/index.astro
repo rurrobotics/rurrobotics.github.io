@@ -1,14 +1,14 @@
 ---
-import AboutSection from "@components/about/AboutSection.astro";
-import ProjectsSection from "@components/projects/ProjectsSection.astro";
-import ArticlesSection from "@components/articles/ArticlesSection.astro";
-import EventsSection from "@components/events/EventsSection.astro";
-import GallerySection from "@components/gallery/GallerySection.astro";
-import SponsorsSection from "@components/sponsors/SponsorsSection.astro";
-import SectionRow from "@components/common/SectionRow.astro";
+import AboutSection from "@components/sections/AboutSection.astro";
+import ProjectsSection from "@components/sections/ProjectsSection.astro";
+import ArticlesSection from "@components/sections/ArticlesSection.astro";
+import EventsSection from "@components/sections/EventsSection.astro";
+import GallerySection from "@components/sections/GallerySection.astro";
+import SponsorsSection from "@components/sections/SponsorsSection.astro";
+import SectionRow from "@components/ui/SectionRow.astro";
 import PageLayout from "@layouts/PageLayout.astro";
 
-export { getStaticPaths } from "../../locales/utils";
+export { getStaticPaths } from "@locales/utils";
 ---
 
 <PageLayout

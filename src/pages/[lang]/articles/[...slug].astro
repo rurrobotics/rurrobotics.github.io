@@ -5,10 +5,11 @@ import {
 	isEventCategory,
 	parseArticleId,
 	type Article,
-} from "@/articles";
-import { defaultLocale, localeTags, type Locale } from "@locales/config.js";
+} from "@lib/articles";
+import { localeTags } from "@locales/config.js";
+import { pageLocale } from "@locales/utils";
 import PageLayout from "@layouts/PageLayout.astro";
-import CategoryBadge from "@components/common/CategoryBadge.astro";
+import CategoryBadge from "@components/ui/CategoryBadge.astro";
 
 export async function getStaticPaths() {
 	const articles = await getCollection(
@@ -29,7 +30,7 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 const { data } = entry;
 
-const localeTag = localeTags[(Astro.currentLocale ?? defaultLocale) as Locale];
+const localeTag = localeTags[pageLocale(Astro.currentLocale)];
 
 const eventDate =
 	isEventCategory(data.category) && "eventDate" in data
