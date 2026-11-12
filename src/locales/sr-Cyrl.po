@@ -75,6 +75,7 @@ msgstr "Сви чланци"
 msgid "All events"
 msgstr "Сва дешавања"
 
+#: src/components/join/JoinForm.astro
 #: src/components/join/JoinSection.astro
 msgid "Send application"
 msgstr "Пошаљи пријаву"
@@ -82,6 +83,7 @@ msgstr "Пошаљи пријаву"
 #: src/components/join/JoinSection.astro
 #: src/components/layout/Navbar.astro
 #: src/components/layout/Navbar.astro
+#: src/pages/[lang]/join/index.astro
 msgid "Join us"
 msgstr "Придружи се"
 
@@ -137,6 +139,7 @@ msgid "© 2023–{0} RUR Robotics. All rights reserved."
 msgstr "© 2023–{0} РУР Роботика. Сва права задржана."
 
 #: src/components/about/AboutSection.astro
+#: src/pages/[lang]/join/index.astro
 msgid "The RUR Robotics team"
 msgstr "Тим РУР Роботике"
 
@@ -145,6 +148,7 @@ msgid "Menu"
 msgstr "Мени"
 
 #: src/components/join/JoinSection.astro
+#: src/pages/[lang]/join/index.astro
 msgid "Meet new people and learn from more experienced members while you compete. We take students from any faculty and any year, no background needed."
 msgstr "Упознај нове људе и учи од искуснијих док се такмичиш. Примамо студенте са свих факултета и свих година, без предзнања."
 
@@ -241,3 +245,75 @@ msgstr "РУР Роботика је клуб роботике Електрот�
 #: src/pages/[lang]/gallery/index.astro
 msgid "A collection of photos from the events we've been part of."
 msgstr "Збирка фотографија са догађаја у којима смо учествовали."
+
+#: src/components/join/JoinForm.astro
+msgid "Name"
+msgstr "Име"
+
+#: src/components/join/JoinForm.astro
+msgid "Email"
+msgstr "Имејл"
+
+#: src/components/join/JoinForm.astro
+msgid "Phone number"
+msgstr "Број телефона"
+
+#: src/components/join/JoinForm.astro
+msgid "Faculty"
+msgstr "Факултет"
+
+#: src/components/join/JoinForm.astro
+msgid "Year of study"
+msgstr "Година студија"
+
+#: src/pages/[lang]/join/index.astro
+msgid "Apply to join RUR Robotics, the robotics club of the School of Electrical Engineering at the University of Belgrade."
+msgstr "Пријави се за чланство у РУР Роботици, клубу роботике Електротехничког факултета Универзитета у Београду."
+
+#: src/pages/[lang]/join/index.astro
+msgid "What happens next"
+msgstr "Шта следи"
+
+#: src/components/join/JoinForm.astro
+msgid "Thanks! We got your application and will be in touch soon."
+msgstr "Хвала! Примили смо твоју пријаву и ускоро ћемо ти се јавити."
+
+#: src/components/join/JoinForm.astro
+msgid "Something went wrong. Check your answers and try again."
+msgstr "Нешто је пошло по злу. Провери одговоре и покушај поново."
+
+#: src/pages/[lang]/join/index.astro
+msgid "Fill in the form."
+msgstr "Попуни формулар."
+
+#: src/pages/[lang]/join/index.astro
+msgid "We email you when the selection round starts."
+msgstr "Мејлом ти јављамо када почиње круг селекције."
+
+#: src/pages/[lang]/join/index.astro
+msgid "Pass the round and pick a project."
+msgstr "Прођи круг и изабери пројекат."
+
+#: src/components/join/JoinForm.astro
+msgid "Enter your name."
+msgstr "Унеси своје име."
+
+#: src/components/join/JoinForm.astro
+msgid "Enter a valid email."
+msgstr "Унеси исправан имејл."
+
+#: src/components/join/JoinForm.astro
+msgid "Enter a valid phone number."
+msgstr "Унеси исправан број телефона."
+
+#: src/components/join/JoinForm.astro
+msgid "Enter your faculty."
+msgstr "Унеси свој факултет."
+
+#: src/components/join/JoinForm.astro
+msgid "Enter a year from 1 to 6."
+msgstr "Унеси годину од 1 до 6."
+
+#: src/components/join/JoinForm.astro
+msgid "We couldn't confirm you're human. Complete the check and try again."
+msgstr "Нисмо успели да потврдимо да си човек. Заврши проверу и покушај поново."

@@ -1,0 +1,11 @@
+# Supabase CLI settings. Anything not set here uses the CLI's default:
+# https://supabase.com/docs/guides/local-development/cli/config
+project_id = "rurrobotics"
+
+[db]
+# Keep in line with the hosted project's Postgres version.
+major_version = 17
+
+[functions.application-emails]
+# Called by the database trigger with its own shared secret, not a user JWT.
+verify_jwt = false
