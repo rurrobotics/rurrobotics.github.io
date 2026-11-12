@@ -1,0 +1,46 @@
+---
+import Section from "@components/ui/Section.astro";
+import SectionTitle from "@components/ui/SectionTitle.astro";
+import SectionLink from "@components/ui/SectionLink.astro";
+import { pageLocale } from "@locales/utils";
+
+interface Props {
+	/** Three-digit status code; the middle digit is highlighted. */
+	code: string;
+	label: string;
+	title: string;
+	message: string;
+	linkLabel: string;
+}
+
+const { code, label, title, message, linkLabel } = Astro.props;
+const home = `/${pageLocale(Astro.currentLocale)}/`;
+const [first, middle, last] = code;
+---
+
+<Section class="flex flex-1 items-center overflow-hidden [&>div]:w-full">
+	<div class="grid items-center gap-16 lg:grid-cols-[1fr_auto]">
+		<div>
+			<p class="font-mono text-sm font-bold tracking-widest text-ink-muted uppercase">
+				{label}
+			</p>
+			<SectionTitle size="large">{title}</SectionTitle>
+			<p class="mb-8 max-w-prose text-lg">{message}</p>
+			<SectionLink href={home}>{linkLabel}</SectionLink>
+		</div>
+
+		<div aria-hidden="true" class="relative mx-auto w-fit px-6 py-4 lg:mr-8">
+			<div class="absolute -top-2 -left-2 size-20 bg-secondary sm:size-28"></div>
+			<div
+				class="absolute -right-4 -bottom-6 size-24 rounded-full border-10 border-tertiary sm:size-36 sm:border-14"
+			>
+			</div>
+			<div class="absolute -bottom-8 left-10 h-3 w-32 bg-primary sm:h-4 sm:w-44"></div>
+			<span
+				class="relative block font-display text-[7rem] leading-none font-bold sm:text-[11rem] lg:text-[13rem]"
+			>
+				{first}<span class="text-primary">{middle}</span>{last}
+			</span>
+		</div>
+	</div>
+</Section>
