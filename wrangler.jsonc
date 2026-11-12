@@ -5,9 +5,12 @@
 	"main": "@astrojs/cloudflare/entrypoints/server",
 	"assets": {
 		"directory": "./dist",
-		"binding": "ASSETS"
+		"binding": "ASSETS",
+	},
+	"vars": {
+		"SUPABASE_URL": "https://vuxfgjoewsyijrpactpc.supabase.co",
 	},
 	"observability": {
-		"enabled": true
-	}
+		"enabled": true,
+	},
 }

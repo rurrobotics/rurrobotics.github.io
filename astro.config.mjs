@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 
@@ -47,6 +47,20 @@ export default defineConfig({
 	trailingSlash: "always",
 	adapter: cloudflare({ imageService: "compile" }),
 	session: false,
+	// Read from the Worker's variables at runtime; locally from .env.
+	env: {
+		schema: {
+			SUPABASE_URL: envField.string({
+				context: "server",
+				access: "secret",
+				url: true,
+			}),
+			SUPABASE_PUBLISHABLE_KEY: envField.string({
+				context: "server",
+				access: "secret",
+			}),
+		},
+	},
 	prefetch: { prefetchAll: true, defaultStrategy: "hover" },
 	redirects: {
 		"/": `/${defaultLocale}/`,
