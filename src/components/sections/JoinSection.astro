@@ -1,10 +1,10 @@
 ---
 import { MoveRight } from "@lucide/astro";
-import Section from "@components/common/Section.astro";
-import SectionTitle from "@components/common/SectionTitle.astro";
-import { defaultLocale, type Locale } from "@locales/config.js";
+import Section from "@components/ui/Section.astro";
+import SectionTitle from "@components/ui/SectionTitle.astro";
+import { pageLocale } from "@locales/utils";
 
-const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const locale = pageLocale(Astro.currentLocale);
 ---
 
 <Section id="join" color="primary">

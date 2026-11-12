@@ -1,8 +1,9 @@
 ---
-import type { Project } from "@/projects";
+import type { Project } from "@lib/projects";
 import { defaultLocale } from "@locales/config.js";
+import { pageLocale } from "@locales/utils";
 import { MoveRight } from "@lucide/astro";
-import Badge from "@components/common/Badge.astro";
+import Badge from "@components/ui/Badge.astro";
 
 interface Props {
 	project: Project;
@@ -12,7 +13,7 @@ interface Props {
 const { project, color = "primary" } = Astro.props;
 const { name, description, url, tags } = project.data;
 
-const locale = Astro.currentLocale ?? defaultLocale;
+const locale = pageLocale(Astro.currentLocale);
 const localizedDescription = description[locale] ?? description[defaultLocale];
 ---
 

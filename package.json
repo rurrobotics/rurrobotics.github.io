@@ -14,7 +14,7 @@
 		"preview": "astro preview",
 		"astro": "astro",
 		"format": "prettier --write .",
-		"db:types": "supabase gen types typescript --linked > src/supabase.types.ts && prettier --write src/supabase.types.ts"
+		"db:types": "supabase gen types typescript --linked > src/lib/supabase.types.ts && prettier --write src/lib/supabase.types.ts"
 	},
 	"dependencies": {
 		"@astrojs/cloudflare": "^14.4.2",

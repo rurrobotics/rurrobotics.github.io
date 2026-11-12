@@ -6,9 +6,10 @@ import {
 	EVENT_TIME_ZONE,
 	isEventCategory,
 	type Article,
-} from "@/articles";
-import { defaultLocale, localeTags, type Locale } from "@locales/config.js";
-import CategoryBadge from "@components/common/CategoryBadge.astro";
+} from "@lib/articles";
+import { localeTags } from "@locales/config.js";
+import { pageLocale } from "@locales/utils";
+import CategoryBadge from "@components/ui/CategoryBadge.astro";
 
 interface Props {
 	article: Article;
@@ -17,7 +18,7 @@ interface Props {
 const { article } = Astro.props;
 const { data } = article;
 
-const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const locale = pageLocale(Astro.currentLocale);
 const localeTag = localeTags[locale];
 
 const color = CATEGORY_COLORS[data.category];

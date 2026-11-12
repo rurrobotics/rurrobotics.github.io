@@ -7,7 +7,7 @@ import {
 import { z } from "astro/zod";
 import { createClient } from "@supabase/supabase-js";
 import { defaultLocale } from "@locales/config.js";
-import type { Database } from "@/supabase.types";
+import type { Database } from "@lib/supabase.types";
 
 /** Asks Cloudflare whether the Turnstile token came from a solved challenge. */
 async function isHuman(token: string, ip: string): Promise<boolean> {

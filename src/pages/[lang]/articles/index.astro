@@ -1,15 +1,15 @@
 ---
-import { ARTICLE_CATEGORIES, EVENT_CATEGORIES, getArticles } from "@/articles";
-import { defaultLocale, type Locale } from "@locales/config.js";
+import { ARTICLE_CATEGORIES, EVENT_CATEGORIES, getArticles } from "@lib/articles";
+import { pageLocale } from "@locales/utils";
 import PageLayout from "@layouts/PageLayout.astro";
-import Section from "@components/common/Section.astro";
-import SectionTitle from "@components/common/SectionTitle.astro";
-import ArticleDetailCard from "@components/common/ArticleDetailCard.astro";
-import ArticleFilters from "@components/articles/ArticleFilters.astro";
+import Section from "@components/ui/Section.astro";
+import SectionTitle from "@components/ui/SectionTitle.astro";
+import ArticleDetailCard from "@components/ui/ArticleDetailCard.astro";
+import ArticleFilters from "@components/ui/ArticleFilters.astro";
 
-export { getStaticPaths } from "../../../locales/utils";
+export { getStaticPaths } from "@locales/utils";
 
-const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const locale = pageLocale(Astro.currentLocale);
 
 const whenOf = (article: (typeof entries)[number]) =>
 	"eventDate" in article.data ? article.data.eventDate : article.data.date;

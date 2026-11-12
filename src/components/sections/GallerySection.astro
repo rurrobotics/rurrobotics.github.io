@@ -1,16 +1,16 @@
 ---
 import { MoveRight } from "@lucide/astro";
-import { defaultLocale, type Locale } from "@locales/config.js";
-import Section from "@components/common/Section.astro";
-import SectionTitle from "@components/common/SectionTitle.astro";
-import GalleryTile from "./GalleryTile.astro";
+import { pageLocale } from "@locales/utils";
+import Section from "@components/ui/Section.astro";
+import SectionTitle from "@components/ui/SectionTitle.astro";
+import GalleryTile from "@components/ui/GalleryTile.astro";
 import img0973 from "@/assets/gallery/2026/IMG_0973.jpg";
 import img1020 from "@/assets/gallery/2026/IMG_1020.jpg";
 import img0974 from "@/assets/gallery/2026/IMG_0974.jpg";
 import img1017 from "@/assets/gallery/2026/IMG_1017.jpg";
 import img0972 from "@/assets/gallery/2026/IMG_0972.jpg";
 
-const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const locale = pageLocale(Astro.currentLocale);
 
 // Placed in order on a 12-column grid, two rows tall. The "See more" tile fills the rest.
 const photos = [
