@@ -56,8 +56,8 @@ msgid ""
 msgstr ""
 "Osnovani 2023. kao <0>Eurobot</0> tim, od tada smo prerasli u klub robotike "
 "Elektrotehničkog fakulteta Univerziteta u Beogradu. Naši članovi dolaze sa "
-"različitih fakulteta i zajedno prave autonomne robote koji spajaju "
-"mehaniku, elektroniku i softver."
+"različitih fakulteta i zajedno prave autonomne robote koji spajaju mehaniku, "
+"elektroniku i softver."
 
 #: src/components/ui/CategoryBadge.astro
 msgid "News"
@@ -109,7 +109,8 @@ msgid "GitHub"
 msgstr "GitHub"
 
 #: src/components/sections/ContactSection.astro
-msgid "School of Electrical Engineering, Bulevar kralja Aleksandra 73, Belgrade"
+msgid ""
+"School of Electrical Engineering, Bulevar kralja Aleksandra 73, Belgrade"
 msgstr "Elektrotehnički fakultet, Bulevar kralja Aleksandra 73, Beograd"
 
 #: src/components/sections/ContactSection.astro
@@ -139,8 +140,8 @@ msgid ""
 "We are grateful to our sponsors for supporting our work and helping us "
 "learn, create, and compete."
 msgstr ""
-"Zahvaljujemo se našim sponzorima na podršci i na tome što nam omogućavaju "
-"da učimo, stvaramo i da se takmičimo."
+"Zahvaljujemo se našim sponzorima na podršci i na tome što nam omogućavaju da "
+"učimo, stvaramo i da se takmičimo."
 
 #: src/components/layout/Footer.astro
 msgid "Source"
@@ -258,8 +259,8 @@ msgstr "Članovi tima pored takmičarskog stola na Eurobot kupu Srbije"
 
 #: src/pages/[lang]/index.astro
 msgid ""
-"RUR Robotics is the robotics club of the School of Electrical Engineering "
-"at the University of Belgrade. We build autonomous robots and compete in "
+"RUR Robotics is the robotics club of the School of Electrical Engineering at "
+"the University of Belgrade. We build autonomous robots and compete in "
 "Eurobot."
 msgstr ""
 "RUR Robotika je klub robotike Elektrotehničkog fakulteta Univerziteta u "
@@ -343,7 +344,8 @@ msgstr "Unesi godinu od 1 do 6."
 
 #: src/components/ui/JoinForm.astro
 msgid "We couldn't confirm you're human. Complete the check and try again."
-msgstr "Nismo uspeli da potvrdimo da si čovek. Završi proveru i pokušaj ponovo."
+msgstr ""
+"Nismo uspeli da potvrdimo da si čovek. Završi proveru i pokušaj ponovo."
 
 #: src/pages/404.astro
 msgid "The page you're looking for doesn't exist."
