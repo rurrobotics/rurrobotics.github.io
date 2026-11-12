@@ -1,9 +1,15 @@
 ---
 import PageLayout from "@layouts/PageLayout.astro";
 import ErrorSection from "@components/sections/ErrorSection.astro";
+
+// Rendered per request so it can follow the locale in the missing URL.
+export const prerender = false;
 ---
 
-<PageLayout description="The page you're looking for doesn't exist." showJoinSection={false}>
+<PageLayout
+	description="The page you're looking for doesn't exist."
+	showJoinSection={false}
+>
 	<ErrorSection
 		code="404"
 		label="Error 404"

@@ -1,9 +1,15 @@
 ---
 import PageLayout from "@layouts/PageLayout.astro";
 import ErrorSection from "@components/sections/ErrorSection.astro";
+
+// Rendered per request so it can follow the locale in the failing URL.
+export const prerender = false;
 ---
 
-<PageLayout description="Something went wrong on our end." showJoinSection={false}>
+<PageLayout
+	description="Something went wrong on our end."
+	showJoinSection={false}
+>
 	<ErrorSection
 		code="500"
 		label="Error 500"
