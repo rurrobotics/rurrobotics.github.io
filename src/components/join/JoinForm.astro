@@ -1,12 +1,14 @@
 ---
 import { MoveRight } from "@lucide/astro";
 import { actions, isInputError } from "astro:actions";
+import { TURNSTILE_SITE_KEY } from "astro:env/server";
 import FormField from "./FormField.astro";
 
 // Set when this request is the form's own POST to the `apply` action.
 const result = Astro.getActionResult(actions.apply);
 const sent = result !== undefined && !result.error;
 const invalid = isInputError(result?.error) ? result.error.fields : {};
+const notHuman = result?.error?.code === "FORBIDDEN";
 // Refill the fields after a failed submit; a sent form starts empty again.
 const values: Record<string, string> = result?.error
 	? Object.fromEntries(
@@ -74,6 +76,13 @@ const values: Record<string, string> = result?.error
 		<span slot="label">Year of study</span>
 		<span slot="error">Enter a year from 1 to 6.</span>
 	</FormField>
+	<div
+		class="cf-turnstile"
+		data-sitekey={TURNSTILE_SITE_KEY}
+		data-size="flexible"
+		data-theme="light"
+	>
+	</div>
 	{
 		sent && (
 			<p
@@ -85,7 +94,18 @@ const values: Record<string, string> = result?.error
 		)
 	}
 	{
-		result?.error && !isInputError(result.error) && (
+		notHuman && (
+			<p
+				role="alert"
+				class="border-4 border-black bg-primary p-4 font-mono text-sm font-bold text-primary-foreground"
+			>
+				We couldn't confirm you're human. Complete the check and try
+				again.
+			</p>
+		)
+	}
+	{
+		result?.error && !isInputError(result.error) && !notHuman && (
 			<p
 				role="alert"
 				class="border-4 border-black bg-primary p-4 font-mono text-sm font-bold text-primary-foreground"
@@ -104,3 +124,9 @@ const values: Record<string, string> = result?.error
 		/>
 	</button>
 </form>
+
+<script
+	is:inline
+	src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+	async
+	defer></script>

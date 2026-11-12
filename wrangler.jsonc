@@ -9,6 +9,7 @@
 	},
 	"vars": {
 		"SUPABASE_URL": "https://vuxfgjoewsyijrpactpc.supabase.co",
+		"TURNSTILE_SITE_KEY": "0x4AAAAAAF-JBF32X8e9Kv5P",
 	},
 	"observability": {
 		"enabled": true,

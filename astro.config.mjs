@@ -59,6 +59,14 @@ export default defineConfig({
 				context: "server",
 				access: "secret",
 			}),
+			TURNSTILE_SITE_KEY: envField.string({
+				context: "server",
+				access: "secret",
+			}),
+			TURNSTILE_SECRET_KEY: envField.string({
+				context: "server",
+				access: "secret",
+			}),
 		},
 	},
 	prefetch: { prefetchAll: true, defaultStrategy: "hover" },
