@@ -270,20 +270,9 @@ msgstr "Година студија"
 msgid "Apply to join RUR Robotics, the robotics club of the School of Electrical Engineering at the University of Belgrade."
 msgstr "Пријави се за чланство у РУР Роботици, клубу роботике Електротехничког факултета Универзитета у Београду."
 
-
-
-
-
-
-
-
-
-
-
 #: src/pages/[lang]/join/index.astro
 msgid "What happens next"
 msgstr "Шта следи"
-
 
 #: src/components/join/JoinForm.astro
 msgid "Thanks! We got your application and will be in touch soon."
@@ -297,8 +286,6 @@ msgstr "Нешто је пошло по злу. Провери одговоре 
 msgid "Fill in the form."
 msgstr "Попуни формулар."
 
-
-
 #: src/pages/[lang]/join/index.astro
 msgid "We email you when the selection round starts."
 msgstr "Мејлом ти јављамо када почиње круг селекције."
@@ -306,11 +293,6 @@ msgstr "Мејлом ти јављамо када почиње круг селе
 #: src/pages/[lang]/join/index.astro
 msgid "Pass the round and pick a project."
 msgstr "Прођи круг и изабери пројекат."
-
-
-
-
-
 
 #: src/components/join/JoinForm.astro
 msgid "Enter your name."
@@ -331,3 +313,7 @@ msgstr "Унеси свој факултет."
 #: src/components/join/JoinForm.astro
 msgid "Enter a year from 1 to 6."
 msgstr "Унеси годину од 1 до 6."
+
+#: src/components/join/JoinForm.astro
+msgid "We couldn't confirm you're human. Complete the check and try again."
+msgstr "Нисмо успели да потврдимо да си човек. Заврши проверу и покушај поново."

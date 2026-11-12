@@ -338,3 +338,7 @@ msgstr "Unesi svoj fakultet."
 #: src/components/join/JoinForm.astro
 msgid "Enter a year from 1 to 6."
 msgstr "Unesi godinu od 1 do 6."
+
+#: src/components/join/JoinForm.astro
+msgid "We couldn't confirm you're human. Complete the check and try again."
+msgstr "Nismo uspeli da potvrdimo da si čovek. Završi proveru i pokušaj ponovo."
