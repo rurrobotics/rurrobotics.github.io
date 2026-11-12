@@ -1,12 +1,12 @@
 ---
 import { EVENT_CATEGORIES, getArticles } from "@lib/articles";
-import { defaultLocale, type Locale } from "@locales/config.js";
-import Section from "@components/common/Section.astro";
-import SectionTitle from "@components/common/SectionTitle.astro";
-import ArticleCard from "@components/common/ArticleCard.astro";
-import SectionLink from "@components/common/SectionLink.astro";
+import { pageLocale } from "@locales/utils";
+import Section from "@components/ui/Section.astro";
+import SectionTitle from "@components/ui/SectionTitle.astro";
+import ArticleCard from "@components/ui/ArticleCard.astro";
+import SectionLink from "@components/ui/SectionLink.astro";
 
-const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const locale = pageLocale(Astro.currentLocale);
 const href = `/${locale}/articles/?category=${EVENT_CATEGORIES.join(",")}`;
 const events = await getArticles(locale, true);
 
