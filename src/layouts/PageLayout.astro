@@ -1,4 +1,5 @@
 ---
+import type { ComponentProps } from "astro/types";
 import Layout from "./Layout.astro";
 import SectionRow from "@components/ui/SectionRow.astro";
 import JoinSection from "@components/sections/JoinSection.astro";
@@ -6,15 +7,14 @@ import ContactSection from "@components/sections/ContactSection.astro";
 import Footer from "@components/layout/Footer.astro";
 import Navbar from "@components/layout/Navbar.astro";
 
-interface Props {
-    description: string;
+type Props = ComponentProps<typeof Layout> & {
     showJoinSection?: boolean;
-}
+};
 
-const { description, showJoinSection = true } = Astro.props;
+const { showJoinSection = true, ...layoutProps } = Astro.props;
 ---
 
-<Layout description={description}>
+<Layout {...layoutProps}>
     <Navbar />
     <slot />
     {

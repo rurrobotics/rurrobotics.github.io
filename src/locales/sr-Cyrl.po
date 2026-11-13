@@ -85,6 +85,7 @@ msgstr "Пошаљи пријаву"
 #: src/components/layout/Navbar.astro
 #: src/components/sections/JoinSection.astro
 #: src/pages/[lang]/join/index.astro
+#: src/pages/[lang]/join/index.astro
 msgid "Join us"
 msgstr "Придружи се"
 
@@ -159,6 +160,7 @@ msgid "All"
 msgstr "Све"
 
 #: src/pages/[lang]/articles/index.astro
+#: src/pages/[lang]/articles/index.astro
 msgid "Events & articles"
 msgstr "Дешавања и чланци"
 
@@ -212,6 +214,7 @@ msgstr "Погледај још"
 
 #: src/components/layout/Navbar.astro
 #: src/components/sections/GallerySection.astro
+#: src/pages/[lang]/gallery/index.astro
 #: src/pages/[lang]/gallery/index.astro
 msgid "Gallery"
 msgstr "Галерија"
@@ -329,6 +332,7 @@ msgid "Error 404"
 msgstr "Грешка 404"
 
 #: src/pages/404.astro
+#: src/pages/404.astro
 msgid "Page not found"
 msgstr "Страница није пронађена"
 
@@ -350,6 +354,7 @@ msgid "Error 500"
 msgstr "Грешка 500"
 
 #: src/pages/500.astro
+#: src/pages/500.astro
 msgid "Something went wrong"
 msgstr "Нешто је пошло наопако"
 
@@ -364,3 +369,7 @@ msgstr "РУР Роботика: дешавања и чланци"
 #: src/pages/[lang]/articles/index.astro
 msgid "RSS feed"
 msgstr "RSS фид"
+
+#: src/layouts/Layout.astro
+msgid "Robotics club of the University of Belgrade"
+msgstr "Клуб роботике ЕТФ-а у Београду"

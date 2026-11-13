@@ -29,7 +29,10 @@ const years = [...new Set(entries.map((a) => whenOf(a).getUTCFullYear()))].sort(
 );
 ---
 
-<PageLayout description="Meetups, lectures, news and writeups from the club.">
+<PageLayout
+	title="Events & articles"
+	description="Meetups, lectures, news and writeups from the club."
+>
 	<Section>
 		<SectionTitle slot="title" size="large">Events & articles</SectionTitle>
 		<SectionLink slot="link" href={`/${locale}/articles/rss.xml`}>RSS feed</SectionLink>

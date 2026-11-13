@@ -85,6 +85,7 @@ msgstr "Send application"
 #: src/components/layout/Navbar.astro
 #: src/components/sections/JoinSection.astro
 #: src/pages/[lang]/join/index.astro
+#: src/pages/[lang]/join/index.astro
 msgid "Join us"
 msgstr "Join us"
 
@@ -159,6 +160,7 @@ msgid "All"
 msgstr "All"
 
 #: src/pages/[lang]/articles/index.astro
+#: src/pages/[lang]/articles/index.astro
 msgid "Events & articles"
 msgstr "Events & articles"
 
@@ -212,6 +214,7 @@ msgstr "See more"
 
 #: src/components/layout/Navbar.astro
 #: src/components/sections/GallerySection.astro
+#: src/pages/[lang]/gallery/index.astro
 #: src/pages/[lang]/gallery/index.astro
 msgid "Gallery"
 msgstr "Gallery"
@@ -329,6 +332,7 @@ msgid "Error 404"
 msgstr "Error 404"
 
 #: src/pages/404.astro
+#: src/pages/404.astro
 msgid "Page not found"
 msgstr "Page not found"
 
@@ -350,6 +354,7 @@ msgid "Error 500"
 msgstr "Error 500"
 
 #: src/pages/500.astro
+#: src/pages/500.astro
 msgid "Something went wrong"
 msgstr "Something went wrong"
 
@@ -364,3 +369,7 @@ msgstr "RUR Robotics: events & articles"
 #: src/pages/[lang]/articles/index.astro
 msgid "RSS feed"
 msgstr "RSS feed"
+
+#: src/layouts/Layout.astro
+msgid "Robotics club of the University of Belgrade"
+msgstr "Robotics club of the University of Belgrade"

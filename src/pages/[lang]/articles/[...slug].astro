@@ -51,7 +51,7 @@ const timeFmt = new Intl.DateTimeFormat(localeTag, {
 });
 ---
 
-<PageLayout description={data.description ?? data.title}>
+<PageLayout title={data.title} description={data.description ?? data.title}>
 	<article
 		class="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 md:px-12 md:py-16"
 	>
