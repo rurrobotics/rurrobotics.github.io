@@ -5,9 +5,10 @@ import { pageLocale } from "@locales/utils";
 
 interface Props {
 	description: string;
+	title?: string;
 }
 
-const { description } = Astro.props;
+const { description, title } = Astro.props;
 const locale = pageLocale(Astro.currentLocale);
 ---
 
@@ -26,7 +27,7 @@ const locale = pageLocale(Astro.currentLocale);
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
 		<FontPreloads />
-		<title>RUR Robotics</title>
+		<title>{title ? `${title} | RUR Robotics` : 'RUR Robotics'}</title>
 		<meta name="description" content={description} />
 	</head>
 	<body>

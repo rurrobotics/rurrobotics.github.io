@@ -93,6 +93,7 @@ msgstr "Pošalji prijavu"
 #: src/components/layout/Navbar.astro
 #: src/components/sections/JoinSection.astro
 #: src/pages/[lang]/join/index.astro
+#: src/pages/[lang]/join/index.astro
 msgid "Join us"
 msgstr "Pridruži se"
 
@@ -176,6 +177,7 @@ msgid "All"
 msgstr "Sve"
 
 #: src/pages/[lang]/articles/index.astro
+#: src/pages/[lang]/articles/index.astro
 msgid "Events & articles"
 msgstr "Dešavanja i članci"
 
@@ -229,6 +231,7 @@ msgstr "Pogledaj još"
 
 #: src/components/layout/Navbar.astro
 #: src/components/sections/GallerySection.astro
+#: src/pages/[lang]/gallery/index.astro
 #: src/pages/[lang]/gallery/index.astro
 msgid "Gallery"
 msgstr "Galerija"
@@ -356,6 +359,7 @@ msgid "Error 404"
 msgstr "Greška 404"
 
 #: src/pages/404.astro
+#: src/pages/404.astro
 msgid "Page not found"
 msgstr "Stranica nije pronađena"
 
@@ -377,6 +381,7 @@ msgid "Error 500"
 msgstr "Greška 500"
 
 #: src/pages/500.astro
+#: src/pages/500.astro
 msgid "Something went wrong"
 msgstr "Nešto je pošlo naopako"
 
@@ -391,3 +396,7 @@ msgstr "RUR Robotika: dešavanja i članci"
 #: src/pages/[lang]/articles/index.astro
 msgid "RSS feed"
 msgstr "RSS fid"
+
+#: src/layouts/Layout.astro
+msgid "Robotics club of the University of Belgrade"
+msgstr "Klub robotike ETF-a u Beogradu"

@@ -100,6 +100,9 @@ export default defineConfig({
 	},
 	integrations: [
 		sitemap({
+			customPages: locales.map(
+				(locale) => `https://rurrobotics.com/${locale}/join/`,
+			),
 			i18n: {
 				defaultLocale,
 				locales: localeTags,
