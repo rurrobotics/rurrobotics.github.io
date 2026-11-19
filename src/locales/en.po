@@ -10,6 +10,8 @@ msgstr ""
 #: src/components/layout/Navbar.astro
 #: src/layouts/Layout.astro
 #: src/layouts/Layout.astro
+#: src/layouts/Layout.astro
+#: src/layouts/Layout.astro
 msgid "RUR Robotics"
 msgstr "RUR Robotics"
 
@@ -370,6 +372,10 @@ msgstr "RUR Robotics: events & articles"
 msgid "RSS feed"
 msgstr "RSS feed"
 
+#~ msgid "Robotics club of the University of Belgrade"
+#~ msgstr "Robotics club of the University of Belgrade"
+
+#. 0: "@/st
 #: src/layouts/Layout.astro
-msgid "Robotics club of the University of Belgrade"
-msgstr "Robotics club of the University of Belgrade"
+msgid "{0} | RUR Robotics"
+msgstr "{0} | RUR Robotics"

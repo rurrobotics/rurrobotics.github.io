@@ -10,6 +10,8 @@ msgstr ""
 #: src/components/layout/Navbar.astro
 #: src/layouts/Layout.astro
 #: src/layouts/Layout.astro
+#: src/layouts/Layout.astro
+#: src/layouts/Layout.astro
 msgid "RUR Robotics"
 msgstr "РУР Роботика"
 
@@ -370,6 +372,10 @@ msgstr "РУР Роботика: дешавања и чланци"
 msgid "RSS feed"
 msgstr "RSS фид"
 
+#~ msgid "Robotics club of the University of Belgrade"
+#~ msgstr "Клуб роботике ЕТФ-а у Београду"
+
+#. 0: "@/st
 #: src/layouts/Layout.astro
-msgid "Robotics club of the University of Belgrade"
-msgstr "Клуб роботике ЕТФ-а у Београду"
+msgid "{0} | RUR Robotics"
+msgstr "{0} | РУР Роботика"
