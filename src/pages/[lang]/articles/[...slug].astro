@@ -37,18 +37,36 @@ const eventDate =
 		? data.eventDate
 		: undefined;
 
-const timeZone = EVENT_TIME_ZONE;
-const dateFmt = new Intl.DateTimeFormat(localeTag, {
+const dateOptions: Intl.DateTimeFormatOptions = {
 	day: "numeric",
 	month: "long",
 	year: "numeric",
-	timeZone,
-});
-const timeFmt = new Intl.DateTimeFormat(localeTag, {
+	timeZone: EVENT_TIME_ZONE,
+};
+const dateFmt = new Intl.DateTimeFormat(localeTag, dateOptions);
+// One formatter for both, so each locale joins date and time its own way.
+const dateTimeFmt = new Intl.DateTimeFormat(localeTag, {
+	...dateOptions,
 	hour: "2-digit",
 	minute: "2-digit",
-	timeZone,
 });
+
+interface MetaItem {
+	label: string;
+	value: string;
+	/** Renders the value as a <time> element. */
+	datetime?: Date;
+}
+
+const meta = [
+	eventDate && {
+		label: "Event date",
+		value: dateTimeFmt.format(eventDate),
+		datetime: eventDate,
+	},
+	data.author && { label: "Author", value: data.author },
+	{ label: "Published", value: dateFmt.format(data.date), datetime: data.date },
+].filter((item): item is MetaItem => Boolean(item));
 ---
 
 <PageLayout
@@ -74,37 +92,24 @@ const timeFmt = new Intl.DateTimeFormat(localeTag, {
 					</p>
 				)
 			}
-			<p
-				class="mt-5 flex flex-wrap gap-x-6 gap-y-1 font-mono text-sm text-muted"
-			>
+			<dl class="mt-6 grid grid-cols-2 gap-x-8 gap-y-4 sm:flex sm:gap-x-12">
 				{
-					eventDate && (
-						<span>
-							<span>Event date: </span>
-							<span class="font-semibold text-foreground">
-								{dateFmt.format(eventDate)}, {timeFmt.format(eventDate)}
-							</span>
-						</span>
-					)
+					meta.map(({ label, value, datetime }) => (
+						<div>
+							<dt class="font-mono text-xs tracking-widest text-muted uppercase">
+								{label}
+							</dt>
+							<dd class="mt-1 text-foreground">
+								{datetime ? (
+									<time datetime={datetime.toISOString()}>{value}</time>
+								) : (
+									value
+								)}
+							</dd>
+						</div>
+					))
 				}
-				{
-					data.author && (
-						<span>
-							<span>Author: </span>
-							<span class="font-semibold text-foreground">{data.author}</span>
-						</span>
-					)
-				}
-				<span>
-					<span>Published: </span>
-					<time
-						class="font-semibold text-foreground"
-						datetime={data.date.toISOString()}
-					>
-						{dateFmt.format(data.date)}
-					</time>
-				</span>
-			</p>
+			</dl>
 		</header>
 
 		<div class="prose max-w-none">
