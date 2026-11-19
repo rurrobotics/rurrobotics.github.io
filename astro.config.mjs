@@ -107,6 +107,15 @@ export default defineConfig({
 				defaultLocale,
 				locales: localeTags,
 			},
+			serialize(item) {
+				const fallback = item.links?.find(
+					(link) => link.lang === localeTags[defaultLocale],
+				);
+				if (fallback) {
+					item.links.push({ lang: "x-default", url: fallback.url });
+				}
+				return item;
+			},
 		}),
 		mdx(),
 	],
