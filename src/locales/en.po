@@ -194,17 +194,14 @@ msgstr "Nothing matches your filters."
 msgid "Shown <0/> out of {0}"
 msgstr "Shown <0/> out of {0}"
 
-#: src/pages/[lang]/articles/[...slug].astro
-msgid "Event date:"
-msgstr "Event date:"
+#~ msgid "Event date:"
+#~ msgstr "Event date:"
 
-#: src/pages/[lang]/articles/[...slug].astro
-msgid "Published:"
-msgstr "Published:"
+#~ msgid "Published:"
+#~ msgstr "Published:"
 
-#: src/pages/[lang]/articles/[...slug].astro
-msgid "Author:"
-msgstr "Author:"
+#~ msgid "Author:"
+#~ msgstr "Author:"
 
 #: src/components/sections/SponsorsSection.astro
 msgid "Become a partner"
@@ -379,3 +376,15 @@ msgstr "RSS feed"
 #: src/layouts/Layout.astro
 msgid "{0} | RUR Robotics"
 msgstr "{0} | RUR Robotics"
+
+#: src/pages/[lang]/articles/[...slug].astro
+msgid "Event date"
+msgstr "Event date"
+
+#: src/pages/[lang]/articles/[...slug].astro
+msgid "Author"
+msgstr "Author"
+
+#: src/pages/[lang]/articles/[...slug].astro
+msgid "Published"
+msgstr "Published"

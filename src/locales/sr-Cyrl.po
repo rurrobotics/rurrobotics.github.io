@@ -194,17 +194,14 @@ msgstr "Ништа не одговара претрази."
 msgid "Shown <0/> out of {0}"
 msgstr "Приказано <0/> од {0}"
 
-#: src/pages/[lang]/articles/[...slug].astro
-msgid "Event date:"
-msgstr "Датум дешавања:"
+#~ msgid "Event date:"
+#~ msgstr "Датум дешавања:"
 
-#: src/pages/[lang]/articles/[...slug].astro
-msgid "Published:"
-msgstr "Објављено:"
+#~ msgid "Published:"
+#~ msgstr "Објављено:"
 
-#: src/pages/[lang]/articles/[...slug].astro
-msgid "Author:"
-msgstr "Аутор:"
+#~ msgid "Author:"
+#~ msgstr "Аутор:"
 
 #: src/components/sections/SponsorsSection.astro
 msgid "Become a partner"
@@ -379,3 +376,15 @@ msgstr "RSS фид"
 #: src/layouts/Layout.astro
 msgid "{0} | RUR Robotics"
 msgstr "{0} | РУР Роботика"
+
+#: src/pages/[lang]/articles/[...slug].astro
+msgid "Event date"
+msgstr "Датум дешавања"
+
+#: src/pages/[lang]/articles/[...slug].astro
+msgid "Author"
+msgstr "Аутор"
+
+#: src/pages/[lang]/articles/[...slug].astro
+msgid "Published"
+msgstr "Објављено"
