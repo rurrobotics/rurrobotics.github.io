@@ -194,15 +194,6 @@ msgstr "Ништа не одговара претрази."
 msgid "Shown <0/> out of {0}"
 msgstr "Приказано <0/> од {0}"
 
-#~ msgid "Event date:"
-#~ msgstr "Датум дешавања:"
-
-#~ msgid "Published:"
-#~ msgstr "Објављено:"
-
-#~ msgid "Author:"
-#~ msgstr "Аутор:"
-
 #: src/components/sections/SponsorsSection.astro
 msgid "Become a partner"
 msgstr "Постани партнер"
@@ -368,9 +359,6 @@ msgstr "РУР Роботика: дешавања и чланци"
 #: src/pages/[lang]/articles/index.astro
 msgid "RSS feed"
 msgstr "RSS фид"
-
-#~ msgid "Robotics club of the University of Belgrade"
-#~ msgstr "Клуб роботике ЕТФ-а у Београду"
 
 #. 0: "@/st
 #: src/layouts/Layout.astro

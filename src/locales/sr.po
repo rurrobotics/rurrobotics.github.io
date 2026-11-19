@@ -403,15 +403,3 @@ msgstr "Autor"
 #: src/pages/[lang]/articles/[...slug].astro
 msgid "Published"
 msgstr "Objavljeno"
-
-#~ msgid "Event date:"
-#~ msgstr "Датум дешавања:"
-
-#~ msgid "Published:"
-#~ msgstr "Објављено:"
-
-#~ msgid "Author:"
-#~ msgstr "Аутор:"
-
-#~ msgid "Robotics club of the University of Belgrade"
-#~ msgstr "Клуб роботике ЕТФ-а у Београду"
