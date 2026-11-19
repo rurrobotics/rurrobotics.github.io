@@ -1,5 +1,5 @@
 ---
-import { EVENT_CATEGORIES, getArticles } from "@lib/articles";
+import { EVENT_CATEGORIES, articleListHref, getArticles } from "@lib/articles";
 import { pageLocale } from "@locales/utils";
 import Section from "@components/ui/Section.astro";
 import SectionTitle from "@components/ui/SectionTitle.astro";
@@ -7,7 +7,7 @@ import ArticleCard from "@components/ui/ArticleCard.astro";
 import SectionLink from "@components/ui/SectionLink.astro";
 
 const locale = pageLocale(Astro.currentLocale);
-const href = `/${locale}/articles/?category=${EVENT_CATEGORIES.join(",")}`;
+const href = articleListHref(locale, EVENT_CATEGORIES);
 const events = await getArticles(locale, true);
 
 const now = Date.now();

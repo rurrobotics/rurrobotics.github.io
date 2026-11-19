@@ -33,6 +33,11 @@ export const ARTICLE_CATEGORIES = ["news", "writeup"] as const;
 
 export type EventCategory = (typeof EVENT_CATEGORIES)[number];
 
+export const articleListHref = (
+	locale: Locale,
+	categories: readonly ArticleCategory[],
+) => `/${locale}/articles/?category=${categories.join(",")}`;
+
 export function isEventCategory(
 	category: ArticleCategory,
 ): category is EventCategory {

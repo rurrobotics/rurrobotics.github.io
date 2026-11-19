@@ -1,5 +1,10 @@
 ---
 import { Image } from "astro:assets";
+import {
+	ARTICLE_CATEGORIES,
+	EVENT_CATEGORIES,
+	articleListHref,
+} from "@lib/articles";
 import { pageLocale } from "@locales/utils";
 import NavLink from "@components/layout/NavLink.astro";
 import LocaleSwitcher from "@components/layout/LocaleSwitcher.astro";
@@ -8,13 +13,27 @@ import logo from "@/assets/logo.svg";
 const locale = pageLocale(Astro.currentLocale);
 const home = `/${locale}/`;
 
+const onHome = Astro.url.pathname === home;
+
+const sectionHref = (id: string, page?: string) =>
+	onHome || !page ? `${home}#${id}` : page;
+
 const links = [
 	{ id: "projects", label: "Projects" },
-	{ id: "events", label: "Events" },
-	{ id: "articles", label: "Articles" },
-	{ id: "gallery", label: "Gallery" },
+	{
+		id: "events",
+		label: "Events",
+		page: articleListHref(locale, EVENT_CATEGORIES),
+	},
+	{
+		id: "articles",
+		label: "Articles",
+		page: articleListHref(locale, ARTICLE_CATEGORIES),
+	},
+	{ id: "gallery", label: "Gallery", page: `${home}gallery/` },
 	{ id: "sponsors", label: "Partners" },
-];
+].map((link) => ({ ...link, href: sectionHref(link.id, link.page) }));
+const joinHref = sectionHref("join", `${home}join/`);
 
 const onArticles = Astro.url.pathname.includes("/articles");
 const onGallery = Astro.url.pathname.includes("/gallery");
@@ -45,7 +64,7 @@ const inner = `mx-auto container ${gutter}`;
 			{
 				links.map((link) => (
 					<NavLink
-						href={`${home}#${link.id}`}
+						href={link.href}
 						section={link.id}
 						current={isCurrent(link.id)}
 						class="flex items-center px-4 text-sm"
@@ -55,7 +74,7 @@ const inner = `mx-auto container ${gutter}`;
 				))
 			}
 			<NavLink
-				href={`${home}#join`}
+				href={joinHref}
 				class="flex items-center bg-secondary px-6.5 text-sm text-secondary-foreground"
 			>
 				<span>Join us</span>
@@ -89,7 +108,7 @@ const inner = `mx-auto container ${gutter}`;
 				{
 					links.map((link) => (
 						<NavLink
-							href={`${home}#${link.id}`}
+							href={link.href}
 							current={isCurrent(link.id)}
 							class="py-3.5 text-lg"
 						>
@@ -100,7 +119,7 @@ const inner = `mx-auto container ${gutter}`;
 					))
 				}
 				<NavLink
-					href={`${home}#join`}
+					href={joinHref}
 					class="bg-secondary py-3.5 text-lg text-secondary-foreground"
 				>
 					<span class:list={["block", inner]}>Join us</span>
