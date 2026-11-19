@@ -12,6 +12,8 @@ const catalog = gettextParser.po.parse(readFileSync(SRC));
 catalog.headers.Language = "sr";
 catalog.headers["Content-Type"] = "text/plain; charset=utf-8";
 
+delete catalog.obsolete;
+
 const existing = existsSync(DEST)
 	? gettextParser.po.parse(readFileSync(DEST)).translations
 	: {};
