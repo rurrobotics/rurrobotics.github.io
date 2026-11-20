@@ -1,5 +1,6 @@
 [ninja]
 name = "ninja"
+order = 1
 description = {
     en = "Firmware and controller for the Ninja and Hybrid SIMA robots",
     sr = "Firmver i kontroler za Ninja i Hybrid SIMA robote",
@@ -10,6 +11,7 @@ tags = ["rust", "embassy"]
 
 [electronics]
 name = "electronics"
+order = 2
 description = {
     en = "Altium schematics and PCB designs for the robot's motion and actuator boards",
     sr = "Altium šeme i PCB dizajni za motion i actuator ploče robota",
@@ -20,6 +22,7 @@ tags = ["altium", "pcb"]
 
 [beacon]
 name = "beacon"
+order = 3
 description = {
     en = "ArUco-based SIMA tracking with UDP position broadcast",
     sr = "Praćenje SIMA robota pomoću ArUco tagova uz slanje pozicija preko UDP-a",
@@ -27,3 +30,15 @@ description = {
 }
 url = "https://github.com/rurrobotics/beacon"
 tags = ["python", "opencv"]
+
+
+[capek]
+name = "capek"
+order = 4
+description = {
+    en = "Early-stage Embassy robotics framework grown out of the ninja firmware",
+    sr = "Robotički framework za Embassy u ranoj fazi razvoja, nastao iz ninja firmvera",
+    "sr-Cyrl" = "Роботички фрејмворк за Embassy у раној фази развоја, настао из ninja фирмвера"
+}
+url = "https://github.com/rurrobotics/capek"
+tags = ["rust", "embassy"]
