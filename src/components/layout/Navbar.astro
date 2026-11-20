@@ -33,7 +33,7 @@ const links = [
 	{ id: "gallery", label: "Gallery", page: `${home}gallery/` },
 	{ id: "sponsors", label: "Partners" },
 ].map((link) => ({ ...link, href: sectionHref(link.id, link.page) }));
-const joinHref = sectionHref("join", `${home}join/`);
+const joinHref = `${home}join/`;
 
 const onArticles = Astro.url.pathname.includes("/articles");
 const onGallery = Astro.url.pathname.includes("/gallery");
