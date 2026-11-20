@@ -17,3 +17,13 @@ description = {
 }
 url = "https://github.com/rurrobotics/electronics"
 tags = ["altium", "pcb"]
+
+[beacon]
+name = "beacon"
+description = {
+    en = "ArUco-based SIMA tracking with UDP position broadcast",
+    sr = "Praćenje SIMA robota pomoću ArUco tagova uz slanje pozicija preko UDP-a",
+    "sr-Cyrl" = "Праћење СИМА робота помоћу ArUco тагова уз слање позиција преко UDP-а"
+}
+url = "https://github.com/rurrobotics/beacon"
+tags = ["python", "opencv"]
