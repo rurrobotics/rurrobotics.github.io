@@ -4,7 +4,7 @@ import PageLayout from "@layouts/PageLayout.astro";
 import Section from "@components/ui/Section.astro";
 import SectionTitle from "@components/ui/SectionTitle.astro";
 import JoinForm from "@components/ui/JoinForm.astro";
-import team from "@/assets/team.jpg";
+import team from "@/assets/team-join.jpg";
 import { locales, type Locale } from "@locales/config.js";
 
 // Rendered on request so the form can post to the `apply` action without JS.
@@ -18,6 +18,7 @@ if (!locales.includes(Astro.params.lang as Locale)) {
 <PageLayout
 	title="Join us"
 	description="Apply to join RUR Robotics, the robotics club of the School of Electrical Engineering at the University of Belgrade."
+	image={team}
 	showJoinSection={false}
 >
 	<Section color="primary" class="relative isolate grow overflow-hidden">
