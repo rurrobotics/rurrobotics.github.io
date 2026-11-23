@@ -54,7 +54,7 @@ Do these in order: Supabase first (the Worker needs its URL and key), then Zoho,
     ```sh
     npx supabase login
     npx supabase link --project-ref <ref>
-    npx supabase db push        # applies supabase/migrations/: the applications table, RLS and the email trigger
+    npx supabase db push        # applies supabase/migrations/: the applications table, RLS, the email trigger and the 12-month delete job
     npm run db:types            # regenerates src/lib/supabase.types.ts
     ```
 
@@ -176,6 +176,16 @@ If no emails arrive:
 
 - look at the function's logs in the Supabase dashboard
 - check `select * from net._http_response order by id desc limit 5;` for the trigger's request
+
+Applications are deleted 12 months after they're sent, as the privacy policy promises. A `pg_cron` job does it daily at 03:00 UTC. To check that it runs:
+
+```sql
+select status, start_time from cron.job_run_details
+where jobid = (select jobid from cron.job where jobname = 'delete-old-applications')
+order by start_time desc limit 5;
+```
+
+Delete the team's notification emails in the `kontakt@` inbox on the same schedule.
 
 ## TODO
 
