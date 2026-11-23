@@ -376,3 +376,15 @@ msgstr "Author"
 #: src/pages/[lang]/articles/[...slug].astro
 msgid "Published"
 msgstr "Published"
+
+#: src/components/layout/Footer.astro
+msgid "Privacy"
+msgstr "Privacy"
+
+#: src/pages/[lang]/privacy/index.astro
+msgid "Last updated"
+msgstr "Last updated"
+
+#: src/components/ui/JoinForm.astro
+msgid "By sending this form, you confirm you've read our <0>privacy policy</0>, which explains how we handle your data."
+msgstr "By sending this form, you confirm you've read our <0>privacy policy</0>, which explains how we handle your data."

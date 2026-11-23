@@ -13,7 +13,7 @@ npm run build               # build to dist/
 
 npm run wuchale             # extract strings into src/locales/*.po
 npm run translit:po         # fill sr.po from sr-Cyrl.po
-npm run translit:articles   # transliterate articles
+npm run translit:content    # transliterate articles and legal pages
 ```
 
 Translate new strings in `sr-Cyrl.po`, then run `npm run translit:po`; don't edit `sr.po` by hand.

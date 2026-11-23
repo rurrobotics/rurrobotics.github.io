@@ -3,13 +3,14 @@ import { MoveRight } from "@lucide/astro";
 import { actions, isInputError } from "astro:actions";
 import { TURNSTILE_SITE_KEY } from "astro:env/server";
 import FormField from "@components/ui/FormField.astro";
+import { pageLocale } from "@locales/utils";
 
-// Set when this request is the form's own POST to the `apply` action.
+const locale = pageLocale(Astro.currentLocale);
+
 const result = Astro.getActionResult(actions.apply);
 const sent = result !== undefined && !result.error;
 const invalid = isInputError(result?.error) ? result.error.fields : {};
 const notHuman = result?.error?.code === "FORBIDDEN";
-// Refill the fields after a failed submit; a sent form starts empty again.
 const values: Record<string, string> = result?.error
 	? Object.fromEntries(
 			[...(await Astro.request.formData())].map(([k, v]) => [
@@ -114,6 +115,12 @@ const values: Record<string, string> = result?.error
 			</p>
 		)
 	}
+	<p class="text-sm leading-relaxed">
+		By sending this form, you confirm you've read our <a
+			href={`/${locale}/privacy/`}
+			class="font-bold underline underline-offset-2">privacy policy</a
+		>, which explains how we handle your data.
+	</p>
 	<button
 		type="submit"
 		class="group wipe wipe-left wipe-primary mt-2 inline-flex items-center justify-between gap-3 border-4 border-black bg-foreground px-6 py-3 font-mono text-sm font-bold tracking-widest text-background uppercase cursor-pointer"

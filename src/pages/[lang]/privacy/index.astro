@@ -1,0 +1,55 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import { parseArticleId } from "@lib/articles";
+import { localeTags } from "@locales/config.js";
+import { pageLocale } from "@locales/utils";
+import PageLayout from "@layouts/PageLayout.astro";
+
+export async function getStaticPaths() {
+	const entries = await getCollection(
+		"legal",
+		({ id }) => parseArticleId(id).slug === "privacy",
+	);
+	return entries.map((entry) => ({
+		params: { lang: parseArticleId(entry.id).locale },
+		props: { entry },
+	}));
+}
+
+interface Props {
+	entry: CollectionEntry<"legal">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { data } = entry;
+
+const updated = new Intl.DateTimeFormat(
+	localeTags[pageLocale(Astro.currentLocale)],
+	{ day: "numeric", month: "long", year: "numeric", timeZone: "UTC" },
+).format(data.updated);
+---
+
+<PageLayout title={data.title} description={data.description}>
+	<article class="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 md:px-12 md:py-16">
+		<header class="mb-10 md:mb-12">
+			<h1 class="font-display text-4xl leading-none font-bold text-foreground uppercase sm:text-6xl">
+				{data.title}
+			</h1>
+			<dl class="mt-6">
+				<dt class="font-mono text-xs tracking-widest text-muted uppercase">
+					Last updated
+				</dt>
+				<dd class="mt-1 text-foreground">
+					<time datetime={data.updated.toISOString().slice(0, 10)}>
+						{updated}
+					</time>
+				</dd>
+			</dl>
+		</header>
+
+		<div class="prose max-w-none">
+			<Content />
+		</div>
+	</article>
+</PageLayout>

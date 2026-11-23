@@ -50,16 +50,8 @@ msgid "The team"
 msgstr "Tim"
 
 #: src/components/sections/AboutSection.astro
-msgid ""
-"Founded in 2023 as a <0>Eurobot</0> team, we've since grown into the "
-"robotics club of the School of Electrical Engineering at the University of "
-"Belgrade. Our members come from faculties across the university, building "
-"autonomous robots that bring together mechanics, electronics and software."
-msgstr ""
-"Osnovani 2023. kao <0>Eurobot</0> tim, od tada smo prerasli u klub robotike "
-"Elektrotehničkog fakulteta Univerziteta u Beogradu. Naši članovi dolaze sa "
-"različitih fakulteta i zajedno prave autonomne robote koji spajaju mehaniku, "
-"elektroniku i softver."
+msgid "Founded in 2023 as a <0>Eurobot</0> team, we've since grown into the robotics club of the School of Electrical Engineering at the University of Belgrade. Our members come from faculties across the university, building autonomous robots that bring together mechanics, electronics and software."
+msgstr "Osnovani 2023. kao <0>Eurobot</0> tim, od tada smo prerasli u klub robotike Elektrotehničkog fakulteta Univerziteta u Beogradu. Naši članovi dolaze sa različitih fakulteta i zajedno prave autonomne robote koji spajaju mehaniku, elektroniku i softver."
 
 #: src/components/ui/CategoryBadge.astro
 msgid "News"
@@ -112,8 +104,7 @@ msgid "GitHub"
 msgstr "GitHub"
 
 #: src/components/sections/ContactSection.astro
-msgid ""
-"School of Electrical Engineering, Bulevar kralja Aleksandra 73, Belgrade"
+msgid "School of Electrical Engineering, Bulevar kralja Aleksandra 73, Belgrade"
 msgstr "Elektrotehnički fakultet, Bulevar kralja Aleksandra 73, Beograd"
 
 #: src/components/sections/ContactSection.astro
@@ -139,19 +130,15 @@ msgid "General"
 msgstr "Generalni"
 
 #: src/components/sections/SponsorsSection.astro
-msgid ""
-"We are grateful to our sponsors for supporting our work and helping us "
-"learn, create, and compete."
-msgstr ""
-"Zahvaljujemo se našim sponzorima na podršci i na tome što nam omogućavaju da "
-"učimo, stvaramo i da se takmičimo."
+msgid "We are grateful to our sponsors for supporting our work and helping us learn, create, and compete."
+msgstr "Zahvaljujemo se našim sponzorima na podršci i na tome što nam omogućavaju da učimo, stvaramo i da se takmičimo."
 
 #: src/components/layout/Footer.astro
 msgid "Source"
 msgstr "Izvorni kod"
 
-#: src/components/layout/Footer.astro
 #. 0: year
+#: src/components/layout/Footer.astro
 msgid "© 2023–{0} RUR Robotics. All rights reserved."
 msgstr "© 2023–{0} RUR Robotika. Sva prava zadržana."
 
@@ -166,12 +153,8 @@ msgstr "Meni"
 
 #: src/components/sections/JoinSection.astro
 #: src/pages/[lang]/join/index.astro
-msgid ""
-"Meet new people and learn from more experienced members while you compete. "
-"We take students from any faculty and any year, no background needed."
-msgstr ""
-"Upoznaj nove ljude i uči od iskusnijih dok se takmičiš. Primamo studente sa "
-"svih fakulteta i svih godina, bez predznanja."
+msgid "Meet new people and learn from more experienced members while you compete. We take students from any faculty and any year, no background needed."
+msgstr "Upoznaj nove ljude i uči od iskusnijih dok se takmičiš. Primamo studente sa svih fakulteta i svih godina, bez predznanja."
 
 #: src/components/ui/ArticleFilters.astro
 #: src/components/ui/ArticleFilters.astro
@@ -206,8 +189,8 @@ msgstr "Godina"
 msgid "Nothing matches your filters."
 msgstr "Ništa ne odgovara pretrazi."
 
-#: src/pages/[lang]/articles/index.astro
 #. 0: entries.length
+#: src/pages/[lang]/articles/index.astro
 msgid "Shown <0/> out of {0}"
 msgstr "Prikazano <0/> od {0}"
 
@@ -251,13 +234,8 @@ msgid "Team members by the playing table at the Serbian Eurobot Cup"
 msgstr "Članovi tima pored takmičarskog stola na Eurobot kupu Srbije"
 
 #: src/pages/[lang]/index.astro
-msgid ""
-"RUR Robotics is the robotics club of the School of Electrical Engineering at "
-"the University of Belgrade. We build autonomous robots and compete in "
-"Eurobot."
-msgstr ""
-"RUR Robotika je klub robotike Elektrotehničkog fakulteta Univerziteta u "
-"Beogradu. Gradimo autonomne robote i takmičimo se na Eurobotu."
+msgid "RUR Robotics is the robotics club of the School of Electrical Engineering at the University of Belgrade. We build autonomous robots and compete in Eurobot."
+msgstr "RUR Robotika je klub robotike Elektrotehničkog fakulteta Univerziteta u Beogradu. Gradimo autonomne robote i takmičimo se na Eurobotu."
 
 #: src/pages/[lang]/gallery/index.astro
 msgid "A collection of photos from the events we've been part of."
@@ -284,12 +262,8 @@ msgid "Year of study"
 msgstr "Godina studija"
 
 #: src/pages/[lang]/join/index.astro
-msgid ""
-"Apply to join RUR Robotics, the robotics club of the School of Electrical "
-"Engineering at the University of Belgrade."
-msgstr ""
-"Prijavi se za članstvo u RUR Robotici, klubu robotike Elektrotehničkog "
-"fakulteta Univerziteta u Beogradu."
+msgid "Apply to join RUR Robotics, the robotics club of the School of Electrical Engineering at the University of Belgrade."
+msgstr "Prijavi se za članstvo u RUR Robotici, klubu robotike Elektrotehničkog fakulteta Univerziteta u Beogradu."
 
 #: src/pages/[lang]/join/index.astro
 msgid "What happens next"
@@ -337,8 +311,7 @@ msgstr "Unesi godinu od 1 do 6."
 
 #: src/components/ui/JoinForm.astro
 msgid "We couldn't confirm you're human. Complete the check and try again."
-msgstr ""
-"Nismo uspeli da potvrdimo da si čovek. Završi proveru i pokušaj ponovo."
+msgstr "Nismo uspeli da potvrdimo da si čovek. Završi proveru i pokušaj ponovo."
 
 #: src/pages/404.astro
 msgid "The page you're looking for doesn't exist."
@@ -387,8 +360,8 @@ msgstr "RUR Robotika: dešavanja i članci"
 msgid "RSS feed"
 msgstr "RSS fid"
 
-#: src/layouts/Layout.astro
 #. 0: "@/st
+#: src/layouts/Layout.astro
 msgid "{0} | RUR Robotics"
 msgstr "{0} | RUR Robotika"
 
@@ -403,3 +376,15 @@ msgstr "Autor"
 #: src/pages/[lang]/articles/[...slug].astro
 msgid "Published"
 msgstr "Objavljeno"
+
+#: src/components/layout/Footer.astro
+msgid "Privacy"
+msgstr "Privatnost"
+
+#: src/pages/[lang]/privacy/index.astro
+msgid "Last updated"
+msgstr "Poslednja izmena"
+
+#: src/components/ui/JoinForm.astro
+msgid "By sending this form, you confirm you've read our <0>privacy policy</0>, which explains how we handle your data."
+msgstr "Slanjem formulara potvrđuješ da si pročitao/la našu <0>politiku privatnosti</0>, koja objašnjava kako obrađujemo tvoje podatke."
