@@ -4,3 +4,6 @@ src/locales/*.loader.js
 
 # Local Supabase CLI state (gitignored)
 supabase/.temp
+
+# Git submodule with the Serbian name vocatives (not ours to format)
+supabase/functions/application-emails/vokativi

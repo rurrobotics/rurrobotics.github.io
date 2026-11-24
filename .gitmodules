@@ -1,0 +1,3 @@
+[submodule "supabase/functions/application-emails/vokativi"]
+	path = supabase/functions/application-emails/vokativi
+	url = https://github.com/startitrs/vokativi.git
