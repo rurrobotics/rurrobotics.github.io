@@ -12,11 +12,11 @@ npm run dev                 # start dev server
 npm run build               # build to dist/
 
 npm run wuchale             # extract strings into src/locales/*.po
-npm run translit:po         # fill sr.po from sr-Cyrl.po
+npm run translit:po         # regenerate sr.po from sr-Cyrl.po
 npm run translit:content    # transliterate articles and legal pages
 ```
 
-Translate new strings in `sr-Cyrl.po`, then run `npm run translit:po`; don't edit `sr.po` by hand.
+Translate new strings in `sr-Cyrl.po`, then run `npm run translit:po`. It overwrites `sr.po` completely, so don't edit that by hand; a Latin string that must differ goes in `OVERRIDES` in `scripts/transliterate-po.mjs`.
 
 ## Services
 
