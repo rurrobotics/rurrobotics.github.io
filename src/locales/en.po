@@ -389,3 +389,7 @@ msgstr "By sending this form, you confirm you've read our <0>privacy policy</0>,
 #: src/components/layout/Footer.astro
 msgid "© 2023–<0/> RUR Robotics. All rights reserved."
 msgstr "© 2023–<0/> RUR Robotics. All rights reserved."
+
+#: src/layouts/PageLayout.astro
+msgid "Skip to content"
+msgstr "Skip to content"

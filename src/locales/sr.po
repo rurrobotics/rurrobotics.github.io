@@ -389,3 +389,7 @@ msgstr "Slanjem formulara potvrđuješ da si pročitao/la našu <0>politiku priv
 #: src/components/layout/Footer.astro
 msgid "© 2023–<0/> RUR Robotics. All rights reserved."
 msgstr "© 2023–<0/> RUR Robotika. Sva prava zadržana."
+
+#: src/layouts/PageLayout.astro
+msgid "Skip to content"
+msgstr "Preskoči na sadržaj"

@@ -389,3 +389,7 @@ msgstr "Слањем формулара потврђујеш да си проч�
 #: src/components/layout/Footer.astro
 msgid "© 2023–<0/> RUR Robotics. All rights reserved."
 msgstr "© 2023–<0/> РУР Роботика. Сва права задржана."
+
+#: src/layouts/PageLayout.astro
+msgid "Skip to content"
+msgstr "Прескочи на садржај"
