@@ -1,7 +1,6 @@
 // Called by the trigger on `applications` inserts (see the migration). Sends the
 // applicant a confirmation in their language and the team a notification.
 import nodemailer from "npm:nodemailer@10.2.1";
-import { vocativeFirstName } from "./vocative.ts";
 
 const FROM = "RUR Robotics <join@rurrobotics.com>";
 const TEAM = "kontakt@rurrobotics.com";
@@ -28,11 +27,11 @@ const confirmations: Record<
 	}),
 	sr: (name) => ({
 		subject: "Primili smo tvoju prijavu",
-		text: `Zdravo ${vocativeFirstName(name)},\n\nHvala na prijavi za RUR Robotiku! Primili smo je i javićemo ti se mejlom kada počne krug selekcije.\n\nRUR Robotika\nhttps://rurrobotics.com/sr/`,
+		text: `Zdravo ${name},\n\nHvala na prijavi za RUR Robotiku! Primili smo je i javićemo ti se mejlom kada počne krug selekcije.\n\nRUR Robotika\nhttps://rurrobotics.com/sr/`,
 	}),
 	"sr-Cyrl": (name) => ({
 		subject: "Примили смо твоју пријаву",
-		text: `Здраво ${vocativeFirstName(name)},\n\nХвала на пријави за РУР Роботику! Примили смо је и јавићемо ти се мејлом када почне круг селекције.\n\nРУР Роботика\nhttps://rurrobotics.com/sr-Cyrl/`,
+		text: `Здраво ${name},\n\nХвала на пријави за РУР Роботику! Примили смо је и јавићемо ти се мејлом када почне круг селекције.\n\nРУР Роботика\nhttps://rurrobotics.com/sr-Cyrl/`,
 	}),
 };
 

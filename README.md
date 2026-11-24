@@ -4,7 +4,7 @@ Website for the RUR Robotics faculty club. Astro on Cloudflare Workers, i18n via
 
 ## Usage
 
-Needs Node 22.23.4 or newer. Clone with `--recurse-submodules`, or run `git submodule update --init` afterwards; the site itself doesn't need the submodule, only deploying the email function does (see [Serbian greetings](#serbian-greetings-in-emails)).
+Needs Node 22.23.4 or newer.
 
 ```sh
 npm install                 # install deps
@@ -65,7 +65,7 @@ Do these in order: Supabase first (the Worker needs its URL and key), then Zoho,
     npx supabase db query --linked "select vault.create_secret('<random>', 'application_emails_secret')"
     ```
 
-4. Deploy the email function (check out the name list first: `git submodule update --init`). `--use-api` deploys without Docker. `verify_jwt = false` in `config.toml` is picked up automatically; the function checks the shared secret itself.
+4. Deploy the email function. `--use-api` deploys without Docker. `verify_jwt = false` in `config.toml` is picked up automatically; the function checks the shared secret itself.
 
     ```sh
     npx supabase functions deploy application-emails --use-api
@@ -165,25 +165,12 @@ npx supabase db query --linked "select vault.update_secret((select id from vault
 npx supabase secrets set APPLICATION_EMAILS_SECRET=<new>
 ```
 
-## Serbian greetings in emails
-
-The Serbian confirmation emails greet the applicant by the vocative of their first name: "Zdravo Marko", "Zdravo Vuče", "Здраво Милице". The names come from [startitrs/vokativi](https://github.com/startitrs/vokativi) (CC BY 4.0), a git submodule at `supabase/functions/application-emails/vokativi`, pinned to a commit. `vocative.ts` in the same folder does the lookup. It handles Cyrillic and Latin spellings, any capitalisation, and Latin names typed without diacritics ("Milos"). A name that isn't in the list is greeted as typed. The English email still uses the full name.
-
-To pick up new names:
-
-```sh
-git submodule update --remote supabase/functions/application-emails/vokativi
-git add supabase/functions/application-emails/vokativi && git commit -m "chore: update the vocative list"
-npx supabase functions deploy application-emails --use-api
-```
-
 ## Checking it works
 
 Send a test application through `/sr/join/`, then check:
 
 - the row appears in the `applications` table
 - both emails arrive: the confirmation to the applicant and the notification to `kontakt@`
-- the Serbian confirmation greets by the vocative ("Zdravo Marko", not "Zdravo Marko Marković")
 
 If no emails arrive:
 
