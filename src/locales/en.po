@@ -13,6 +13,7 @@ msgstr ""
 #: src/layouts/Layout.astro
 #: src/layouts/Layout.astro
 #: src/pages/[lang]/index.astro
+#: src/pages/[lang]/index.astro
 msgid "RUR Robotics"
 msgstr "RUR Robotics"
 
@@ -393,3 +394,39 @@ msgstr "Showing <0/> of {0}"
 #: src/components/ui/JoinForm.astro
 msgid "Too many applications from this connection. Wait a minute and try again."
 msgstr "Too many applications from this connection. Wait a minute and try again."
+
+#: src/layouts/Layout.astro
+msgid "The RUR Robotics team gathered around their robots"
+msgstr "The RUR Robotics team gathered around their robots"
+
+#: src/pages/[lang]/index.astro
+msgid "Organization"
+msgstr "Organization"
+
+#: src/pages/[lang]/index.astro
+msgid "RUR Robotika"
+msgstr "RUR Robotika"
+
+#: src/pages/[lang]/index.astro
+msgid "РУР Роботика"
+msgstr "РУР Роботика"
+
+#: src/pages/[lang]/index.astro
+msgid "CollegeOrUniversity"
+msgstr "CollegeOrUniversity"
+
+#: src/pages/[lang]/index.astro
+msgid "School of Electrical Engineering, University of Belgrade"
+msgstr "School of Electrical Engineering, University of Belgrade"
+
+#: src/pages/[lang]/index.astro
+msgid "PostalAddress"
+msgstr "PostalAddress"
+
+#: src/pages/[lang]/index.astro
+msgid "Bulevar kralja Aleksandra 73"
+msgstr "Bulevar kralja Aleksandra 73"
+
+#: src/pages/[lang]/index.astro
+msgid "Belgrade"
+msgstr "Belgrade"

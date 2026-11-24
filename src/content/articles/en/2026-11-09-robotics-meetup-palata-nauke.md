@@ -5,6 +5,8 @@ date: 2026-11-05
 author: "Aleksa Ognjanović"
 category: "meetup"
 eventDate: 2026-11-09T16:30:00+01:00
+hero: "../../../assets/articles/robotics-meetup.png"
+heroAlt: "Poster of the Robotics Meet-up at Palata nauke"
 ---
 
 ![Robotics Meet-up poster](../../../assets/articles/robotics-meetup.png)

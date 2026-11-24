@@ -1,18 +1,13 @@
 ---
 import { Mail, MapPin, Phone } from "@lucide/astro";
 import { getContactEmail } from "@lib/contact";
+import { socials } from "@lib/socials";
 import Section from "@components/ui/Section.astro";
 import SectionTitle from "@components/ui/SectionTitle.astro";
 import SocialLink from "@components/ui/SocialLink.astro";
 
 const email = getContactEmail(Astro.currentLocale);
 const phone = null as string | null;
-
-const socials = [
-	{ network: "instagram", href: "https://instagram.com/rurrobotics" },
-	{ network: "linkedin", href: "https://linkedin.com/company/rur-robotics" },
-	{ network: "github", href: "https://github.com/rurrobotics" },
-] as const;
 ---
 
 <Section id="contact" color="black">

@@ -17,20 +17,26 @@ const articles = defineCollection({
 			date: z.coerce.date(),
 			author: z.string().optional(),
 			hero: image().optional(),
+			heroAlt: z.string().optional(),
 			draft: z.boolean().default(false),
 		});
-		return z.discriminatedUnion("category", [
-			base.extend({
-				category: z.literal("meetup"),
-				eventDate: z.coerce.date(),
-			}),
-			base.extend({
-				category: z.literal("lecture"),
-				eventDate: z.coerce.date(),
-			}),
-			base.extend({ category: z.literal("news") }),
-			base.extend({ category: z.literal("writeup") }),
-		]);
+		return z
+			.discriminatedUnion("category", [
+				base.extend({
+					category: z.literal("meetup"),
+					eventDate: z.coerce.date(),
+				}),
+				base.extend({
+					category: z.literal("lecture"),
+					eventDate: z.coerce.date(),
+				}),
+				base.extend({ category: z.literal("news") }),
+				base.extend({ category: z.literal("writeup") }),
+			])
+			.refine((data) => !data.hero || data.heroAlt, {
+				message: "heroAlt is required when hero is set",
+				path: ["heroAlt"],
+			});
 	},
 });
 
