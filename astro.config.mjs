@@ -112,7 +112,10 @@ export default defineConfig({
 					(link) => link.lang === localeTags[defaultLocale],
 				);
 				if (fallback) {
-					item.links.push({ lang: "x-default", url: fallback.url });
+					item.links = [
+						...item.links,
+						{ lang: "x-default", url: fallback.url },
+					];
 				}
 				return item;
 			},
