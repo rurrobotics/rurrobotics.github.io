@@ -31,6 +31,7 @@ msgid "Events"
 msgstr "Дешавања"
 
 #: src/components/sections/EventsSection.astro
+#: src/components/sections/EventsSection.astro
 msgid "No upcoming events."
 msgstr "Нема надолазећих дешавања"
 

@@ -13,9 +13,10 @@ import CategoryBadge from "@components/ui/CategoryBadge.astro";
 interface Props {
 	article: Article;
 	past?: boolean;
+	hidden?: boolean;
 }
 
-const { article, past = false } = Astro.props;
+const { article, past = false, hidden = false } = Astro.props;
 const { data } = article;
 
 const locale = pageLocale(Astro.currentLocale);
@@ -39,7 +40,7 @@ const eventYear = (date: Date) =>
 		.find((part) => part.type === "year")?.value;
 ---
 
-<li>
+<li hidden={hidden} data-event-time={eventDate?.valueOf()}>
 	<a
 		href={`/${locale}/articles/${articleSlug(article)}/`}
 		class:list={[
