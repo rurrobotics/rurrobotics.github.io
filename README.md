@@ -213,10 +213,6 @@ Delete the team's notification emails in the `kontakt@` inbox on the same schedu
 - Redo style for blockquote
 - Redo style for inline code
 
-### Navbar
-
-- Redesign the locale switcher
-
 ### Performance
 
 - Trim the fonts (about 106 KB for the Latin subsets): drop JetBrains Mono, which only labels use, or subset the fonts further
