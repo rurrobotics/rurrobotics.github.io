@@ -16,7 +16,7 @@ const links = [
 <footer class="bg-foreground text-background">
 	<div class="mx-auto container flex flex-col gap-5 px-5 py-6 font-mono text-[11px] tracking-widest uppercase sm:flex-row sm:items-center sm:justify-between sm:px-10 sm:text-xs md:px-15">
 		<p>
-			© 2023–<span data-year>{year}</span> RUR Robotics. All rights
+			© 2023–<span data-footer-year>{year}</span> RUR Robotics. All rights
 			reserved.
 		</p>
 		<div class="flex items-center gap-5">
@@ -40,6 +40,6 @@ const links = [
 </footer>
 
 <script>
-	const year = document.querySelector("[data-year]");
+	const year = document.querySelector("[data-footer-year]");
 	if (year) year.textContent = String(new Date().getFullYear());
 </script>
