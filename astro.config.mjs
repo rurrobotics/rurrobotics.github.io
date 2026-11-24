@@ -80,8 +80,10 @@ export default defineConfig({
 			prefixDefaultLocale: true,
 		},
 	},
+	build: { inlineStylesheets: "never" },
 	vite: {
 		plugins: [tailwindcss(), wuchale()],
+		build: { assetsInlineLimit: 0 },
 	},
 	markdown: {
 		syntaxHighlight: false,

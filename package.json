@@ -7,6 +7,7 @@
 	},
 	"scripts": {
 		"dev": "astro dev",
+		"prebuild": "node scripts/generate-headers.mjs",
 		"build": "astro build",
 		"wuchale": "wuchale",
 		"translit:po": "node scripts/transliterate-po.mjs && wuchale --clean",

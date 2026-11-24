@@ -127,6 +127,12 @@ The Worker is called `rurrobotics` (`name` in `wrangler.jsonc`). It serves `dist
 
 The join action is rate limited to 10 applications a minute per IP address by the `JOIN_LIMITER` binding in `wrangler.jsonc`, checked before Turnstile. It needs no setup: the binding is created when the Worker deploys. Over the limit, the form shows "Too many applications from this connection". Cloudflare counts per location and only offers 10 or 60 second windows, so this slows a flood down without capping a day's total.
 
+### Security headers
+
+Every page gets a Content-Security-Policy, Referrer-Policy, Permissions-Policy and `X-Frame-Options`. They're defined once, in `src/lib/security-headers.js`. `npm run build` first runs `scripts/generate-headers.mjs`, which writes them to `public/_headers` for the static pages; the middleware sets the same ones on the pages the Worker renders (the join form and the error pages), in production builds only. HSTS and `nosniff` come from Cloudflare's own settings.
+
+The policy allows no inline scripts, so `astro.config.mjs` stops Vite from inlining anything. Turnstile is the only third party. If you add another one (analytics, an embed, a font host), add its origin to the matching directive in `security-headers.js`. A blocked resource shows up as a "Content Security Policy" error in the browser console.
+
 ### 5. Local `.env`
 
 ```sh
@@ -195,6 +201,7 @@ Delete the team's notification emails in the `kontakt@` inbox on the same schedu
 
 ### Join form and emails
 
+- After deploying, check the live headers: `curl -sI https://rurrobotics.com/en/join/ | grep -i "content-security\|referrer\|permissions\|x-frame"`, and load the join page once to see that the Turnstile widget still appears
 - Deploy the email function so the confirmation no longer includes the applicant's name: `git pull`, then `npx supabase functions deploy application-emails --use-api`
 - Delete the test applications left by the rate-limit test (once), in the SQL editor: `delete from applications where email = 'test@example.invalid';`, and delete the "Nova prijava: Test Person" emails in the `kontakt@` inbox
 - Check in Workers → Observability that real applications aren't being refused with `TOO_MANY_REQUESTS`, for example from the faculty wifi, where many students share one IP; raise `limit` in `wrangler.jsonc` if they are
