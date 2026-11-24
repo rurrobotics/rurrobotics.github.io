@@ -1,25 +1,27 @@
 ---
-import type { Locale } from "@locales/config.js";
+import { localeTags, type Locale } from "@locales/config.js";
 import { pageLocale } from "@locales/utils";
 
 const locale = pageLocale(Astro.currentLocale);
 
 // @wc-ignore
 const options = [
-	["en", "EN"],
-	["sr", "SR"],
-	["sr-Cyrl", "СР"],
-] as const satisfies readonly (readonly [Locale, string])[];
+	["en", "EN", "English"],
+	["sr", "LAT", "Srpski (latinica)"],
+	["sr-Cyrl", "ЋИР", "Српски (ћирилица)"],
+] as const satisfies readonly (readonly [Locale, string, string])[];
 
-// The same page in another locale: swap the first path segment.
 const rest = Astro.url.pathname.split("/").filter(Boolean).slice(1).join("/");
 const href = (target: Locale) => `/${target}/${rest && `${rest}/`}`;
 ---
 
 {
-	options.map(([target, label]) => (
+	options.map(([target, label, name]) => (
 		<a
 			href={href(target)}
+			lang={localeTags[target]}
+			hreflang={localeTags[target]}
+			aria-label={name}
 			aria-current={target === locale ? "true" : undefined}
 			class:list={[
 				"px-2.5 py-1",
