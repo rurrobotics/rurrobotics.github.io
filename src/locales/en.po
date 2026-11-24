@@ -389,3 +389,7 @@ msgstr "The robot's gantry frame on a workbench in the workshop"
 #: src/pages/[lang]/articles/index.astro
 msgid "Showing <0/> of {0}"
 msgstr "Showing <0/> of {0}"
+
+#: src/components/ui/JoinForm.astro
+msgid "Too many applications from this connection. Wait a minute and try again."
+msgstr "Too many applications from this connection. Wait a minute and try again."

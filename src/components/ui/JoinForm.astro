@@ -11,6 +11,7 @@ const result = Astro.getActionResult(actions.apply);
 const sent = result !== undefined && !result.error;
 const invalid = isInputError(result?.error) ? result.error.fields : {};
 const notHuman = result?.error?.code === "FORBIDDEN";
+const tooMany = result?.error?.code === "TOO_MANY_REQUESTS";
 const values: Record<string, string> = result?.error
 	? Object.fromEntries(
 			[...(await Astro.request.formData())].map(([k, v]) => [
@@ -99,7 +100,16 @@ const values: Record<string, string> = result?.error
 			We couldn't confirm you're human. Complete the check and try again.
 		</p>
 	)}
-	{result?.error && !isInputError(result.error) && !notHuman && (
+	{tooMany && (
+		<p
+			role="alert"
+			class="border-4 border-black bg-primary p-4 font-mono text-sm font-bold text-primary-foreground"
+		>
+			Too many applications from this connection. Wait a minute and try
+			again.
+		</p>
+	)}
+	{result?.error && !isInputError(result.error) && !notHuman && !tooMany && (
 		<p
 			role="alert"
 			class="border-4 border-black bg-primary p-4 font-mono text-sm font-bold text-primary-foreground"

@@ -340,8 +340,8 @@ msgstr "RUR Robotika: dešavanja i članci"
 msgid "RSS feed"
 msgstr "RSS"
 
-#. 0: "@/st
 #: src/layouts/Layout.astro
+#. 0: "@/st
 msgid "{0} | RUR Robotics"
 msgstr "{0} | RUR Robotika"
 
@@ -385,7 +385,11 @@ msgstr "Član tima seče metal ugaonom brusilicom u radionici"
 msgid "The robot's gantry frame on a workbench in the workshop"
 msgstr "Portal robota na radnom stolu u radionici"
 
-#. 0: total
 #: src/pages/[lang]/articles/index.astro
+#. 0: total
 msgid "Showing <0/> of {0}"
 msgstr "Prikazano <0/> od {0}"
+
+#: src/components/ui/JoinForm.astro
+msgid "Too many applications from this connection. Wait a minute and try again."
+msgstr "Previše prijava sa ove veze. Sačekaj minut i pokušaj ponovo."

@@ -389,3 +389,7 @@ msgstr "Портал робота на радном столу у радиони
 #: src/pages/[lang]/articles/index.astro
 msgid "Showing <0/> of {0}"
 msgstr "Приказано <0/> од {0}"
+
+#: src/components/ui/JoinForm.astro
+msgid "Too many applications from this connection. Wait a minute and try again."
+msgstr "Превише пријава са ове везе. Сачекај минут и покушај поново."

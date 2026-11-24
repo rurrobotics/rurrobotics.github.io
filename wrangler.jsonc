@@ -11,6 +11,14 @@
 		"SUPABASE_URL": "https://vuxfgjoewsyijrpactpc.supabase.co",
 		"TURNSTILE_SITE_KEY": "0x4AAAAAAF-JBF32X8e9Kv5P",
 	},
+	// At most 10 applications a minute per IP address, checked in the join action.
+	"ratelimits": [
+		{
+			"name": "JOIN_LIMITER",
+			"namespace_id": "1001",
+			"simple": { "limit": 10, "period": 60 },
+		},
+	],
 	"observability": {
 		"enabled": true,
 	},

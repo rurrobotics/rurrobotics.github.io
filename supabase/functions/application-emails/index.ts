@@ -17,22 +17,19 @@ interface Application {
 	created_at: string;
 }
 
-const confirmations: Record<
-	Locale,
-	(name: string) => { subject: string; text: string }
-> = {
-	en: (name) => ({
+const confirmations: Record<Locale, { subject: string; text: string }> = {
+	en: {
 		subject: "We received your application",
-		text: `Hi ${name},\n\nThanks for applying to RUR Robotics! We got your application and will email you when the selection round starts.\n\nRUR Robotics\nhttps://rurrobotics.com/en/`,
-	}),
-	sr: (name) => ({
+		text: `Hi,\n\nThanks for applying to RUR Robotics! We got your application and will email you when the selection round starts.\n\nRUR Robotics\nhttps://rurrobotics.com/en/`,
+	},
+	sr: {
 		subject: "Primili smo tvoju prijavu",
-		text: `Zdravo ${name},\n\nHvala na prijavi za RUR Robotiku! Primili smo je i javićemo ti se mejlom kada počne krug selekcije.\n\nRUR Robotika\nhttps://rurrobotics.com/sr/`,
-	}),
-	"sr-Cyrl": (name) => ({
+		text: `Zdravo,\n\nHvala na prijavi za RUR Robotiku! Primili smo je i javićemo ti se mejlom kada počne krug selekcije.\n\nRUR Robotika\nhttps://rurrobotics.com/sr/`,
+	},
+	"sr-Cyrl": {
 		subject: "Примили смо твоју пријаву",
-		text: `Здраво ${name},\n\nХвала на пријави за РУР Роботику! Примили смо је и јавићемо ти се мејлом када почне круг селекције.\n\nРУР Роботика\nhttps://rurrobotics.com/sr-Cyrl/`,
-	}),
+		text: `Здраво,\n\nХвала на пријави за РУР Роботику! Примили смо је и јавићемо ти се мејлом када почне круг селекције.\n\nРУР Роботика\nhttps://rurrobotics.com/sr-Cyrl/`,
+	},
 };
 
 const transport = nodemailer.createTransport({
@@ -64,9 +61,7 @@ Deno.serve(async (request) => {
 		from: FROM,
 		to: application.email,
 		replyTo: TEAM,
-		...(confirmations[application.locale] ?? confirmations.en)(
-			application.name,
-		),
+		...(confirmations[application.locale] ?? confirmations.en),
 	});
 
 	await transport.sendMail({

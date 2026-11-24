@@ -125,6 +125,8 @@ The Worker is called `rurrobotics` (`name` in `wrangler.jsonc`). It serves `dist
 
 4. Under the Worker's **Settings → Domains & Routes**, add `rurrobotics.com` as a custom domain. The domain's DNS must be on the same Cloudflare account.
 
+The join action is rate limited to 10 applications a minute per IP address by the `JOIN_LIMITER` binding in `wrangler.jsonc`, checked before Turnstile. It needs no setup: the binding is created when the Worker deploys. Over the limit, the form shows "Too many applications from this connection". Cloudflare counts per location and only offers 10 or 60 second windows, so this slows a flood down without capping a day's total.
+
 ### 5. Local `.env`
 
 ```sh
@@ -132,6 +134,8 @@ SUPABASE_PUBLISHABLE_KEY=sb_publishable_…
 TURNSTILE_SITE_KEY=1x00000000000000000000AA
 TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
 ```
+
+Careful: these are Cloudflare's test keys, which always pass, and `SUPABASE_URL` in `wrangler.jsonc` is the real project. Submitting the form locally saves a real application and sends real emails. To test the form without that, point `SUPABASE_URL` at a throwaway project. The dev server's Worker reads `.env`, not variables set in your shell.
 
 ## Moving to another account
 
@@ -188,6 +192,13 @@ order by start_time desc limit 5;
 Delete the team's notification emails in the `kontakt@` inbox on the same schedule.
 
 ## TODO
+
+### Join form and emails
+
+- Deploy the email function so the confirmation no longer includes the applicant's name: `git pull`, then `npx supabase functions deploy application-emails --use-api`
+- Delete the test applications left by the rate-limit test (once), in the SQL editor: `delete from applications where email = 'test@example.invalid';`, and delete the "Nova prijava: Test Person" emails in the `kontakt@` inbox
+- Check in Workers → Observability that real applications aren't being refused with `TOO_MANY_REQUESTS`, for example from the faculty wifi, where many students share one IP; raise `limit` in `wrangler.jsonc` if they are
+- Optional, stronger than a per-minute cap: limit confirmations per address per day, for example in the `applications` trigger, and add a Cloudflare WAF rate-limiting rule for `POST /*/join/` in the dashboard
 
 ### Articles page
 

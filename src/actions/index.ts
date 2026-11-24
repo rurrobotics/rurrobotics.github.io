@@ -5,6 +5,7 @@ import {
 	TURNSTILE_SECRET_KEY,
 } from "astro:env/server";
 import { z } from "astro/zod";
+import { env } from "cloudflare:workers";
 import { createClient } from "@supabase/supabase-js";
 import { defaultLocale } from "@locales/config.js";
 import type { Database } from "@lib/supabase.types";
@@ -46,6 +47,15 @@ export const server = {
 			{ "cf-turnstile-response": token, ...application },
 			{ clientAddress, currentLocale, logger },
 		) => {
+			// Each application sends a confirmation email to whatever address
+			// was typed, so cap how fast one IP address can trigger them.
+			const { success: allowed } = await env.JOIN_LIMITER.limit({
+				key: clientAddress,
+			});
+			if (!allowed) {
+				throw new ActionError({ code: "TOO_MANY_REQUESTS" });
+			}
+
 			if (!(await isHuman(token, clientAddress))) {
 				throw new ActionError({ code: "FORBIDDEN" });
 			}
