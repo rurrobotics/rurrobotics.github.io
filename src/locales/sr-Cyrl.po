@@ -33,7 +33,7 @@ msgstr "Дешавања"
 #: src/components/sections/EventsSection.astro
 #: src/components/sections/EventsSection.astro
 msgid "No upcoming events."
-msgstr "Нема надолазећих дешавања"
+msgstr "Нема надолазећих дешавања."
 
 #: src/components/sections/EventsSection.astro
 msgid "Past events"
@@ -53,7 +53,7 @@ msgstr "Тим"
 
 #: src/components/sections/AboutSection.astro
 msgid "Founded in 2023 as a <0>Eurobot</0> team, we've since grown into the robotics club of the School of Electrical Engineering at the University of Belgrade. Our members come from faculties across the university, building autonomous robots that bring together mechanics, electronics and software."
-msgstr "Основани 2023. године као тим за <0>Еуробот</0>, а од тада смо прерасли у клуб роботике Електротехничког факултета Универзитета у Београду. Наши чланови долазе са различитих факултета и заједно пројектују, граде и програмирају аутономне роботе."
+msgstr "Основани 2023. године као тим за <0>Eurobot</0>, а од тада смо прерасли у клуб роботике Електротехничког факултета Универзитета у Београду. Наши чланови долазе са различитих факултета и заједно пројектују, граде и програмирају аутономне роботе."
 
 #: src/components/ui/CategoryBadge.astro
 msgid "News"
@@ -186,11 +186,6 @@ msgstr "Година"
 msgid "Nothing matches your filters."
 msgstr "Ништа не одговара претрази."
 
-#. 0: total
-#: src/pages/[lang]/articles/index.astro
-msgid "Shown <0/> out of {0}"
-msgstr "Приказано <0/> од {0}"
-
 #: src/components/sections/SponsorsSection.astro
 msgid "Become a partner"
 msgstr "Постани партнер"
@@ -220,7 +215,7 @@ msgstr "Наш робот на такмичарском столу на Eurobot 
 
 #: src/pages/[lang]/index.astro
 msgid "RUR Robotics is the robotics club of the School of Electrical Engineering at the University of Belgrade. We build autonomous robots and compete in Eurobot."
-msgstr "РУР Роботика је клуб роботике Електротехничког факултета Универзитета у Београду. Градимо аутономне роботе и такмичимо се на Еуроботу."
+msgstr "РУР Роботика је клуб роботике Електротехничког факултета Универзитета у Београду. Градимо аутономне роботе и такмичимо се на Eurobot-у."
 
 #: src/pages/[lang]/gallery/index.astro
 msgid "A collection of photos from the events we've been part of."
@@ -343,7 +338,7 @@ msgstr "РУР Роботика: дешавања и чланци"
 
 #: src/pages/[lang]/articles/index.astro
 msgid "RSS feed"
-msgstr "RSS фид"
+msgstr "RSS"
 
 #. 0: "@/st
 #: src/layouts/Layout.astro
@@ -389,3 +384,8 @@ msgstr "Члан тима сече метал угаоном брусилицо�
 #: src/components/sections/GallerySection.astro
 msgid "The robot's gantry frame on a workbench in the workshop"
 msgstr "Портал робота на радном столу у радионици"
+
+#. 0: total
+#: src/pages/[lang]/articles/index.astro
+msgid "Showing <0/> of {0}"
+msgstr "Приказано <0/> од {0}"

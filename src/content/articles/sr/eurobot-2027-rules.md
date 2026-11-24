@@ -1,5 +1,5 @@
 ---
-title: "Izlaze pravila za Eurobot 2027"
+title: "Izašla su pravila za Eurobot 2027"
 description: "U subotu se okupljamo u laboratoriji da zajedno pročitamo nova pravila."
 date: 2026-09-16
 author: "Aleksa Ognjanović"

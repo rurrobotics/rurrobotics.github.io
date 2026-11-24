@@ -30,4 +30,4 @@ Every article is available in English, Serbian (Latin) and Serbian (Cyrillic), a
 
 ## What's next
 
-You'll find meetups, lectures and writeups here as the season goes on, starting with the Eurobot 2027 rules and the Robotics Meet-up at Palata nauke. If you want to build robots with us, [send an application](/en/#join).
+You'll find meetups, lectures and writeups here as the season goes on, starting with the Eurobot 2027 rules and the Robotics Meet-up at Palata nauke. If you want to build robots with us, [send an application](/en/join/).

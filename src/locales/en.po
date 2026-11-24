@@ -186,11 +186,6 @@ msgstr "Year"
 msgid "Nothing matches your filters."
 msgstr "Nothing matches your filters."
 
-#. 0: total
-#: src/pages/[lang]/articles/index.astro
-msgid "Shown <0/> out of {0}"
-msgstr "Shown <0/> out of {0}"
-
 #: src/components/sections/SponsorsSection.astro
 msgid "Become a partner"
 msgstr "Become a partner"
@@ -389,3 +384,8 @@ msgstr "A team member cutting metal with an angle grinder in the workshop"
 #: src/components/sections/GallerySection.astro
 msgid "The robot's gantry frame on a workbench in the workshop"
 msgstr "The robot's gantry frame on a workbench in the workshop"
+
+#. 0: total
+#: src/pages/[lang]/articles/index.astro
+msgid "Showing <0/> of {0}"
+msgstr "Showing <0/> of {0}"

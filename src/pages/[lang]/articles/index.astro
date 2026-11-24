@@ -56,7 +56,7 @@ const years = [...new Set(entries.map((a) => whenOf(a).getUTCFullYear()))].sort(
 			class="mb-4 font-mono text-xs tracking-widest text-muted uppercase"
 			aria-live="polite"
 		>
-			Shown <span data-shown>{total}</span> out of {total}
+			Showing <span data-shown>{total}</span> of {total}
 		</p>
 		<ul class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 			{entries.map((article) => (

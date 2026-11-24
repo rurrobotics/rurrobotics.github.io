@@ -30,4 +30,4 @@ Svaki članak je dostupan na engleskom, srpskom (latinica) i srpskom (ćirilica)
 
 ## Šta sledi
 
-Okupljanja, predavanja i tekstove ćete ovde naći tokom sezone, počevši od pravila za Eurobot 2027 i Robotics Meet-up-a u Palati nauke. Ako želite da pravite robote sa nama, [pošaljite prijavu](/sr/#join).
+Okupljanja, predavanja i tekstove ćete ovde naći tokom sezone, počevši od pravila za Eurobot 2027 i Robotics Meet-up-a u Palati nauke. Ako želite da pravite robote sa nama, [pošaljite prijavu](/sr/join/).
