@@ -12,6 +12,7 @@ msgstr ""
 #: src/layouts/Layout.astro
 #: src/layouts/Layout.astro
 #: src/layouts/Layout.astro
+#: src/pages/[lang]/index.astro
 msgid "RUR Robotics"
 msgstr "РУР Роботика"
 

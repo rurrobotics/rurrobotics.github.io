@@ -2,16 +2,21 @@
 interface Props {
 	class?: string;
 	size?: "default" | "large";
-	/** Show the trailing dot. */
+	as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 	dot?: boolean;
-	/** Color of the trailing dot. */
 	color?: "primary" | "secondary" | "accent" | "tertiary" | "black";
 }
 
-const { class: className, size = "default", dot = true, color = "primary" } = Astro.props;
+const {
+	class: className,
+	size = "default",
+	as: Tag = "h2",
+	dot = true,
+	color = "primary",
+} = Astro.props;
 ---
 
-<h2
+<Tag
 	class:list={[
 		"font-display font-bold uppercase gap-4 mb-6 sm:mb-8",
 		size === "large" ? "text-4xl sm:text-6xl" : "text-3xl sm:text-4xl",
@@ -19,4 +24,4 @@ const { class: className, size = "default", dot = true, color = "primary" } = As
 	]}
 >
 	<slot />{dot && <span style={`color: var(--${color})`}>.</span>}
-</h2>
+</Tag>

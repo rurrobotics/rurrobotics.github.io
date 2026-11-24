@@ -15,7 +15,7 @@ const years = getGalleryYears();
 	description="A collection of photos from the events we've been part of."
 >
 	<Section>
-		<SectionTitle slot="title" size="large">Gallery</SectionTitle>
+		<SectionTitle slot="title" as="h1" size="large">Gallery</SectionTitle>
 		{
 			years.map(({ year, photos }) => (
 				<section class="mt-10 first:mt-0">
