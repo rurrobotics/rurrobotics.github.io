@@ -138,11 +138,6 @@ msgstr "We are grateful to our sponsors for supporting our work and helping us l
 msgid "Source"
 msgstr "Source"
 
-#. 0: year
-#: src/components/layout/Footer.astro
-msgid "© 2023–{0} RUR Robotics. All rights reserved."
-msgstr "© 2023–{0} RUR Robotics. All rights reserved."
-
 #: src/components/sections/AboutSection.astro
 #: src/pages/[lang]/join/index.astro
 msgid "The RUR Robotics team"
@@ -389,3 +384,7 @@ msgstr "Last updated"
 #: src/components/ui/JoinForm.astro
 msgid "By sending this form, you confirm you've read our <0>privacy policy</0>, which explains how we handle your data."
 msgstr "By sending this form, you confirm you've read our <0>privacy policy</0>, which explains how we handle your data."
+
+#: src/components/layout/Footer.astro
+msgid "© 2023–<0/> RUR Robotics. All rights reserved."
+msgstr "© 2023–<0/> RUR Robotics. All rights reserved."

@@ -138,11 +138,6 @@ msgstr "Zahvaljujemo se našim sponzorima na podršci i na tome što nam omoguć
 msgid "Source"
 msgstr "Izvorni kod"
 
-#. 0: year
-#: src/components/layout/Footer.astro
-msgid "© 2023–{0} RUR Robotics. All rights reserved."
-msgstr "© 2023–{0} RUR Robotika. Sva prava zadržana."
-
 #: src/components/sections/AboutSection.astro
 #: src/pages/[lang]/join/index.astro
 msgid "The RUR Robotics team"
@@ -389,3 +384,7 @@ msgstr "Poslednja izmena"
 #: src/components/ui/JoinForm.astro
 msgid "By sending this form, you confirm you've read our <0>privacy policy</0>, which explains how we handle your data."
 msgstr "Slanjem formulara potvrđuješ da si pročitao/la našu <0>politiku privatnosti</0>, koja objašnjava kako obrađujemo tvoje podatke."
+
+#: src/components/layout/Footer.astro
+msgid "© 2023–<0/> RUR Robotics. All rights reserved."
+msgstr "© 2023–<0/> RUR Robotika. Sva prava zadržana."
