@@ -206,14 +206,6 @@ msgstr "Погледај још"
 msgid "Gallery"
 msgstr "Галерија"
 
-#: src/pages/[lang]/gallery/index.astro
-msgid "A photo from the Serbian Eurobot Cup"
-msgstr "Фотографија са Eurobot купа Србије"
-
-#: src/components/sections/GallerySection.astro
-msgid "Team members preparing a robot at the Serbian Eurobot Cup"
-msgstr "Чланови тима припремају робота на Eurobot купу Србије"
-
 #: src/components/sections/GallerySection.astro
 msgid "A team member setting up a robot at the Serbian Eurobot Cup"
 msgstr "Члан тима поставља робота на Eurobot купу Србије"
@@ -225,10 +217,6 @@ msgstr "Чланови тима окупљени на Eurobot купу Срби�
 #: src/components/sections/GallerySection.astro
 msgid "Our robot on the playing table at the Serbian Eurobot Cup"
 msgstr "Наш робот на такмичарском столу на Eurobot купу Србије"
-
-#: src/components/sections/GallerySection.astro
-msgid "Team members by the playing table at the Serbian Eurobot Cup"
-msgstr "Чланови тима поред такмичарског стола на Eurobot купу Србије"
 
 #: src/pages/[lang]/index.astro
 msgid "RUR Robotics is the robotics club of the School of Electrical Engineering at the University of Belgrade. We build autonomous robots and compete in Eurobot."
@@ -393,3 +381,11 @@ msgstr "© 2023–<0/> РУР Роботика. Сва права задржан
 #: src/layouts/PageLayout.astro
 msgid "Skip to content"
 msgstr "Прескочи на садржај"
+
+#: src/components/sections/GallerySection.astro
+msgid "A team member cutting metal with an angle grinder in the workshop"
+msgstr "Члан тима сече метал угаоном брусилицом у радионици"
+
+#: src/components/sections/GallerySection.astro
+msgid "The robot's gantry frame on a workbench in the workshop"
+msgstr "Портал робота на радном столу у радионици"

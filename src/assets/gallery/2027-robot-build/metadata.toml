@@ -1,0 +1,39 @@
+[title]
+en = "Eurobot 2027: Building the robot"
+sr = "Eurobot 2027: izrada robota"
+"sr-Cyrl" = "Eurobot 2027: израда робота"
+
+[photos.DSC_1072]
+en = "Wiring, motor drivers and stepper motors on the robot frame, seen from above"
+sr = "Kabliranje, drajveri motora i koračni motori na okviru robota, pogled odozgo"
+"sr-Cyrl" = "Каблирање, драјвери мотора и корачни мотори на оквиру робота, поглед одозго"
+
+[photos.DSC_1086]
+en = "Close-up of wiring and orange 3D-printed brackets on the robot frame"
+sr = "Krupan plan kablova i narandžastih 3D štampanih držača na okviru robota"
+"sr-Cyrl" = "Крупан план каблова и наранџастих 3D штампаних држача на оквиру робота"
+
+[photos.DSC_1126]
+en = "A team member tightening screws on the robot frame with a screwdriver"
+sr = "Član tima zateže šrafove na okviru robota šrafcigerom"
+"sr-Cyrl" = "Члан тима затеже шрафове на оквиру робота шрафцигером"
+
+[photos.DSC_1299]
+en = "A team member cutting metal with an angle grinder, sparks flying"
+sr = "Član tima seče metal ugaonom brusilicom, a iskre lete na sve strane"
+"sr-Cyrl" = "Члан тима сече метал угаоном брусилицом, а искре лете на све стране"
+
+[photos.DSC_1327]
+en = "Front view of the robot's aluminium gantry with belts, a stepper motor and orange 3D-printed parts"
+sr = "Aluminijumski portal robota spreda, sa remenima, koračnim motorom i narandžastim 3D štampanim delovima"
+"sr-Cyrl" = "Алуминијумски портал робота спреда, са ременима, корачним мотором и наранџастим 3D штампаним деловима"
+
+[photos.DSC_1329]
+en = "The robot's gantry on a workbench with wiring and switches in front of it"
+sr = "Portal robota na radnom stolu, sa kabliranjem i prekidačima ispred"
+"sr-Cyrl" = "Портал робота на радном столу, са каблирањем и прекидачима испред"
+
+[photos.DSC_1340]
+en = "The whole gantry frame on a workbench, mid-assembly"
+sr = "Ceo okvir portala na radnom stolu tokom sklapanja"
+"sr-Cyrl" = "Цео оквир портала на радном столу током склапања"

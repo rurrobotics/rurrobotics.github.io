@@ -1,6 +1,9 @@
 import { defineCollection } from "astro:content";
 import { glob, file } from "astro/loaders";
 import { z } from "astro/zod";
+import { locales } from "./locales/config.js";
+
+const localized = z.record(z.enum(locales), z.string());
 
 const articles = defineCollection({
 	loader: glob({
@@ -35,7 +38,7 @@ const projects = defineCollection({
 	loader: file("./src/content/projects.toml"),
 	schema: z.object({
 		name: z.string(),
-		description: z.record(z.string(), z.string()).default({}),
+		description: localized,
 		url: z.url(),
 		tags: z.array(z.string()).default([]),
 		order: z.number().optional(),
@@ -51,4 +54,16 @@ const legal = defineCollection({
 	}),
 });
 
-export const collections = { articles, projects, legal };
+const gallery = defineCollection({
+	loader: glob({
+		pattern: "*/metadata.toml",
+		base: "./src/assets/gallery",
+		generateId: ({ entry }) => entry.split("/")[0],
+	}),
+	schema: z.object({
+		title: localized,
+		photos: z.record(z.string(), localized),
+	}),
+});
+
+export const collections = { articles, projects, legal, gallery };
