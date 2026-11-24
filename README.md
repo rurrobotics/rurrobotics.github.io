@@ -198,7 +198,6 @@ Delete the team's notification emails in the `kontakt@` inbox on the same schedu
 ### Navbar
 
 - Redesign the locale switcher
-- Animations for mobile
 
 ### Performance
 
