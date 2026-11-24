@@ -186,7 +186,7 @@ msgstr "Година"
 msgid "Nothing matches your filters."
 msgstr "Ништа не одговара претрази."
 
-#. 0: entries.length
+#. 0: total
 #: src/pages/[lang]/articles/index.astro
 msgid "Shown <0/> out of {0}"
 msgstr "Приказано <0/> од {0}"

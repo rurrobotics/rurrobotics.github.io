@@ -186,8 +186,8 @@ msgstr "Godina"
 msgid "Nothing matches your filters."
 msgstr "Ništa ne odgovara pretrazi."
 
+#. 0: total
 #: src/pages/[lang]/articles/index.astro
-#. 0: entries.length
 msgid "Shown <0/> out of {0}"
 msgstr "Prikazano <0/> od {0}"
 
@@ -345,8 +345,8 @@ msgstr "RUR Robotika: dešavanja i članci"
 msgid "RSS feed"
 msgstr "RSS fid"
 
-#: src/layouts/Layout.astro
 #. 0: "@/st
+#: src/layouts/Layout.astro
 msgid "{0} | RUR Robotics"
 msgstr "{0} | RUR Robotika"
 

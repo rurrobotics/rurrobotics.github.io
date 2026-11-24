@@ -108,12 +108,13 @@ export default defineConfig({
 				locales: localeTags,
 			},
 			serialize(item) {
-				const fallback = item.links?.find(
+				const links = item.links ?? [];
+				const fallback = links.find(
 					(link) => link.lang === localeTags[defaultLocale],
 				);
 				if (fallback) {
 					item.links = [
-						...item.links,
+						...links,
 						{ lang: "x-default", url: fallback.url },
 					];
 				}

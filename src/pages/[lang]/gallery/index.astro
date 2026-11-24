@@ -16,28 +16,28 @@ const events = await getGalleryEvents(pageLocale(Astro.currentLocale));
 	description="A collection of photos from the events we've been part of."
 >
 	<Section>
-		<SectionTitle slot="title" as="h1" size="large">Gallery</SectionTitle>
-		{
-			events.map(({ title, photos }) => (
-				<section class="mt-10 first:mt-0">
-					<h3 class="mb-4 font-display text-2xl font-bold sm:mb-6 sm:text-3xl">
-						{title}
-					</h3>
-					<ul class="grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
-						{photos.map((photo) => (
-							<li>
-								<GalleryTile
-									photo={photo.src}
-									alt={photo.alt}
-									sizes="(min-width: 1024px) min(25vw, 330px), (min-width: 768px) 33vw, 50vw"
-									class="aspect-4/3 border-4"
-								/>
-							</li>
-						))}
-					</ul>
-				</section>
-			))
-		}
+		<SectionTitle slot="title" as="h1" size="large">
+			Gallery
+		</SectionTitle>
+		{events.map(({ title, photos }) => (
+			<section class="mt-10 first:mt-0">
+				<h3 class="mb-4 font-display text-2xl font-bold sm:mb-6 sm:text-3xl">
+					{title}
+				</h3>
+				<ul class="grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
+					{photos.map((photo) => (
+						<li>
+							<GalleryTile
+								photo={photo.src}
+								alt={photo.alt}
+								sizes="(min-width: 1024px) min(25vw, 330px), (min-width: 768px) 33vw, 50vw"
+								class="aspect-4/3 border-4"
+							/>
+						</li>
+					))}
+				</ul>
+			</section>
+		))}
 	</Section>
 </PageLayout>
 

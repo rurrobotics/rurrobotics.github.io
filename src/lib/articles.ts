@@ -48,7 +48,10 @@ export type EventArticle = Article & {
 	data: Extract<Article["data"], { category: EventCategory }>;
 };
 
-export function getArticles(locale: Locale, event: true): Promise<EventArticle[]>;
+export function getArticles(
+	locale: Locale,
+	event: true,
+): Promise<EventArticle[]>;
 export function getArticles(
 	locale: Locale,
 	event?: boolean | null,
@@ -59,7 +62,8 @@ export async function getArticles(
 ): Promise<Article[]> {
 	const entries = await getCollection("articles", ({ id, data }) => {
 		const isLocale = parseArticleId(id).locale === locale;
-		const isWanted = event == null || isEventCategory(data.category) === event;
+		const isWanted =
+			event == null || isEventCategory(data.category) === event;
 		return isLocale && isWanted && (import.meta.env.DEV || !data.draft);
 	});
 	return entries.sort(

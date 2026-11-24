@@ -21,12 +21,19 @@ const { sponsors, size, color } = Astro.props;
 		<slot />
 	</h3>
 	<ul class="flex flex-wrap gap-4">
-		{
-			sponsors.map((sponsor) => (
-				<li class:list={["w-full", { large: "sm:w-72", medium: "sm:w-48", small: "w-[calc((100%-1rem)/2)] sm:w-40" }[size]]}>
-					<SponsorTile {...sponsor} size={size} />
-				</li>
-			))
-		}
+		{sponsors.map((sponsor) => (
+			<li
+				class:list={[
+					"w-full",
+					{
+						large: "sm:w-72",
+						medium: "sm:w-48",
+						small: "w-[calc((100%-1rem)/2)] sm:w-40",
+					}[size],
+				]}
+			>
+				<SponsorTile {...sponsor} size={size} />
+			</li>
+		))}
 	</ul>
 </div>

@@ -1,5 +1,9 @@
 ---
-import { ARTICLE_CATEGORIES, EVENT_CATEGORIES, getArticles } from "@lib/articles";
+import {
+	ARTICLE_CATEGORIES,
+	EVENT_CATEGORIES,
+	getArticles,
+} from "@lib/articles";
 import { pageLocale } from "@locales/utils";
 import PageLayout from "@layouts/PageLayout.astro";
 import Section from "@components/ui/Section.astro";
@@ -18,6 +22,8 @@ const entries = (await getArticles(locale)).sort(
 	(a, b) => whenOf(b).valueOf() - whenOf(a).valueOf(),
 );
 
+const total = entries.length;
+
 const categories = [...EVENT_CATEGORIES, ...ARTICLE_CATEGORIES].map(
 	(category) => ({
 		category,
@@ -34,8 +40,12 @@ const years = [...new Set(entries.map((a) => whenOf(a).getUTCFullYear()))].sort(
 	description="Meetups, lectures, news and writeups from the club."
 >
 	<Section>
-		<SectionTitle slot="title" as="h1" size="large">Events & articles</SectionTitle>
-		<SectionLink slot="link" href={`/${locale}/articles/rss.xml`}>RSS feed</SectionLink>
+		<SectionTitle slot="title" as="h1" size="large">
+			Events & articles
+		</SectionTitle>
+		<SectionLink slot="link" href={`/${locale}/articles/rss.xml`}>
+			RSS feed
+		</SectionLink>
 		<p class="mb-8 max-w-2xl text-lg leading-relaxed text-ink-muted">
 			Meetups, lectures, news and writeups from the club.
 		</p>
@@ -46,11 +56,15 @@ const years = [...new Set(entries.map((a) => whenOf(a).getUTCFullYear()))].sort(
 			class="mb-4 font-mono text-xs tracking-widest text-muted uppercase"
 			aria-live="polite"
 		>
-			Shown <span data-shown>{entries.length}</span> out of {entries.length}
+			Shown <span data-shown>{total}</span> out of {total}
 		</p>
 		<ul class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-			{entries.map((article) => <ArticleDetailCard article={article} />)}
+			{entries.map((article) => (
+				<ArticleDetailCard article={article} />
+			))}
 		</ul>
-		<p data-empty hidden class="font-mono text-sm text-muted">Nothing matches your filters.</p>
+		<p data-empty hidden class="font-mono text-sm text-muted">
+			Nothing matches your filters.
+		</p>
 	</Section>
 </PageLayout>

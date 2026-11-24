@@ -9,8 +9,9 @@
 
 const input = document.querySelector<HTMLInputElement>("[data-search]")!;
 const cards = [...document.querySelectorAll<HTMLElement>("li[data-category]")];
-const allCategories =
-	document.querySelector<HTMLButtonElement>("[data-category-all]")!;
+const allCategories = document.querySelector<HTMLButtonElement>(
+	"[data-category-all]",
+)!;
 const categoryButtons = [
 	...document.querySelectorAll<HTMLButtonElement>("[data-category-filter]"),
 ];
@@ -61,7 +62,10 @@ function render() {
 		);
 	}
 	for (const button of yearButtons) {
-		button.setAttribute("aria-pressed", String(button.dataset.yearFilter === year));
+		button.setAttribute(
+			"aria-pressed",
+			String(button.dataset.yearFilter === year),
+		);
 	}
 
 	const selection = [

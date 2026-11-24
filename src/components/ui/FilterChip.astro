@@ -11,8 +11,10 @@ const { color, class: className, ...attrs } = Astro.props;
 <button
 	type="button"
 	{...attrs}
-	style={color &&
-		`--chip: var(--${color}); --chip-fg: var(--${color}-foreground)`}
+	style={
+		color &&
+		`--chip: var(--${color}); --chip-fg: var(--${color}-foreground)`
+	}
 	class:list={[
 		"cursor-pointer border-2 px-3 py-1 font-mono text-xs font-bold tracking-widest uppercase",
 		color

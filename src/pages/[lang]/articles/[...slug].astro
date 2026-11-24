@@ -65,7 +65,11 @@ const meta = [
 		datetime: eventDate,
 	},
 	data.author && { label: "Author", value: data.author },
-	{ label: "Published", value: dateFmt.format(data.date), datetime: data.date },
+	{
+		label: "Published",
+		value: dateFmt.format(data.date),
+		datetime: data.date,
+	},
 ].filter((item): item is MetaItem => Boolean(item));
 ---
 
@@ -75,40 +79,34 @@ const meta = [
 	image={data.hero}
 	type="article"
 >
-	<article
-		class="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 md:px-12 md:py-16"
-	>
+	<article class="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 md:px-12 md:py-16">
 		<header class="mb-10 md:mb-12">
 			<CategoryBadge category={data.category} />
-			<h1
-				class="mt-4 font-display text-4xl leading-none font-bold text-foreground uppercase sm:text-6xl"
-			>
+			<h1 class="mt-4 font-display text-4xl leading-none font-bold text-foreground uppercase sm:text-6xl">
 				{data.title}
 			</h1>
-			{
-				data.description && (
-					<p class="mt-5 text-base leading-relaxed text-ink-muted md:text-lg">
-						{data.description}
-					</p>
-				)
-			}
+			{data.description && (
+				<p class="mt-5 text-base leading-relaxed text-ink-muted md:text-lg">
+					{data.description}
+				</p>
+			)}
 			<dl class="mt-6 grid grid-cols-2 gap-x-8 gap-y-4 sm:flex sm:gap-x-12">
-				{
-					meta.map(({ label, value, datetime }) => (
-						<div>
-							<dt class="font-mono text-xs tracking-widest text-muted uppercase">
-								{label}
-							</dt>
-							<dd class="mt-1 text-foreground">
-								{datetime ? (
-									<time datetime={datetime.toISOString()}>{value}</time>
-								) : (
-									value
-								)}
-							</dd>
-						</div>
-					))
-				}
+				{meta.map(({ label, value, datetime }) => (
+					<div>
+						<dt class="font-mono text-xs tracking-widest text-muted uppercase">
+							{label}
+						</dt>
+						<dd class="mt-1 text-foreground">
+							{datetime ? (
+								<time datetime={datetime.toISOString()}>
+									{value}
+								</time>
+							) : (
+								value
+							)}
+						</dd>
+					</div>
+				))}
 			</dl>
 		</header>
 

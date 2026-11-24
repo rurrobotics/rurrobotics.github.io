@@ -10,9 +10,9 @@ const { name, invalid = false, ...attrs } = Astro.props;
 ---
 
 <label class="flex flex-col gap-2">
-	<span class="font-mono text-xs font-bold tracking-widest uppercase"
-		><slot name="label" /></span
-	>
+	<span class="font-mono text-xs font-bold tracking-widest uppercase">
+		<slot name="label" />
+	</span>
 	<input
 		{name}
 		{...attrs}
@@ -21,14 +21,12 @@ const { name, invalid = false, ...attrs } = Astro.props;
 		aria-describedby={invalid ? `${name}-error` : undefined}
 		class="border-4 border-black bg-background px-4 py-3 font-sans text-base text-foreground aria-invalid:border-primary focus-visible:border-tertiary focus-visible:outline-none"
 	/>
-	{
-		invalid && (
-			<span
-				id={`${name}-error`}
-				class="font-mono text-xs font-bold text-primary"
-			>
-				<slot name="error" />
-			</span>
-		)
-	}
+	{invalid && (
+		<span
+			id={`${name}-error`}
+			class="font-mono text-xs font-bold text-primary"
+		>
+			<slot name="error" />
+		</span>
+	)}
 </label>

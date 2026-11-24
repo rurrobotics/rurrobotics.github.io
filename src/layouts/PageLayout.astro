@@ -8,34 +8,32 @@ import Footer from "@components/layout/Footer.astro";
 import Navbar from "@components/layout/Navbar.astro";
 
 type Props = ComponentProps<typeof Layout> & {
-    showJoinSection?: boolean;
+	showJoinSection?: boolean;
 };
 
 const { showJoinSection = true, ...layoutProps } = Astro.props;
 ---
 
 <Layout {...layoutProps}>
-    <a
-        href="#main"
-        class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-foreground focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:font-bold focus:tracking-widest focus:text-background focus:uppercase"
-    >
-        Skip to content
-    </a>
-    <Navbar />
-    <main id="main" tabindex="-1" class="flex grow flex-col outline-none">
-        <slot />
-        {
-            showJoinSection ? (
-                <SectionRow split={0.6} class="mt-auto">
-                    <JoinSection />
-                    <ContactSection />
-                </SectionRow>
-            ) : (
-                <div class="mt-auto">
-                    <ContactSection />
-                </div>
-            )
-        }
-    </main>
-    <Footer />
+	<a
+		href="#main"
+		class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-foreground focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:font-bold focus:tracking-widest focus:text-background focus:uppercase"
+	>
+		Skip to content
+	</a>
+	<Navbar />
+	<main id="main" tabindex="-1" class="flex grow flex-col outline-none">
+		<slot />
+		{showJoinSection ? (
+			<SectionRow split={0.6} class="mt-auto">
+				<JoinSection />
+				<ContactSection />
+			</SectionRow>
+		) : (
+			<div class="mt-auto">
+				<ContactSection />
+			</div>
+		)}
+	</main>
+	<Footer />
 </Layout>

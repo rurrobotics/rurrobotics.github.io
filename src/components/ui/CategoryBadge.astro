@@ -18,15 +18,13 @@ const labels = {
 } as const satisfies Record<ArticleCategory, string>;
 ---
 
-{
-	plain ? (
-		labels[category]
-	) : (
-		<Badge
-			label={labels[category]}
-			color={CATEGORY_COLORS[category]}
-			variant={variant}
-			class="font-bold tracking-widest uppercase"
-		/>
-	)
-}
+{plain ? (
+	labels[category]
+) : (
+	<Badge
+		label={labels[category]}
+		color={CATEGORY_COLORS[category]}
+		variant={variant}
+		class="font-bold tracking-widest uppercase"
+	/>
+)}

@@ -24,40 +24,34 @@ const past = events
 	<SectionLink slot="link" href={href}>
 		All events
 	</SectionLink>
-	{
-		upcoming.length === 0 ? (
-			<p class="font-mono text-sm text-muted">
-				No upcoming events.
-			</p>
-		) : (
-			<ul data-upcoming class="grid grid-cols-1 gap-6">
-				{upcoming.map((event) => (
-					<ArticleCard article={event} />
-				))}
-			</ul>
-		)
-	}
+	{upcoming.length === 0 ? (
+		<p class="font-mono text-sm text-muted">No upcoming events.</p>
+	) : (
+		<ul data-upcoming class="grid grid-cols-1 gap-6">
+			{upcoming.map((event) => (
+				<ArticleCard article={event} />
+			))}
+		</ul>
+	)}
 	<p data-no-upcoming hidden class="font-mono text-sm text-muted">
 		No upcoming events.
 	</p>
 
-	{
-		events.length > 0 ? (
-			<div data-past-block hidden={past.length === 0}>
-				<h3 class="mt-10 mb-6 font-display text-2xl font-bold uppercase text-muted">
-					Past events
-				</h3>
-				<ul data-past class="grid grid-cols-1 gap-6">
-					{[...upcoming].reverse().map((event) => (
-						<ArticleCard article={event} past hidden />
-					))}
-					{past.slice(0, 2).map((event) => (
-						<ArticleCard article={event} past />
-					))}
-				</ul>
-			</div>
-		) : null
-	}
+	{events.length > 0 ? (
+		<div data-past-block hidden={past.length === 0}>
+			<h3 class="mt-10 mb-6 font-display text-2xl font-bold uppercase text-muted">
+				Past events
+			</h3>
+			<ul data-past class="grid grid-cols-1 gap-6">
+				{[...upcoming].reverse().map((event) => (
+					<ArticleCard article={event} past hidden />
+				))}
+				{past.slice(0, 2).map((event) => (
+					<ArticleCard article={event} past />
+				))}
+			</ul>
+		</div>
+	) : null}
 </Section>
 
 <script>
@@ -71,14 +65,18 @@ const past = events
 
 	if (list && [...items].every((item) => item.hidden)) {
 		list.hidden = true;
-		document.querySelector<HTMLElement>("[data-no-upcoming]")!.hidden = false;
+		document.querySelector<HTMLElement>("[data-no-upcoming]")!.hidden =
+			false;
 	}
 
 	let shown = 0;
-	for (const item of document.querySelectorAll<HTMLElement>("[data-past] > li")) {
+	for (const item of document.querySelectorAll<HTMLElement>(
+		"[data-past] > li",
+	)) {
 		item.hidden = !isPast(item) || shown >= 2;
 		if (!item.hidden) shown++;
 	}
 
-	document.querySelector<HTMLElement>("[data-past-block]")!.hidden = shown === 0;
+	document.querySelector<HTMLElement>("[data-past-block]")!.hidden =
+		shown === 0;
 </script>

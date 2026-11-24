@@ -82,39 +82,32 @@ const values: Record<string, string> = result?.error
 		data-sitekey={TURNSTILE_SITE_KEY}
 		data-size="flexible"
 		data-theme="light"
-	>
-	</div>
-	{
-		sent && (
-			<p
-				role="status"
-				class="border-4 border-black bg-secondary p-4 font-mono text-sm font-bold text-secondary-foreground"
-			>
-				Thanks! We got your application and will be in touch soon.
-			</p>
-		)
-	}
-	{
-		notHuman && (
-			<p
-				role="alert"
-				class="border-4 border-black bg-primary p-4 font-mono text-sm font-bold text-primary-foreground"
-			>
-				We couldn't confirm you're human. Complete the check and try
-				again.
-			</p>
-		)
-	}
-	{
-		result?.error && !isInputError(result.error) && !notHuman && (
-			<p
-				role="alert"
-				class="border-4 border-black bg-primary p-4 font-mono text-sm font-bold text-primary-foreground"
-			>
-				Something went wrong. Check your answers and try again.
-			</p>
-		)
-	}
+	></div>
+	{sent && (
+		<p
+			role="status"
+			class="border-4 border-black bg-secondary p-4 font-mono text-sm font-bold text-secondary-foreground"
+		>
+			Thanks! We got your application and will be in touch soon.
+		</p>
+	)}
+	{notHuman && (
+		<p
+			role="alert"
+			class="border-4 border-black bg-primary p-4 font-mono text-sm font-bold text-primary-foreground"
+		>
+			We couldn't confirm you're human. Complete the check and try again.
+		</p>
+	)}
+	{result?.error && !isInputError(result.error) && !notHuman && (
+		<p
+			role="alert"
+			class="border-4 border-black bg-primary p-4 font-mono text-sm font-bold text-primary-foreground"
+		>
+			Something went wrong. Check your answers and try again.
+		</p>
+	)}
+	<!-- prettier-ignore -->
 	<p class="text-sm leading-relaxed">
 		By sending this form, you confirm you've read our <a
 			href={`/${locale}/privacy/`}
@@ -126,9 +119,7 @@ const values: Record<string, string> = result?.error
 		class="group wipe wipe-left wipe-primary mt-2 inline-flex items-center justify-between gap-3 border-4 border-black bg-foreground px-6 py-3 font-mono text-sm font-bold tracking-widest text-background uppercase cursor-pointer"
 	>
 		<span>Send application</span>
-		<MoveRight
-			class="size-5 transition-transform group-hover:translate-x-0.5"
-		/>
+		<MoveRight class="size-5 transition-transform group-hover:translate-x-0.5" />
 	</button>
 </form>
 
@@ -136,4 +127,5 @@ const values: Record<string, string> = result?.error
 	is:inline
 	src="https://challenges.cloudflare.com/turnstile/v0/api.js"
 	async
-	defer></script>
+	defer
+></script>

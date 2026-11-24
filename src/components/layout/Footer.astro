@@ -6,24 +6,29 @@ const locale = pageLocale(Astro.currentLocale);
 
 const links = [
 	{ href: `/${locale}/privacy/`, label: "Privacy" },
-	{ href: "https://github.com/rurrobotics/rurrobotics.github.io", label: "Source" },
+	{
+		href: "https://github.com/rurrobotics/rurrobotics.github.io",
+		label: "Source",
+	},
 ];
 ---
 
 <footer class="bg-foreground text-background">
-	<div
-		class="mx-auto container flex flex-col gap-5 px-5 py-6 font-mono text-[11px] tracking-widest uppercase sm:flex-row sm:items-center sm:justify-between sm:px-10 sm:text-xs md:px-15"
-	>
-		<p>© 2023–<span data-year>{year}</span> RUR Robotics. All rights reserved.</p>
+	<div class="mx-auto container flex flex-col gap-5 px-5 py-6 font-mono text-[11px] tracking-widest uppercase sm:flex-row sm:items-center sm:justify-between sm:px-10 sm:text-xs md:px-15">
+		<p>
+			© 2023–<span data-year>{year}</span> RUR Robotics. All rights
+			reserved.
+		</p>
 		<div class="flex items-center gap-5">
 			<nav class="-mx-2 flex items-center">
-				{
-					links.map((link) => (
-						<a href={link.href} class="wipe wipe-left wipe-secondary px-2 py-1">
-							{link.label}
-						</a>
-					))
-				}
+				{links.map((link) => (
+					<a
+						href={link.href}
+						class="wipe wipe-left wipe-secondary px-2 py-1"
+					>
+						{link.label}
+					</a>
+				))}
 			</nav>
 			<span class="flex items-center gap-2" aria-hidden="true">
 				<span class="size-3 bg-primary"></span>

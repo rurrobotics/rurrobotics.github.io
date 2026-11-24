@@ -6,7 +6,7 @@ import SectionTitle from "@components/ui/SectionTitle.astro";
 import SocialLink from "@components/ui/SocialLink.astro";
 
 const email = getContactEmail(Astro.currentLocale);
-const phone: string | null = null;
+const phone = null as string | null;
 
 const socials = [
 	{ network: "instagram", href: "https://instagram.com/rurrobotics" },
@@ -17,34 +17,40 @@ const socials = [
 ---
 
 <Section id="contact" color="black">
-	<SectionTitle slot="title" color="secondary">Contact</SectionTitle>
+	<SectionTitle slot="title" color="secondary">
+		Contact
+	</SectionTitle>
 	<ul class="space-y-4 text-lg">
 		<li class="flex items-start gap-4">
 			<Mail class="mt-0.5 size-6 shrink-0" />
-			<a href={`mailto:${email}`} class="link wipe-secondary">{email}</a>
+			<a href={`mailto:${email}`} class="link wipe-secondary">
+				{email}
+			</a>
 		</li>
-		{
-			phone && (
-				<li class="flex items-start gap-4">
-					<Phone class="mt-0.5 size-6 shrink-0" />
-					<a href={`tel:${phone.replaceAll(" ", "")}`} class="link wipe-secondary">
-						{phone}
-					</a>
-				</li>
-			)
-		}
+		{phone && (
+			<li class="flex items-start gap-4">
+				<Phone class="mt-0.5 size-6 shrink-0" />
+				<a
+					href={`tel:${phone.replaceAll(" ", "")}`}
+					class="link wipe-secondary"
+				>
+					{phone}
+				</a>
+			</li>
+		)}
 		<li class="flex items-start gap-4">
 			<MapPin class="mt-0.5 size-6 shrink-0" />
-			<span>School of Electrical Engineering, Bulevar kralja Aleksandra 73, Belgrade</span>
+			<span>
+				School of Electrical Engineering, Bulevar kralja Aleksandra 73,
+				Belgrade
+			</span>
 		</li>
 	</ul>
 	<ul class="mt-8 flex gap-4">
-		{
-			socials.map((social) => (
-				<li>
-					<SocialLink network={social.network} href={social.href} />
-				</li>
-			))
-		}
+		{socials.map((social) => (
+			<li>
+				<SocialLink network={social.network} href={social.href} />
+			</li>
+		))}
 	</ul>
 </Section>

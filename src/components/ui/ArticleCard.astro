@@ -49,48 +49,40 @@ const eventYear = (date: Date) =>
 			past ? "wipe-muted" : isEvent ? "wipe-tertiary" : "wipe-primary",
 		]}
 	>
-		{
-			!(isEvent && eventDate) && (
-				<div class="wipe-strip w-3.5 shrink-0 self-stretch" />
-			)
-		}
-		{
-			isEvent && eventDate && (
-				<div
-					class:list={[
-						"flex w-16 sm:w-26 shrink-0 flex-col items-center justify-center gap-0.5",
-						past
-							? "bg-muted border-muted text-muted-foreground"
-							: "bg-tertiary text-tertiary-foreground",
-					]}
-				>
-					<span class="font-display text-2xl sm:text-4xl font-bold leading-none">
-						{dayFmt.format(eventDate)}
-					</span>
-					<span class="font-mono text-xs font-bold uppercase tracking-widest">
-						{monthFmt.format(eventDate)}
-					</span>
-				</div>
-			)
-		}
-		<div
-			class="flex min-w-0 flex-1 flex-col justify-center gap-1 px-2.5 py-2 sm:gap-2.5 sm:px-6 sm:py-5"
-		>
+		{!(isEvent && eventDate) && (
+			<div class="wipe-strip w-3.5 shrink-0 self-stretch" />
+		)}
+		{isEvent && eventDate && (
+			<div
+				class:list={[
+					"flex w-16 sm:w-26 shrink-0 flex-col items-center justify-center gap-0.5",
+					past
+						? "bg-muted border-muted text-muted-foreground"
+						: "bg-tertiary text-tertiary-foreground",
+				]}
+			>
+				<span class="font-display text-2xl sm:text-4xl font-bold leading-none">
+					{dayFmt.format(eventDate)}
+				</span>
+				<span class="font-mono text-xs font-bold uppercase tracking-widest">
+					{monthFmt.format(eventDate)}
+				</span>
+			</div>
+		)}
+		<div class="flex min-w-0 flex-1 flex-col justify-center gap-1 px-2.5 py-2 sm:gap-2.5 sm:px-6 sm:py-5">
 			<div class="flex items-center gap-3">
 				<CategoryBadge
 					category={data.category}
 					variant={past ? "outline" : "solid"}
 				/>
 				<span class="wipe-text font-mono text-xs font-semibold text-muted">
-					{
-						eventDate
-							? past
-								? eventYear(eventDate)
-								: timeFmt.format(eventDate)
-							: data.author
-								? data.author
-								: dateFmt.format(data.date)
-					}
+					{eventDate
+						? past
+							? eventYear(eventDate)
+							: timeFmt.format(eventDate)
+						: data.author
+							? data.author
+							: dateFmt.format(data.date)}
 				</span>
 			</div>
 			<span class="truncate text-xl font-semibold leading-snug">
@@ -98,9 +90,7 @@ const eventYear = (date: Date) =>
 			</span>
 		</div>
 		<div class="flex shrink-0 items-center pr-6">
-			<MoveRight
-				class="size-5 transition-transform group-hover:translate-x-0.5"
-			/>
+			<MoveRight class="size-5 transition-transform group-hover:translate-x-0.5" />
 		</div>
 	</a>
 </li>

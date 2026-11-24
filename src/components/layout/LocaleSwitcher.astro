@@ -15,22 +15,20 @@ const rest = Astro.url.pathname.split("/").filter(Boolean).slice(1).join("/");
 const href = (target: Locale) => `/${target}/${rest && `${rest}/`}`;
 ---
 
-{
-	options.map(([target, label, name]) => (
-		<a
-			href={href(target)}
-			lang={localeTags[target]}
-			hreflang={localeTags[target]}
-			aria-label={name}
-			aria-current={target === locale ? "true" : undefined}
-			class:list={[
-				"px-2.5 py-1",
-				target === locale
-					? "bg-secondary font-bold text-secondary-foreground"
-					: "font-semibold text-ink-muted",
-			]}
-		>
-			{label}
-		</a>
-	))
-}
+{options.map(([target, label, name]) => (
+	<a
+		href={href(target)}
+		lang={localeTags[target]}
+		hreflang={localeTags[target]}
+		aria-label={name}
+		aria-current={target === locale ? "true" : undefined}
+		class:list={[
+			"px-2.5 py-1",
+			target === locale
+				? "bg-secondary font-bold text-secondary-foreground"
+				: "font-semibold text-ink-muted",
+		]}
+	>
+		{label}
+	</a>
+))}

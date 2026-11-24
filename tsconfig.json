@@ -3,7 +3,6 @@
 	"include": [".astro/types.d.ts", "**/*"],
 	"exclude": ["dist", "supabase/functions"],
 	"compilerOptions": {
-		"baseUrl": ".",
 		"paths": {
 			"@components/*": ["src/components/*"],
 			"@locales/*": ["src/locales/*"],

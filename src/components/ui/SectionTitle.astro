@@ -23,5 +23,6 @@ const {
 		className,
 	]}
 >
-	<slot />{dot && <span style={`color: var(--${color})`}>.</span>}
+	<slot />
+	{dot && <span style={`color: var(--${color})`}>.</span>}
 </Tag>

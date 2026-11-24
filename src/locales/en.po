@@ -186,7 +186,7 @@ msgstr "Year"
 msgid "Nothing matches your filters."
 msgstr "Nothing matches your filters."
 
-#. 0: entries.length
+#. 0: total
 #: src/pages/[lang]/articles/index.astro
 msgid "Shown <0/> out of {0}"
 msgstr "Shown <0/> out of {0}"

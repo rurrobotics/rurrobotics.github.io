@@ -53,30 +53,25 @@ const photos = [
 		<div
 			aria-hidden="true"
 			class="absolute -top-4.5 -right-4.5 size-20 bg-primary sm:size-26"
-		>
-		</div>
+		></div>
 		<div
 			aria-hidden="true"
 			class="absolute -bottom-4 -left-4 size-24 rounded-full border-10 border-secondary sm:size-33 sm:border-14 lg:-bottom-6.5 lg:-left-6.5"
-		>
-		</div>
+		></div>
 		<div
 			aria-hidden="true"
 			class="absolute top-10 -left-4 h-28 w-3 bg-tertiary sm:h-35 sm:w-4 lg:-left-8.5"
-		>
-		</div>
-		<div
-			class="relative grid auto-rows-36 grid-flow-dense grid-cols-2 gap-1 border-4 bg-border md:auto-rows-48 md:grid-cols-12"
-		>
-			{photos.map((tile) => <GalleryTile {...tile} />)}
+		></div>
+		<div class="relative grid auto-rows-36 grid-flow-dense grid-cols-2 gap-1 border-4 bg-border md:auto-rows-48 md:grid-cols-12">
+			{photos.map((tile) => (
+				<GalleryTile {...tile} />
+			))}
 			<a
 				href={`/${locale}/gallery/`}
 				class="group wipe wipe-left wipe-tertiary flex items-end gap-3 bg-primary p-4 font-mono text-sm font-bold uppercase tracking-widest text-primary-foreground md:col-span-2"
 			>
 				<span>See more</span>
-				<MoveRight
-					class="size-5 transition-transform group-hover:translate-x-0.5"
-				/>
+				<MoveRight class="size-5 transition-transform group-hover:translate-x-0.5" />
 			</a>
 		</div>
 	</div>

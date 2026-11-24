@@ -1,0 +1,36 @@
+name: CI
+
+on:
+    push:
+        branches: [develop]
+
+concurrency:
+    group: ci-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    check:
+        runs-on: ubuntu-latest
+        timeout-minutes: 15
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  # The gallery, sponsor and article images are stored in Git LFS and
+                  # the build processes them, so a pointer file would fail it.
+                  lfs: true
+
+            - uses: actions/setup-node@v4
+              with:
+                  node-version-file: .node-version
+                  cache: npm
+
+            - run: npm ci
+
+            - name: Formatting
+              run: npm run format:check
+
+            - name: Type check
+              run: npm run check
+
+            - name: Build
+              run: npm run build

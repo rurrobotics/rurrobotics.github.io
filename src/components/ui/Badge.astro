@@ -23,9 +23,11 @@ const {
 		variant === "outline" && "border-2 border-current",
 		className,
 	]}
-	style={variant === "solid"
-		? `background: var(--${color}); color: var(--${color}-foreground)`
-		: undefined}
+	style={
+		variant === "solid"
+			? `background: var(--${color}); color: var(--${color}-foreground)`
+			: undefined
+	}
 >
 	{label}
 </span>

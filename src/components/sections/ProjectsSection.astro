@@ -11,17 +11,18 @@ const colors = ["primary", "secondary", "tertiary", "accent"] as const;
 
 <Section id="projects">
 	<SectionTitle slot="title">Projects</SectionTitle>
-	<SectionLink slot="link" href="https://github.com/orgs/rurrobotics/repositories">
+	<SectionLink
+		slot="link"
+		href="https://github.com/orgs/rurrobotics/repositories"
+	>
 		All repositories
 	</SectionLink>
 	<div
 		class="grid gap-6"
 		style="grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr))"
 	>
-		{
-			projects.map((p, i) => (
-				<ProjectCard project={p} color={colors[i % colors.length]} />
-			))
-		}
+		{projects.map((p, i) => (
+			<ProjectCard project={p} color={colors[i % colors.length]} />
+		))}
 	</div>
 </Section>

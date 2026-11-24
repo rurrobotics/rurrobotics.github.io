@@ -22,25 +22,22 @@ if (!locales.includes(Astro.params.lang as Locale)) {
 	showJoinSection={false}
 >
 	<Section color="primary" class="relative isolate grow overflow-hidden">
-		<SectionTitle slot="title" as="h1" size="large" dot={false}
-			>Join us</SectionTitle
-		>
+		<SectionTitle slot="title" as="h1" size="large" dot={false}>
+			Join us
+		</SectionTitle>
 
 		<div
 			aria-hidden="true"
 			class="absolute -top-16 -right-12 -z-10 size-56 bg-secondary sm:size-72"
-		>
-		</div>
+		></div>
 		<div
 			aria-hidden="true"
 			class="absolute -bottom-28 -left-24 -z-10 size-72 rounded-full border-[3.5rem] border-background"
-		>
-		</div>
+		></div>
 		<div
 			aria-hidden="true"
 			class="absolute top-1/2 -right-6 -z-10 hidden h-40 w-5 bg-black lg:block"
-		>
-		</div>
+		></div>
 
 		<div class="relative grid items-start gap-12 lg:grid-cols-[1fr_30rem]">
 			<div class="flex flex-col gap-8">
@@ -51,9 +48,7 @@ if (!locales.includes(Astro.params.lang as Locale)) {
 				</p>
 
 				<div>
-					<h2
-						class="font-mono text-sm font-bold tracking-widest uppercase"
-					>
+					<h2 class="font-mono text-sm font-bold tracking-widest uppercase">
 						What happens next
 					</h2>
 					<ol class="mt-4 flex flex-col gap-3">
@@ -63,9 +58,9 @@ if (!locales.includes(Astro.params.lang as Locale)) {
 						</li>
 						<li class="flex gap-4">
 							<span class="font-mono font-bold">02</span>
-							<span
-								>We email you when the selection round starts.</span
-							>
+							<span>
+								We email you when the selection round starts.
+							</span>
 						</li>
 						<li class="flex gap-4">
 							<span class="font-mono font-bold">03</span>
@@ -87,13 +82,11 @@ if (!locales.includes(Astro.params.lang as Locale)) {
 				<div
 					aria-hidden="true"
 					class="absolute -top-4.5 -left-4.5 size-20 bg-secondary sm:size-24"
-				>
-				</div>
+				></div>
 				<div
 					aria-hidden="true"
 					class="absolute -right-4 -bottom-4 size-24 rounded-full border-10 border-background sm:size-28"
-				>
-				</div>
+				></div>
 				<JoinForm />
 			</div>
 		</div>

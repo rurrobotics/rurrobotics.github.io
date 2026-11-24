@@ -12,8 +12,9 @@ export default defineConfig({
 	},
 	adapters: {
 		main: astro(),
-		// The RSS feeds. Shares the .po files with `main`; the
-		// middleware's runWithLocale picks the locale.
-		endpoints: vanilla({ files: "src/pages/**/rss.xml.ts", loader: "server" }),
+		endpoints: vanilla({
+			files: "src/pages/**/rss.xml.ts",
+			loader: "server",
+		}),
 	},
 });

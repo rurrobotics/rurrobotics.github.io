@@ -24,34 +24,72 @@ const general = [{ name: "RBT", href: "https://rbt.rs/", logo: rbt }];
 
 // @wc-ignore
 const partners = [
-	{ name: "Telix", href: "https://www.telix.rs/", logo: telix, class: "bg-[#11153e]" },
+	{
+		name: "Telix",
+		href: "https://www.telix.rs/",
+		logo: telix,
+		class: "bg-[#11153e]",
+	},
 	{ name: "Zanus", href: "https://zanustechnology.com/", logo: zanus },
-	{ name: "SistemCD", href: "https://sistemcd.rs/", logo: sistemcd, class: "bg-[#191c20]" },
+	{
+		name: "SistemCD",
+		href: "https://sistemcd.rs/",
+		logo: sistemcd,
+		class: "bg-[#191c20]",
+	},
 	{ name: "3D Republika", href: "https://3drepublika.com/", logo: republika },
 	{ name: "Pinoles", href: "https://www.pinoles.com/", logo: pinoles },
 ];
 
 // @wc-ignore
 const supporters = [
-	{ name: "Maxon YEP", href: "https://www.maxongroup.com/en/cooperations/young-engineers-program", logo: maxon, logoClass: "p-3" },
+	{
+		name: "Maxon YEP",
+		href: "https://www.maxongroup.com/en/cooperations/young-engineers-program",
+		logo: maxon,
+		logoClass: "p-3",
+	},
 	{ name: "Malina314", href: "https://malina314.com/", logo: malina314 },
-	{ name: "Kelco", href: "https://www.kelco.rs/", logo: kelco, class: "bg-[#212121]" },
-	{ name: "Elektroleum", href: "https://elektroleum.rs/", logo: elektroleum, class: "bg-[#1d2a3f]" },
-	{ name: "Insist Elektrik", href: "http://www.insistelektrik.com/", logo: insist },
+	{
+		name: "Kelco",
+		href: "https://www.kelco.rs/",
+		logo: kelco,
+		class: "bg-[#212121]",
+	},
+	{
+		name: "Elektroleum",
+		href: "https://elektroleum.rs/",
+		logo: elektroleum,
+		class: "bg-[#1d2a3f]",
+	},
+	{
+		name: "Insist Elektrik",
+		href: "http://www.insistelektrik.com/",
+		logo: insist,
+	},
 	{ name: "Tipteh", href: "https://www.tipteh.rs/", logo: tipteh },
 ];
 ---
 
 <Section id="sponsors">
 	<SectionTitle slot="title">Partners</SectionTitle>
-	<SectionLink slot="link" href={`mailto:${email}`}>Become a partner</SectionLink>
+	<SectionLink slot="link" href={`mailto:${email}`}>
+		Become a partner
+	</SectionLink>
 	<p class="mb-10 text-lg leading-relaxed">
-		We are grateful to our sponsors for supporting our work and helping us learn, create, and compete.
+		We are grateful to our sponsors for supporting our work and helping us
+		learn, create, and compete.
 	</p>
 
 	<div class="flex flex-col gap-10">
-		<SponsorTier sponsors={general} size="large" color="primary">General</SponsorTier>
-		<SponsorTier sponsors={partners} size="medium" color="tertiary">Partners</SponsorTier>
-		<SponsorTier sponsors={supporters} size="small" color="secondary">Support</SponsorTier>
+		<SponsorTier sponsors={general} size="large" color="primary">
+			General
+		</SponsorTier>
+		<SponsorTier sponsors={partners} size="medium" color="tertiary">
+			Partners
+		</SponsorTier>
+		<SponsorTier sponsors={supporters} size="small" color="secondary">
+			Support
+		</SponsorTier>
 	</div>
 </Section>

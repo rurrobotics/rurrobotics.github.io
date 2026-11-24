@@ -15,7 +15,8 @@ const { split = 0.5, class: className } = Astro.props;
 	@media (width >= 64rem) {
 		.section-row {
 			--container: 64rem;
-			grid-template-columns: calc(50% + (var(--split) - 0.5) * var(--container)) minmax(0, 1fr);
+			--first-column: calc(50% + (var(--split) - 0.5) * var(--container));
+			grid-template-columns: var(--first-column) minmax(0, 1fr);
 		}
 		.section-row > :global(:first-child > div) {
 			max-width: calc(var(--split) * var(--container));

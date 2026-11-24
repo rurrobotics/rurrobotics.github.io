@@ -42,16 +42,16 @@ const sizeClasses = {
 		className,
 	]}
 >
-	{
-		logo ? (
-			<Image
-				src={logo}
-				alt={name ?? ""}
-				height={logoHeights[size]}
-				class:list={["max-h-full w-auto object-contain", logoClass]}
-			/>
-		) : (
-			<span class="text-center font-mono text-xs font-bold uppercase tracking-widest">{name ?? "Logo"}</span>
-		)
-	}
+	{logo ? (
+		<Image
+			src={logo}
+			alt={name ?? ""}
+			height={logoHeights[size]}
+			class:list={["max-h-full w-auto object-contain", logoClass]}
+		/>
+	) : (
+		<span class="text-center font-mono text-xs font-bold uppercase tracking-widest">
+			{name ?? "Logo"}
+		</span>
+	)}
 </Tag>
