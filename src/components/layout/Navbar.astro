@@ -4,12 +4,19 @@ import {
 	ARTICLE_CATEGORIES,
 	EVENT_CATEGORIES,
 	articleListHref,
+	isEventCategory,
+	type ArticleCategory,
 } from "@lib/articles";
 import { pageLocale } from "@locales/utils";
 import NavLink from "@components/layout/NavLink.astro";
 import LocaleSwitcher from "@components/layout/LocaleSwitcher.astro";
 import logo from "@/assets/logo.svg";
 
+interface Props {
+	articleCategory?: ArticleCategory;
+}
+
+const { articleCategory } = Astro.props;
 const locale = pageLocale(Astro.currentLocale);
 const home = `/${locale}/`;
 
@@ -37,8 +44,12 @@ const joinHref = `${home}join/`;
 
 const onArticles = Astro.url.pathname.includes("/articles");
 const onGallery = Astro.url.pathname.includes("/gallery");
+const onEventArticle = articleCategory && isEventCategory(articleCategory);
+const onArticleList = onArticles && !articleCategory;
 const isCurrent = (id: string) =>
-	(id === "articles" && onArticles) || (id === "gallery" && onGallery);
+	(id === "events" && (onEventArticle || onArticleList)) ||
+	(id === "articles" && onArticles && !onEventArticle) ||
+	(id === "gallery" && onGallery);
 
 const gutter = "px-5 sm:px-10 md:px-15";
 const inner = `mx-auto container ${gutter}`;

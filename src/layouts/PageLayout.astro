@@ -1,5 +1,6 @@
 ---
 import type { ComponentProps } from "astro/types";
+import type { ArticleCategory } from "@lib/articles";
 import Layout from "./Layout.astro";
 import SectionRow from "@components/ui/SectionRow.astro";
 import JoinSection from "@components/sections/JoinSection.astro";
@@ -9,9 +10,10 @@ import Navbar from "@components/layout/Navbar.astro";
 
 type Props = ComponentProps<typeof Layout> & {
 	showJoinSection?: boolean;
+	articleCategory?: ArticleCategory;
 };
 
-const { showJoinSection = true, ...layoutProps } = Astro.props;
+const { showJoinSection = true, articleCategory, ...layoutProps } = Astro.props;
 ---
 
 <Layout {...layoutProps}>
@@ -21,7 +23,7 @@ const { showJoinSection = true, ...layoutProps } = Astro.props;
 	>
 		Skip to content
 	</a>
-	<Navbar />
+	<Navbar articleCategory={articleCategory} />
 	<main id="main" tabindex="-1" class="flex grow flex-col outline-none">
 		<slot />
 		{showJoinSection ? (
