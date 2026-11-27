@@ -42,3 +42,14 @@ description = {
 }
 url = "https://github.com/rurrobotics/capek"
 tags = ["rust", "embassy"]
+
+[waypoint]
+name = "waypoint"
+order = 5
+description = {
+    en = "Desktop editor for planning Eurobot robot paths",
+    sr = "Desktop editor za planiranje putanja robota za Eurobot",
+    "sr-Cyrl" = "Десктоп едитор за планирање путања робота за Eurobot"
+}
+url = "https://github.com/rurrobotics/waypoint"
+tags = ["rust", "gpui"]
