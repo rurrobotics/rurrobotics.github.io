@@ -1,15 +1,15 @@
 name: Notify org profile
 
 on:
-  push:
-    branches: [stable]
-    paths: [src/content/projects.toml]
+    push:
+        branches: [stable]
+        paths: [src/content/projects.toml]
 
 jobs:
-  dispatch:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Trigger projects sync in rurrobotics/.github
-        run: gh api repos/rurrobotics/.github/dispatches -f event_type=projects-updated
-        env:
-          GH_TOKEN: ${{ secrets.ORG_PROFILE_TOKEN }}
+    dispatch:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Trigger projects sync in rurrobotics/.github
+              run: gh api repos/rurrobotics/.github/dispatches -f event_type=projects-updated
+              env:
+                  GH_TOKEN: ${{ secrets.ORG_PROFILE_TOKEN }}
