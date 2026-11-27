@@ -53,3 +53,14 @@ description = {
 }
 url = "https://github.com/rurrobotics/waypoint"
 tags = ["rust", "gpui"]
+
+[bole]
+name = "bole"
+order = 6
+description = {
+    en = "Ubuntu Server + ROS 2 image for Raspberry Pi 4/5, built with Ansible",
+    sr = "Ubuntu Server + ROS 2 slika sistema za Raspberry Pi 4/5, napravljena pomoću Ansible-a",
+    "sr-Cyrl" = "Ubuntu Server + ROS 2 слика система за Raspberry Pi 4/5, направљена помоћу Ansible-а"
+}
+url = "https://github.com/rurrobotics/bole"
+tags = ["ansible", "packer"]
